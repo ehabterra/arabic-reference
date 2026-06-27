@@ -55,16 +55,16 @@ const trackInfo = {
         <Comments />
       </div>
 
-      <aside class="dp-article__toc" aria-label="On this page">
+      <aside class="dp-article__toc" aria-label="في هذه الصفحة">
         <div class="dp-article__toc-inner">
-          <p class="dp-toc-title">Your progress</p>
+          <p class="dp-toc-title">تقدّمك</p>
           <div class="dp-like-dock">
             <LikeButton client:visible page={`${base}/${entry.id}`} />
           </div>
           <button class="dp-btn" data-dp-learn={entry.id} aria-pressed="false">
-            <span data-dp-learn-label>Mark as learned</span>
+            <span data-dp-learn-label>علِّم كمتعلَّم</span>
           </button>
-          <p class="dp-toc-title" style="margin-top:1.5rem">On this page</p>
+          <p class="dp-toc-title" style="margin-top:1.5rem">في هذه الصفحة</p>
           <ul class="dp-toc" data-dp-toc></ul>
         </div>
       </aside>

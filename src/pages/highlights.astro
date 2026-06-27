@@ -4,17 +4,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 // (it's per-visitor data) — this page is just the shell, empty state, and the
 // "clear all" control.
 ---
-<BaseLayout title="Highlights" description="Every passage you've highlighted across The Go Reference, gathered in one place and linked back to where you found it — your own reading notebook, kept in this browser and synced across your devices.">
-  <nav class="dp-breadcrumb dp-kicker"><a href="/">The Go Reference</a> › <span>Highlights</span></nav>
+<BaseLayout title="التظليلات" description="كل مقطع ظلّلته عبر المرجع العربي، مجموعٌ في مكان واحد ومرتبطٌ بموضعه — دفتر قراءتك الخاص، محفوظ في هذا المتصفح ومزامَن عبر أجهزتك.">
+  <nav class="dp-breadcrumb dp-kicker"><a href="/">المرجع العربي</a> › <span>التظليلات</span></nav>
 
   <header class="dp-hero">
-    <p class="dp-hero__eyebrow" data-i18n="hl.eyebrow">Your notebook</p>
-    <h1 data-i18n="hl.h1">Highlights</h1>
+    <p class="dp-hero__eyebrow" data-i18n="hl.eyebrow">دفتر ملاحظاتك</p>
+    <h1 data-i18n="hl.h1">التظليلات</h1>
     <p class="dp-hero__lede" data-i18n-html="hl.lede">
-      Select any text while you read and hit <strong>Highlight</strong> — or tap <strong>✎</strong>
-      to highlight and add a <strong>note</strong>. It's saved here and marked on the page.
-      Everything stays in this browser (and syncs across your devices if you add an email), so this
-      is your private, growing reference of the bits that mattered — and why.
+      حدِّد أي نص أثناء القراءة واضغط <strong>تظليل</strong> — يُحفظ هنا ويُعلَّم في الصفحة. كل شيء يبقى في هذا المتصفح (ويُزامَن عبر أجهزتك إن أضفت بريدًا)، فيصبح هذا مرجعك الخاص المتنامي لأهم ما قرأت.
     </p>
   </header>
 
@@ -22,27 +19,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="dp-highlights__bar">
       <p class="dp-kicker">
         <strong data-dp-highlights-count>0</strong>
-        <span data-i18n="hl.saved">highlights saved</span>
+        <span data-i18n="hl.saved">تظليلات محفوظة</span>
       </p>
       <div class="dp-highlights__controls">
-        <label class="dp-hl-optout" title="Counts are anonymous — only the number of readers per paragraph is shared, never your text, notes, or identity.">
+        <label class="dp-hl-optout" title="الأرقام مجهولة — يُشارَك عدد القرّاء لكل فقرة فقط، لا نصّك ولا ملاحظاتك ولا هويّتك.">
           <input type="checkbox" data-dp-hl-stats-optout checked />
-          <span data-i18n="hl.statsShare">Share anonymous highlight counts</span>
+          <span data-i18n="hl.statsShare">مشاركة إحصاءات التظليل المجهولة</span>
         </label>
         <button class="dp-btn dp-btn--ghost dp-btn--sm" data-dp-highlights-clear hidden data-i18n="hl.clear">
-          Clear all
+          مسح الكل
         </button>
       </div>
     </div>
 
     <div class="dp-highlights__empty" data-dp-highlights-empty hidden>
       <p class="dp-review__emoji">🖍️</p>
-      <h2 data-i18n="hl.noneTitle">Nothing highlighted yet</h2>
+      <h2 data-i18n="hl.noneTitle">لا يوجد تظليل بعد</h2>
       <p class="dp-review__hint" data-i18n="hl.noneBody">
-        Open any page, select a sentence that clicks, and choose a colour. It'll appear here,
-        linked straight back to the spot you found it.
+        افتح أي صفحة، وحدِّد جملة لفتت انتباهك، واختر لونًا. ستظهر هنا مرتبطةً مباشرةً بموضعها.
       </p>
-      <a class="dp-btn dp-btn--primary" href="/" data-i18n="hl.browse">Browse the tracks →</a>
+      <a class="dp-btn dp-btn--primary" href="/" data-i18n="hl.browse">تصفّح المسارات ←</a>
     </div>
 
     <div data-dp-highlights-list></div>

@@ -43,7 +43,7 @@ export default function Playground({ code, title = 'main.go', predict = false }:
 
   async function run() {
     setRunning(true);
-    setOut({ text: 'Compiling and running on the Go Playground…', kind: '' });
+    setOut({ text: 'جارٍ التصريف والتشغيل على Go Playground…', kind: '' });
     try {
       const res = await fetch('/api/run', {
         method: 'POST',
@@ -54,14 +54,14 @@ export default function Playground({ code, title = 'main.go', predict = false }:
       if (data.errors) {
         setOut({ text: data.errors, kind: 'err' });
       } else {
-        setOut({ text: data.output || '(program produced no output)', kind: 'ok' });
+        setOut({ text: data.output || '(البرنامج لم ينتج أي خرج)', kind: 'ok' });
         if (predict && !revealed && predicted.trim()) {
           setVerdict(normalize(predicted) === normalize(data.output || '') ? 'hit' : 'miss');
         }
       }
       setRevealed(true);
     } catch {
-      setOut({ text: 'Could not reach the runner. Check your connection and try again.', kind: 'err' });
+      setOut({ text: 'تعذّر الوصول إلى المُشغّل. تحقق من اتصالك وحاول مرة أخرى.', kind: 'err' });
     } finally {
       setRunning(false);
     }
@@ -87,13 +87,13 @@ export default function Playground({ code, title = 'main.go', predict = false }:
     <div className="dp-pg">
       <div className="dp-pg__bar">
         <span className="dp-pg__title">
-          {predicting ? <>🤔 {title} — predict, then run</> : <>▶ {title} — editable &amp; runnable</>}
+          {predicting ? <>🤔 {title} — توقّع، ثم شغّل</> : <>▶ {title} — قابل للتعديل والتشغيل</>}
         </span>
         <div className="dp-pg__actions">
-          <button className="dp-btn dp-btn--sm dp-btn--ghost" onClick={copy}>{copied ? 'Copied ✓' : 'Copy'}</button>
-          <button className="dp-btn dp-btn--sm dp-btn--ghost" onClick={reset}>Reset</button>
+          <button className="dp-btn dp-btn--sm dp-btn--ghost" onClick={copy}>{copied ? 'تم النسخ ✓' : 'نسخ'}</button>
+          <button className="dp-btn dp-btn--sm dp-btn--ghost" onClick={reset}>إعادة تعيين</button>
           <button className="dp-btn dp-btn--sm dp-btn--primary" onClick={run} disabled={running}>
-            {running ? 'Running…' : predicting ? 'Reveal & run ▸' : 'Run ▸'}
+            {running ? 'جارٍ التشغيل…' : predicting ? 'اكشف وشغّل ▸' : 'شغّل ▸'}
           </button>
         </div>
       </div>
@@ -128,13 +128,13 @@ export default function Playground({ code, title = 'main.go', predict = false }:
       {predicting && (
         <div className="dp-predict">
           <p className="dp-predict__q">
-            🤔 <strong>What will this print?</strong> Commit to a prediction before revealing —
-            type it below for an automatic check, or just decide in your head.
+            🤔 <strong>ما الذي سيطبعه هذا البرنامج؟</strong> التزم بتوقع قبل الكشف —
+            اكتبه أدناه للتحقق التلقائي، أو قرّر في ذهنك.
           </p>
           <textarea
             className="dp-predict__ta"
             rows={3}
-            placeholder="your predicted output (optional)…"
+            placeholder="ناتجك المتوقع (اختياري)…"
             value={predicted}
             onChange={(e) => setPredicted(e.target.value)}
             spellCheck={false}
@@ -147,13 +147,13 @@ export default function Playground({ code, title = 'main.go', predict = false }:
         </div>
       )}
       {verdict === 'hit' && (
-        <div className="dp-predict__verdict dp-predict__verdict--hit">🎯 Exactly what you predicted.</div>
+        <div className="dp-predict__verdict dp-predict__verdict--hit">🎯 تمامًا ما توقّعت.</div>
       )}
       {verdict === 'miss' && (
         <div className="dp-predict__verdict dp-predict__verdict--miss">
-          <strong>Not quite.</strong> You predicted:
+          <strong>ليس تمامًا.</strong> توقّعت:
           <pre>{predicted}</pre>
-          The gap between your guess and the real output above is the lesson — trace where they diverge.
+          الفجوة بين توقّعك والناتج الفعلي أعلاه هي الدرس — تتبّع أين يتباعدان.
         </div>
       )}
     </div>

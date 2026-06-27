@@ -68,14 +68,14 @@ function initCopy() {
     const btn = document.createElement('button');
     btn.className = 'dp-copy-btn';
     btn.type = 'button';
-    btn.textContent = 'Copy';
+    btn.textContent = 'نسخ';
     btn.addEventListener('click', async () => {
       const code = pre.querySelector('code')?.innerText ?? pre.innerText;
       try {
         await navigator.clipboard.writeText(code.replace(/\n$/, ''));
-        btn.textContent = 'Copied ✓';
+        btn.textContent = 'تم النسخ ✓';
         btn.classList.add('is-done');
-        setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('is-done'); }, 1500);
+        setTimeout(() => { btn.textContent = 'نسخ'; btn.classList.remove('is-done'); }, 1500);
       } catch {}
     });
     pre.appendChild(btn);
@@ -175,7 +175,7 @@ function initSearch() {
 
   const render = () => {
     if (!results.length) {
-      list.innerHTML = '<li class="dp-cmdk__empty">No matches — try “channel”, “factory”, “context”…</li>';
+      list.innerHTML = '<li class=”dp-cmdk__empty”>لا نتائج — جرّب كلمات من المحتوى…</li>';
       return;
     }
     list.innerHTML = results.map((r, i) => {

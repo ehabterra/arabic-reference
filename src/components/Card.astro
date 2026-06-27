@@ -20,8 +20,8 @@ const { slug, category, title, intent, order, difficulty, status, numLabel, foot
   <p class="dp-card__intent" data-i18n-html={`intent.${slug}`}>{intent}</p>
   <span class="dp-card__foot">
     <span>
-      {footLabel ?? (status === 'ready' ? '✦ Complete' : 'Draft')}
-      {minutes && <span class="dp-card__time">· ⏱ {minutes} min</span>}
+      {footLabel ?? (status === 'ready' ? '✦ مكتمل' : 'مسودة')}
+      {minutes && <span class="dp-card__time">· ⏱ {minutes} د</span>}
     </span>
     <span class="dp-card__check" aria-hidden="true">✓</span>
   </span>

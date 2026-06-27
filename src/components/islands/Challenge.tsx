@@ -53,7 +53,7 @@ export default function Challenge({ id, title = 'bug.go', brief, code, expected,
   async function check() {
     setRunning(true);
     setStatus('idle');
-    setOut('Compiling and running on the Go Playground…');
+    setOut('جارٍ التصريف والتشغيل على Go Playground…');
     try {
       const res = await fetch('/api/run', {
         method: 'POST',
@@ -71,12 +71,12 @@ export default function Challenge({ id, title = 'bug.go', brief, code, expected,
         recordSolved();
       } else {
         setStatus('fail');
-        setOut(data.output || '(program produced no output)');
+        setOut(data.output || '(البرنامج لم ينتج أي خرج)');
         setFails((f) => f + 1);
       }
     } catch {
       setStatus('err');
-      setOut('Could not reach the runner. Check your connection and try again.');
+      setOut('تعذّر الوصول إلى المُشغّل. تحقق من اتصالك وحاول مرة أخرى.');
     } finally {
       setRunning(false);
     }
@@ -91,28 +91,28 @@ export default function Challenge({ id, title = 'bug.go', brief, code, expected,
   return (
     <div className={`dp-pg dp-chal${solved ? ' is-solved' : ''}`}>
       <div className="dp-pg__bar">
-        <span className="dp-pg__title">🐞 {title} — fix the bug</span>
+        <span className="dp-pg__title">🐞 {title} — أصلح الخطأ</span>
         <div className="dp-pg__actions">
-          {solved && <span className="dp-chal__solved">Solved ✓</span>}
+          {solved && <span className="dp-chal__solved">حُلَّ ✓</span>}
           {hint && (
             <button className="dp-btn dp-btn--sm dp-btn--ghost" onClick={() => setShowHint((s) => !s)}>
-              {showHint ? 'Hide hint' : 'Hint'}
+              {showHint ? 'إخفاء التلميح' : 'تلميح'}
             </button>
           )}
-          <button className="dp-btn dp-btn--sm dp-btn--ghost" onClick={reset}>Reset</button>
+          <button className="dp-btn dp-btn--sm dp-btn--ghost" onClick={reset}>إعادة تعيين</button>
           {solution && fails >= 2 && status !== 'pass' && (
             <button className="dp-btn dp-btn--sm dp-btn--ghost" onClick={() => setSrc(solution.trim() + '\n')}>
-              Show solution
+              إظهار الحل
             </button>
           )}
           <button className="dp-btn dp-btn--sm dp-btn--primary" onClick={check} disabled={running}>
-            {running ? 'Checking…' : 'Run & check ▸'}
+            {running ? 'جارٍ التحقق…' : 'تشغيل وتحقق ▸'}
           </button>
         </div>
       </div>
       <p className="dp-chal__brief">{brief}</p>
       <div className="dp-chal__expected">
-        <span>Expected output</span>
+        <span>الناتج المتوقع</span>
         <pre>{expected}</pre>
       </div>
       {mounted ? (
@@ -139,12 +139,12 @@ export default function Challenge({ id, title = 'bug.go', brief, code, expected,
         </pre>
       )}
       {showHint && hint && <div className="dp-chal__hint">💡 {hint}</div>}
-      {status === 'pass' && <div className="dp-chal__pass">✓ Fixed — output matches. Nice debugging!</div>}
-      {out && status !== 'pass' && (
-        <div className={`dp-pg__out ${status === 'err' ? 'dp-pg__out--err' : ''}`}>{out}</div>
+      {status === ‘pass’ && <div className="dp-chal__pass">✓ تم الإصلاح — الناتج متطابق. عمل رائع!</div>}
+      {out && status !== ‘pass’ && (
+        <div className={`dp-pg__out ${status === ‘err’ ? ‘dp-pg__out--err’ : ‘’}`}>{out}</div>
       )}
-      {status === 'fail' && (
-        <div className="dp-chal__nomatch">Runs, but the output doesn’t match the expected output yet.</div>
+      {status === ‘fail’ && (
+        <div className="dp-chal__nomatch">يعمل البرنامج، لكن الناتج لا يطابق المتوقع بعد.</div>
       )}
     </div>
   );

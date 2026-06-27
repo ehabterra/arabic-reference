@@ -2,27 +2,26 @@
 const { data: d } = Astro.props;
 ---
 <div class="dp-callout dp-callout--gotcha">
-  <p class="dp-callout__title">🚧 This page is being written</p>
-  <p>The full walkthrough — analogy, diagrams, idiomatic Go, trade-offs and a quiz — is on its way. Here's the gist for now.</p>
+  <p class="dp-callout__title">🚧 هذه الصفحة قيد الكتابة</p>
+  <p>الشرح الكامل — تشبيه، مخططات، أمثلة، مفاضلات، واختبار — في الطريق. إليك الملخص في الوقت الحالي.</p>
 </div>
 
 {d.nutshell && (
   <Fragment>
-    <h2 id="in-a-nutshell">In a nutshell</h2>
+    <h2 id="in-a-nutshell">باختصار</h2>
     <p>{d.nutshell}</p>
   </Fragment>
 )}
 
-<h2 id="whats-coming">What you'll find here</h2>
+<h2 id="whats-coming">ماذا ستجد هنا</h2>
 <ul>
-  <li>The problem this {d.kind === 'guide' ? 'topic' : 'pattern'} solves, with a memorable real-world analogy</li>
-  <li>A UML structure diagram and a step-by-step sequence diagram</li>
+  <li>المسألة التي يحلّها هذا {d.kind === 'guide' ? 'الموضوع' : 'النمط'} مع تشبيه واقعي لا يُنسى</li>
+  <li>مخطط بنية UML ومخطط تسلسل خطوة بخطوة</li>
   <li>
-    An idiomatic Go implementation{d.source ? (
-      <Fragment> — <a href={d.source} target="_blank" rel="noopener">browse the source on GitHub</a></Fragment>
+    تطبيق اصطلاحي{d.source ? (
+      <Fragment> — <a href={d.source} target="_blank" rel="noopener">المصدر على GitHub</a></Fragment>
     ) : ''}
   </li>
-  <li>How Go's interfaces &amp; composition reshape the classic design</li>
-  <li>Where it shows up in the Go standard library</li>
-  <li>When to use it, when to avoid it, and a quick self-check quiz</li>
+  <li>أين يظهر في المصادر العربية المعتمدة</li>
+  <li>متى تستخدمه، ومتى تتجنّبه، واختبار تحقق سريع</li>
 </ul>
