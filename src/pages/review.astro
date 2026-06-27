@@ -1,0 +1,84 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// The full quiz bank, embedded at build time. Only pages with quizzes are
+// included; review.js intersects it with the visitor's learned set and the
+// dp-review schedule to build a session.
+const collections = [
+  { base: '/qiraa', name: 'القراءة والكتابة', entries: await getCollection('qiraa') },
+  { base: '/nahw', name: 'النحو', entries: await getCollection('nahw') },
+  { base: '/sarf', name: 'الصرف', entries: await getCollection('sarf') },
+  { base: '/balagha', name: 'البلاغة', entries: await getCollection('balagha') },
+  { base: '/tajwid', name: 'التجويد', entries: await getCollection('tajwid') },
+  { base: '/khat', name: 'الخط العربي', entries: await getCollection('khat') },
+  { base: '/quran-arabic', name: 'عربية القرآن', entries: await getCollection('quranArabic') },
+  { base: '/nonnative', name: 'العربية لغير الناطقين بها', entries: await getCollection('nonnative') },
+];
+const bank = collections.flatMap((c) =>
+  c.entries
+    .filter((e) => e.data.quiz?.length)
+    .map((e) => ({
+      id: e.id,
+      title: e.data.title,
+      url: `${c.base}/${e.id}/`,
+      track: c.name,
+      quiz: e.data.quiz,
+    }))
+);
+---
+<BaseLayout title="المراجعة اليومية" description="مراجعة متباعدة لدروس العربية التي تعلّمتها.">
+  <div class="dp-review">
+    <header class="dp-review__head">
+      <p class="dp-resume__kicker" data-i18n="home.reviewKicker">المراجعة اليومية</p>
+      <h1 data-i18n="review.title">اختبر ما علق في ذهنك</h1>
+      <p class="dp-review__lede" data-i18n="review.lede">
+        أسئلة سريعة من الدروس التي علّمتها بـ"تعلّمت" — كل سؤال يعود قبيل أن تنساه.
+        أجب صحيحاً وسيعود لاحقاً؛ أخطأت وسيعود غداً.
+      </p>
+    </header>
+
+    <div class="dp-review__empty" data-dp-review-empty hidden>
+      <p class="dp-review__emoji">🎉</p>
+      <h2 data-i18n="review.none">لا شيء مستحقاً الآن</h2>
+      <p class="dp-review__hint" data-dp-review-nextwrap hidden>
+        <span data-i18n="review.nextAt">تُفتح مراجعتك التالية في</span>
+        <strong data-dp-review-next></strong>
+      </p>
+      <p class="dp-review__hint" data-dp-review-nolearned hidden data-i18n="review.empty">
+        علِّم دروساً بـ"تعلّمت" أثناء القراءة وستعود أسئلتها هنا وفق جدول مصمَّم لمقاومة النسيان.
+      </p>
+      <a class="dp-btn dp-btn--primary" href="/" data-i18n="review.browse">تصفَّح المسارات →</a>
+    </div>
+
+    <div data-dp-review-session hidden>
+      <div class="dp-review__meta">
+        <span class="dp-review__progress" data-dp-review-progress></span>
+        <a class="dp-review__src" data-dp-review-src href="#"></a>
+      </div>
+      <div class="dp-quiz dp-review__quiz" data-dp-review-q></div>
+      <div class="dp-review__nav">
+        <button class="dp-btn dp-btn--primary" data-dp-review-nextbtn hidden>
+          <span data-i18n="review.next">التالي</span> →
+        </button>
+      </div>
+    </div>
+
+    <div class="dp-review__empty" data-dp-review-done hidden>
+      <p class="dp-review__emoji">✅</p>
+      <h2><span data-i18n="review.scorePrefix">تذكّرت</span> <span data-dp-review-score></span></h2>
+      <p class="dp-review__hint" data-i18n="review.comeback">
+        ما أجبت عليه صحيحاً سيعود لاحقاً — والأخطاء تعود غداً.
+      </p>
+      <p class="dp-review__hint" data-dp-review-streak hidden>
+        🔥 <strong data-dp-review-streak-n></strong>
+        <span data-i18n="review.streak">أيام متتالية — أراك غداً!</span>
+      </p>
+      <a class="dp-btn dp-btn--ghost" href="/" data-i18n="review.browse">تصفَّح المسارات →</a>
+    </div>
+  </div>
+
+  {/* <-escape: quiz text contains literal "</script>" which would otherwise terminate this script element mid-JSON */}
+  <script type="application/json" id="dp-review-bank" set:html={JSON.stringify(bank).replace(/</g, '\\u003c')}></script>
+  <script>import '../scripts/review.js';</script>
+</BaseLayout>

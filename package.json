@@ -1,0 +1,38 @@
+{
+  "name": "arabic-reference",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "description": "An interactive reference for learning Arabic",
+  "author": "Ehab Terra",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/ehabterra/arabic-reference#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ehabterra/arabic-reference.git"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && node scripts/build-search-index.mjs && node scripts/write-assetsignore.mjs",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^12.6.13",
+    "@astrojs/mdx": "^4.3.14",
+    "@astrojs/react": "^4.4.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "astro": "^5.18.2",
+    "mermaid": "^11.15.0",
+    "prismjs": "^1.30.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-simple-code-editor": "^0.14.1"
+  },
+  "devDependencies": {
+    "@types/prismjs": "^1.26.6",
+    "cheerio": "^1.2.0",
+    "wrangler": "^4.100.0"
+  }
+}

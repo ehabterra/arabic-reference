@@ -1,0 +1,66 @@
+---
+import { REPO_URL, TRACKS } from '../lib/consts';
+---
+<header class="dp-nav" id="dp-nav">
+  <div class="dp-container dp-nav__inner">
+    <a class="dp-brand" href="/">
+      <span class="dp-brand__mark">ع</span>
+      <span>المرجع العربي</span>
+    </a>
+
+    <nav class="dp-nav__links" id="dp-nav-links">
+      <div class="dp-nav__group">
+        <button class="dp-nav__trigger" aria-haspopup="true" aria-expanded="false">
+          <span data-i18n="nav.tracks">المسارات</span>
+          <svg class="dp-nav__caret" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="dp-nav__menu">
+          {TRACKS.map((track) => (
+            <a href={`/${track.route}/`}>{track.title}</a>
+          ))}
+        </div>
+      </div>
+      <a href="/review/" data-i18n="nav.review">مراجعة</a>
+      <a href="/highlights/" data-i18n="nav.highlights">إبرازات</a>
+      <a href="/glossary/" data-i18n="nav.glossary">مسرد</a>
+      <a href={REPO_URL} target="_blank" rel="noopener">GitHub ↗</a>
+    </nav>
+
+    <div class="dp-nav__actions">
+      <button class="dp-lang-btn" data-dp-theme aria-label="Toggle light / dark theme" title="Toggle light / dark theme">☀️</button>
+      <button class="dp-account-btn" data-dp-account-btn aria-haspopup="dialog" title="Sync your progress and likes across devices">
+        ⇅ <span data-dp-account-label data-i18n="nav.sync">مزامنة</span>
+      </button>
+      <button class="dp-lang-btn" data-dp-lang aria-label="Switch language / تبديل اللغة">EN</button>
+      <button class="dp-search-btn" data-dp-search aria-label="Search (Cmd K)">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <span class="dp-search-btn__label" data-i18n="nav.search">بحث</span>
+        <kbd>⌘K</kbd>
+      </button>
+      <button class="dp-menu-btn" data-dp-menu aria-label="Menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+      </button>
+    </div>
+  </div>
+
+  <dialog class="dp-account" data-dp-account>
+    <h3 class="dp-account__title" data-i18n="account.title">مزامنة عبر الأجهزة</h3>
+    <p class="dp-account__desc" data-i18n="account.desc">
+      أضف بريدك الإلكتروني للاحتفاظ بتقدُّمك وإعجاباتك على أي جهاز.
+      لا حساب ولا رسائل منّا — لا يُحفظ عنوانك في أي مكان: يبقى في هذا المتصفّح،
+      وتُستخدم فقط بصمة مجهولة منه.
+    </p>
+    <p class="dp-account__status" data-dp-account-status hidden>
+      <span data-i18n="account.syncingAs">تجري المزامنة حاليًا بوصفك</span>
+      <strong data-dp-account-email></strong>
+    </p>
+    <form class="dp-account__form" data-dp-account-form>
+      <input type="email" required placeholder="you@example.com" aria-label="Your email" />
+      <div class="dp-account__row">
+        <button type="submit" class="dp-btn dp-btn--sm dp-btn--primary" data-i18n="account.save">حفظ</button>
+        <button type="button" class="dp-btn dp-btn--sm dp-btn--ghost" data-dp-account-cancel data-i18n="account.cancel">إلغاء</button>
+        <button type="button" class="dp-btn dp-btn--sm dp-btn--ghost dp-account__remove" data-dp-account-remove hidden data-i18n="account.remove">إزالة من هذا المتصفّح</button>
+      </div>
+    </form>
+  </dialog>
+</header>

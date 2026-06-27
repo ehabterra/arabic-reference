@@ -1,0 +1,77 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from './BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import DraftScaffold from '../components/DraftScaffold.astro';
+import Tradeoffs from '../components/Tradeoffs.astro';
+import Related from '../components/Related.astro';
+import QuizBlock from '../components/QuizBlock.astro';
+import Pager from '../components/Pager.astro';
+import Comments from '../components/Comments.astro';
+import LikeButton from '../components/islands/LikeButton.tsx';
+import { readingTime } from '../lib/reading-time';
+
+const {
+  entry,
+  collection = 'qiraa',
+  base = '/qiraa',
+  sectionTitle = 'القراءة والكتابة',
+  sectionHref = '/qiraa/',
+  relatedHeading = 'دروس ذات صلة',
+  topicLabel = 'القراءة والكتابة',
+} = Astro.props;
+const d = entry.data;
+const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+const catLabel = cap(d.category.replace(/-/g, ' '));
+
+// Per-page Arabic content (ordered to match the runtime block collector).
+const contentModules = import.meta.glob('../i18n/content/*.json', { eager: true });
+const contentAr = (contentModules[`../i18n/content/${entry.id}.json`] as any)?.default ?? [];
+
+// The track's full slug list, so marking a page learned can detect milestone
+// crossings (25/50/75/100%) right at the moment they happen.
+const trackEntries = await getCollection(collection);
+const trackInfo = {
+  name: sectionTitle,
+  slugs: [...trackEntries].sort((a, b) => a.data.order - b.data.order).map((e) => e.id),
+};
+---
+<BaseLayout title={d.title} description={d.intent}>
+  <article>
+    <nav class="dp-breadcrumb dp-kicker">
+      <a href={sectionHref}>{sectionTitle}</a> › <span>{catLabel}</span> › <span>{d.title}</span>
+    </nav>
+
+    <PageHeader data={d} slug={entry.id} topicLabel={topicLabel} minutes={readingTime(entry.body)} />
+
+    <div class="dp-article">
+      <div class="dp-article__body dp-prose">
+        <slot />
+        {d.status !== 'ready' && <DraftScaffold data={d} />}
+        <Tradeoffs data={d} />
+        <Related related={d.related} collection={collection} base={base} heading={relatedHeading} />
+        {d.quiz.length > 0 && <QuizBlock quiz={d.quiz} />}
+        <Pager slug={entry.id} collection={collection} base={base} />
+        <Comments />
+      </div>
+
+      <aside class="dp-article__toc" aria-label="On this page">
+        <div class="dp-article__toc-inner">
+          <p class="dp-toc-title">Your progress</p>
+          <div class="dp-like-dock">
+            <LikeButton client:visible page={`${base}/${entry.id}`} />
+          </div>
+          <button class="dp-btn" data-dp-learn={entry.id} aria-pressed="false">
+            <span data-dp-learn-label>Mark as learned</span>
+          </button>
+          <p class="dp-toc-title" style="margin-top:1.5rem">On this page</p>
+          <ul class="dp-toc" data-dp-toc></ul>
+        </div>
+      </aside>
+    </div>
+  </article>
+
+  <script type="application/json" id="dp-content-ar" set:html={JSON.stringify(contentAr)}></script>
+  <script type="application/json" id="dp-track-info" set:html={JSON.stringify(trackInfo).replace(/</g, '\\u003c')}></script>
+  <script>import '../scripts/mermaid.js';</script>
+</BaseLayout>

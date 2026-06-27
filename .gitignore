@@ -1,0 +1,26 @@
+# build output
+dist/
+.vercel/
+.astro/
+.wrangler/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# environment
+.env
+.env.production
+
+# macOS
+.DS_Store
+
+.idea
+
+books
+
+BLUEPRINT.md

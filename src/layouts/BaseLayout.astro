@@ -1,0 +1,98 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { getCollection } from 'astro:content';
+import { SITE_TITLE, SITE_DESC } from '../lib/consts';
+import ar from '../i18n/ar.json';
+
+interface Props { title?: string; description?: string; }
+const { title, description } = Astro.props;
+const pageTitle = title ? `${title} · ${SITE_TITLE}` : SITE_TITLE;
+const desc = description ?? SITE_DESC;
+
+// Build a lightweight search index for the ⌘K command palette.
+const qiraa = await getCollection('qiraa');
+const nahw = await getCollection('nahw');
+const sarf = await getCollection('sarf');
+const balagha = await getCollection('balagha');
+const tajwid = await getCollection('tajwid');
+const khat = await getCollection('khat');
+const quranArabic = await getCollection('quranArabic');
+const nonnative = await getCollection('nonnative');
+const searchIndex = [
+  ...qiraa.map((p) => ({ t: p.data.title, u: `/qiraa/${p.id}/`, c: p.data.category, s: 'القراءة والكتابة', i: p.data.intent, d: p.data.difficulty })),
+  ...nahw.map((p) => ({ t: p.data.title, u: `/nahw/${p.id}/`, c: p.data.category, s: 'النحو', i: p.data.intent, d: p.data.difficulty })),
+  ...sarf.map((p) => ({ t: p.data.title, u: `/sarf/${p.id}/`, c: p.data.category, s: 'الصرف', i: p.data.intent, d: p.data.difficulty })),
+  ...balagha.map((p) => ({ t: p.data.title, u: `/balagha/${p.id}/`, c: p.data.category, s: 'البلاغة', i: p.data.intent, d: p.data.difficulty })),
+  ...tajwid.map((p) => ({ t: p.data.title, u: `/tajwid/${p.id}/`, c: p.data.category, s: 'التجويد', i: p.data.intent, d: p.data.difficulty })),
+  ...khat.map((p) => ({ t: p.data.title, u: `/khat/${p.id}/`, c: p.data.category, s: 'الخط العربي', i: p.data.intent, d: p.data.difficulty })),
+  ...quranArabic.map((p) => ({ t: p.data.title, u: `/quran-arabic/${p.id}/`, c: p.data.category, s: 'عربية القرآن', i: p.data.intent, d: p.data.difficulty })),
+  ...nonnative.map((p) => ({ t: p.data.title, u: `/nonnative/${p.id}/`, c: p.data.category, s: 'العربية لغير الناطقين بها', i: p.data.intent, d: p.data.difficulty })),
+];
+---
+<!doctype html>
+<html lang="ar" data-lang="ar" dir="rtl">
+  <head>
+    <script is:inline>
+      (function () {
+        try {
+          var d = document.documentElement;
+          if (localStorage.getItem('dp-lang') === 'en') {
+            d.dataset.lang = 'en';
+            d.dir = 'ltr';
+          }
+          // before first paint, so light-theme users never flash dark
+          if (localStorage.getItem('dp-theme') === 'light') d.dataset.theme = 'light';
+        } catch (e) {}
+      })();
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+    <meta name="description" content={desc} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#080b12" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="dp-readbar" id="dp-readbar"></div>
+    <Nav />
+    <main class="dp-container">
+      <slot />
+    </main>
+    <Footer />
+
+    <!-- ⌘K command palette -->
+    <div class="dp-cmdk" id="dp-cmdk" aria-hidden="true">
+      <div class="dp-cmdk__backdrop" data-dp-cmdk-close></div>
+      <div class="dp-cmdk__panel" role="dialog" aria-modal="true" aria-label="Search the reference">
+        <input class="dp-cmdk__input" id="dp-cmdk-input" type="text" placeholder="ابحث في العناوين والمحتوى…" autocomplete="off" spellcheck="false" />
+        <div class="dp-cmdk__filters" id="dp-cmdk-filters"></div>
+        <ul class="dp-cmdk__results" id="dp-cmdk-results"></ul>
+        <div class="dp-cmdk__hint">
+          <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+          <span><kbd>↵</kbd> open</span>
+          <span><kbd>esc</kbd> close</span>
+        </div>
+      </div>
+    </div>
+    <script type="application/json" id="dp-search-index" set:html={JSON.stringify(searchIndex)}></script>
+    <script type="application/json" id="dp-i18n" set:html={JSON.stringify(ar)}></script>
+
+    <script>
+      import '../scripts/progress.js';
+      import '../scripts/ui.js';
+      import '../scripts/highlights.js';
+    </script>
+  </body>
+</html>

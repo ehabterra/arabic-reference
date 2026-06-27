@@ -1,0 +1,29 @@
+---
+import { getCollection, render } from 'astro:content';
+import PageLayout from '../../layouts/PageLayout.astro';
+import { TRACKS } from '../../lib/consts';
+
+const track = TRACKS.find(t => t.key === 'quranArabic')!;
+
+export async function getStaticPaths() {
+  const items = await getCollection('quranArabic');
+  return items.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+<PageLayout
+  entry={entry}
+  collection="quranArabic"
+  base={`/${track.route}`}
+  sectionTitle={track.title}
+  sectionHref={`/${track.route}/`}
+  relatedHeading="دروس ذات صلة"
+  topicLabel={track.title}
+>
+  <Content />
+</PageLayout>

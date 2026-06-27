@@ -1,0 +1,145 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { TRACKS, SITE_DESC } from '../lib/consts';
+
+const qiraa = await getCollection('qiraa');
+const nahw = await getCollection('nahw');
+const sarf = await getCollection('sarf');
+const balagha = await getCollection('balagha');
+const tajwid = await getCollection('tajwid');
+const khat = await getCollection('khat');
+const quranArabic = await getCollection('quranArabic');
+const nonnative = await getCollection('nonnative');
+
+// unified progress across every page in the reference
+const allSlugs = [...qiraa, ...nahw, ...sarf, ...balagha, ...tajwid, ...khat, ...quranArabic, ...nonnative].map((p) => p.id).join(',');
+
+// Ordered per-track manifest for the resume card
+const trackList = [
+  { base: '/qiraa', name: 'القراءة والكتابة', entries: qiraa },
+  { base: '/nahw', name: 'النحو', entries: nahw },
+  { base: '/sarf', name: 'الصرف', entries: sarf },
+  { base: '/balagha', name: 'البلاغة', entries: balagha },
+  { base: '/tajwid', name: 'التجويد', entries: tajwid },
+  { base: '/khat', name: 'الخط العربي', entries: khat },
+  { base: '/quran-arabic', name: 'عربية القرآن', entries: quranArabic },
+  { base: '/nonnative', name: 'العربية لغير الناطقين بها', entries: nonnative },
+];
+const resumeManifest = trackList.map((t) => ({
+  base: t.base,
+  name: t.name,
+  pages: [...t.entries]
+    .sort((a, b) => a.data.order - b.data.order)
+    .map((e) => ({ id: e.id, title: e.data.title, ...(e.data.quiz?.length ? { q: 1 } : {}) })),
+}));
+
+const trackIcons: Record<string, string> = {
+  qiraa: '📖',
+  nahw: '✍️',
+  sarf: '⚖️',
+  balagha: '🌸',
+  tajwid: '🎵',
+  khat: '🖋️',
+  quranArabic: '📿',
+  nonnative: '🌍',
+};
+---
+<BaseLayout>
+  <header class="dp-hero">
+    <p class="dp-hero__eyebrow">مرجع تفاعلي للغة العربية</p>
+    <h1>المرجع العربي</h1>
+    <p class="dp-hero__lede">{SITE_DESC}</p>
+  </header>
+
+  <section class="dp-resume" data-dp-resume hidden>
+    <div class="dp-resume__info">
+      <p class="dp-resume__kicker" data-i18n="home.resumeKicker">واصل من حيث توقّفت</p>
+      <h2 class="dp-resume__title" data-dp-resume-title></h2>
+      <p class="dp-resume__meta">
+        <span data-dp-resume-track></span> · <span data-dp-resume-count></span>
+        <span data-i18n="home.learnedSuffix">تعلّمت</span>
+      </p>
+    </div>
+    <div class="dp-resume__actions">
+      <a class="dp-btn dp-btn--primary" data-dp-resume-link><span data-i18n="home.resume">واصل</span> →</a>
+      <a class="dp-btn dp-btn--ghost" data-dp-resume-next hidden>
+        <span data-i18n="home.nextUp">التالي</span>: <span data-dp-resume-next-title></span>
+      </a>
+    </div>
+  </section>
+  <section class="dp-resume dp-resume--review" data-dp-review-card hidden>
+    <div class="dp-resume__info">
+      <p class="dp-resume__kicker" data-i18n="home.reviewKicker">المراجعة اليومية</p>
+      <h2 class="dp-resume__title">
+        <span data-dp-review-count>0</span> <span data-i18n="home.reviewDue">صفحات للمراجعة السريعة</span>
+      </h2>
+      <p class="dp-resume__meta" data-i18n="home.reviewNote">بضع دقائق من الإجابة من الذاكرة تُرسّخ المعلومة للأبد.</p>
+    </div>
+    <div class="dp-resume__actions">
+      <a class="dp-btn dp-btn--primary" href="/review/"><span data-i18n="home.reviewStart">ابدأ المراجعة</span> →</a>
+    </div>
+  </section>
+  <script type="application/json" id="dp-resume-manifest" set:html={JSON.stringify(resumeManifest).replace(/</g, '\\u003c')}></script>
+
+  <div class="dp-overall">
+    <div class="dp-overall__top">
+      <strong data-i18n="home.progressTitle">تقدُّمك الإجمالي</strong>
+      <button class="dp-btn dp-btn--ghost dp-btn--sm" data-dp-reset data-i18n="home.reset">إعادة ضبط</button>
+    </div>
+    <div class="dp-progress" data-dp-progress data-slugs={allSlugs}>
+      <div class="dp-progress__track"><div class="dp-progress__fill"></div></div>
+      <span class="dp-progress__label"></span>
+    </div>
+    <p class="dp-kicker" style="margin:.7rem 0 0;" data-i18n="home.progressNote">
+      يُتابَع عبر كل المسارات — علِّم أي درس بـ"تعلّمت" وتقدّم الشريط. محفوظ في متصفّحك.
+    </p>
+  </div>
+
+  <h2 class="dp-section-head" style="border:0;margin-top:2.4rem;">اختر مساراً</h2>
+  <div class="dp-topics">
+    {TRACKS.map((track) => (
+      <a class="dp-topic" data-cat={track.categories[0]?.key} href={`/${track.route}/`}>
+        <div class="dp-topic__icon">{trackIcons[track.key] ?? '📚'}</div>
+        <h3>{track.title}</h3>
+        <p>{track.blurb}</p>
+        <span class="dp-topic__stat">{track.categories.length} <span>أقسام</span></span>
+        <span class="dp-topic__go">ادخل →</span>
+      </a>
+    ))}
+  </div>
+
+  <section data-dp-toplikes hidden>
+    <h2 class="dp-section-head" style="border:0;margin-top:2.6rem;" data-i18n="home.topLikes">أكثر الصفحات إعجاباً</h2>
+    <div class="dp-toplikes" data-dp-toplikes-grid></div>
+  </section>
+
+  <section data-dp-mylikes hidden>
+    <h2 class="dp-section-head" style="border:0;margin-top:2.6rem;" data-i18n="home.myLikes">صفحاتي المفضّلة</h2>
+    <div class="dp-toplikes" data-dp-mylikes-grid></div>
+  </section>
+
+  <h2 class="dp-section-head" style="border:0;margin-top:2.8rem;">كيف يعمل المرجع</h2>
+  <div class="dp-features">
+    <div class="dp-feature">
+      <div class="dp-feature__icon">📊</div>
+      <h3>مخططات توضيحية</h3>
+      <p>مخططات مرموز تجعل العلاقات واضحة قبل أن تقرأ سطراً واحداً.</p>
+    </div>
+    <div class="dp-feature">
+      <div class="dp-feature__icon">📝</div>
+      <h3>أمثلة تطبيقية</h3>
+      <p>كل مفهوم مدعوم بأمثلة أصيلة من اللغة العربية الفصيحة.</p>
+    </div>
+    <div class="dp-feature">
+      <div class="dp-feature__icon">🧠</div>
+      <h3>مصنوع للحفظ</h3>
+      <p>اختبار في كل درس وتتبُّع للتقدم يحوّل القراءة السلبية إلى رحلة تُكملها.</p>
+    </div>
+    <div class="dp-feature">
+      <div class="dp-feature__icon">📚</div>
+      <h3>مصادر موثَّقة</h3>
+      <p>كل قاعدة مرتبطة بمصادرها من كتب النحو والبلاغة والتجويد المعتمدة.</p>
+    </div>
+  </div>
+</BaseLayout>
