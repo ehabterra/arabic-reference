@@ -12,9 +12,9 @@ const next = idx >= 0 && idx < all.length - 1 ? all[idx + 1] : null;
 ---
 <nav class="dp-pager" aria-label="تنقّل الأقسام">
   {prev ? (
-    <a class="prev" href={`${base}/${prev.id}/`}><small>السابق →</small><strong>{prev.data.title}</strong></a>
+    <a class="prev" href={`${base}/${prev.id}/`}><small>السابق <bdi>→</bdi></small><strong>{prev.data.title}</strong></a>
   ) : <span></span>}
   {next ? (
-    <a class="next" href={`${base}/${next.id}/`}><small>← التالي</small><strong>{next.data.title}</strong></a>
+    <a class="next" href={`${base}/${next.id}/`}><small><bdi>←</bdi> التالي</small><strong>{next.data.title}</strong></a>
   ) : <span></span>}
 </nav>
