@@ -1450,7 +1450,7 @@ mark.dp-hl[data-has-note]::after,
 /* ── Bilingual lesson blocks (Arabic base, English overlay via toggle) ── */
 [data-lang-block="en"] { display: none; }
 html[data-lang="en"] [data-lang-block="ar"] { display: none; }
-html[data-lang="en"] [data-lang-block="en"] { display: block; }
+html[data-lang="en"] [data-lang-block="en"] { display: revert; }
 html[data-lang="en"] [data-lang-block="en"] .dp-prose,
 html[data-lang="en"] [data-lang-block="en"] { text-align: left; }
 .dp-langnote { color: var(--dp-muted); font-style: italic; font-size: .9rem; }

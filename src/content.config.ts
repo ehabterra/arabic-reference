@@ -4,6 +4,7 @@ import { glob } from 'astro/loaders';
 // Shared schema for every Arabic reference section.
 const refSchema = z.object({
   title: z.string(),
+  title_en: z.string().optional(),
   category: z.enum([
     // qiraa categories
     'huruf',

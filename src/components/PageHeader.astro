@@ -11,7 +11,7 @@ const eyebrow =
 ---
 <header class="dp-hero">
   <p class="dp-hero__eyebrow">{eyebrow}{d.difficulty ? ` · ${d.difficulty}` : ''}</p>
-  <h1>{d.title}</h1>
+  <h1><span data-lang-block="ar">{d.title}</span><span data-lang-block="en">{d.title_en ?? d.title}</span></h1>
   {d.intent && <p class="dp-hero__lede" data-i18n-html={`intent.${slug}`}>{d.intent}</p>}
   {d.aka && <p class="dp-kicker" style="margin-top:.9rem">يُعرف أيضاً بـ — {d.aka}</p>}
   <div class="dp-badges" style="margin-top:1.1rem">
