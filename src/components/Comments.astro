@@ -1,28 +1,112 @@
 ---
-// Giscus comments — each page maps to a GitHub Discussion (by pathname) in the
-// "Announcements" category, which visitors can't post to directly, so threads
-// can only be created by the giscus app. Requires the giscus GitHub App
-// (https://github.com/apps/giscus) to be installed on ehabterra/go-reference.
-// Reactions are off here — the page already has its own like button.
+// Native comments backed by Cloudflare D1 (see src/pages/api/comments.ts),
+// gated behind Google Sign-In — no GitHub, no anonymous posts. The OAuth
+// client id is read from PUBLIC_GOOGLE_CLIENT_ID; if it's unset the section
+// shows a friendly "not configured yet" notice instead of breaking.
+const clientId = import.meta.env.PUBLIC_GOOGLE_CLIENT_ID || '';
 ---
-<section class="dp-comments">
+<section class="dp-comments" id="dp-comments">
   <h2 class="dp-comments__title">التعليقات</h2>
-  <p class="dp-comments__hint">سجّل دخولك بـ GitHub للمشاركة في النقاش.</p>
-  <script
-    is:inline
-    src="https://giscus.app/client.js"
-    data-repo="ehabterra/go-reference"
-    data-repo-id="R_kgDOSyOa0g"
-    data-category="Announcements"
-    data-category-id="DIC_kwDOSyOa0s4C_BbT"
-    data-mapping="pathname"
-    data-strict="0"
-    data-reactions-enabled="0"
-    data-emit-metadata="0"
-    data-input-position="top"
-    data-theme="transparent_dark"
-    data-lang="en"
-    data-loading="lazy"
-    crossorigin="anonymous"
-    async></script>
+
+  {clientId ? (
+    <>
+      <p class="dp-comments__hint" id="dp-cmt-hint">سجّل الدخول بحساب Google للمشاركة في النقاش.</p>
+      <div class="dp-cmt-auth" id="dp-cmt-auth"></div>
+      <form class="dp-cmt-form" id="dp-cmt-form" hidden>
+        <textarea
+          class="dp-cmt-input"
+          id="dp-cmt-text"
+          rows="3"
+          maxlength="2000"
+          required
+          placeholder="شارك بتعليقك أو سؤالك…"></textarea>
+        <button type="submit" class="dp-cmt-submit">نشر التعليق</button>
+      </form>
+      <ul class="dp-cmt-list" id="dp-cmt-list" aria-live="polite"></ul>
+    </>
+  ) : (
+    <p class="dp-comments__hint">
+      التعليقات غير مُفعَّلة بعد — يلزم ضبط <code>PUBLIC_GOOGLE_CLIENT_ID</code>.
+    </p>
+  )}
 </section>
+
+{clientId && (
+  <>
+    <script is:inline src="https://accounts.google.com/gsi/client" async></script>
+    <script is:inline define:vars={{ clientId }}>
+      (function () {
+        const slug = location.pathname;
+        const listEl = document.getElementById('dp-cmt-list');
+        const form = document.getElementById('dp-cmt-form');
+        const hint = document.getElementById('dp-cmt-hint');
+        const authEl = document.getElementById('dp-cmt-auth');
+        let credential = null;
+
+        const esc = (s) => {
+          const d = document.createElement('div');
+          d.textContent = s == null ? '' : String(s);
+          return d.innerHTML;
+        };
+        const fmt = (iso) => {
+          try { return new Date((iso || '').replace(' ', 'T') + 'Z').toLocaleDateString('ar'); }
+          catch { return esc(iso); }
+        };
+
+        async function load() {
+          if (!listEl) return;
+          try {
+            const r = await fetch('/api/comments?slug=' + encodeURIComponent(slug));
+            const data = await r.json();
+            const items = (data && data.comments) || [];
+            listEl.innerHTML = items.length
+              ? items.map((c) =>
+                  '<li class="dp-cmt">' +
+                  (c.picture ? '<img class="dp-cmt__av" src="' + esc(c.picture) + '" alt="" referrerpolicy="no-referrer" />' : '<span class="dp-cmt__av dp-cmt__av--none"></span>') +
+                  '<div class="dp-cmt__main"><div class="dp-cmt__head"><span class="dp-cmt__name">' + esc(c.name) + '</span><time class="dp-cmt__time">' + fmt(c.created_at) + '</time></div>' +
+                  '<p class="dp-cmt__text">' + esc(c.body) + '</p></div></li>'
+                ).join('')
+              : '<li class="dp-cmt-empty">لا توجد تعليقات بعد. كن أوّل المشاركين.</li>';
+          } catch (e) { /* leave list as-is */ }
+        }
+
+        window.__dpCmtCredential = function (resp) {
+          credential = resp && resp.credential;
+          if (form) form.hidden = false;
+          if (hint) hint.textContent = 'أنت مسجَّل الدخول — اكتب تعليقك بالأسفل.';
+        };
+
+        function initGSI() {
+          if (!(window.google && google.accounts && google.accounts.id)) {
+            return setTimeout(initGSI, 300);
+          }
+          google.accounts.id.initialize({ client_id: clientId, callback: window.__dpCmtCredential });
+          if (authEl) google.accounts.id.renderButton(authEl, { theme: 'outline', size: 'large', text: 'signin_with', shape: 'pill', locale: 'ar' });
+        }
+        initGSI();
+
+        if (form) {
+          form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const ta = document.getElementById('dp-cmt-text');
+            const body = (ta.value || '').trim();
+            if (!body || !credential) return;
+            const btn = form.querySelector('.dp-cmt-submit');
+            btn.disabled = true;
+            try {
+              const r = await fetch('/api/comments', {
+                method: 'POST',
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify({ slug, credential, body }),
+              });
+              if (r.ok) { ta.value = ''; await load(); }
+              else { const er = await r.json().catch(() => ({})); alert(er.error || 'تعذّر نشر التعليق.'); }
+            } finally { btn.disabled = false; }
+          });
+        }
+
+        load();
+      })();
+    </script>
+  </>
+)}
