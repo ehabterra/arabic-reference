@@ -1,5 +1,6 @@
 ---
 title: "التفخيم والترقيق"
+title_en: "Emphasis and Attenuation (Al-Tafkhīm wa-l-Tarqīq)"
 category: tilawa
 kind: topic
 order: 20
@@ -60,6 +61,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## التفخيم والترقيق
 
@@ -179,3 +182,123 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة
 
 > التفخيم سِمَنٌ في الصوت والترقيق نحولٌ — وفيصلهما الاستعلاء. حروف الاستعلاء **سبعة** «خص ضغط قظ» — مفخَّمة دائماً بخمس مراتب أعلاها المفتوح الممدود وأدناها المكسور. الحروف الثلاثة الدائرة: **الألف** تتبع ما قبلها، **لام الجلالة** تُفخَّم بعد فتح أو ضم وتُرقَّق بعد كسر، **الراء** لها أحكام تفصيلية مستقلة تجدها في درسها المخصَّص.
+
+</div>
+
+<div data-lang-block="en">
+
+## Emphasis and attenuation — التفخيم والترقيق
+
+**التفخيم** (*al-tafkhīm*, emphasis/heaviness): a fullness that enters the sound of a letter, filling the mouth with its resonance — produced by the back of the tongue rising toward the upper palate.
+
+**الترقيق** (*al-tarqīq*, attenuation/lightness): a thinness in the sound that does not fill the mouth — produced by the tongue staying low.
+
+---
+
+## 1. Always-heavy letters — حروف الاستعلاء
+
+**7 letters**, memorised as: **«خُصَّ ضَغطٌ قِظ»**
+
+They are: **خ، ص، ض، غ، ط، ق، ظ**
+
+These letters are heavy at all times — though the *degree* of heaviness varies with the vowel.
+
+**Strength order** (most to least heavy): ط، ض، ص، ظ (with *iṭbāq*) — then: ق، غ، خ (without *iṭbāq*).
+
+### Istiʿlāʾ vs. Iṭbāq
+
+| Group | Letters |
+|---|---|
+| Istiʿlāʾ letters (7) | خ ص ض غ ط ق ظ |
+| Iṭbāq letters (4) — strongest emphasis | ط ص ض ظ |
+
+The 4 *muṭbaqa* letters are never significantly lightened even by kasra; the 3 non-*muṭbaqa* raised letters (ق، غ، خ) are slightly more affected by kasra, though they remain heavy.
+
+---
+
+## 2. Always-light letters — حروف الاستفال
+
+All Arabic letters except the 7 *istiʿlāʾ* letters — always light, except the 3 alternating letters below.
+
+---
+
+## 3. Letters alternating between heavy and light
+
+### الألف *Alif*
+No independent rule — it **follows the letter before it**: heavy after a heavy letter, light after a light letter.
+
+| Preceded by heavy | Preceded by light |
+|---|---|
+| طَال — قَال | كَال — بَاب |
+
+### لام الجلالة *Lām al-Jalāla*
+
+| What precedes it | Ruling | Short example |
+|---|---|---|
+| Fatḥa | Heavy | قَالَ الله |
+| Ḍamma | Heavy | عَبدُ الله |
+| Kasra | Light | بِسمِ الله |
+
+> See the lesson on **Rules of Lām and Rāʾ** for full detail.
+
+### الراء *Rāʾ*
+Has detailed contextual rules.
+
+> See the lesson on **Rules of Lām and Rāʾ** for full detail.
+
+---
+
+## 4. Five degrees of tafkhīm (for istiʿlāʾ letters)
+
+| Degree | Condition | Short example |
+|---|---|---|
+| 1 (highest) | Vowelled with fatḥa + followed by alif madd | طَال — قَال |
+| 2 | Vowelled with fatḥa, no alif | طَبَق — قَبل |
+| 3 | Vowelled with ḍamma | طُهر — قُل |
+| 4 | Quiescent (*sākin*) | أَطغَى — اقشَعَرَّ |
+| 5 (lowest) | Vowelled with kasra | طِفل — قِيل |
+
+---
+
+## 5. Tafkhīm and tarqīq in recitation practice
+
+**Practical impact**: Mixing up heavy and light is a *laḥn khafī* (concealed error) that affects both meaning and beauty of recitation. Key points:
+- Alif **after** an open (*fatḥa*) *mustaʿlī* deepens and reinforces the heaviness.
+- Kasra **weakens** (but does not remove) the heaviness of a *mustaʿlī*.
+- Light letters adjacent to heavy ones are not affected — each letter has its own independent rule.
+
+---
+
+## Summary table
+
+| Group | Letters | Ruling |
+|---|---|---|
+| Always heavy | خ ص ض غ ط ق ظ (istiʿlāʾ) | Tafkhīm |
+| Always light | Remaining 25 letters | Tarqīq |
+| Alternating | Alif — Lām al-Jalāla — Rāʾ | Conditional |
+
+<Mermaid code={String.raw`flowchart TD
+  A["Arabic Letters"] --> B["Always heavy<br/>Istiʿlāʾ 7: khṣ ḍghaṭ qẓ"]
+  A --> C["Always light<br/>25 letters"]
+  A --> D["Alternating"]
+  D --> E["Alif<br/>follows what precedes it"]
+  D --> F["Lām al-Jalāla<br/>kasra→light / fatḥa-ḍamma→heavy"]
+  D --> G["Rāʾ<br/>detailed contextual rules"]`} />
+
+---
+
+## Common mistakes
+
+- **Lightening istiʿlāʾ letters when they carry kasra**: kasra weakens but does not remove heaviness — «قِيل» and «طِفل» are still heavy.
+- **Making lām heavy in words other than الله**: لـ in «قال» and «جعل» is always light.
+- **Excessively opening the mouth for tafkhīm**: tafkhīm is not about wide jaw-opening — exaggeration is affectation.
+- **Confusing the 7 istiʿlāʾ letters with the 4 iṭbāq letters**: every *muṭbaq* is *mustaʿlī*, but not every *mustaʿlī* is *muṭbaq*.
+- **Thinking alif has its own independent heavy/light rule**: alif has no inherent ruling — it follows its neighbour.
+
+---
+
+## Summary
+
+> Tafkhīm is fullness in sound; tarqīq is thinness — the dividing line is *istiʿlāʾ*. The **7 istiʿlāʾ letters** «خص ضغط قظ» are always heavy, in 5 degrees — highest when open and followed by alif, lowest when carrying kasra. The 3 alternating letters: **alif** follows its predecessor; **lām al-jalāla** is heavy after fatḥa or ḍamma and light after kasra; **rāʾ** has its own detailed rules in a separate lesson.
+
+</div>

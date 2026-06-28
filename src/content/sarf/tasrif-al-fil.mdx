@@ -1,5 +1,6 @@
 ---
 title: "تصريف الفعل: الماضي والمضارع والأمر"
+title_en: "Verb Conjugation: Past, Present, and Command Forms"
 category: afaal
 kind: topic
 order: 10
@@ -59,6 +60,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## تصريف الفعل: الماضي والمضارع والأمر
 
@@ -166,3 +169,114 @@ import Mermaid from '../../components/Mermaid.astro';
 > **الماضي** للحدث المنقضي — علامته: تاء الفاعل وتاء التأنيث الساكنة و«قد».  
 > **المضارع** للحال والاستقبال — علامته: البدء بـ(أَنَيْتُ) وقبول «لم» و«لن».  
 > **الأمر** للطلب من المخاطَب — علامته: ياء المخاطبة ونون التوكيد، ويُبنى من المضارع المجزوم بحذف حرف المضارعة.
+
+</div>
+
+<div data-lang-block="en">
+
+## Verb Conjugation — التصريف (*al-taṣrīf*)
+
+### What is conjugation?
+
+**Conjugation** (*taṣrīf*) in morphology means converting one verbal root into different forms to express meanings such as gender, number, tense, and person.
+
+<Mermaid code={String.raw`flowchart TD
+  A["The Arabic verb"] --> B["Past — فَعَلَ"]
+  A --> C["Present — يَفعُلُ"]
+  A --> D["Command — افعُلْ"]
+  B --> B1["Sign: subject-tāʾ /<br/>silent feminine-tāʾ"]
+  C --> C1["Sign: أَنَيتُ prefix +<br/>accepts لم / لن"]
+  D --> D1["Sign: feminine-yāʾ /<br/>nūn of emphasis"]`} />
+
+---
+
+## 1. The past tense — الفعل الماضي (*al-fiʿl al-māḍī*)
+
+**Definition:** Expresses an action that has already been completed before the time of speaking.
+
+**Signs:**
+
+- Accepts the **silent feminine tāʾ**: كَتَبَ**ت** (*katabat*, she wrote).
+- Accepts the **subject tāʾ**: كَتَبْ**تُ** (*katabtu*, I wrote) — كَتَبْ**تَ** (*katabta*, you wrote) — كَتَبْ**تِ** (*katabti*, you [f.] wrote).
+- Accepts **قَد** (*qad*) for emphasis/certainty: قَد كَتَبَ (*qad kataba*, he has indeed written).
+
+**Examples:** كَتَبَ (*kataba*, he wrote) — فَهِمَ (*fahima*, he understood) — كَرُمَ (*karuma*, he was generous) — نَصَرَ (*naṣara*, he helped).
+
+---
+
+## 2. The present tense — الفعل المضارع (*al-fiʿl al-muḍāriʿ*)
+
+**Definition:** Expresses an action happening now or in the future. Named *muḍāriʿ* ("resembling") because it resembles the active participle in its vowel-pattern and syllable count.
+
+**Signs:**
+
+- Begins with one of the **muḍāraʿa letters** collected in the mnemonic **أَنَيْتُ** (*a-n-y-t*):
+  - **همزة** (أ): أَكتُبُ (*aktub*, I write) — 1st person singular.
+  - **نون** (ن): نَكتُبُ (*naktub*, we write) — 1st person plural.
+  - **ياء** (ي): يَكتُبُ (*yaktub*, he writes) — 3rd person masculine singular.
+  - **تاء** (ت): تَكتُبُ (*taktub*, she/you write).
+- Accepts **لم** (*lam*) → jussive: **لم** يَكتُبْ (*lam yaktub*, he did not write).
+- Accepts **لن** (*lan*) → subjunctive: **لن** يَكتُبَ (*lan yaktuba*, he will not write).
+- Accepts **سـ / سوف** for future: سَيَكتُبُ (*sayaktubu*, he will write).
+
+**Examples:** يَكتُبُ (*yaktub*, he writes) — تَذهَبُ (*tadhhabu*, she goes) — نَفهَمُ (*nafham*, we understand).
+
+---
+
+## 3. The command — فعل الأمر (*fiʿl al-amr*)
+
+**Definition:** Requests an action from the person addressed. The command form exists only for the second person (المخاطَب).
+
+**How to build it — three steps:**
+1. Take the present tense and drop the muḍāraʿa prefix: يَكتُبُ → كتُبُ.
+2. Apply jussive (cut the final short vowel): كتُبُ → كتُبْ.
+3. If the result starts with a consonant-cluster, add a connecting hamza: اكتُبْ.
+
+**Signs:**
+
+- Accepts the **feminine address yāʾ**: اكتُبِ**ي** (*uktubī*, write! [to a woman]).
+- Accepts the **nūn of emphasis**: اكتُبَ**نَّ** (*uktubanna*, write! [emphatic]).
+
+> The command has no direct form for the third person (absent); **lām al-amr** + present is used instead: لِيَكتُبْ (*li-yaktub*, let him write).
+
+**Examples:** اكتُبْ (*uktub*, write!) — اذهَبْ (*idhhab*, go!) — استَغفِرْ (*istaghfir*, seek forgiveness!).
+
+---
+
+## Conjugation table: كَتَبَ — يَكتُبُ — اكتُبْ
+
+| Pronoun | Past | Present | Command |
+|---|---|---|---|
+| هو (he) | كَتَبَ | يَكتُبُ | — |
+| هي (she) | كَتَبَتْ | تَكتُبُ | — |
+| هما م (they two m.) | كَتَبَا | يَكتُبَانِ | — |
+| هما ف (they two f.) | كَتَبَتَا | تَكتُبَانِ | — |
+| هم (they m.) | كَتَبُوا | يَكتُبُونَ | — |
+| هنَّ (they f.) | كَتَبنَ | يَكتُبنَ | — |
+| أنتَ (you m.) | كَتَبتَ | تَكتُبُ | اكتُبْ |
+| أنتِ (you f.) | كَتَبتِ | تَكتُبِينَ | اكتُبِي |
+| أنتما (you two) | كَتَبتُمَا | تَكتُبَانِ | اكتُبَا |
+| أنتم (you m. pl.) | كَتَبتُم | تَكتُبُونَ | اكتُبُوا |
+| أنتنَّ (you f. pl.) | كَتَبتُنَّ | تَكتُبنَ | اكتُبنَ |
+| أنا (I) | كَتَبتُ | أَكتُبُ | — |
+| نحن (we) | كَتَبنَا | نَكتُبُ | — |
+
+---
+
+## Quranic examples
+
+| Tense | Example |
+|---|---|
+| Past | ﴿وَخَلَقَ اللهُ السَّمَاوَاتِ وَالأَرضَ﴾ (*And God created the heavens and the earth*) |
+| Present | ﴿يُسَبِّحُ لِلهِ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرضِ﴾ (*Everything in the heavens and earth glorifies God*) |
+| Command | ﴿اقرَأْ بِاسمِ رَبِّكَ الَّذِي خَلَقَ﴾ (*Read in the name of your Lord who created*) |
+
+---
+
+## Summary
+
+> **Past** (*māḍī*): a completed action — signs: subject-tāʾ, silent feminine-tāʾ, and **قَد**.  
+> **Present** (*muḍāriʿ*): present or future — signs: begins with an **أَنَيْتُ** letter and accepts **لم** and **لن**.  
+> **Command** (*amr*): a request addressed to the second person — signs: feminine-yāʾ and nūn of emphasis; built from the jussive present by dropping the muḍāraʿa letter.
+
+</div>

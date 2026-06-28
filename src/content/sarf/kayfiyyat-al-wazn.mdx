@@ -1,5 +1,6 @@
 ---
 title: "كيفية وزن الكلمات"
+title_en: "How to Weigh Arabic Words: Special Cases in the Root Template"
 category: mizan
 kind: topic
 order: 3
@@ -60,6 +61,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## مقدمة
 
@@ -169,3 +172,110 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة القاعدة
 
 > الوزن الصرفي يجري دائماً على **الأصل** لا على الصورة الظاهرة. المحذوف يُحذَف مقابله، والمدغم يُفَكُّ، والمعل بالنقل يُردّ إلى أصله، والحرف الزائد يُوزَن بلفظه.
+
+</div>
+
+<div data-lang-block="en">
+
+## Introduction
+
+A word is not always in its underlying form: a letter may be deleted, two identical letters may be merged (gemination/*idghām*), a vowel may be shifted (*iʿlāl bil-naql*), or letters may be transposed. Each case has its own weighing rule.
+
+**The master rule:**
+
+> Weighing always follows the **underlying (original) form**, not the surface appearance.
+
+---
+
+## 1. Augmented letters
+
+**Rule:** An augmented letter is written in the scale with its own letter-shape (see the previous lesson on al-mīzān).
+
+| Word | Augmented letter | Pattern |
+|---|---|---|
+| أَخرَجَ (*akhraja*, he brought out) | hamza | أَفعَلَ |
+| كَاتَبَ (*kātaba*, he corresponded) | ālif | فَاعَلَ |
+| اسْتَغفَرَ (*istaghfara*, he sought forgiveness) | hamza + sīn + tāʾ | اسْتَفعَلَ |
+
+---
+
+## 2. Deleted letters
+
+**Rule:** When a root-letter is deleted from the surface form, the corresponding position in the scale is also deleted.
+
+| Surface form | Underlying form | What was deleted | Pattern |
+|---|---|---|---|
+| قُلْ (*qul*, say!) | قُوْلْ | wāw (the *ʿayn*) | فُلْ |
+| عِدْ (*ʿid*, promise!) | وَعِدْ | wāw (the *fāʾ*) | عِلْ |
+
+> The deleted letter has no replacement in the scale. The pattern of **قُلْ** is **فُلْ**, not **فُعْل**.
+
+---
+
+## 3. Geminated (doubled) letters — breaking the idghām
+
+**Rule:** When two identical root-letters are merged into one (*idghām*), break the merger for the purpose of weighing, because gemination is a phonetic phenomenon and does not change the root.
+
+| Surface form | After breaking *idghām* | Pattern |
+|---|---|---|
+| مَدَّ (*madda*, he extended) | مَدَدَ | فَعَلَ |
+| رَدَّ (*radda*, he returned it) | رَدَدَ | فَعَلَ |
+| شَدَّ (*shadda*, he tightened) | شَدَدَ | فَعَلَ |
+
+> Breaking the merger is only for weighing purposes; in actual pronunciation the *idghām* remains obligatory.
+
+---
+
+## 4. Weakening by vowel-transfer — الإعلال بالنقل (*iʿlāl bil-naql*)
+
+**What is it?** The vowel on a weak letter (و or ي) is shifted onto the preceding consonant, causing the weak letter to become an ālif or fall silent.
+
+**Rule:** Weigh on the underlying form *before* the transfer, not the resulting surface form.
+
+| Surface form | Underlying form (before transfer) | Pattern |
+|---|---|---|
+| صَامَ (*ṣāma*, he fasted) | صَوَمَ (wāw originally vowelled) | فَعَلَ |
+| بَاعَ (*bāʿa*, he sold) | بَيَعَ (yāʾ originally vowelled) | فَعَلَ |
+| يَقُومُ (*yaqūmu*, he stands) | يَقْوُمُ (wāw originally after ق) | يَفعُلُ |
+
+---
+
+## 5. Metathesis — القلب المكاني (a note)
+
+**Metathesis** is a rare phenomenon where a letter has moved from its original position. When confirmed by derivational evidence (ishtiqāq), the word is weighed on its original order before the transposition.
+
+> Metathesis must not be claimed without evidence: derivation, inflection, or analogy. It is an advanced topic.
+
+---
+
+## Summary table
+
+| Case | Rule | Example |
+|---|---|---|
+| Augmented letter | written in scale as itself | اسْتَغفَرَ → اسْتَفعَلَ |
+| Deleted letter | deleted from scale too | قُلْ → فُلْ |
+| Gemination | break for weighing | مَدَّ → فَعَلَ |
+| Weakening by transfer | weigh the underlying form | صَامَ → فَعَلَ |
+| Metathesis | weigh the underlying form (rare, needs evidence) | — |
+
+<Mermaid code={String.raw`flowchart TD
+  R["Special weighing cases"] --> Z["Augmented: write as itself"]
+  R --> D["Deleted: delete from scale too"]
+  R --> I["Geminated: break for weighing"]
+  R --> N["Weakened by transfer: revert to origin"]`} />
+
+---
+
+## Common mistakes
+
+- Weighing **قُلْ** as **فُعْل**. Correct: the wāw (*ʿayn*) was deleted, so its scale-counterpart is deleted too — the pattern is **فُلْ**.
+- Weighing **رَدَّ** as **فَعَّلَ** because it has doubling. Correct: the doubling in **رَدَّ** is original gemination (رَدَدَ), not augmentation — the pattern is **فَعَلَ**.
+- Weighing **صَامَ** as **فَالَ**. Correct: weigh the underlying form **صَوَمَ**, not the surface — the pattern is **فَعَلَ**.
+
+---
+
+## Summary
+
+> Morphological weighing always follows the **underlying form**, not the surface. A deleted letter is deleted from the scale; a geminated pair is un-merged for weighing; a letter weakened by transfer is restored to its origin; and an augmented letter is written in the scale as itself.
+
+</div>

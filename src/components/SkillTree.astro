@@ -4,13 +4,14 @@
 // nodes, pulses the next unlearned one, and marks completed tiers.
 const { entries, categories, base } = Astro.props as {
   entries: any[];
-  categories: { key: string; title: string }[];
+  categories: { key: string; title: string; title_en?: string }[];
   base: string;
 };
 const tiers = categories
   .map((c) => ({
     key: c.key,
     title: c.title,
+    title_en: c.title_en,
     pages: entries
       .filter((e) => e.data.category === c.key)
       .sort((a, b) => a.data.order - b.data.order),
@@ -27,7 +28,10 @@ const tiers = categories
   <div class="dp-tree__tiers">
     {tiers.map((t) => (
       <div class="dp-tree__tier" data-tree-tier>
-        <span class="dp-tree__tier-label">{t.title}</span>
+        <span class="dp-tree__tier-label">
+          <span data-lang-block="ar">{t.title}</span>
+          <span data-lang-block="en">{t.title_en ?? t.title}</span>
+        </span>
         <div class="dp-tree__nodes">
           {t.pages.map((p) => (
             <a class="dp-tree__node" href={`${base}/${p.id}/`} data-tree-slug={p.id}>

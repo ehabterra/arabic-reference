@@ -1,5 +1,6 @@
 ---
 title: "كان وإنَّ وأخواتهما — النواسخ في القرآن"
+title_en: "Kāna, Inna and Their Sisters — Sentence-Modifiers in the Qurʾān"
 category: mustawa2
 kind: guide
 order: 10
@@ -58,6 +59,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## الهدف
 
@@ -143,3 +146,97 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة
 
 > كان تدخل على الجملة الاسمية فترفع اسمها وتنصب خبرها؛ أما إنَّ فتنصب الاسم وترفع الخبر. وكلا الناسخين يُضيف معنىً جديداً: كان تُحدِّد الزمن، وإنَّ تُؤكِّد المضمون. وفهمهما ضروري لتفسير الكثير من الجمل القرآنية التي تصف صفات الله أو تُقرِّر حقائق الإيمان.
+
+</div>
+
+<div data-lang-block="en">
+
+## Objective
+
+In this unit you will learn how **sentence-modifiers** (*nawāsikh* — النواسخ) change the case endings of the nominal sentence. This lesson builds on the subject–predicate structure from Level 1 and adds the effect of **كان** and its sisters, and **إنَّ** and its sisters, on that structure.
+
+---
+
+## The Rule
+
+### 1. كان and its sisters — verbal modifiers (أفعال ناسخة)
+
+They enter a nominal sentence and:
+- **keep the subject nominative** — now called **اسم كان** (*ism kāna*)
+- **make the predicate accusative** — now called **خبر كان** (*khabar kāna*)
+
+| Verbal modifier | Example | Temporal meaning |
+|---|---|---|
+| كَانَ (*kāna*) | كَانَ اللهُ غَفُوراً | past |
+| أَصبَحَ (*aṣbaḥa*) | أَصبَحَ الإِيمَانُ قَوِيًّا | morning / change of state |
+| صَارَ (*ṣāra*) | صَارَ الأَمرُ يَسِيراً | became |
+| لَيسَ (*laysa*) | لَيسَ كَمِثلِهِ شَيءٌ | negation |
+
+### 2. إنَّ and its sisters — particle modifiers (حروف ناسخة)
+
+They enter a nominal sentence and:
+- **make the subject accusative** — **اسم إنَّ** (*ism inna*)
+- **keep the predicate nominative** — **خبر إنَّ** (*khabar inna*)
+
+| Particle modifier | Example | Meaning |
+|---|---|---|
+| إِنَّ (*inna*) | إِنَّ اللهَ قَدِيرٌ | emphasis, assertion |
+| أَنَّ (*anna*) | عَلِمتُ أَنَّ الحَقَّ واضِحٌ | assertion (as object) |
+| كَأَنَّ (*kaʾanna*) | كَأَنَّ القَمَرَ بَدرٌ | resemblance |
+| لَيتَ (*layta*) | لَيتَ الأَمرَ سَهلٌ | wish |
+| لَعَلَّ (*laʿalla*) | لَعَلَّ الفَرَجَ قَرِيبٌ | hope |
+| لَكِنَّ (*lākinna*) | لَكِنَّ الصَّبرَ جَمِيلٌ | concession |
+
+<Mermaid code={String.raw`flowchart TD
+  N["Sentence-modifiers
+(nawāsikh)"] --> KA["Verbal modifiers
+كان and sisters"]
+  N --> IN["Particle modifiers
+إنَّ and sisters"]
+  KA --> K1["subject: nominative
+predicate: accusative"]
+  IN --> I1["subject: accusative
+predicate: nominative"]
+  K1 --> K2["كَانَ / صَارَ / لَيسَ"]
+  I1 --> I2["إِنَّ / لَعَلَّ / لَيتَ / لَكِنَّ"]`} />
+
+---
+
+## From the Qurʾān
+
+| Qurʾānic phrase | Modifier | Subject (*ism*) | Predicate (*khabar*) | Reference |
+|---|---|---|---|---|
+| «وَكَانَ اللَّهُ غَفُوراً رَّحِيماً» — *wa-kāna-llāhu Ghafūran* | كَانَ | اللهُ (nominative) | غَفُوراً (accusative) | al-Nisāʾ 4:96 |
+| «لَيسَ كَمِثلِهِ شَيءٌ» — *laysa ka-mithlihi shayʾ* | لَيسَ | شَيءٌ (nominative) | كَمِثلِهِ (accusative) | al-Shūrā 42:11 |
+| «إِنَّ الدِّينَ عِندَ اللهِ الْإِسلامُ» — *inna d-dīna* | إِنَّ | الدِّينَ (accusative) | الإِسلامُ (nominative) | Āl ʿImrān 3:19 |
+| «إِنَّ اللَّهَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ» — *inna-llāha* | إِنَّ | اللهَ (accusative) | قَدِيرٌ (nominative) | recurring |
+
+---
+
+## Vocabulary
+
+| Arabic | Transliteration | English |
+|---|---|---|
+| غَفُورٌ | *ghafūr* | Oft-Forgiving |
+| رَحِيمٌ | *raḥīm* | Most Merciful |
+| قَدِيرٌ | *qadīr* | All-Powerful |
+| الدِّينُ | *al-dīn* | religion, way of life |
+| الإِسلامُ | *al-islām* | Islam, submission to God |
+| مِثلٌ | *mithl* | likeness, equivalent |
+| يَسِيرٌ | *yasīr* | easy, simple |
+
+---
+
+## Exercise
+
+1. **Parse this sentence:** «إِنَّ اللهَ سَمِيعٌ بَصِيرٌ» — what is the subject of إنَّ (*ism inna*) and what is its predicate (*khabar inna*)? State the case of each.
+
+2. **Apply the modifier:** «اللهُ كريمٌ» — add «إنَّ» at the start and adjust the case endings.
+
+---
+
+## Summary
+
+> كان enters the nominal sentence and puts the predicate into the accusative while keeping the subject nominative. إنَّ does the reverse: it puts the subject into the accusative while keeping the predicate nominative. Both modifiers add a new layer of meaning — كان locates the state in time; إنَّ asserts it with emphasis. Understanding them is essential for interpreting the many Qurʾānic sentences that describe God's attributes or declare the truths of faith.
+
+</div>

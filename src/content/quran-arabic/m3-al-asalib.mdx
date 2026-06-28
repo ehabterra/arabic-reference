@@ -1,5 +1,6 @@
 ---
 title: "أساليب: الاستثناء والتعجب والقسم في القرآن"
+title_en: "Three Qur'anic Styles: Exception, Exclamation, and Oath"
 category: mustawa3
 kind: guide
 order: 22
@@ -59,6 +60,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## الهدف
 
@@ -195,3 +198,128 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة
 
 > ثلاثة أساليب مهمة في القرآن: **الاستثناء** (إلا وأخواتها — إعراب المستثنى يتبع نوع الاستثناء)، و**التعجب** (صيغتان: «ما أَفعَلَه» و«أَفعِلْ بِه»)، و**القسم** (حرف القسم + مجرور + جواب). والجمعُ بين هذه الأساليب في الآية الواحدة من خصائص الأسلوب القرآني البياني المعجز.
+
+</div>
+
+<div data-lang-block="en">
+
+## Goal
+
+By the end of this lesson you will be able to:
+- Identify exception (*istiṯhnāʾ*), exclamation (*taʿajjub*), and oath (*qasam*) constructions in the Qur'an
+- Parse the excepted noun (المستثنى) correctly
+- Recognise the two standard exclamation patterns
+- Name the oath particles and identify the oath response
+
+---
+
+## Part 1: Exception — الاستثناء
+
+### Exception particles
+
+| Particle | After it | Note |
+|---|---|---|
+| **إلا** | see table below | the standard particle |
+| **غير / سوى** | genitive (added to) | inflected like the excepted noun with إلا |
+| **خلا / عدا / حاشا** | accusative or genitive | can function as verbs or particles |
+
+### Types of exception with إلا
+
+| Type | Definition | Case of excepted noun | Example |
+|---|---|---|---|
+| **Complete affirmative** | positive sentence, antecedent stated | **accusative — obligatory** | ﴿لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا﴾ |
+| **Complete negative** | negative sentence, antecedent stated | **accusative OR substitute** | *mā jāʾa al-qawmu illā Zaydan / Zaydun* |
+| **Incomplete negative** | negative sentence, no antecedent stated | **by grammatical position** | *mā jāʾa illā Zaydun* (subject) |
+
+<Mermaid code={String.raw`flowchart TD
+  IS["Exception — إلا"] --> TP["Complete affirmative<br/>← obligatory accusative"]
+  IS --> TN["Complete negative<br/>← accusative OR substitute"]
+  IS --> NK["Incomplete negative<br/>← by grammatical position"]
+  TP --> EX1["نفساً إلا وُسعَها"]
+  TN --> EX2["ما قام القوم إلا زيداً"]
+  NK --> EX3["ما قام إلا زيدٌ"]`} />
+
+---
+
+## Part 2: Exclamation — التعجب
+
+### The two standard patterns
+
+**Pattern 1 — مَا أَفعَلَهُ** (*mā afʿalahu*):
+- **ما**: indefinite noun ("what a great thing!") — subject
+- **The verb**: frozen past tense (non-inflecting)
+- **Pronoun**: object
+- *mā aʿẓama Allāha* — How great is God!
+
+**Pattern 2 — أَفعِلْ بِهِ** (*afʿil bihi*):
+- Looks like a command but functions as a past verb
+- **بِ**: extra particle; the noun after it is the subject
+- ﴿أَسْمِعْ بِهِمْ وَأَبْصِرْ﴾ — *What hearing and sight they have!*
+
+### Exclamation of reproach in the Qur'an
+
+The Qur'an often expresses wonder and rebuke through context rather than the two explicit patterns — the rhetorical effect is even stronger.
+
+---
+
+## Part 3: Oath — القسم
+
+### Elements of an oath
+
+| Element | Description |
+|---|---|
+| **Oath particle** | الواو, الباء, التاء (التاء exclusive to the Divine Name) |
+| **The sworn-by item** | genitive after the particle |
+| **Oath response** | a sentence stating the content of the oath |
+
+### Oath particles in the Qur'an
+
+- **و (*wāw*)**: the most frequent — ﴿وَالْفَجْرِ﴾, ﴿وَالشَّمْسِ﴾, ﴿وَالضُّحَى﴾
+- **ب (*bāʾ*)**: prepositional — ﴿فَوَرَبِّكَ لَنَسْأَلَنَّهُمْ﴾ (al-Ḥijr: 92)
+- **ت (*tāʾ*)**: exclusive to God's name — ﴿وَتَاللَّهِ لَأَكِيدَنَّ أَصْنَامَكُمْ﴾ (al-Anbiyāʾ: 57)
+
+### Oath response
+
+- **Affirmative**: introduced by لام + قد, or لام + future particle: *la-qad arsalnā*
+- **Negative**: introduced by ما, لا, or negative إن
+- The response is sometimes omitted when the context makes it clear
+
+---
+
+## From the Qur'an
+
+> ﴿لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا﴾ (al-Baqara: 286)
+
+*lā yukallifu Allāhu nafsan illā wusʿahā* — "God does not burden any soul beyond its capacity." Complete affirmative exception; *wusʿahā* is the excepted noun, accusative (obligatory).
+
+> ﴿أَسْمِعْ بِهِمْ وَأَبْصِرْ﴾ (Maryam: 38)
+
+Pattern 2 exclamation (*afʿil bihi*): *What hearing they have and what sight!* — expressing wonder at how sharply they will perceive on the Day of Judgement.
+
+> ﴿وَالضُّحَى﴾ (al-Ḍuḥā: 1)
+
+**و**: oath particle. **الضُّحَى** (*the morning brightness*): genitive. The oath response comes in the following verses.
+
+> ﴿وَتَاللَّهِ لَأَكِيدَنَّ أَصْنَامَكُمْ﴾ (al-Anbiyāʾ: 57)
+
+**ت**: oath particle, exclusive to God's name. **لأكيدنَّ**: oath response, reinforced by لام + emphatic *nūn*.
+
+---
+
+## Vocabulary
+
+| Word | Root | Meaning | Where it appears |
+|---|---|---|---|
+| وُسْع | و س ع | capacity, ability | ﴿إِلَّا وُسْعَهَا﴾ |
+| كَيْد | ك ي د | scheming, stratagem | ﴿لَأَكِيدَنَّ أَصْنَامَكُمْ﴾ |
+| صَنَم / أصنام | ص ن م | idol, graven image | ﴿أَصْنَامَكُمْ﴾ |
+| بَصَرَ / يُبصِر | ب ص ر | to see, to perceive | ﴿وَأَبْصِرْ﴾ |
+| ضُحَى | ض ح و | the morning brightness | ﴿وَالضُّحَى﴾ |
+
+---
+
+## In a nutshell
+
+> Three important styles in the Qur'an: **exception** (إلا and its sisters — the case of the excepted noun follows the type); **exclamation** (two patterns: *mā afʿalahu* and *afʿil bihi*); and **oath** (particle + genitive + response). Their combination in a single passage is a hallmark of the Qur'an's rhetorical power.
+
+</div>

@@ -1,5 +1,6 @@
 ---
 title: "الميزان الصرفي"
+title_en: "The Morphological Scale: The Arabic Root Template (فَ—عَ—لَ)"
 category: mizan
 kind: topic
 order: 2
@@ -60,6 +61,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## الميزان الصرفي
 
@@ -159,3 +162,96 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة القاعدة
 
 > **الميزان الصرفي** مقياسٌ مكوَّنٌ من: فَاء (تُقابل الأصل الأول) + عَيْن (تُقابل الأصل الثاني) + لاَم (تُقابل الأصل الثالث أو ما زاد). الحرف الزائد يُوزَن بلفظه. الحركات والسكنات جزء من الوزن لا يُهمَل.
+
+</div>
+
+<div data-lang-block="en">
+
+## The Morphological Scale — الميزان الصرفي (*al-mīzān al-ṣarfī*)
+
+### What is it?
+
+The **morphological scale** (الميزان الصرفي) is a measuring template devised by Arabic grammarians to analyse the internal structure of any Arabic word — the status of its letters as root or augmented, their order, and their vowel-patterns.
+
+---
+
+## The three parts of the scale
+
+The scale uses a fixed three-letter template — **فَ — عَ — لَ** (*fa – ʿa – la*) — and the root-letters of the word being weighed are matched to it:
+
+| Scale part | Corresponds to | Term |
+|---|---|---|
+| **فاء الكلمة** (*fāʾ al-kalima*, ف) | The 1st root-letter | *fāʾ al-fiʿl* |
+| **عين الكلمة** (*ʿayn al-kalima*, ع) | The 2nd root-letter | *ʿayn al-fiʿl* |
+| **لام الكلمة** (*lām al-kalima*, ل) | The 3rd root-letter (or 4th/5th in non-triliterals) | *lām al-fiʿl* |
+
+### Why **فَعَلَ** (*faʿala*)?
+
+1. Most Arabic roots are triliteral, so a three-letter template is the natural choice.
+2. The letters of **فَعَلَ** do not coincide with the most common augmentation-letters (ألف، نون، سين، تاء), making it easy to spot what is root and what is added.
+3. The root ف-ع-ل carries the broadest sense of "doing an action," making it the ideal neutral standard.
+
+<Mermaid code={String.raw`flowchart TD
+  W["كَتَبَ"] --> F["ك = fāʾ al-kalima"]
+  W --> E["ت = ʿayn al-kalima"]
+  W --> L["ب = lām al-kalima"]
+  F --> FW["فَ in the scale"]
+  E --> EW["عَ in the scale"]
+  L --> LW["لَ in the scale"]`} />
+
+---
+
+## The matching rule
+
+> **The scale and the word must match exactly in the number of positions, vowels, and sukūns.**
+
+If the word has a *fatḥa*, the corresponding scale position gets a *fatḥa*; a *sukūn* matches a *sukūn*, and so on.
+
+### Core trilateral patterns
+
+| Word | ف | ع | ل | Pattern |
+|---|---|---|---|---|
+| كَتَبَ | ك (*fatḥa*) | ت (*fatḥa*) | ب (*fatḥa*) | فَعَلَ |
+| عَلِمَ | ع (*fatḥa*) | ل (*kasra*) | م (*fatḥa*) | فَعِلَ |
+| كَرُمَ | ك (*fatḥa*) | ر (*ḍamma*) | م (*fatḥa*) | فَعُلَ |
+| عِلْم | ع (*kasra*) | ل (*sukūn*) | م (*fatḥa*) | فِعْل |
+| كِتَاب | ك (*kasra*) | ت (*fatḥa*) | ب (*fatḥa*) + ālif | فِعَال |
+
+---
+
+## Augmented letters in the scale
+
+If the word contains an **augmented letter** (حرف زائد) — one that is not a root-letter — it is **written in the scale with its own letter-shape**, not replaced by ف، ع، or ل:
+
+| Word | Augmented letter | Pattern |
+|---|---|---|
+| أَكرَمَ (*akrama*, he honoured) | the hamza | أَفعَلَ |
+| كَاتَبَ (*kātaba*, he corresponded) | the ālif | فَاعَلَ |
+| اسْتَغْفَرَ (*istaghfara*, he sought forgiveness) | hamza + sīn + tāʾ | اسْتَفْعَلَ |
+| تَعَلَّمَ (*taʿallama*, he learned) | tāʾ + doubling of *ʿayn* | تَفَعَّلَ |
+
+### The quadriliteral root
+
+When a word has **four root-letters**, a second **لام** is added to the scale:
+
+| Word | Pattern |
+|---|---|
+| دَحرَجَ (*daḥraja*, he rolled) | فَعلَلَ |
+| بَعثَرَ (*baʿthara*, he scattered) | فَعلَلَ |
+| زَلزَلَ (*zalzala*, he shook) | فَعلَلَ |
+
+---
+
+## Common mistakes
+
+- Weighing **أَكَلَ** as **أَفَعَلَ** because it starts with hamza. Correct: the hamza of **أَكَلَ** is a root-letter (أ - ك - ل), so the pattern is **فَعَلَ**.
+- Ignoring vowels in the pattern. Vowels are part of the pattern — **فَعِلَ ≠ فَعَلَ ≠ فَعُلَ**.
+- Matching an augmented letter to ف، ع، or ل. An augmented letter is written in the scale as itself.
+
+---
+
+## Summary
+
+> The **morphological scale** (الميزان الصرفي) consists of: **فَاء** (matching the 1st root-letter) + **عَيْن** (matching the 2nd) + **لاَم** (matching the 3rd — or beyond). An augmented letter is written in the scale with its own shape. Vowels and *sukūns* are integral to the pattern and must never be omitted.
+
+</div>

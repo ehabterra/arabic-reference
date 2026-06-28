@@ -1,5 +1,6 @@
 ---
 title: "المقاطع والكلمات القرآنية"
+title_en: "Syllables and Qur'anic Words"
 category: qiraaq
 kind: guide
 order: 31
@@ -58,6 +59,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## الهدف
 
@@ -209,3 +212,129 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة
 
 > الكلمة القرآنية تُبنى من مقاطع صوتية: **قصيرة** (حرف + حركة) و**طويلة** (حرف + مد) و**مغلقة** (حرف + حركة + ساكن). الضبط الكامل (الشكل) يُمكِّن من التقطيع الصحيح، والتقطيع الصحيح يُوصِّل إلى القراءة السليمة. والخطوة التالية هي تطبيق هذا على السور القرآنية الكاملة.
+
+</div>
+
+<div data-lang-block="en">
+
+## Goal
+
+This lesson:
+- Explains the structure of short, long, and closed syllables in Qur'anic Arabic
+- Trains the learner to read Qur'anic words syllable by syllable
+- Bridges from syllable-reading to reading a complete, fully vowelled word
+
+---
+
+## Syllables in Qur'anic Arabic
+
+### 1. The short syllable — CV
+
+A short syllable = **one consonant + one short vowel**:
+
+| Vowel | Syllable | Pronunciation |
+|---|---|---|
+| Fatḥa | بَ | *ba* |
+| Kasra | بِ | *bi* |
+| Ḍamma | بُ | *bu* |
+
+**Drill table — consonant + *fatḥa*:**
+
+| بَ | تَ | ثَ | جَ | حَ | خَ | دَ | ذَ | رَ | زَ |
+|---|---|---|---|---|---|---|---|---|---|
+| سَ | شَ | صَ | ضَ | طَ | ظَ | عَ | غَ | فَ | قَ |
+
+Read across, then down, then in reverse.
+
+---
+
+### 2. The closed syllable — CVC
+
+Consonant + short vowel + silent consonant:
+
+| Qur'anic word | Syllable | Note |
+|---|---|---|
+| ﴿مِن﴾ | مِنْ | ends with a silent *nūn* |
+| ﴿قُلْ﴾ | قُلْ | imperative "say!" |
+| ﴿لَمْ﴾ | لَمْ | jussive particle "did not" |
+
+---
+
+### 3. Long syllables — المدود
+
+**Long *a* (alif after *fatḥa*): CVV**
+
+| Syllable | Qur'anic examples |
+|---|---|
+| كَا | ﴿كَانَ﴾ (*kāna*, was) |
+| قَا | ﴿قَالَ﴾ (*qāla*, said) |
+| عَا | ﴿عَالَمِينَ﴾ (*ʿālamīn*, worlds) |
+
+**Long *i* (yāʾ after *kasra*): CVV**
+
+| Syllable | Examples |
+|---|---|
+| فِي | ﴿فِي﴾ (*fī*, in) |
+| دِي | ﴿دِينٌ﴾ (*dīn*, religion) |
+
+**Long *u* (wāw after *ḍamma*): CVV**
+
+| Syllable | Examples |
+|---|---|
+| نُو | ﴿نُورٌ﴾ (*nūr*, light) |
+| قُو | ﴿قُولُوا﴾ (*qūlū*, say!) |
+
+---
+
+### 4. From syllable to word
+
+<Mermaid code={String.raw`flowchart TD
+  SYL["Syllable types"] --> SH["Short (CV)<br/>consonant + vowel<br/>e.g. بَ، نُ، لِ"]
+  SYL --> LG["Long (CVV)<br/>consonant + madd<br/>e.g. بَا، فِي، نُو"]
+  SYL --> CL["Closed (CVC)<br/>consonant + vowel + silent<br/>e.g. مِنْ، قُلْ، لَمْ"]`} />
+
+Every Qur'anic word is a sequence of syllables — breaking a word down makes it easier to read:
+
+| Word | Syllables | Meaning |
+|---|---|---|
+| ﴿قَالَ﴾ | قَا + لَ | he said |
+| ﴿آمَنُوا﴾ | آ + مَ + نُو + ا | they believed |
+| ﴿كِتَابٌ﴾ | كِ + تَا + بٌ | a book |
+| ﴿يُؤْمِنُونَ﴾ | يُ + ؤْ + مِ + نُو + نَ | they believe |
+| ﴿الرَّحْمَنِ﴾ | الرَّحْ + مَ + نِ | the Most Merciful |
+
+---
+
+## From the Qur'an
+
+> ﴿قُلْ هُوَ اللَّهُ أَحَدٌ﴾ (al-Ikhlāṣ: 1)
+
+Syllables: *qul | huwa | Allāhu | aḥad*
+- *qul*: closed syllable (CVC)
+- *huwa*: 2 short syllables
+- *Allāhu*: *al-* + *lāhu*
+- *aḥad*: أَ + حَ + دٌ — 3 syllables, last with *tanwīn ḍamma*
+
+> ﴿الرَّحْمَٰنِ الرَّحِيمِ﴾ (al-Fātiḥa: 1)
+
+*al-Raḥmāni l-Raḥīm* — *al-Raḥmān*: *shamʿī al-* + 2 main syllables. *al-Raḥīm*: long *yāʾ* syllable (*ḥī*).
+
+---
+
+## Vocabulary — high-frequency Qur'anic words
+
+| Word | Syllables | Meaning | Type |
+|---|---|---|---|
+| ﴿قَالَ﴾ | قَا + لَ | he said | past verb |
+| ﴿كَانَ﴾ | كَا + نَ | he was | defective verb |
+| ﴿لَهُمْ﴾ | لَ + هُمْ | for them | preposition + pronoun |
+| ﴿عَلَيْهِمْ﴾ | عَ + لَيْ + هِمْ | upon them | preposition + pronoun |
+| ﴿إِنَّهُ﴾ | إِنْ + نَ + هُ | indeed he | particle + pronoun |
+
+---
+
+## In a nutshell
+
+> A Qur'anic word is built from syllables: **short** (CV), **long** (CVV), and **closed** (CVC). Full vowelling (*shakl*) is what makes correct syllabification possible, and correct syllabification is what makes correct recitation possible. The next step is applying all this to complete surahs.
+
+</div>

@@ -10,6 +10,7 @@ import Pager from '../components/Pager.astro';
 import Comments from '../components/Comments.astro';
 import LikeButton from '../components/islands/LikeButton.tsx';
 import { readingTime } from '../lib/reading-time';
+import { TRACKS } from '../lib/consts';
 
 const {
   entry,
@@ -23,6 +24,8 @@ const {
 const d = entry.data;
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 const catLabel = cap(d.category.replace(/-/g, ' '));
+const trackMeta = TRACKS.find(t => `/${t.route}` === base);
+const sectionTitle_en = trackMeta?.title_en ?? sectionTitle;
 
 // Per-page Arabic content (ordered to match the runtime block collector).
 const contentModules = import.meta.glob('../i18n/content/*.json', { eager: true });
@@ -39,7 +42,13 @@ const trackInfo = {
 <BaseLayout title={d.title} description={d.intent}>
   <article>
     <nav class="dp-breadcrumb dp-kicker">
-      <a href={sectionHref}>{sectionTitle}</a> › <span>{catLabel}</span> › <span>{d.title}</span>
+      <a href={sectionHref}>
+        <span data-lang-block="ar">{sectionTitle}</span>
+        <span data-lang-block="en">{sectionTitle_en}</span>
+      </a> › <span>{catLabel}</span> › <span>
+        <span data-lang-block="ar">{d.title}</span>
+        <span data-lang-block="en">{d.title_en ?? d.title}</span>
+      </span>
     </nav>
 
     <PageHeader data={d} slug={entry.id} topicLabel={topicLabel} minutes={readingTime(entry.body)} />
@@ -57,14 +66,14 @@ const trackInfo = {
 
       <aside class="dp-article__toc" aria-label="في هذه الصفحة">
         <div class="dp-article__toc-inner">
-          <p class="dp-toc-title">تقدّمك</p>
+          <p class="dp-toc-title" data-i18n="pagelayout.progress">تقدّمك</p>
           <div class="dp-like-dock">
             <LikeButton client:visible page={`${base}/${entry.id}`} />
           </div>
           <button class="dp-btn" data-dp-learn={entry.id} aria-pressed="false">
-            <span data-dp-learn-label>علِّم كمتعلَّم</span>
+            <span data-dp-learn-label data-i18n="pagelayout.markLearned">علِّم كمتعلَّم</span>
           </button>
-          <p class="dp-toc-title" style="margin-top:1.5rem">في هذه الصفحة</p>
+          <p class="dp-toc-title" style="margin-top:1.5rem" data-i18n="pagelayout.toc">في هذه الصفحة</p>
           <ul class="dp-toc" data-dp-toc></ul>
         </div>
       </aside>

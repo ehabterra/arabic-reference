@@ -1,5 +1,6 @@
 ---
 title: "تصريف الفعل — الماضي والمضارع والأمر في القرآن"
+title_en: "Verb Conjugation — Past, Present, and Command in the Qurʾān"
 category: mustawa2
 kind: guide
 order: 13
@@ -58,6 +59,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## الهدف
 
@@ -159,3 +162,112 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة
 
 > الأفعال العربية ثلاثة: الماضي (انقضى)، والمضارع (يجري أو يُستقبل)، والأمر (مطلوب). كل منها له علاماته وتصريفاته. وفي القرآن الكريم تتوزَّع هذه الأزمنة توزيعاً دلالياً دقيقاً: الماضي للأخبار الثابتة، والمضارع للصفات الإلهية المستمرة، والأمر للتكاليف والتوجيهات. وبإتقان هذه الوحدة يكون الدارس قد أكمل أدوات قراءة الجملة القرآنية في مستوييها الأول والثاني.
+
+</div>
+
+<div data-lang-block="en">
+
+## Objective
+
+This unit closes Level 2 by studying the **three forms of the Arabic verb**: past (*māḍī*), present/future (*muḍāriʿ*), and command (*amr*), with a concise conjugation table for each. By the end you will be able to identify any verb in a Qurʾānic verse, determine its tense, and read its pronoun.
+
+---
+
+## The Rule
+
+### 1. The past tense — الفعل الماضي
+
+Expresses a **completed action**; its base form ends in *fatḥa*.
+
+| Pronoun | Form (example: خَلَقَ) | Transliteration |
+|---|---|---|
+| هو (he) | خَلَقَ | *khalaqa* |
+| هي (she) | خَلَقَتْ | *khalaqat* |
+| هم (they) | خَلَقُوا | *khalaqū* |
+| أنتَ (you m.) | خَلَقتَ | *khalaqta* |
+| أنا (I) | خَلَقتُ | *khalaqtu* |
+| نحن (we) | خَلَقنَا | *khalaqnā* |
+
+**Identifying sign:** accepts the silent feminine *tāʾ* (خَلَقَتْ) and the subject *tāʾ* (خَلَقتُ).
+
+### 2. The present/future tense — الفعل المضارع
+
+Expresses an action **ongoing or expected**; always begins with one of the four prefix letters: أ ن ي ت (*a n y t*).
+
+| Pronoun | Form (example: يَخلُقُ) | Transliteration |
+|---|---|---|
+| هو (he) | يَخلُقُ | *yakhluqu* |
+| هي (she) | تَخلُقُ | *takhluqu* |
+| هم (they) | يَخلُقُونَ | *yakhluqūna* |
+| أنتَ (you m.) | تَخلُقُ | *takhluqu* |
+| أنا (I) | أَخلُقُ | *akhluqu* |
+| نحن (we) | نَخلُقُ | *nakhluqu* |
+
+**Identifying sign:** accepts **لم** (لم يَخلُقْ, *he did not create*) and **سـ/سوف** (سيَخلُقُ, *he will create*).
+
+### 3. The command — فعل الأمر
+
+Requests an action from the **addressee**:
+
+| Addressee | Form (example: اقرَأ) | Transliteration |
+|---|---|---|
+| أنتَ (you m. sg.) | اقرَأْ | *iqraʾ* |
+| أنتِ (you f. sg.) | اقرَئِي | *iqraʾī* |
+| أنتم (you m. pl.) | اقرَؤُوا | *iqraʾū* |
+
+**Identifying sign:** accepts the **feminine yāʾ** (اقرَئِي); built for requests (*ṭalab*).
+
+<Mermaid code={String.raw`flowchart LR
+  FI["Arabic Verb"] --> P["Past — ماضٍ
+(completed)"]
+  FI --> PR["Present — مضارع
+(ongoing / future)"]
+  FI --> IM["Command — أمر
+(requested)"]
+  P --> P1["خَلَقَ
+sign: fem. tāʾ"]
+  PR --> PR1["يَخلُقُ
+sign: prefix letter"]
+  IM --> IM1["اخلُقْ
+sign: fem. yāʾ"]`} />
+
+---
+
+## From the Qurʾān
+
+| Qurʾānic phrase | Verb | Type | Pronoun | Reference |
+|---|---|---|---|---|
+| «خَلَقَ اللهُ السَّمَاوَاتِ وَالأَرضَ» — *khalaqa-llāhu* | خَلَقَ | past | هو (God) | al-Naḥl 16:3 |
+| «يَخلُقُ مَا يَشَاءُ» — *yakhluqu mā yashāʾ* | يَخلُقُ | present | هو | Āl ʿImrān 3:47 |
+| «اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ» — *iqraʾ* | اقرَأْ | command | أنتَ (the Prophet) | al-ʿAlaq 96:1 |
+| «آمِنُوا بِاللَّهِ وَرَسُولِهِ» — *āminū bi-llāh* | آمِنُوا | command (plural) | أنتم | al-Nisāʾ 4:136 |
+
+---
+
+## Vocabulary
+
+| Arabic | Transliteration | English |
+|---|---|---|
+| خَلَقَ / يَخلُقُ | *khalaqa / yakhluqu* | created / creates |
+| يَشَاءُ | *yashāʾu* | wills, wishes |
+| اقرَأ | *iqraʾ* | read! (command from قَرَأَ) |
+| اسمٌ | *ism* | name |
+| آمِنُوا | *āminū* | believe! (plural command) |
+| رَسُولٌ | *rasūl* | messenger |
+| عَمِلَ | *ʿamila* | worked, did |
+
+---
+
+## Exercise
+
+1. **Convert from past to present:** «نَزَّلَ» → ____ (for the 3rd m. singular)
+
+2. **Extract each verb's type and pronoun** from: «وَاعبُدُوا اللهَ وَلَا تُشرِكُوا بِهِ شَيئاً» — «اعبُدُوا»: ____ — «تُشرِكُوا»: ____
+
+---
+
+## Summary
+
+> Arabic has three verb forms: **past** (completed action), **present** (ongoing or future), and **command** (requested). Each has its own identifying signs and conjugation set. In the Qurʾān these tenses are distributed with precise semantic intent: the past for established facts, the present for God's ongoing attributes, the command for duties and guidance. Completing this unit means you have mastered the core tools for reading the Qurʾānic sentence at Levels 1 and 2.
+
+</div>

@@ -1,5 +1,6 @@
 ---
 title: "الحركات: الفتحة والضمة والكسرة"
+title_en: "Vowel Marks: Fatḥa, Ḍamma, and Kasra"
 category: harakat
 kind: topic
 order: 10
@@ -69,6 +70,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## الهدف
 
@@ -154,3 +157,85 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة
 
 > الحركات الثلاث هي مفتاح نطق العربية: **الفتحة (ـَ)** فوق الحرف بصوت أَ، و**الكسرة (ـِ)** تحته بصوت إِ، و**الضمة (ـُ)** فوقه بصوت أُو. كل حرف + حركة = مقطع صوتي كامل.
+
+</div>
+
+<div data-lang-block="en">
+
+## Goal
+
+Arabic consonants are silent until a **vowel mark** (حركة, *ḥaraka*) is added. There are three short vowels; without them you cannot pronounce a word. This lesson covers all three.
+
+---
+
+## The Three Vowel Marks — Comparison Table
+
+| Mark | Symbol | Position | Sound | Example |
+|---|---|---|---|---|
+| Fatḥa | ـَ | **above** the letter | short *a* | بَ = b + fatḥa |
+| Kasra | ـِ | **below** the letter | short *i* | بِ = b + kasra |
+| Ḍamma | ـُ | **above** (small واو shape) | short *u* | بُ = b + ḍamma |
+
+---
+
+## Vowel Map
+
+<Mermaid code={String.raw`flowchart TD
+  A["Three Vowels — الحركات"] --> F["Fatḥa ـَ<br/>above the letter<br/>sound: a"]
+  A --> K["Kasra ـِ<br/>below the letter<br/>sound: i"]
+  A --> D["Ḍamma ـُ<br/>above the letter<br/>sound: u"]
+  F --> F1["بَ / تَ / سَ"]
+  K --> K1["بِ / تِ / سِ"]
+  D --> D1["بُ / تُ / سُ"]`} />
+
+---
+
+## Practice Table — the Letter ب with All Three Vowels
+
+| Vowel | Symbol | Pronunciation |
+|---|---|---|
+| Fatḥa | بَ | *ba* |
+| Kasra | بِ | *bi* |
+| Ḍamma | بُ | *bu* |
+
+<div style="display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0;align-items:center">
+<button class="dp-speak" data-speak="بَ"><span class="khat-sample" style="font-size:1.4rem">بَ</span> <span class="dp-speak__icon">🔊</span></button>
+<button class="dp-speak" data-speak="بِ"><span class="khat-sample" style="font-size:1.4rem">بِ</span> <span class="dp-speak__icon">🔊</span></button>
+<button class="dp-speak" data-speak="بُ"><span class="khat-sample" style="font-size:1.4rem">بُ</span> <span class="dp-speak__icon">🔊</span></button>
+</div>
+
+---
+
+## Quranic Examples
+
+| Word | Vowel Analysis |
+|---|---|
+| رَبِّ (*Rabbi*, My Lord) | رَ (fatḥa) + بِّ (kasra) |
+| هُدًى (*hudan*, guidance) | هُ (ḍamma) + دَ (fatḥa) |
+| نَعَم (*naʿam*, yes) | نَ + عَ + مَ (three fatḥas) |
+| مِنَ (*mina*, from) | مِ (kasra) + نَ (fatḥa) |
+
+---
+
+## Learning Sequence (Nūr al-Bayān Method)
+
+Start with the fatḥa (*a*) — it is the easiest sound for beginners — then the kasra, then the ḍamma:
+
+<Mermaid code={String.raw`flowchart LR
+  A["Fatḥa first<br/>(easiest)"] --> B["Kasra second"] --> C["Ḍamma third"] --> D["Review all three together"]`} />
+
+---
+
+## Common Mistakes
+
+- **Mixing fatḥa (above) and kasra (below).** The fatḥa is a tiny stroke above; the kasra is a tiny stroke below — check placement, not just the stroke itself.
+- **Pronouncing ḍamma as a long *ū*.** The ḍamma is a **short** *u* sound. Do not drag it out.
+- **Skipping vowel marks on unvowelled text.** Beginners must always read from a fully vowelled (*mushakkal*) text — never guess.
+
+---
+
+## Summary
+
+> The three short vowels are the key to pronouncing Arabic: **fatḥa (ـَ)** sits above the letter and sounds like *a*; **kasra (ـِ)** sits below and sounds like *i*; **ḍamma (ـُ)** sits above (in a small *wāw* shape) and sounds like *u*. Letter + vowel = one complete spoken syllable.
+
+</div>

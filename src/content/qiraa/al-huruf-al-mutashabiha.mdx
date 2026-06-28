@@ -1,5 +1,6 @@
 ---
 title: "الحروف المتشابهة في الرسم والنقط"
+title_en: "Look-alike Letters: Dots Make the Difference"
 category: huruf
 kind: topic
 order: 3
@@ -68,6 +69,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## الهدف
 
@@ -186,3 +189,127 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة
 
 > 9 مجموعات من الحروف المتشابهة تُميَّز بـ3 وسائل: **عدد النقاط** (0، 1، 2، 3)، **موضع النقطة** (أعلى أو أسفل)، وملامح **جسم الحرف** (ذيل — منحنى — انغلاق). استوعب هذه الفوارق وستصبح القراءة سلسة.
+
+</div>
+
+<div data-lang-block="en">
+
+## Goal
+
+Many Arabic letters share the same base shape (*body*); only the **number and position of dots** distinguish them. Confusing these letters leads to reading errors that can change meaning entirely.
+
+---
+
+## Group 1 — بَاء, تَاء, ثَاء (*b*, *t*, *th*)
+
+| Letter | Shape | Dots | Example |
+|---|---|---|---|
+| بَاء (*bāʾ*, b) | ب | 1 dot **below** | بَيْت (*bayt*, house) |
+| تَاء (*tāʾ*, t) | ت | 2 dots **above** | تَمْر (*tamr*, dates) |
+| ثَاء (*thāʾ*, th) | ث | 3 dots **above** | ثَلْج (*thalj*, snow) |
+
+> Rule: the body is identical — look at the dots!
+
+---
+
+## Group 2 — جِيم, حَاء, خَاء (*j*, *ḥ*, *kh*)
+
+| Letter | Shape | Dots | Example |
+|---|---|---|---|
+| جِيم (*jīm*, j) | ج | 1 dot **below** | جَمَل (*jamal*, camel) |
+| حَاء (*ḥāʾ*, ḥ) | ح | **no dots** | حَجَر (*ḥajar*, stone) |
+| خَاء (*khāʾ*, kh) | خ | 1 dot **above** | خَبَر (*khabar*, news) |
+
+---
+
+## Group 3 — دَال, ذَال (*d*, *dh*)
+
+| Letter | Shape | Dots | Example |
+|---|---|---|---|
+| دَال (*dāl*, d) | د | **no dots** | دَار (*dār*, home) |
+| ذَال (*dhāl*, dh) | ذ | 1 dot **above** | ذَهَب (*dhahab*, gold) |
+
+---
+
+## Group 4 — رَاء, زَاي (*r*, *z*)
+
+| Letter | Shape | Dots | Example |
+|---|---|---|---|
+| رَاء (*rāʾ*, r) | ر | **no dots** | رَسُول (*rasūl*, messenger) |
+| زَاي (*zāy*, z) | ز | 1 dot **above** | زَيْت (*zayt*, oil) |
+
+> رَاء and زَاي have a longer, more curved tail than دَال/ذَال.
+
+---
+
+## Group 5 — سِين, شِين (*s*, *sh*)
+
+| Letter | Shape | Dots | Example |
+|---|---|---|---|
+| سِين (*sīn*, s) | س | **no dots** | سَمَاء (*samāʾ*, sky) |
+| شِين (*shīn*, sh) | ش | 3 dots **above** | شَمْس (*shams*, sun) |
+
+---
+
+## Group 6 — صَاد, ضَاد (*ṣ*, *ḍ*)
+
+| Letter | Shape | Dots | Example |
+|---|---|---|---|
+| صَاد (*ṣād*, ṣ) | ص | **no dots** | صَبْر (*ṣabr*, patience) |
+| ضَاد (*ḍād*, ḍ) | ض | 1 dot **above** | ضَوْء (*ḍawʾ*, light) |
+
+---
+
+## Group 7 — طَاء, ظَاء (*ṭ*, *ẓ*)
+
+| Letter | Shape | Dots | Example |
+|---|---|---|---|
+| طَاء (*ṭāʾ*, ṭ) | ط | **no dots** | طَيْر (*ṭayr*, bird) |
+| ظَاء (*ẓāʾ*, ẓ) | ظ | 1 dot **above** | ظِل (*ẓill*, shade) |
+
+---
+
+## Group 8 — عَيْن, غَيْن (*ʿ*, *gh*)
+
+| Letter | Shape | Dots | Example |
+|---|---|---|---|
+| عَيْن (*ʿayn*, ʿ) | ع | **no dots** | عِلْم (*ʿilm*, knowledge) |
+| غَيْن (*ghayn*, gh) | غ | 1 dot **above** | غَيْم (*ghaym*, cloud) |
+
+---
+
+## Group 9 — فَاء, قَاف (*f*, *q*)
+
+| Letter | Shape | Dots | Example |
+|---|---|---|---|
+| فَاء (*fāʾ*, f) | ف | 1 dot **above** | فَجْر (*fajr*, dawn) |
+| قَاف (*qāf*, q) | ق | 2 dots **above** | قَمَر (*qamar*, moon) |
+
+---
+
+## Similarity Map
+
+<Mermaid code={String.raw`flowchart TD
+  A["Look-alike Letters"] --> G1["ب / ت / ث<br/>dots below or above"]
+  A --> G2["ج / ح / خ<br/>dot below, none, dot above"]
+  A --> G3["د / ذ — ر / ز<br/>short or long tail"]
+  A --> G4["س / ش — ص / ض<br/>teeth or rounded body"]
+  A --> G5["ط / ظ — ع / غ<br/>closed body"]
+  A --> G6["ف / ق<br/>1 or 2 dots above"]`} />
+
+---
+
+## Common Mistakes
+
+- **ب vs ت:** The bāʾ has 1 dot below; the tāʾ has 2 dots above. Don't rely on memory alone — always check the dot's position.
+- **ح vs خ:** Some beginners add a dot to ح by mistake. The ḥāʾ always has no dots.
+- **ر vs ذ:** The rāʾ has a longer, more curved tail than the dāl. The dhāl adds a dot; the zāy also has a longer tail.
+- **ص vs ض:** The ṣād has no dots; the ḍād has one. In connected text the dot can be small — always look carefully.
+
+---
+
+## Summary
+
+> 9 groups of similar letters are distinguished by 3 means: **number of dots** (0, 1, 2, 3), **position of dots** (above or below), and **body shape** (tail length, curve, closure). Master these differences and reading becomes fluent.
+
+</div>

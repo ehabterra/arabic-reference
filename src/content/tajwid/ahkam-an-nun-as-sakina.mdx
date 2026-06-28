@@ -1,5 +1,6 @@
 ---
 title: "أحكام النون الساكنة والتنوين (الإظهار، الإدغام، الإقلاب، الإخفاء)"
+title_en: "Rules of the Quiescent Nūn and Tanwīn (Iẓhār, Idghām, Iqlāb, Ikhfāʾ)"
 category: ahkam
 kind: topic
 order: 10
@@ -60,6 +61,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## أحكام النون الساكنة والتنوين
 
@@ -215,3 +218,158 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة
 
 > للنون الساكنة والتنوين أربعة أحكام: **الإظهار الحلقي** عند الستة الحلقية، **الإدغام** في «يرملون» — بغنة في «ينمو» وبغير غنة في «ل ر» — **الإقلاب** عند الباء وحدها، **الإخفاء** عند الخمسة عشر الباقية. والإخفاء أكثر هذه الأحكام حروفاً وأوسعها وروداً في القرآن.
+
+</div>
+
+<div data-lang-block="en">
+
+## Rules of the quiescent nūn and tanwīn
+
+When a quiescent **نـ** (*nūn sākina*) or **tanwīn** (the indefinite-noun ending representing a trailing نـ sound: ً ٍ ٌ) meets the next letter, one of **four rules** applies:
+
+<Mermaid code={String.raw`flowchart TD
+  A["Nūn Sākina<br/>& Tanwīn"] --> B["Iẓhār ḥalqī<br/>ء هـ ع ح غ خ"]
+  A --> C["Idghām<br/>يرملون"]
+  A --> D["Iqlāb<br/>bāʾ only"]
+  A --> E["Ikhfāʾ<br/>15 letters"]
+  C --> F["With ghunna: ي ن م و"]
+  C --> G["Without ghunna: ل ر"]`} />
+
+**Nūn sākina vs. tanwīn**:
+- **النون الساكنة** (*nūn sākina*): an original letter — written and pronounced whether pausing or connecting.
+- **التنوين** (*tanwīn*): an additional نـ affixed to the end of an indefinite noun — audible when connecting to the next word, but silent when pausing.
+
+---
+
+## 1. Iẓhār Ḥalqī (إظهار حلقي) — Clear pronunciation
+
+**Definition**: Pronounce the نـ/tanwīn clearly and distinctly, **without any nasal ghunna**, when one of the 6 *ḥalq* (throat) letters follows.
+
+**Why "ḥalqī"**: the 6 triggering letters all come from the throat (*ḥalq*).
+
+**Why clear**: the throat letters are far from the *makhraj* of نـ (tongue-tip), making assimilation impossible.
+
+**The 6 letters**: ء، هـ، ع، ح، غ، خ — memorised as **«أَخِي هَاكَ عِلماً حَازَهُ غَيرُ خَاسِر»**
+
+| Letter | Example (nūn sākina) | Example (tanwīn) |
+|---|---|---|
+| ء *hamza* | مِنْ أَجل | عَلِيمٌ أَحَد |
+| هـ *hāʾ* | مِنْ هَادٍ | — |
+| ع *ʿayn* | مِنْ عِلم | سَمِيعٌ عَلِيم |
+| ح *ḥāʾ* | مَنْ حَكَم | رَحِيمٌ حَكِيم |
+| غ *ghayn* | مِنْ غِلٍّ | — |
+| خ *khāʾ* | مِنْ خَير | عَلِيمٌ خَبِير |
+
+---
+
+## 2. Idghām (إدغام) — Assimilation
+
+**Definition**: Merge the نـ/tanwīn into the following letter so that both become one doubled letter.
+
+**Key condition**: The نـ must be at the **end of one word** and the assimilating letter at the **start of the next word**. If both are in a single word (like «بُنيان» or «قِنوان»), the نـ is pronounced clearly — no assimilation applies.
+
+**The 6 idghām letters**: memorised as **«يَرْمَلُون»**
+
+### Idghām with ghunna (بغنة)
+**4 letters**: ي، ن، م، و — memorised as **«يَنمُو»**
+
+| Letter | Short example |
+|---|---|
+| ي *yāʾ* | مِن يَقُول |
+| ن *nūn* | مِن نِعمة |
+| م *mīm* | مِن مَاء |
+| و *wāw* | مِن وَلِيٍّ |
+
+> **Note**: Assimilation into واو and ياء is **incomplete** (*nāqiṣ*) — the ghunna remains; assimilation into نـ and مـ is **complete** (*kāmil*).
+
+### Idghām without ghunna (بغير غنة)
+**2 letters**: ل *lām* and ر *rāʾ*.
+
+| Letter | Short example |
+|---|---|
+| ل | مِن لَدُن |
+| ر | مِن رَبِّك |
+
+Assimilation here is **complete** — no ghunna remains.
+
+> **Ḥafṣ exception**: In three positions Ḥafṣ (Shāṭibiyya path) pronounces the نـ clearly despite an idghām letter following: «لَمَّا» (Yāsīn), «وَقِيلَ مَن رَاق» (al-Qiyāma), «بَل رَانَ» (al-Muṭaffifīn).
+
+---
+
+## 3. Iqlāb (إقلاب) — Conversion
+
+**Definition**: Convert the quiescent نـ or tanwīn into a **concealed مـ** when followed by بـ *bāʾ*, retaining the ghunna.
+
+**Triggering letter**: بـ *bāʾ* alone.
+
+**Reason**: Pronouncing نـ clearly before بـ is difficult (distant makhārij), and assimilation is impossible (different letter type); so the نـ converts to مـ because مـ and بـ share the same *makhraj* (lips), making concealment natural.
+
+| Type | Short example |
+|---|---|
+| Nūn sākina before بـ | أَنبِياء |
+| Tanwīn before بـ | سَمِيعٌ بَصِير |
+
+> **How to pronounce**: the نـ is written but pronounced as a **concealed مـ** — the lips near each other (or lightly press) and the ghunna sounds for 2 beats. No doubling.
+
+---
+
+## 4. Ikhfāʾ Ḥaqīqī (إخفاء حقيقي) — Concealment
+
+**Definition**: Pronounce the نـ/tanwīn in a state **between** full clarity and full assimilation — the نـ is neither fully articulated nor completely merged — while the ghunna sounds for 2 beats without doubling.
+
+**15 letters** memorised in:
+> **«صِفْ ذا ثَنَا كَم جادَ شَخصٌ قَد سَما دُم طَيِّباً زِد فِي تُقىً ضَع ظَالِماً»**
+
+The 15 letters: ص، ذ، ث، ك، ج، ش، ق، س، د، ط، ز، ف، ت، ض، ظ.
+
+**Why ikhfāʾ**: these letters are neither close enough to نـ for idghām nor far enough for iẓhār — the rule is intermediate.
+
+**Three degrees of ikhfāʾ**:
+
+| Degree | Letters | Reason |
+|---|---|---|
+| Highest (closest to idghām) | ط، د، ت | Closest in makhraj to نـ |
+| Middle | Remaining except ق and ك | Moderate distance |
+| Lowest (closest to iẓhār) | ق، ك | Farthest from نـ |
+
+**Selected examples**:
+
+| Letter | Short example |
+|---|---|
+| ص | مَنصُور |
+| ذ | مِن ذَهب |
+| ك | أَنكَال |
+| ط | أَنطَق |
+| ف | أَنفُس |
+| س | إِنسَان |
+
+---
+
+## Comparison table
+
+| Rule | Letters | Count | Ghunna | Context |
+|---|---|---|---|---|
+| Iẓhār ḥalqī | ء هـ ع ح غ خ | 6 | No | 1 or 2 words |
+| Idghām with ghunna | ي ن م و | 4 | Yes | 2 words only |
+| Idghām without ghunna | ل ر | 2 | No | 2 words only |
+| Iqlāb | ب | 1 | Yes | 1 or 2 words |
+| Ikhfāʾ | 15 letters | 15 | Yes | 1 or 2 words |
+| **Total** | | **28** | | |
+
+---
+
+## Common mistakes
+
+- **Pronouncing نـ clearly before idghām letters**: it must merge — do not fully articulate نـ before «يرملون».
+- **Dropping the ghunna in iqlāb**: the ghunna is obligatory when converting نـ to مـ before بـ.
+- **Ikhfāʾ without ghunna or with shortened ghunna**: the ghunna in ikhfāʾ lasts 2 beats — it must not be cut short.
+- **Treating ق and ك as iẓhār**: they are the *lowest* degree of ikhfāʾ, not iẓhār.
+- **Assimilating within a single word**: «بُنيان» and «قِنوان» — the نـ is pronounced clearly despite following واو or نـ, because idghām requires two separate words.
+
+---
+
+## Summary
+
+> The quiescent نـ and tanwīn have **four rules**: **iẓhār ḥalqī** before the 6 throat letters; **idghām** into the 6 letters of «يرملون» — with ghunna before the 4 letters of «ينمو», without ghunna before لـ and رـ; **iqlāb** before بـ alone; **ikhfāʾ** before the remaining 15 letters. Ikhfāʾ has the most letters and occurs most frequently in the Qurʾan.
+
+</div>

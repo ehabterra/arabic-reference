@@ -1,5 +1,6 @@
 ---
 title: "المجرّد والمزيد (مدخل)"
+title_en: "Bare and Augmented Verbs: Root Classes and Derived Patterns"
 category: mizan
 kind: topic
 order: 4
@@ -60,6 +61,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## المجرد والمزيد
 
@@ -170,3 +173,119 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة القاعدة
 
 > **المجرد** ما كانت جميع حروفه أصلية. **المزيد** ما زيد فيه حرف أو أكثر من حروف «سَأَلْتُمُونِيهَا». للثلاثي المجرد **6 أبواب** تُحدَّد بحركة العين في الماضي والمضارع معاً، وهي **سماعية** في الثلاثي ولا بدَّ فيها من المعجم.
+
+</div>
+
+<div data-lang-block="en">
+
+## Bare and Augmented Verbs
+
+### The bare verb — المجرد (*al-mujarrad*)
+
+A **bare (unaugmented) verb** is one whose every letter is a root-letter — nothing has been added. Removing any single letter either breaks the word or fundamentally changes its meaning beyond regular morphological derivation.
+
+### The augmented verb — المزيد (*al-mazīd*)
+
+An **augmented verb** is one to which one or more letters from the ten augmentation-letters have been added on top of its root.
+
+### The ten augmentation-letters
+
+Collected in the mnemonic: **سَأَلْتُمُونِيهَا** (*saʾaltumūnīhā*) — سـ، أ، لـ، تـ، مـ، وـ، نـ، يـ، هـ، ا.
+
+> **Rule of identification:** an augmented letter is one whose removal does not break the root, and whose status is confirmed by tracing the derivation (اشتقاق).
+
+<Mermaid code={String.raw`flowchart TD
+  A["Arabic verb"] --> B["Bare — المجرد"]
+  A --> C["Augmented — المزيد"]
+  B --> D["Trilateral: 6 classes"]
+  B --> E["Quadriliteral: فَعلَلَ"]
+  C --> F["+1 letter:<br/>أَفعَلَ / فَعَّلَ / فَاعَلَ"]
+  C --> G["+2 letters:<br/>اِنفَعَلَ / اِفتَعَلَ / تَفَعَّلَ"]
+  C --> H["+3 letters: اِستَفعَلَ"]`} />
+
+---
+
+## The trilateral bare verb and its six classes
+
+The trilateral bare verb has **6 classes** (أبواب, *abwāb*) determined by the vowel on the *ʿayn* in the past and present tense together:
+
+| Class | Past pattern | Present pattern | Example |
+|---|---|---|---|
+| 1 (naṣara) | فَعَلَ (open *ʿayn*) | يَفعُلُ (raised *ʿayn*) | نَصَرَ يَنصُرُ (*naṣara yanṣuru*, he helped) |
+| 2 (ḍaraba) | فَعَلَ (open) | يَفعِلُ (lowered) | ضَرَبَ يَضرِبُ (*ḍaraba yaḍribu*, he struck) |
+| 3 (fataḥa) | فَعَلَ (open) | يَفعَلُ (open) | فَتَحَ يَفتَحُ (*fataḥa yaftaḥu*, he opened) |
+| 4 (fariḥa) | فَعِلَ (lowered) | يَفعَلُ (open) | فَرِحَ يَفرَحُ (*fariḥa yafraḥu*, he was happy) |
+| 5 (karuma) | فَعُلَ (raised) | يَفعُلُ (raised) | كَرُمَ يَكرُمُ (*karuma yakrumu*, he was generous) |
+| 6 (ḥasiba) | فَعِلَ (lowered) | يَفعِلُ (lowered) | حَسِبَ يَحسِبُ (*ḥasiba yaḥsibu*, he supposed) |
+
+> **Important:** which class a given trilateral bare verb belongs to is **heard, not deduced by rule** — you must check the dictionary for the present-tense vowel.
+
+### Notes on the classes
+
+- **Class 5 (karuma):** always intransitive; typically denotes a permanent character trait — كَرُمَ (*generous*), شَجُعَ (*brave*).
+- **Class 3 (fataḥa):** commonly used when the *ʿayn* or *lām* is a throat-letter (أ، هـ، ع، غ، ح، خ).
+- **Class 4 (fariḥa):** frequent in verbs of emotion, fullness/emptiness, colours, and bodily defects.
+- **Class 6 (ḥasiba):** very rare — only about 24 verbs recorded.
+
+---
+
+## The quadriliteral bare verb
+
+On the pattern **فَعلَلَ** — all four letters are roots:
+
+**Examples:** دَحرَجَ (*daḥraja*, he rolled), بَعثَرَ (*baʿthara*, he scattered), زَلزَلَ (*zalzala*, he shook).
+
+Present: **يُفَعلِلُ** — يُدَحرِجُ, يُبَعثِرُ.
+
+---
+
+## Augmented trilateral verbs
+
+### +1 letter — 3 main patterns
+
+| Pattern | Example | What was added |
+|---|---|---|
+| أَفعَلَ (*afʿala*) | أَكرَمَ (*akrama*, he honoured) | hamza at the start |
+| فَعَّلَ (*faʿʿala*) | كَرَّمَ (*karrama*, he honoured greatly) | doubling of *ʿayn* |
+| فَاعَلَ (*fāʿala*) | كَاتَبَ (*kātaba*, he corresponded) | ālif after *fāʾ* |
+
+### +2 letters — main patterns
+
+| Pattern | Example | What was added |
+|---|---|---|
+| اِنفَعَلَ (*infaʿala*) | اِنطَلَقَ (*inṭalaqa*, he set off) | hamza + nūn |
+| اِفتَعَلَ (*iftaʿala*) | اِجتَمَعَ (*ijtamaʿa*, he gathered) | hamza + tāʾ |
+| اِفعَلَّ (*ifʿalla*) | اِحمَرَّ (*iḥmarra*, he turned red) | hamza + doubling of *lām* |
+| تَفَعَّلَ (*tafaʿʿala*) | تَعَلَّمَ (*taʿallama*, he learned) | tāʾ + doubling of *ʿayn* |
+| تَفَاعَلَ (*tafāʿala*) | تَعَاوَنَ (*taʿāwana*, they cooperated) | tāʾ + ālif |
+
+### +3 letters — the most famous pattern
+
+| Pattern | Example | What was added |
+|---|---|---|
+| اِستَفعَلَ (*istafʿala*) | اِستَغفَرَ (*istaghfara*, he sought forgiveness) | hamza + sīn + tāʾ |
+
+---
+
+## Gemination: bare or augmented?
+
+| Case | Explanation | Example |
+|---|---|---|
+| Bare geminated | *ʿayn* and *lām* are both original root-letters that merged | رَدَّ (root: رَدَدَ) → pattern **فَعَلَ** |
+| Augmented by *ʿayn*-doubling | the *ʿayn* is deliberately doubled as an addition | كَرَّمَ (from bare: كَرَمَ) → pattern **فَعَّلَ** |
+
+---
+
+## Common mistakes
+
+- Treating **رَدَّ** as augmented because it has doubling. Correct: **رَدَّ** is a bare geminated verb (root: رَدَدَ), pattern **فَعَلَ**.
+- Treating every word-initial hamza as augmented. Correct: the hamza of **أَخَذَ** (أ - خ - ذ) is a root-letter, pattern **فَعَلَ**; the hamza of **أَكرَمَ** is augmented, pattern **أَفعَلَ**.
+- Determining the class from the past vowel alone. Correct: you must look at **both** past and present together (classes 1, 2, and 3 all share the past pattern فَعَلَ).
+
+---
+
+## Summary
+
+> **Bare (mujarrad):** all letters are root-letters. **Augmented (mazīd):** one or more letters from **سَأَلتُمُونِيهَا** have been added. The trilateral bare verb has **6 classes** determined by the *ʿayn*-vowel in past and present together — these are heard, not deduced, and must be looked up in the dictionary.
+
+</div>

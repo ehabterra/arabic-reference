@@ -1,5 +1,6 @@
 ---
 title: "نصب وجزم الفعل المضارع في القرآن"
+title_en: "Moods of the Imperfect Verb in the Qur'an"
 category: mustawa3
 kind: guide
 order: 20
@@ -59,6 +60,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## الهدف
 
@@ -183,3 +186,114 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة
 
 > الفعل المضارع مرفوع بالأصل؛ تنصبه أدوات النصب (أن، لن، كي، حتى، لام التعليل)، وتجزمه أدوات الجزم (لم، لمّا، لا الناهية، لام الأمر). وعلامة النصب: الفتحة أو حذف النون في الأفعال الخمسة. وعلامة الجزم: السكون أو حذف النون في الأفعال الخمسة أو حذف حرف العلة في المعتل الآخر.
+
+</div>
+
+<div data-lang-block="en">
+
+## Goal
+
+By the end of this lesson you will be able to:
+- Identify the subjunctive (*naṣb*) and jussive (*jazm*) moods of the imperfect verb in the Qur'an
+- Name the particles that trigger each mood
+- Recognise the mood-markers on sound, defective, and five-form verbs
+
+---
+
+## Rule: moods of the imperfect verb
+
+The Arabic imperfect (*muḍāriʿ*) has three moods:
+
+| Mood | Trigger | Main particles |
+|---|---|---|
+| **Indicative** (*marfūʿ*) | default — no particle | — |
+| **Subjunctive** (*manṣūb*) | a subjunctive particle precedes it | أن, لن, كي, حتى, lām of purpose |
+| **Jussive** (*majzūm*) | a jussive particle precedes it | لم, لمّا, prohibitive لا, lām of command, conditional particles |
+
+<Mermaid code={String.raw`flowchart TD
+  MU["Imperfect — المضارع"] --> R["Indicative (default)"]
+  MU --> N["Subjunctive (manṣūb)<br/>(أن، لن، كي، حتى، lām of purpose)"]
+  MU --> Z["Jussive (majzūm)<br/>(لم، لمّا، prohibitive لا)"]
+  N --> N1["Sign: fatḥa / drop nūn"]
+  Z --> Z1["Sign: sukūn / drop nūn / drop weak letter"]`} />
+
+---
+
+### 1. The subjunctive — النصب
+
+**Subjunctive particles:**
+
+| Particle | Meaning | Example |
+|---|---|---|
+| **أنْ** | turns the verb into a verbal noun | *urīdu an ataʿallama* — I want to learn |
+| **لن** | strong future negation | ﴿لَن تَنَالُوا الْبِرَّ﴾ — *you will never attain righteousness* |
+| **كي** | purpose (so that) | *jiʾtu kay afham* — I came so that I may understand |
+| **حتى** | until / purpose | *iqraʾ ḥattā tafham* — read until you understand |
+| **لام التعليل** | reason / goal | *jāʾa li-yataʿallama* — he came in order to learn |
+
+**Signs of the subjunctive:**
+- **Visible *fatḥa*** on a sound final consonant: *yaʿmala*
+- **Deletion of *nūn*** in the five verb-forms (*al-afʿāl al-khamsa*): *yaktubūna → yaktubū*
+- **Implied *fatḥa*** on a final *alif* (defective verb): *yakhshā → yakhsha*
+
+---
+
+### 2. The jussive — الجزم
+
+**Jussive particles (one verb):**
+
+| Particle | Meaning | Note |
+|---|---|---|
+| **لم** | negates the past | flips the imperfect to past meaning |
+| **لمّا** | not yet | the action has not yet occurred |
+| **لا الناهية** | prohibition | command to stop doing something |
+| **لام الأمر** | command to a third party | *li-yaqum* — let him stand |
+
+**Signs of the jussive:**
+- **Sukūn** on sound final consonant: *yaʿmalْ*
+- **Deletion of *nūn*** in the five verb-forms: *yaktubūna → yaktubū*
+- **Deletion of the weak letter** in defective verbs: *yakhshā → yakhsha*, *yadʿū → yadʿu*, *yarmī → yarmi*
+
+---
+
+## From the Qur'an
+
+**Subjunctive examples:**
+
+> ﴿لَن تَنَالُوا الْبِرَّ حَتَّى تُنفِقُوا مِمَّا تُحِبُّونَ﴾ (Āl ʿImrān: 92)
+
+*lan tanālū al-birra ḥattā tunfiqū* — "You will never attain righteousness until you spend from what you love." *Tanālū*: subjunctive after **لن**, sign = drop of *nūn* (five-form verb). *Tunfiqū*: subjunctive after **حتى**, same sign.
+
+> ﴿وَأَن تَصُومُوا خَيْرٌ لَّكُمْ﴾ (al-Baqara: 184)
+
+*wa-an taṣūmū khayrun lakum* — "And that you fast is better for you." *Taṣūmū*: subjunctive after **أن**; the phrase *an taṣūmū* is a verbal-noun clause functioning as the subject.
+
+**Jussive examples:**
+
+> ﴿لَمْ يَلِدْ وَلَمْ يُولَدْ﴾ (al-Ikhlāṣ: 3)
+
+*lam yalid wa-lam yūlad* — "He neither begot nor was begotten." Both verbs are jussive after **لم**; sign: *sukūn*.
+
+> ﴿وَلَا تَقْرَبُوا الزِّنَا﴾ (al-Isrāʾ: 32)
+
+*wa-lā taqrabū al-zinā* — "Do not approach adultery." Jussive after prohibitive **لا**; sign: drop of *nūn*.
+
+---
+
+## Vocabulary
+
+| Verb | Indicative | Subjunctive | Jussive | Meaning |
+|---|---|---|---|---|
+| نَالَ | يَنَالُ | أن يَنَالَ | لم يَنَلْ | to attain, to reach |
+| أَنْفَقَ | يُنْفِقُ | أن يُنْفِقَ | لم يُنْفِقْ | to spend (in God's way) |
+| وَلَدَ | يَلِدُ | أن يَلِدَ | لم يَلِدْ | to beget |
+| قَرُبَ | يَقْرَبُ | أن يَقْرَبَ | لا يَقْرَبْ | to approach |
+| خَشِيَ | يَخْشَى | أن يَخْشَى | لا يَخْشَ | to fear (with knowledge) |
+
+---
+
+## In a nutshell
+
+> The Arabic imperfect is **indicative** by default. Subjunctive particles (أن, لن, كي, حتى, lām of purpose) shift it to the **subjunctive**; jussive particles (لم, لمّا, prohibitive لا, lām of command) shift it to the **jussive**. Signs: subjunctive = *fatḥa* or drop of *nūn*; jussive = *sukūn*, drop of *nūn*, or drop of the weak letter.
+
+</div>

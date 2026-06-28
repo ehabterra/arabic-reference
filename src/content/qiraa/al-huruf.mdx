@@ -1,5 +1,6 @@
 ---
 title: "الحروف الهجائية"
+title_en: "The Arabic Alphabet: 28 Letters"
 category: huruf
 kind: topic
 order: 1
@@ -69,6 +70,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## الهدف
 
@@ -179,3 +182,119 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة
 
 > حروف الهجاء العربية **28 حرفًا**، لكل منها اسم وصوت مميَّز. تتوزع بحسب موضع نطقها بين الحلق واللسان والشفتين. احفظها في 4 مجموعات وكرِّر الاستماع والنطق حتى تثبت في الذاكرة.
+
+</div>
+
+<div data-lang-block="en">
+
+## Goal
+
+In this lesson you will learn all **28 Arabic letters**: the name of each letter, its sound, and its place in alphabetical order.
+
+---
+
+## The 28 Letters — Full Table
+
+| # | Letter | Name | Sound (approx.) |
+|---|---|---|---|
+| 1 | ا | *Alif* | glottal stop / long *ā* |
+| 2 | ب | *Bāʾ* | b |
+| 3 | ت | *Tāʾ* | t |
+| 4 | ث | *Thāʾ* | th (as in *thin*) |
+| 5 | ج | *Jīm* | j (or soft g) |
+| 6 | ح | *Ḥāʾ* | ḥ (breathy h) |
+| 7 | خ | *Khāʾ* | kh (as in *Bach*) |
+| 8 | د | *Dāl* | d |
+| 9 | ذ | *Dhāl* | dh (as in *the*) |
+| 10 | ر | *Rāʾ* | r (trilled) |
+| 11 | ز | *Zāy* | z |
+| 12 | س | *Sīn* | s |
+| 13 | ش | *Shīn* | sh |
+| 14 | ص | *Ṣād* | ṣ (emphatic s) |
+| 15 | ض | *Ḍād* | ḍ (emphatic d) |
+| 16 | ط | *Ṭāʾ* | ṭ (emphatic t) |
+| 17 | ظ | *Ẓāʾ* | ẓ (emphatic dh) |
+| 18 | ع | *ʿAyn* | ʿ (voiced pharyngeal) |
+| 19 | غ | *Ghayn* | gh (voiced uvular) |
+| 20 | ف | *Fāʾ* | f |
+| 21 | ق | *Qāf* | q (uvular stop) |
+| 22 | ك | *Kāf* | k |
+| 23 | ل | *Lām* | l |
+| 24 | م | *Mīm* | m |
+| 25 | ن | *Nūn* | n |
+| 26 | ه | *Hāʾ* | h |
+| 27 | و | *Wāw* | w |
+| 28 | ي | *Yāʾ* | y |
+
+> The **name** (e.g. *Bāʾ*) is used to talk about or spell the letter. The **sound** (e.g. *b*) is what you actually pronounce inside a word.
+
+<div class="khat-grid" style="margin:1.2rem 0;display:flex;flex-wrap:wrap;gap:.6rem;align-items:center">
+<span style="width:100%;font-size:.9rem;color:var(--color-muted)">Click to hear 🔊</span>
+<button class="dp-speak" data-speak="ا"><span class="khat-sample" style="font-size:1.4rem">ا</span> <span class="dp-speak__icon">🔊</span></button>
+<button class="dp-speak" data-speak="ب"><span class="khat-sample" style="font-size:1.4rem">ب</span> <span class="dp-speak__icon">🔊</span></button>
+<button class="dp-speak" data-speak="ت"><span class="khat-sample" style="font-size:1.4rem">ت</span> <span class="dp-speak__icon">🔊</span></button>
+<button class="dp-speak" data-speak="ث"><span class="khat-sample" style="font-size:1.4rem">ث</span> <span class="dp-speak__icon">🔊</span></button>
+<button class="dp-speak" data-speak="ج"><span class="khat-sample" style="font-size:1.4rem">ج</span> <span class="dp-speak__icon">🔊</span></button>
+<button class="dp-speak" data-speak="ح"><span class="khat-sample" style="font-size:1.4rem">ح</span> <span class="dp-speak__icon">🔊</span></button>
+<button class="dp-speak" data-speak="خ"><span class="khat-sample" style="font-size:1.4rem">خ</span> <span class="dp-speak__icon">🔊</span></button>
+<button class="dp-speak" data-speak="د"><span class="khat-sample" style="font-size:1.4rem">د</span> <span class="dp-speak__icon">🔊</span></button>
+<button class="dp-speak" data-speak="ر"><span class="khat-sample" style="font-size:1.4rem">ر</span> <span class="dp-speak__icon">🔊</span></button>
+<button class="dp-speak" data-speak="س"><span class="khat-sample" style="font-size:1.4rem">س</span> <span class="dp-speak__icon">🔊</span></button>
+<button class="dp-speak" data-speak="ع"><span class="khat-sample" style="font-size:1.4rem">ع</span> <span class="dp-speak__icon">🔊</span></button>
+<button class="dp-speak" data-speak="م"><span class="khat-sample" style="font-size:1.4rem">م</span> <span class="dp-speak__icon">🔊</span></button>
+</div>
+
+---
+
+## Three Articulation Regions
+
+<Mermaid code={String.raw`flowchart TD
+  A["28 Letters"] --> B["Throat — الحلق"]
+  A --> C["Tongue — اللسان"]
+  A --> D["Lips — الشفتان"]
+  B --> B1["ء هـ ع غ ح خ"]
+  C --> C1["ق ك ج ش ي ن ل ر"]
+  C --> C2["ز س ص ض ط ظ ث ذ ت د"]
+  D --> D1["ب م و ف"]`} />
+
+> Fine details of letter articulation (مخارج) are studied in the Tajwīd track.
+
+---
+
+## Letters in Groups for Memorisation
+
+Divide the alphabet into 4 groups to make memorisation easier:
+
+| Group | Letters |
+|---|---|
+| 1 | ا ب ت ث ج ح خ |
+| 2 | د ذ ر ز س ش ص |
+| 3 | ض ط ظ ع غ ف ق |
+| 4 | ك ل م ن ه و ي |
+
+---
+
+## Quranic Examples
+
+| Word | Letters visible |
+|---|---|
+| رَبِّ (*Rabbi*, My Lord) | ر + ب |
+| نُوحٌ (*Nūḥ*, Noah) | ن + و + ح |
+| مَاءً (*māʾan*, water) | م + ا + ء |
+| هَدَى (*hadā*, guided) | هـ + د + ي |
+
+---
+
+## Common Mistakes
+
+- **Confusing name with sound:** *Bāʾ* is the name; *b* is the sound. You read with sounds, not names.
+- **Counting errors:** Some people count 29 or 30 letters by adding the standalone hamza or alif maqṣūra. The standard count is 28.
+- **Mixing similar-looking letters** (س/ش, ص/ض): covered in the next lesson.
+
+---
+
+## Summary
+
+> Arabic has **28 letters**, each with a distinct name and sound. They are distributed across three articulation regions: throat, tongue, and lips. Learn them in 4 groups and practise listening and repeating until they become automatic.
+
+</div>

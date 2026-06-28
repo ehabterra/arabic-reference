@@ -1,5 +1,6 @@
 ---
 title: "تكوين المقاطع والكلمات"
+title_en: "Building Syllables and Words"
 category: tarkib
 kind: topic
 order: 20
@@ -68,6 +69,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## الهدف
 
@@ -158,3 +161,97 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة
 
 > **المقطع** = حرف + حركة (+ ربما حرف ساكن). **الكلمة** = تسلسل مقاطع موصولة. **منهج التعلم الصحيح**: اقرأ المقاطع كاملةً ثم اجمعها بلا هجاء، وهذا ما يُسمى «القراءة التجميعية» في مقابل «الهجاء التقليدي».
+
+</div>
+
+<div data-lang-block="en">
+
+## Goal
+
+Reading Arabic is not about stringing individual letters together — it is about **building syllables** and then chaining them. This lesson shows how a syllable is formed, how syllables make a word, and how words make a sentence.
+
+---
+
+## The Linguistic Ladder
+
+<Mermaid code={String.raw`flowchart TD
+  A["Letter (ب)"] --> B["Letter + vowel = open syllable<br/>(بَ / بِ / بُ)"]
+  B --> C["Syllable + silent consonant = closed syllable<br/>(بَيْ / بَلْ)"]
+  C --> D["Chained syllables = word<br/>(كَتَبَ / بَيْت)"]
+  D --> E["Words linked = sentence<br/>(كَتَبَ الوَلَد)"]`} />
+
+---
+
+## Types of Syllables
+
+| Type | Structure | Example | Note |
+|---|---|---|---|
+| Short open | consonant + vowel (CV) | بَ, تِ, كُ | the basic unit — flows smoothly |
+| Long open | consonant + vowel + long-vowel letter (CVV) | بَا, بِي, بُو | extended — twice as long as short open |
+| Short closed | consonant + vowel + silent consonant (CVC) | بَيْ, كَلْ | closed by the silent letter |
+
+---
+
+## Syllable Grid — the Letter ب as Model
+
+| Letter | + fatḥa | + kasra | + ḍamma | + alif madd | + yāʾ madd | + wāw madd |
+|---|---|---|---|---|---|---|
+| ب | بَ | بِ | بُ | بَا | بِي | بُو |
+| ت | تَ | تِ | تُ | تَا | تِي | تُو |
+| ك | كَ | كِ | كُ | كَا | كِي | كُو |
+| م | مَ | مِ | مُ | مَا | مِي | مُو |
+
+<div style="display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0;align-items:center">
+<button class="dp-speak" data-speak="بَ"><span class="khat-sample" style="font-size:1.4rem">بَ</span> <span class="dp-speak__icon">🔊</span></button>
+<button class="dp-speak" data-speak="بَتَ"><span class="khat-sample" style="font-size:1.4rem">بَتَ</span> <span class="dp-speak__icon">🔊</span></button>
+<button class="dp-speak" data-speak="كَتَبَ"><span class="khat-sample" style="font-size:1.4rem">كَتَبَ</span> <span class="dp-speak__icon">🔊</span></button>
+</div>
+
+---
+
+## How to Read a Word by Blending — رَسُول (*rasūl*, messenger)
+
+| Step | Action | Result |
+|---|---|---|
+| 1 | Read first syllable | رَ |
+| 2 | Read second syllable | سُو (ḍamma + wāw madd) |
+| 3 | Read third syllable | لْ (silent at pause) |
+| 4 | Blend without stopping | رَسُولْ |
+
+---
+
+## Second Example — كِتَاب (*kitāb*, book)
+
+| Step | Action | Result |
+|---|---|---|
+| 1 | Read: كِ | *ki* (kasra) |
+| 2 | Read: تَا | *tā* (fatḥa + alif madd) |
+| 3 | Read: بْ | *b* (silent at pause) |
+| 4 | Blend | *kitāb* |
+
+---
+
+## Short Quranic Examples
+
+| Word | Syllable split |
+|---|---|
+| نُوح (*Nūḥ*, Noah) | نُو + حْ |
+| رَبِّ (*Rabbi*, My Lord) | رَ + بِّ |
+| هُدًى (*hudan*, guidance) | هُ + دَى |
+| مَاء (*māʾ*, water) | مَا + ءْ |
+
+---
+
+## Common Mistakes
+
+- **Spelling out letter names while reading** ("*bāʾ*, *alif*, *yāʾ*…"). Read with sounds and syllables directly — never name the letters.
+- **Pausing between syllables.** Read syllables and immediately chain them — the pause destroys the word.
+- **Shortening a long vowel.** *Kitāb* is not *kitab* — the alif madd doubles the vowel length.
+
+---
+
+## Summary
+
+> A **syllable** = consonant + vowel (+ possibly a silent consonant). A **word** = a chain of syllables. The correct method: read syllables in full and blend them without spelling — this is *blending reading* (القراءة التجميعية), the opposite of traditional letter-by-letter spelling.
+
+</div>

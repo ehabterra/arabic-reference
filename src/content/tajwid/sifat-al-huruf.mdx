@@ -1,5 +1,6 @@
 ---
 title: "صفات الحروف (ذات الضدّ وغير ذات الضدّ)"
+title_en: "Characteristics of the Letters (Ṣifāt al-Ḥurūf)"
 category: makharij
 kind: topic
 order: 3
@@ -60,6 +61,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## صفات الحروف
 
@@ -252,3 +255,201 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة
 
 > الصفات **18** عند الجمهور: 5 أزواج ذات ضدّ (الجهر/الهمس، الشدة/الرخاوة مع التوسط، الاستعلاء/الاستفال، الإطباق/الانفتاح، الإذلاق/الإصمات) + 8 صفات ليس لها ضدّ (الصفير، القلقلة، اللين، الانحراف، التكرير، التفشي، الاستطالة، الغنة). معرفة الصفات تُتِمُّ الفائدة بعد معرفة المخارج، وكلاهما أساس لا غنى عنه في التجويد.
+
+</div>
+
+<div data-lang-block="en">
+
+## Characteristics of the letters — الصفات (*al-ṣifāt*)
+
+**الصفة** (*al-ṣifa*, pl. *ṣifāt*): a fixed phonetic quality that attaches to a letter when pronounced, distinguishing it from another even when both share the same *makhraj*.
+
+**Why knowing the ṣifāt matters**:
+1. Distinguishing letters that share a *makhraj* (e.g., حـ and عـ; ذـ and ظـ).
+2. Knowing the relative strength or weakness of letters.
+3. Refining pronunciation and giving each letter its full due.
+
+Total ṣifāt: **18**, according to Ibn al-Jazarī and the majority.
+
+<Mermaid code={String.raw`flowchart TD
+  A["Paired ṣifāt — 5 pairs"] --> B["Jahr — Hams<br/>Hams: fḥthh shkhṣ skt"]
+  A --> C["Shadda — Rakhāwa<br/>Shadda: ʾjd qṭ bkt"]
+  A --> D["Istiʿlāʾ — Istifāl<br/>Istiʿlāʾ: khṣ ḍghaṭ qẓ"]
+  A --> E["Iṭbāq — Infitāḥ<br/>Iṭbāq: ṭ ṣ ḍ ẓ"]
+  A --> F["Idhilāq — Iṣmāt<br/>Idhilāq: f r m n l b"]`} />
+
+---
+
+## Part 1: Paired characteristics (ṣifāt dhāt al-ḍidd)
+
+### Pair 1: Jahr (جهر) and Hams (همس)
+
+| Characteristic | Definition | Letters |
+|---|---|---|
+| **الجهر** (*Jahr* — voicing) | Breath is held back; sound is full due to strong pressure on the makhraj | 19 letters — all except the 10 breathed ones |
+| **الهمس** (*Hams* — breathiness) | Breath flows with the sound due to weak pressure | 10 letters: «فَحَثَّهُ شَخصٌ سَكَتَ» |
+
+Breathed (*hams*) letters: **ف، ح، ث، هـ، ش، خ، ص، س، ك، ت**.
+
+Experiment: say «سَ» then «زَ» — the first is breathed (air flows), the second is voiced (air held back).
+
+---
+
+### Pair 2: Shadda (شدة), Tawassuṭ (توسط), Rakhāwa (رخاوة)
+
+| Characteristic | Definition | Letters |
+|---|---|---|
+| **الشدة** (*Shadda* — stop) | Sound is completely blocked at the makhraj | 8 letters: «أَجِدُ قَطٍّ بَكَتْ» |
+| **التوسط** (*Tawassuṭ* — intermediate) | Sound flows with moderate restraint | 5 letters: «لِنْ عُمَرَ» (ل، ن، ع، م، ر) |
+| **الرخاوة** (*Rakhāwa* — fricative) | Sound flows freely | all remaining letters |
+
+Stop (*shadda*) letters: **أ، ج، د، ق، ط، ب، ك، ت**.
+
+---
+
+### Pair 3: Istiʿlāʾ (استعلاء) and Istifāl (استفال)
+
+| Characteristic | Definition | Letters |
+|---|---|---|
+| **الاستعلاء** (*Istiʿlāʾ* — raising) | The back of the tongue rises toward the upper palate | 7 letters: «خُصَّ ضَغطٍ قِظْ» |
+| **الاستفال** (*Istifāl* — lowering) | The tongue stays low | 21 letters — all except the 7 raised ones |
+
+The 7 *istiʿlāʾ* letters — **خ، ص، ض، غ، ط، ق، ظ** — are the letters of **tafkhīm** (heaviness/emphasis).
+
+---
+
+### Pair 4: Iṭbāq (إطباق) and Infitāḥ (انفتاح)
+
+| Characteristic | Definition | Letters |
+|---|---|---|
+| **الإطباق** (*Iṭbāq* — sealing) | The tongue seals against the upper palate | 4 letters: **ط، ص، ض، ظ** |
+| **الانفتاح** (*Infitāḥ* — openness) | The tongue does not rise to meet the palate | 24 letters — all except the 4 sealed ones |
+
+> Iṭbāq is the strongest *ṣifa* for producing tafkhīm. These 4 *muṭbaqa* letters carry the heaviest emphasis of all.
+
+---
+
+### Pair 5: Idhilāq (إذلاق) and Iṣmāt (إصمات)
+
+| Characteristic | Definition | Letters |
+|---|---|---|
+| **الإذلاق** (*Idhilāq* — agility) | Easy, flowing production from the tongue-tip or lip-tip | 6 letters: **ف، ر، م، ن، ل، ب** («فِرَّ مِنْ لُبٍّ») |
+| **الإصمات** (*Iṣmāt* — heaviness) | The letter is heavier and less flowing | 22 letters — all except the 6 *mudhlaq* ones |
+
+---
+
+## Part 2: Unpaired characteristics (8 ṣifāt without an opposite)
+
+### 1. Ṣafīr (صفير) — whistling
+
+A whistle-like sound produced with **3 letters**: **ص، ز، س**.
+
+| Letter | Whistle strength | Reason |
+|---|---|---|
+| ص *ṣād* | Strongest | Sealed (*muṭbaqa*) + raised (*mustaʿliya*) |
+| ز *zāy* | Middle | Voiced (*majhūr*) |
+| س *sīn* | Weakest | Breathed and open |
+
+---
+
+### 2. Qalqala (قلقلة) — echo-rebound
+
+A rebounding vibration when one of the 5 *qalqala* letters is quiescent.
+
+**Letters** (5): memorised as «**قُطُبُ جَدٍّ**»: ق *qāf*, ط *ṭāʾ*, ب *bāʾ*, ج *jīm*, د *dāl*.
+
+**Three degrees** (the well-known position):
+
+| Degree | Condition | Short example |
+|---|---|---|
+| **Highest** | Quiescent + doubled, paused on | «الحَقّ» (paused) |
+| **Middle** | Quiescent + undoubled, paused on | «أَحَد» (paused) |
+| **Lowest** | Quiescent mid-word, in flow | «يَقدِر» (flowing) |
+
+---
+
+### 3. Līn (لين) — ease/glide
+
+Producing quiescent واو or ياء preceded by fatḥa with effortlessness.
+
+**Letters**: Wāw-līn and Yāʾ-līn only.
+
+Examples: «خَوْف» (wāw-līn), «بَيْت» (yāʾ-līn).
+
+---
+
+### 4. Inḥirāf (انحراف) — deflection
+
+The sound bends away from the primary point of articulation.
+
+**Letters**: **ر** *rāʾ* and **ل** *lām*.
+
+---
+
+### 5. Takrirr (تكرير) — vibration
+
+The tongue-tip quivers when producing رـ.
+
+**Letter**: **ر** *rāʾ* alone.
+
+> **Important**: Takrirr is intrinsic to رـ but **must be suppressed** — do not let the rāʾ sound rolled or trilled audibly.
+
+---
+
+### 6. Tafashī (تفشي) — spreading
+
+Air spreads broadly through the mouth during pronunciation.
+
+**Letter**: **ش** *shīn* alone.
+
+---
+
+### 7. Istiṭāla (استطالة) — elongation along makhraj
+
+The ض *ḍād* stretches along the lateral tongue-edge, almost reaching the *makhraj* of لـ.
+
+**Letter**: **ض** *ḍād* alone.
+
+---
+
+### 8. Ghunna (غنة) — nasal resonance
+
+A pleasant nasal buzz emanating from the *khayshūm* (nasopharynx), inherently attached to نـ *nūn* and مـ *mīm*.
+
+**Five degrees** (strongest to weakest):
+
+| Degree | Condition |
+|---|---|
+| 1 | نـ/مـ doubled (*mushaddad*) |
+| 2 | نـ/مـ fully assimilated (*mudgham*) |
+| 3 | نـ/مـ concealed (*mukhfāt*), including iqlāb |
+| 4 | نـ/مـ quiescent (*sākin*) |
+| 5 | نـ/مـ vowelled (*mutaḥarrik*) |
+
+---
+
+## Part 3: Strength ranking
+
+| Strength | Characteristics |
+|---|---|
+| **Strong** (11) | Jahr, Shadda, Istiʿlāʾ, Iṭbāq, Ṣafīr, Qalqala, Inḥirāf, Takrirr, Istiṭāla, Tafashī, Ghunna |
+| **Weak** (6) | Hams, Rakhāwa, Istifāl, Infitāḥ, Līn, Khafāʾ |
+| **Neither** (3) | Idhilāq, Iṣmāt, Tawassuṭ |
+
+---
+
+## Common mistakes
+
+- **Ignoring qalqala in connected recitation**: obligatory in all 5 letters whether pausing or flowing — only the degree differs.
+- **Rolling رـ audibly**: rāʾ has the quality of *takrirr* but displaying it overtly is an error.
+- **Confusing istiʿlāʾ and iṭbāq**: every *muṭbaq* is *mustaʿlī*, but not every *mustaʿlī* is *muṭbaq* — قـ, غـ, خـ are raised but not sealed.
+- **Thinking ghunna comes from tongue or lips**: the nasal resonance of نـ/مـ originates from the *khayshūm*.
+- **Omitting tafashī in شـ**: شـ requires broad air-spreading — do not pronounce it like سـ.
+
+---
+
+## Summary
+
+> There are **18 ṣifāt** (according to the majority): 5 opposite pairs (*Jahr/Hams, Shadda-Tawassuṭ/Rakhāwa, Istiʿlāʾ/Istifāl, Iṭbāq/Infitāḥ, Idhilāq/Iṣmāt*) + 8 unpaired qualities (*Ṣafīr, Qalqala, Līn, Inḥirāf, Takrirr, Tafashī, Istiṭāla, Ghunna*). Knowing the ṣifāt completes the knowledge of the makhārij — both are indispensable foundations of tajwīd.
+
+</div>

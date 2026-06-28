@@ -1,5 +1,6 @@
 ---
 title: "الصفة المشبهة واسم التفضيل"
+title_en: "The Resemblant Adjective (Ṣifa Mushabbaha) and the Elative (Ism al-Tafḍīl)"
 category: mushtaqqat
 kind: topic
 order: 21
@@ -59,6 +60,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## الصفة المشبهة واسم التفضيل
 
@@ -175,3 +178,125 @@ import Mermaid from '../../components/Mermaid.astro';
 
 > **الصفة المشبهة:** مشتقّةٌ من الثلاثي اللازم للدلالة على الثبوت؛ وأوزانها متعددة: فَعِل، فَعْل، فَعَل، فَعِيل، فَعْلان، أَفعَل.  
 > **اسم التفضيل:** يأتي على وزن **أَفعَل** دائماً للدلالة على الزيادة؛ ويُشترط في فعله: أن يكون ثلاثياً متصرّفاً مثبَتاً معلوماً قابلاً للتفاضل غير دالٍّ على لون أو عيب. وعند تعذُّر الصياغة يُستعان بـ«أَشَدَّ» + المصدر.
+
+</div>
+
+<div data-lang-block="en">
+
+## Two Derived Adjectives: Resemblant and Elative
+
+---
+
+## 1. The resemblant adjective — الصفة المشبهة (*al-ṣifa al-mushabbaha*)
+
+### Definition
+
+The **resemblant adjective** is a derived noun that expresses a **stable, permanent** quality of the person or thing described — not a momentary action. It is called "resemblant" because its form resembles the active participle, yet differs in meaning.
+
+**The core distinction from the active participle:**
+
+| | Active participle — اسم الفاعل | Resemblant adjective — الصفة المشبهة |
+|---|---|---|
+| Meaning | An action happening / just performed | A permanent, ingrained quality |
+| Derived from | Transitive *or* intransitive trilateral | Intransitive trilateral only |
+| Example | كَارِم (*kārim*, one who is being generous right now) | كَرِيم (*karīm*, generous by nature, always) |
+
+---
+
+### Main patterns
+
+Derived from **intransitive trilateral verbs**; comes in many patterns:
+
+| Pattern | Typical meaning | Examples |
+|---|---|---|
+| **فَعِل** (*faʿil*) | transient states | حَذِر (*ḥadhir*, cautious) — فَرِح (*fariḥ*, joyful) |
+| **فَعْل** (*faʿl*) | stable physical traits | سَهْل (*sahl*, easy) — صَعْب (*ṣaʿb*, difficult) — ضَخْم (*ḍakhm*, massive) |
+| **فَعَل** (*faʿal*) | character and moral traits | حَسَن (*ḥasan*, handsome/good) — بَطَل (*baṭal*, hero) |
+| **فَعِيل** (*faʿīl*) | character and nature | كَرِيم (*karīm*, generous) — بَخِيل (*bakhīl*, miserly) — جَمِيل (*jamīl*, beautiful) |
+| **فَعْلان** (*faʿlān*) | fullness/emptiness/agitation | غَضبَان (*ghaḍbān*, angry) — عَطشَان (*ʿaṭshān*, thirsty) — جَوعَان (*jawʿān*, hungry) |
+| **أَفعَل** (*afʿal*) | colours and bodily defects | أَحمَر (*aḥmar*, red) — أَبيَض (*abyaḍ*, white) — أَعوَر (*aʿwar*, one-eyed) |
+
+> Note: the pattern **أَفعَل** appears in both the resemblant adjective (colours/defects) and the elative (comparison). Context decides which it is.
+
+<Mermaid code={String.raw`flowchart TD
+  A["Derived adjectives"] --> B["Resemblant adj.
+صفة مشبهة
+(stable quality)"]
+  A --> C["Elative
+اسم تفضيل
+(comparison)"]
+  B --> B1["فَعِل: حَذِر"]
+  B --> B2["فَعِيل: كَرِيم"]
+  B --> B3["فَعْلان: غَضبَان"]
+  B --> B4["أَفعَل for colours: أَحمَر"]
+  C --> C1["أَفعَل always:<br/>أَكبَر / أَكرَم"]`} />
+
+---
+
+## 2. The elative — اسم التفضيل (*ism al-tafḍīl*)
+
+### Definition
+
+The **elative** is a derived noun that expresses that two things share a quality, with **one exceeding the other** in it — equivalent to the comparative/superlative in English.
+
+**Example:** مُحمَّدٌ أَكرَمُ مِن زَيد (*Muḥammad is more generous than Zayd*).
+
+---
+
+### Its pattern
+
+> **The elative always comes on the pattern أَفعَل (*afʿal*).**
+
+| Verb | Elative |
+|---|---|
+| كَبُرَ (*kabura*, he was large) | أَكبَر (*akbar*, larger/the largest) |
+| كَرُمَ (*karuma*, he was generous) | أَكرَم (*akram*, more generous) |
+| حَسُنَ (*ḥasuna*, he was good) | أَحسَن (*aḥsan*, better/the best) |
+| فَضَلَ (*faḍala*, he excelled) | أَفضَل (*afḍal*, more excellent) |
+| عَلِمَ (*ʿalima*, he knew) | أَعلَم (*aʿlam*, more knowledgeable) |
+
+---
+
+### Conditions for regular (*qiyāsī*) formation
+
+The elative is derived by rule from a verb that meets **all** of the following conditions:
+
+| Condition | Meaning | Example of a verb that fails |
+|---|---|---|
+| **Trilateral** | 3 root-letters | اِستَخرَجَ (*istakhraja*, 6 letters) |
+| **Inflectable** | not frozen/defective | نِعمَ (*niʿma*) — بِئسَ (*biʾsa*) |
+| **Affirmative** | not negated | لم يَبلَغ — لا يَجمُل |
+| **Active** | not passive-only | — |
+| **Admitting comparison** | the quality can be more or less | مَاتَ (*māta*, he died) — death has no degrees |
+| **Not a colour or defect** | does not denote a colour or physical defect | اِحمَرَّ (*iḥmarra*, turned red) — عَوِرَ (*ʿawira*, became one-eyed) |
+
+---
+
+### Workaround when conditions are not met
+
+Use **أَشَدَّ** (*ashadda*, more intensely) or **أَكثَر** (*akthara*, more frequently) + the verbal noun (*maṣdar*):
+
+| Intended meaning | Workaround |
+|---|---|
+| "more extracted" (from a 6-letter verb) | أَشَدُّ استِخراجاً |
+| "redder" (a colour) | أَشَدُّ حُمرةً |
+| "more broken" (a passive concept) | أَشَدُّ انكِساراً |
+
+---
+
+## Quranic examples
+
+| Verse | Word | Type |
+|---|---|---|
+| ﴿وَاللهُ أَعلَمُ بِمَا يَضَعُونَ﴾ | أَعلَم (*aʿlam*, most knowing) | elative |
+| ﴿وَلَلآخِرَةُ أَكبَرُ دَرَجَاتٍ﴾ | أَكبَر (*akbar*, greater) | elative |
+| ﴿إِنَّ أَكرَمَكُم عِندَ اللهِ أَتقَاكُم﴾ | أَكرَم — أَتقَى | elative |
+
+---
+
+## Summary
+
+> **Resemblant adjective (صفة مشبهة):** derived from an intransitive trilateral verb; denotes a **permanent quality**; comes in many patterns — فَعِل، فَعْل، فَعَل، فَعِيل، فَعْلان، أَفعَل.  
+> **Elative (اسم التفضيل):** always on the pattern **أَفعَل**; denotes **exceeding** another in a quality; requires the source-verb to be trilateral, inflectable, affirmative, active, admitting comparison, and free of colour/defect meanings. When conditions fail, use أَشَدَّ + *maṣdar*.
+
+</div>

@@ -1,5 +1,6 @@
 ---
 title: "الفعل الصحيح والمعتل وأقسامهما"
+title_en: "Sound and Weak Verbs: Categories and Types"
 category: afaal
 kind: topic
 order: 11
@@ -60,6 +61,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## الفعل الصحيح والمعتل وأقسامهما
 
@@ -196,3 +199,141 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة القاعدة
 
 > **الصحيح** ما خَلَت حروفه الأصلية من حروف العلة، وأقسامه: السالم (خالٍ من همز وتضعيف)، والمهموز (فيه همزة في فاء أو عين أو لام)، والمضعَّف (العين واللام من جنس واحد مدغمَان). **المعتل** ما فيه حرف علة في الأصل، وأقسامه: المثال (في الفاء)، والأجوف (في العين)، والناقص (في اللام)، واللفيف (في موضعين: مفروق أو مقرون).
+
+</div>
+
+<div data-lang-block="en">
+
+## Sound and Weak Verbs
+
+### The two broad categories
+
+- **Sound verb** (الفعل الصحيح, *al-fiʿl al-ṣaḥīḥ*): its root-letters contain no weak letters (و ا ي).
+- **Weak verb** (الفعل المعتل, *al-fiʿl al-muʿtall*): one or more of its root-letters is a weak letter.
+
+> The three **weak letters** are: wāw (و), ālif (ا), and yāʾ (ي). The **hamza** (ء) is *not* counted as a weak letter in Arabic morphology.
+
+---
+
+## Sound verbs — three types
+
+### 1. The plain sound verb — السالم (*al-sālim*)
+
+Root-letters free of hamza, doubling, and weak letters.
+
+**Examples:** كَتَبَ (*kataba*, he wrote) — ضَرَبَ (*ḍaraba*, he struck) — نَصَرَ (*naṣara*, he helped) — جَلَسَ (*jalasa*, he sat).
+
+---
+
+### 2. The hamzated verb — المهموز (*al-mahmūz*)
+
+One of the three root-positions carries a **hamza**:
+
+| Type | Definition | Examples |
+|---|---|---|
+| **Hamzated *fāʾ*** | hamza in position 1 | أَكَلَ (*akala*, he ate) — أَخَذَ (*akhadha*, he took) — أَمَرَ (*amara*, he commanded) |
+| **Hamzated *ʿayn*** | hamza in position 2 | سَأَلَ (*saʾala*, he asked) — رَأَى (*raʾā*, he saw) |
+| **Hamzated *lām*** | hamza in position 3 | قَرَأَ (*qaraʾa*, he read) — مَلَأَ (*malaʾa*, he filled) |
+
+> Hamzated verbs receive special treatment because Arabic speakers tend to lighten the hamza in certain contexts (e.g. كُلْ *kul*, eat! — from أَكَلَ *akala*).
+
+---
+
+### 3. The geminated verb — المضعَّف (*al-muḍaʿʿaf*) — also called "the deaf" (الأصم)
+
+The *ʿayn* and *lām* are the same letter, merged by *idghām*:
+
+**Underlying forms:** مَدَدَ — شَدَدَ — فَرَرَ.  
+**Surface forms after merger:** مَدَّ (*madda*, he stretched) — شَدَّ (*shadda*, he tightened) — فَرَّ (*farra*, he fled).
+
+**Pattern:** weighing follows the underlying form — **مَدَّ** has the pattern **فَعَلَ**, not **فَعَّلَ**.
+
+---
+
+## Weak verbs — five types
+
+### 1. The initial-weak verb — المثال (*al-mithāl*)
+
+The weak letter is in the **fāʾ** position (1st root):
+
+- **Wāw-initial** (most common): وَلَدَ (*walada*, he gave birth) — وَقَفَ (*waqafa*, he stood) — وَعَدَ (*waʿada*, he promised).
+- **Yāʾ-initial** (rare): يَسَرَ (*yasara*, it was easy) — يَئِسَ (*yaʾisa*, he despaired).
+
+> No verb begins with ālif, because ālif is always silent and Arabic words cannot begin with a silent consonant.
+
+---
+
+### 2. The hollow verb — الأجوف (*al-ajwaf*)
+
+The weak letter is in the **ʿayn** position (2nd root), originally wāw or yāʾ, which then became ālif on the surface:
+
+| Type | Underlying form | Surface form | Verbal noun reveals origin |
+|---|---|---|---|
+| Wāw-hollow | قَوَلَ | قَالَ (*qāla*, he said) | قَوْل (*qawl*, speech) |
+| Wāw-hollow | نَوَمَ | نَامَ (*nāma*, he slept) | نَوْم (*nawm*, sleep) |
+| Yāʾ-hollow | بَيَعَ | بَاعَ (*bāʿa*, he sold) | بَيْع (*bayʿ*, sale) |
+| Yāʾ-hollow | سَيَرَ | سَارَ (*sāra*, he travelled) | سَيْر (*sayr*, travel) |
+
+> The origin of the *ʿayn* is traced through the verbal noun (*maṣdar*), not the present tense.
+
+---
+
+### 3. The defective verb — الناقص (*al-nāqiṣ*)
+
+The weak letter is in the **lām** position (3rd root):
+
+| Ending | Example |
+|---|---|
+| Wāw-final | دَعَا (*daʿā*, he called) — underlying: دَعَوَ |
+| Yāʾ-final | رَمَى (*ramā*, he threw) — underlying: رَمَيَ; رَضِيَ (*raḍiya*, he was pleased); بَقِيَ (*baqiya*, he remained) |
+
+---
+
+### 4. Doubly-weak with separated weak letters — اللفيف المفروق (*al-lafīf al-mafrūq*)
+
+Weak letters in **fāʾ and lām** positions, separated by the *ʿayn*:
+
+**Examples:** وَقَى (*waqā*, he protected) — وَعَى (*waʿā*, he memorised) — وَلَى (*walā*, he turned away) — وَفَى (*wafā*, he fulfilled his promise).
+
+---
+
+### 5. Doubly-weak with adjacent weak letters — اللفيف المقرون (*al-lafīf al-maqrūn*)
+
+Weak letters in **ʿayn and lām** positions, adjacent:
+
+**Examples:** طَوَى (*ṭawā*, he folded) — لَوَى (*lawā*, he twisted) — كَوَى (*kawā*, he branded) — قَوِيَ (*qawiya*, he grew strong).
+
+---
+
+## Summary table
+
+| Category | Type | Example |
+|---|---|---|
+| **Sound** | Plain (*sālim*) | ضَرَبَ |
+| | Hamzated (*mahmūz*) | أَكَلَ — سَأَلَ — قَرَأَ |
+| | Geminated (*muḍaʿʿaf*) | مَدَّ — شَدَّ |
+| **Weak** | Initial-weak (*mithāl*) | وَزَنَ — وَعَدَ |
+| | Hollow (*ajwaf*) | قَالَ — بَاعَ |
+| | Defective (*nāqiṣ*) | دَعَا — رَمَى |
+| | Doubly-weak separated (*lafīf mafrūq*) | وَقَى — وَعَى |
+| | Doubly-weak adjacent (*lafīf maqrūn*) | طَوَى — لَوَى |
+
+<Mermaid code={String.raw`flowchart TD
+  A["Verb"] --> B["Sound — الصحيح"]
+  A --> C["Weak — المعتل"]
+  B --> B1["Plain: كَتَبَ"]
+  B --> B2["Hamzated: أَكَلَ / سَأَلَ / قَرَأَ"]
+  B --> B3["Geminated: مَدَّ"]
+  C --> C1["Initial-weak: وَلَدَ"]
+  C --> C2["Hollow: قَالَ"]
+  C --> C3["Defective: دَعَا"]
+  C --> C4["Lafīf mafrūq: وَقَى"]
+  C --> C5["Lafīf maqrūn: طَوَى"]`} />
+
+---
+
+## Summary
+
+> **Sound:** no weak letters in the root. Three types: **plain** (no hamza or doubling), **hamzated** (hamza in *fāʾ*, *ʿayn*, or *lām*), **geminated** (*ʿayn* and *lām* are the same letter, merged). **Weak:** has a weak letter (و، ا، ي) in the root. Five types: **initial-weak** (*fāʾ*), **hollow** (*ʿayn*), **defective** (*lām*), ***lafīf mafrūq*** (*fāʾ* + *lām*), ***lafīf maqrūn*** (*ʿayn* + *lām*).
+
+</div>

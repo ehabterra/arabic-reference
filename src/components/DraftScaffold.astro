@@ -2,26 +2,41 @@
 const { data: d } = Astro.props;
 ---
 <div class="dp-callout dp-callout--gotcha">
-  <p class="dp-callout__title">🚧 هذه الصفحة قيد الكتابة</p>
-  <p>الشرح الكامل — تشبيه، مخططات، أمثلة، مفاضلات، واختبار — في الطريق. إليك الملخص في الوقت الحالي.</p>
+  <p class="dp-callout__title" data-i18n="draft.title">🚧 هذه الصفحة قيد الكتابة</p>
+  <p data-i18n="draft.body">الشرح الكامل — تشبيه، مخططات، أمثلة، مفاضلات، واختبار — في الطريق. إليك الملخص في الوقت الحالي.</p>
 </div>
 
 {d.nutshell && (
   <Fragment>
-    <h2 id="in-a-nutshell">باختصار</h2>
+    <h2 id="in-a-nutshell" data-i18n="draft.nutshell">باختصار</h2>
     <p>{d.nutshell}</p>
   </Fragment>
 )}
 
-<h2 id="whats-coming">ماذا ستجد هنا</h2>
+<h2 id="whats-coming" data-i18n="draft.coming">ماذا ستجد هنا</h2>
 <ul>
-  <li>المسألة التي يحلّها هذا {d.kind === 'guide' ? 'الموضوع' : 'النمط'} مع تشبيه واقعي لا يُنسى</li>
-  <li>مخطط بنية UML ومخطط تسلسل خطوة بخطوة</li>
   <li>
-    تطبيق اصطلاحي{d.source ? (
-      <Fragment> — <a href={d.source} target="_blank" rel="noopener">المصدر على GitHub</a></Fragment>
-    ) : ''}
+    <span data-lang-block="ar">المسألة التي يحلّها هذا {d.kind === 'guide' ? 'الموضوع' : 'النمط'} مع تشبيه واقعي لا يُنسى</span>
+    <span data-lang-block="en">The problem this {d.kind === 'guide' ? 'topic' : 'pattern'} solves with a memorable real-world analogy</span>
   </li>
-  <li>أين يظهر في المصادر العربية المعتمدة</li>
-  <li>متى تستخدمه، ومتى تتجنّبه، واختبار تحقق سريع</li>
+  <li>
+    <span data-lang-block="ar">مخطط بنية UML ومخطط تسلسل خطوة بخطوة</span>
+    <span data-lang-block="en">Structure and sequence diagrams, step by step</span>
+  </li>
+  <li>
+    <span data-lang-block="ar">تطبيق اصطلاحي{d.source ? (
+      <Fragment> — <a href={d.source} target="_blank" rel="noopener">المصدر على GitHub</a></Fragment>
+    ) : ''}</span>
+    <span data-lang-block="en">An idiomatic example{d.source ? (
+      <Fragment> — <a href={d.source} target="_blank" rel="noopener">source on GitHub</a></Fragment>
+    ) : ''}</span>
+  </li>
+  <li>
+    <span data-lang-block="ar">أين يظهر في المصادر العربية المعتمدة</span>
+    <span data-lang-block="en">Where it appears in accredited Arabic sources</span>
+  </li>
+  <li>
+    <span data-lang-block="ar">متى تستخدمه، ومتى تتجنّبه، واختبار تحقق سريع</span>
+    <span data-lang-block="en">When to use it, when to avoid it, and a quick check quiz</span>
+  </li>
 </ul>

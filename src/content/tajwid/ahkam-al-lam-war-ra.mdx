@@ -1,5 +1,6 @@
 ---
 title: "أحكام اللام والراء (التفخيم والترقيق)"
+title_en: "Rules of Lām and Rāʾ (Tafkhīm and Tarqīq)"
 category: ahkam
 kind: topic
 order: 13
@@ -60,6 +61,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## أحكام اللام والراء
 
@@ -178,3 +181,125 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة
 
 > لام الجلالة تُفخَّم بعد فتح أو ضم وتُرقَّق بعد كسر — وهذا الحكم خاص بها وحدها. والراء الأوسع تفصيلاً: تُفخَّم مفتوحةً ومضمومةً وساكنةً بعد فتح أو ضم أو كسر عارض؛ وتُرقَّق مكسورةً كسراً أصلياً وساكنةً بعد كسر أصلي لا استعلاء بعدها؛ ويجوز الوجهان حين يتعارض الكسر الأصلي مع حرف الاستعلاء في الكلمة ذاتها.
+
+</div>
+
+<div data-lang-block="en">
+
+## Rules of Lām and Rāʾ
+
+Both **ل** *lām* and **ر** *rāʾ* can be either **heavy** (*tafkhīm*) or **light** (*tarqīq*) — unlike most letters, which are permanently one or the other.
+
+---
+
+## 1. Lām of the Divine Name — لام لفظ الجلالة (*lām al-jalāla*)
+
+The **لـ** in the word «الله» (Allāh) follows the **vowel immediately preceding it**:
+
+### When to make it heavy (tafkhīm)
+
+| Preceding vowel | Short example |
+|---|---|
+| Fatḥa (a) | قَالَ الله |
+| Ḍamma (u) | عَبدُ الله |
+
+### When to make it light (tarqīq)
+
+| Preceding vowel | Short example |
+|---|---|
+| Kasra (i) | بِسمِ الله |
+
+> **Quick rule**: Kasra → light; fatḥa or ḍamma → heavy.
+
+### Important note
+
+This rule applies **exclusively** to the لـ in «الله». All other lāms — definite-article لـ, verbal لـ, particle لـ — are **always light** (*marqaqa dāʾiman*).
+
+---
+
+## 2. Rules of Rāʾ (الراء)
+
+Rāʾ is the Arabic letter with the most detailed tafkhīm/tarqīq rules. The governing factors are its own vowel and phonetic environment.
+
+---
+
+### When Rāʾ is heavy (tafkhīm)
+
+| Condition | Short example |
+|---|---|
+| Vowelled with fatḥa | رَمَضَان |
+| Vowelled with ḍamma | رُزِق |
+| Quiescent after fatḥa in the same word | أَرسَل |
+| Quiescent after ḍamma in the same word | أُرسِل |
+| Quiescent after an **incidental** kasra (from hamzat al-waṣl) | اِرجِع |
+
+> **Incidental kasra**: the kasra under a *hamzat al-waṣl* is not the word's own kasra — it does not lighten the رـ.
+
+---
+
+### When Rāʾ is light (tarqīq)
+
+| Condition | Short example |
+|---|---|
+| Vowelled with **original** kasra | رِزق — كَرِيم |
+| Quiescent after original kasra, no *istiʿlāʾ* letter following in the same word | مِرية — ذِكر (paused) |
+| Quiescent word-final, preceded by quiescent yāʾ | خَير (paused) |
+
+---
+
+### When both are permitted (al-wajhān)
+
+| Position | Short example | Reason |
+|---|---|---|
+| Quiescent after original kasra + *istiʿlāʾ* letter in the same word | فِرقَة — القِطرِ (paused) | Conflict: original kasra (lightens) vs. *istiʿlāʾ* letter (heavies) |
+
+---
+
+## Summary table for Rāʾ
+
+| Condition | Ruling |
+|---|---|
+| Vowelled with fatḥa or ḍamma | Heavy |
+| Original kasra | Light |
+| Quiescent after fatḥa or ḍamma | Heavy |
+| Quiescent after original kasra, no *istiʿlāʾ* | Light |
+| Quiescent after incidental kasra (hamzat al-waṣl) | Heavy |
+| Quiescent after original kasra + *istiʿlāʾ* in same word | Both |
+| Quiescent, preceded by quiescent yāʾ | Light |
+
+<Mermaid code={String.raw`flowchart TD
+  A["Rāʾ"] --> B["Heavy — tafkhīm"]
+  A --> C["Light — tarqīq"]
+  A --> D["Both permitted"]
+  B --> E["fatḥa or ḍamma"]
+  B --> F["quiescent after fatḥa/ḍamma"]
+  B --> G["quiescent after incidental kasra"]
+  C --> H["original kasra"]
+  C --> I["quiescent after original kasra<br/>no istiʿlāʾ after"]
+  D --> J["quiescent after original kasra<br/>+ istiʿlāʾ in same word"]`} />
+
+---
+
+## Doubled Rāʾ
+
+A doubled رـ takes the rule of the second (vowelled) رـ: kasra → light; fatḥa or ḍamma → heavy.
+
+**Warning**: Avoid **takrirr** — do not let the tongue vibrate audibly producing a rolled or trilled رـ. Takrirr is inherent in رـ but must be suppressed in recitation.
+
+---
+
+## Common mistakes
+
+- **Making لام الجلالة heavy after kasra**: «بِسمِ الله» — the لـ must be light.
+- **Lightening رـ after an incidental kasra**: «اِرجِعُوا» has a heavy رـ because the kasra is incidental.
+- **Rolling the رـ**: excessive tongue-vibration is a recitation error.
+- **Treating the two-option positions as fixed**: «فِرقٍ» and «القِطرِ» accept both weightings.
+- **Applying the Jalāla rule to other lāms**: لـ in «قال» or «جعل» is always light.
+
+---
+
+## Summary
+
+> The لـ of «الله» is heavy after fatḥa or ḍamma and light after kasra — that rule is exclusive to the divine name. Rāʾ has the most detailed rules: heavy when vowelled with fatḥa or ḍamma, quiescent after fatḥa/ḍamma, or quiescent after an incidental kasra; light when carrying an original kasra or quiescent after original kasra with no *istiʿlāʾ* following; both weightings are valid when an original kasra conflicts with a following *istiʿlāʾ* letter in the same word.
+
+</div>

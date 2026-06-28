@@ -1,10 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
-const { related, collection = 'qiraa', base = '/qiraa', heading = 'دروس ذات صلة' } = Astro.props as {
+const { related, collection = 'qiraa', base = '/qiraa', heading = 'دروس ذات صلة', heading_en = 'Related lessons' } = Astro.props as {
   related: string[];
   collection?: 'qiraa' | 'nahw' | 'sarf' | 'balagha' | 'tajwid' | 'khat' | 'quranArabic';
   base?: string;
   heading?: string;
+  heading_en?: string;
 };
 const all = await getCollection(collection);
 const items = (related ?? [])
@@ -13,7 +14,10 @@ const items = (related ?? [])
 ---
 {items.length > 0 && (
   <Fragment>
-    <h2 id="related">{heading}</h2>
+    <h2 id="related">
+      <span data-lang-block="ar">{heading}</span>
+      <span data-lang-block="en" data-i18n="related.heading">{heading_en}</span>
+    </h2>
     <div class="dp-grid">
       {items.map((p) => (
         <a class="dp-card" data-cat={p.data.category} data-slug={p.id} href={`${base}/${p.id}/`}>

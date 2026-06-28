@@ -5,8 +5,14 @@ const { quiz } = Astro.props as { quiz: QuizItem[] };
 ---
 <div class="dp-quiz" data-dp-quiz>
   <div class="dp-quiz__head">
-    <h2 id="quiz"><span>اختبر فهمك</span></h2>
-    <span class="dp-quiz__score" data-dp-score>النتيجة: 0 / {quiz.length}</span>
+    <h2 id="quiz">
+      <span data-lang-block="ar">اختبر فهمك</span>
+      <span data-lang-block="en" data-i18n="quiz.title">Test your understanding</span>
+    </h2>
+    <span class="dp-quiz__score" data-dp-score>
+      <span data-lang-block="ar">النتيجة: 0 / {quiz.length}</span>
+      <span data-lang-block="en">Score: 0 / {quiz.length}</span>
+    </span>
   </div>
   {quiz.map((q, i) => (
     <div class="dp-q">

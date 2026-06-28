@@ -1,5 +1,6 @@
 ---
 title: "أحكام الميم الساكنة (الإخفاء الشفوي، الإدغام الصغير، الإظهار الشفوي)"
+title_en: "Rules of the Quiescent Mīm (Ikhfāʾ Shafawī, Idghām al-Mithlayn, Iẓhār Shafawī)"
 category: ahkam
 kind: topic
 order: 11
@@ -60,6 +61,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## أحكام الميم الساكنة
 
@@ -170,3 +173,113 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة
 
 > للميم الساكنة ثلاثة أحكام: **إخفاء شفوي** عند الباء وحدها مع الغنة في كلمتين، **إدغام المثلين الصغير** عند الميم في كلمة أخرى، **إظهار شفوي** عند بقية الحروف الستة والعشرين — مع وجوب الحذر من الإخفاء غير المقصود عند الواو والفاء لتقارب المخارج.
+
+</div>
+
+<div data-lang-block="en">
+
+## Rules of the quiescent mīm
+
+The quiescent **مـ** (*mīm sākina*) — a مـ carrying no vowel, whether inherently or temporarily, in mid-word or word-final position — has **three rules** determined by what follows it.
+
+<Mermaid code={String.raw`flowchart TD
+  A["Mīm Sākina"] --> B["Ikhfāʾ shafawī<br/>before bāʾ — with ghunna"]
+  A --> C["Idghām al-mithlayn<br/>before mīm — doubled"]
+  A --> D["Iẓhār shafawī<br/>26 letters — no extra ghunna"]
+  D --> E["Caution: wāw and fāʾ<br/>iẓhār — not ikhfāʾ"]`} />
+
+---
+
+## 1. Ikhfāʾ Shafawī (إخفاء شفوي) — Labial concealment
+
+**Definition**: Conceal the مـ before **بـ** *bāʾ*, keeping the ghunna — so the مـ is neither fully pronounced nor completely merged.
+
+**Triggering letter**: بـ *bāʾ* alone.
+
+**Why "shafawī"**: Both مـ and بـ are **lip letters** (*shafawiyya*) — they share the same *makhraj* (the two lips). This proximity makes concealment natural.
+
+**Only occurs across two words** — مـ ends the first word, بـ opens the second.
+
+| Example |
+|---|
+| تَرمِيهِم بِحِجَارَة |
+| وَهُم بِالآخِرَة |
+| أَم بِظَاهِر |
+
+> **How to pronounce**: Keep the lips slightly apart (or nearly closed — not pressed shut as in full idghām), run the ghunna for 2 beats — no doubling, no full clarity.
+
+---
+
+## 2. Idghām al-Mithlayn al-Ṣaghīr (إدغام المثلين الصغير) — Assimilation of two mīms
+
+**Definition**: Merge the quiescent مـ into the vowelled مـ at the start of the next word, producing a single doubled مـ.
+
+**Triggering letter**: مـ *mīm* alone.
+
+**Only occurs across two words**.
+
+| Example |
+|---|
+| لَهُم مَّا يَشَاءُون |
+| فِيهِم مِّن حَرَج |
+
+> **Complete assimilation**: the first مـ dissolves into the second, which is then pronounced doubled with ghunna for 2 beats.
+
+---
+
+## 3. Iẓhār Shafawī (إظهار شفوي) — Labial clarity
+
+**Definition**: Pronounce the مـ clearly from its *makhraj* (the two lips) before any of the remaining **26 letters** (all letters except بـ and مـ).
+
+**Occurs in one word and across two words**.
+
+| Example |
+|---|
+| أَمرٌ — أَمسَك |
+| وَأَنتُم تَعلَمُون |
+| يَعلَمُ مَا تُسِرُّون |
+
+### Two important cautions
+
+1. **Before واو *wāw***: Pronounce مـ with full clarity — because واو's *makhraj* is close to مـ's, unintended concealment may occur. The correct ruling is **iẓhār**.
+2. **Before فـ *fāʾ***: Likewise — pronounce مـ clearly. No relationship between their makhārij calls for concealment.
+
+---
+
+## Comparison table
+
+| Rule | Triggering letter | Ghunna | Words |
+|---|---|---|---|
+| Ikhfāʾ shafawī | بـ | With ghunna | 2 words |
+| Idghām al-mithlayn | مـ | With ghunna (doubled) | 2 words |
+| Iẓhār shafawī | 26 letters (remaining) | No extra ghunna | 1 or 2 words |
+
+---
+
+## Comparison: Mīm vs. Nūn
+
+| Aspect | Nūn sākina | Mīm sākina |
+|---|---|---|
+| Number of rules | 4 | 3 |
+| Iẓhār | Ḥalqī — before 6 throat letters | Shafawī — before 26 letters |
+| Idghām | Into «يرملون» (6 letters) | Al-Mithlayn — into مـ only |
+| Ikhfāʾ | Before 15 letters | Shafawī — before بـ only |
+| Iqlāb | Before بـ (نـ converts to مـ) | Does not apply |
+
+---
+
+## Common mistakes
+
+- **Dropping the ghunna in ikhfāʾ shafawī**: some reciters press their lips shut and fully assimilate — the correct approach retains the ghunna with lips only lightly closed.
+- **Pronouncing مـ clearly before مـ**: it must be fully assimilated and doubled with ghunna.
+- **Concealing مـ before واو**: واو does not trigger ikhfāʾ — the rule is iẓhār shafawī.
+- **Concealing مـ before فـ**: فـ also triggers iẓhār, not ikhfāʾ.
+- **Confusing ikhfāʾ shafawī of مـ with iqlāb**: iqlāb is specific to نـ/tanwīn before بـ — مـ before بـ undergoes ikhfāʾ, not iqlāb.
+
+---
+
+## Summary
+
+> The quiescent مـ has **three rules**: **ikhfāʾ shafawī** before بـ alone — with ghunna, across two words; **idghām al-mithlayn al-ṣaghīr** before مـ in the next word; **iẓhār shafawī** before the remaining 26 letters — with the caution to avoid unintended concealment before واو and فـ, whose makhārij are near مـ.
+
+</div>

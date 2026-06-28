@@ -1,5 +1,6 @@
 ---
 title: "أسماء الإشارة والأسماء الموصولة في القرآن"
+title_en: "Demonstrative and Relative Nouns in the Qurʾān"
 category: mustawa1
 kind: guide
 order: 3
@@ -63,6 +64,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## الهدف
 
@@ -141,3 +144,93 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة
 
 > أسماء الإشارة (هذا، ذلك...) تُشير إلى قريب أو بعيد مع مطابقة المُشار إليه. والأسماء الموصولة (الذي، التي، الذين...) تربط الاسمَ بجملةٍ تُوضّحه تُسمَّى الصلة. وكلاهما يُثري الجملة القرآنية ويُضيف إليها التخصيص والتوصيف.
+
+</div>
+
+<div data-lang-block="en">
+
+## Objective
+
+In this unit you will learn two important noun classes in Qurʾānic Arabic: **demonstratives** (*asmāʾ al-ishāra* — أسماء الإشارة), which point to something near or far, and **relative nouns** (*asmāʾ mawṣūla* — الأسماء الموصولة), which link a noun to a following clause that describes it. Both are among the most-used tools in the Qurʾān.
+
+---
+
+## The Rule
+
+### 1. Demonstratives — أسماء الإشارة
+
+| | Near (*qarīb*) | Far (*baʿīd*) |
+|---|---|---|
+| Singular masculine | هَذَا (*hādhā*, this) | ذَلِكَ (*dhālika*, that) |
+| Singular feminine | هَذِهِ (*hādhihi*, this) | تِلكَ (*tilka*, that) |
+| Plural (m. & f.) | هَؤُلَاءِ (*hāʾulāʾi*, these) | أُولَئِكَ (*ulāʾika*, those) |
+
+> The demonstrative must agree with the noun it points to in gender and number.
+
+<Mermaid code={String.raw`flowchart LR
+  A["Demonstratives"] --> Q["Near"]
+  A --> B["Far"]
+  Q --> Q1["هَذَا
+(masc.)"]
+  Q --> Q2["هَذِهِ
+(fem.)"]
+  Q --> Q3["هَؤُلَاءِ
+(plural)"]
+  B --> B1["ذَلِكَ
+(masc.)"]
+  B --> B2["تِلكَ
+(fem.)"]
+  B --> B3["أُولَئِكَ
+(plural)"]`} />
+
+### 2. Relative nouns — الأسماء الموصولة
+
+| Relative noun | Used for |
+|---|---|
+| الَّذِي (*alladhī*) | singular masculine |
+| الَّتِي (*allatī*) | singular feminine |
+| الَّذِينَ (*alladhīna*) | masculine plural |
+| اللَّاتِي / اللَّوَاتِي (*allātī / allawātī*) | feminine plural |
+
+> After every relative noun comes a **relative clause** (*ṣilat al-mawṣūl* — صلة الموصول): a complete sentence that defines the noun. This clause has no grammatical case of its own.
+
+---
+
+## From the Qurʾān
+
+| Qurʾānic phrase | Tool | Type | Reference |
+|---|---|---|---|
+| «ذَٰلِكَ الْكِتَابُ لَا رَيْبَ فِيهِ» — *dhālika-l-kitābu lā rayba fīh* | ذَلِكَ | far demonstrative (m. sg.) | al-Baqara 2:2 |
+| «هَٰذَا بَيَانٌ لِّلنَّاسِ» — *hādhā bayānun li-n-nās* | هَذَا | near demonstrative (m. sg.) | Āl ʿImrān 3:138 |
+| «الَّذِي خَلَقَ فَسَوَّى» — *alladhī khalaqa fa-sawwā* | الَّذِي | relative noun (m. sg.) | al-Aʿlā 87:2 |
+| «الَّذِينَ آمَنُوا» — *alladhīna āmanū* | الَّذِينَ | relative noun (m. pl.) | recurring in the Qurʾān |
+
+---
+
+## Vocabulary
+
+| Arabic | Transliteration | English |
+|---|---|---|
+| الكِتَابُ | *al-kitāb* | the Book (the Qurʾān) |
+| رَيبٌ | *rayb* | doubt, uncertainty |
+| بَيَانٌ | *bayān* | clarification, exposition |
+| النَّاسُ | *al-nās* | people, mankind |
+| خَلَقَ | *khalaqa* | created from nothing |
+| سَوَّى | *sawwā* | proportioned, made right |
+| آمَنَ | *āmana* | believed, accepted faith |
+
+---
+
+## Exercise
+
+1. **Identify the demonstrative and its type** in: «هَٰذِهِ جَهَنَّمُ الَّتِي كُنتُم بِهَا تُكَذِّبُونَ» — demonstrative: ____ — type: ____
+
+2. **Choose the right relative noun:** «الطَّالِبةُ ___ نجحَت مجتهدةٌ.» — Is it «الذي» or «التي»? Why?
+
+---
+
+## Summary
+
+> Demonstratives (هذا, ذلك …) point to something near or far and must agree with the noun in gender and number. Relative nouns (الذي, التي, الذين …) attach a defining clause to their noun. Both enrich the Qurʾānic sentence by adding specificity and vivid description.
+
+</div>

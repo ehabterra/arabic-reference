@@ -3,6 +3,7 @@ interface Props {
   slug: string;
   category: string;
   title: string;
+  title_en?: string;
   intent: string;
   order?: number;
   difficulty?: string;
@@ -12,16 +13,24 @@ interface Props {
   base?: string;
   minutes?: number;
 }
-const { slug, category, title, intent, order, difficulty, status, numLabel, footLabel, base = '/patterns', minutes } = Astro.props;
+const { slug, category, title, title_en, intent, order, difficulty, status, numLabel, footLabel, base = '/patterns', minutes } = Astro.props;
 ---
 <a class="dp-card" data-cat={category} data-slug={slug} href={`${base}/${slug}/`}>
   <span class="dp-card__num">{numLabel ?? `${order} · ${difficulty}`}</span>
-  <span class="dp-card__title">{title}</span>
+  <span class="dp-card__title">
+    <span data-lang-block="ar">{title}</span>
+    <span data-lang-block="en">{title_en ?? title}</span>
+  </span>
   <p class="dp-card__intent" data-i18n-html={`intent.${slug}`}>{intent}</p>
   <span class="dp-card__foot">
     <span>
-      {footLabel ?? (status === 'ready' ? '✦ مكتمل' : 'مسودة')}
-      {minutes && <span class="dp-card__time">· ⏱ {minutes} د</span>}
+      {footLabel ?? (
+      <>
+        <span data-lang-block="ar">{status === 'ready' ? '✦ مكتمل' : 'مسودة'}</span>
+        <span data-lang-block="en">{status === 'ready' ? '✦ Complete' : 'Draft'}</span>
+      </>
+    )}
+      {minutes && <span class="dp-card__time">· ⏱ {minutes} <span data-lang-block="ar">د</span><span data-lang-block="en">m</span></span>}
     </span>
     <span class="dp-card__check" aria-hidden="true">✓</span>
   </span>

@@ -5,7 +5,7 @@ import { REPO_URL, TRACKS } from '../lib/consts';
   <div class="dp-container dp-nav__inner">
     <a class="dp-brand" href="/">
       <span class="dp-brand__mark">ع</span>
-      <span>المرجع العربي</span>
+      <span data-i18n="nav.home">المرجع العربي</span>
     </a>
 
     <nav class="dp-nav__links" id="dp-nav-links">
@@ -16,7 +16,10 @@ import { REPO_URL, TRACKS } from '../lib/consts';
         </button>
         <div class="dp-nav__menu">
           {TRACKS.map((track) => (
-            <a href={`/${track.route}/`}>{track.title}</a>
+            <a href={`/${track.route}/`}>
+              <span data-lang-block="ar">{track.title}</span>
+              <span data-lang-block="en">{track.title_en ?? track.title}</span>
+            </a>
           ))}
         </div>
       </div>

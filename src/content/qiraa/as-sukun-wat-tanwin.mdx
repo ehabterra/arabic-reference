@@ -1,5 +1,6 @@
 ---
 title: "السكون والتنوين"
+title_en: "Sukūn and Tanwīn: Consonant Rest and the Nasal Ending"
 category: harakat
 kind: topic
 order: 11
@@ -68,6 +69,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## الهدف
 
@@ -168,3 +171,109 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة
 
 > **السكون (ْ)** علامة على حرف خالٍ من الحركة يُنطق بصوت مغلق. **التنوين** نون ساكنة مزيدة في نهاية الأسماء النكرات، وله 3 أشكال: فتح (ـً) وكسر (ـٍ) وضم (ـٌ). الفرق بين الحركة البسيطة والتنوين: ضبطة مكرَّرة تعني تنوينًا.
+
+</div>
+
+<div data-lang-block="en">
+
+## Goal
+
+After learning the three short vowels (fatḥa, kasra, ḍamma), this lesson adds **sukūn** (the absence of any vowel) and **tanwīn** (a silent *n* added to nouns in pronunciation). These two elements complete the basic system of Arabic vowel notation.
+
+---
+
+## Part 1 — Sukūn (السكون)
+
+### What is sukūn?
+
+Sukūn means the letter has **no vowel at all**. You pronounce the consonant and immediately close the sound — no added vowel colour.
+
+### The sukūn sign
+
+| Sign | Shape | Example |
+|---|---|---|
+| Small round-head shape | ْ | بَيْت (*bayt*, house) — the *yāʾ* is silent |
+
+### Examples
+
+| Word | Silent letter | Position |
+|---|---|---|
+| بَيْت (*bayt*, house) | يْ | middle |
+| قُلْ (*qul*, say) | لْ | end |
+| عِلْم (*ʿilm*, knowledge) | لْ | middle |
+| نَصْر (*naṣr*, victory) | صْ | middle |
+
+> Rule: Arabic words cannot **begin** with a silent letter, and cannot **end** with two consecutive silent letters (when pausing, only the final letter is made silent).
+
+---
+
+## Part 2 — Tanwīn (التنوين)
+
+### What is tanwīn?
+
+Tanwīn is a **silent *n*** added to the end of an indefinite noun **in pronunciation only** — it is not written as a separate letter but is shown by doubling the vowel mark.
+
+### The three tanwīn forms
+
+| Type | Sign | Sound | Example |
+|---|---|---|---|
+| Fatḥ tanwīn | ـً | *-an* | كِتَابًا (*kitāban*) |
+| Kasr tanwīn | ـٍ | *-in* | كِتَابٍ (*kitābin*) |
+| Ḍamm tanwīn | ـٌ | *-un* | كِتَابٌ (*kitābun*) |
+
+<div style="display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0;align-items:center">
+<button class="dp-speak" data-speak="بًا"><span class="khat-sample" style="font-size:1.4rem">بًا</span> <span class="dp-speak__icon">🔊</span></button>
+<button class="dp-speak" data-speak="بٌ"><span class="khat-sample" style="font-size:1.4rem">بٌ</span> <span class="dp-speak__icon">🔊</span></button>
+<button class="dp-speak" data-speak="بٍ"><span class="khat-sample" style="font-size:1.4rem">بٍ</span> <span class="dp-speak__icon">🔊</span></button>
+<button class="dp-speak" data-speak="أَبْ"><span class="khat-sample" style="font-size:1.4rem">أَبْ</span> <span class="dp-speak__icon">🔊</span></button>
+</div>
+
+### Tanwīn diagram
+
+<Mermaid code={String.raw`flowchart TD
+  A["Tanwīn<br/>(added silent n)"] --> B["Fatḥ tanwīn ـً<br/>كِتَابًا"]
+  A --> C["Kasr tanwīn ـٍ<br/>كِتَابٍ"]
+  A --> D["Ḍamm tanwīn ـٌ<br/>كِتَابٌ"]
+  B --> B1["pronounced: kitāba-n"]
+  C --> C1["pronounced: kitābi-n"]
+  D --> D1["pronounced: kitābu-n"]`} />
+
+---
+
+## Plain Vowel vs. Tanwīn — Side by Side
+
+| Case | Mark | Meaning | Example |
+|---|---|---|---|
+| Plain ḍamma | ـُ | vowel only | يَذهَبُ (a verb — no tanwīn) |
+| Ḍamm tanwīn | ـٌ | ḍamma + silent *n* | كِتَابٌ (indefinite noun) |
+| Plain kasra | ـِ | vowel only | مِنَ (a particle) |
+| Kasr tanwīn | ـٍ | kasra + silent *n* | كِتَابٍ (indefinite noun in genitive) |
+
+---
+
+## Quranic Examples
+
+| Word | Vowel type | Note |
+|---|---|---|
+| قُلْ (*qul*, say) | sukūn | lām is silent |
+| عِلْم (*ʿilm*, knowledge) | sukūn | lām is silent |
+| رَبٌّ (*rabbun*, lord) | ḍamm tanwīn + shadda | — |
+| نُوحٌ (*Nūḥun*, Noah) | ḍamm tanwīn | — |
+| رَحِيمٌ (*raḥīmun*, merciful) | ḍamm tanwīn | — |
+
+---
+
+## Common Mistakes
+
+- **Pronouncing a silent letter with an invented vowel.** A sukūn letter is stopped immediately — add no vowel.
+- **Confusing plain ḍamma (ـُ) with ḍamm tanwīn (ـٌ).** Tanwīn has two stacked marks; a plain vowel has one.
+- **Stopping completely on a silent letter mid-word.** Sukūn does not mean a full stop — flow quickly to the next letter.
+- **Adding tanwīn to verbs or particles.** Tanwīn belongs only to indefinite nouns.
+
+---
+
+## Summary
+
+> **Sukūn (ْ)** marks a letter with no vowel — it is pronounced by closing the sound immediately. **Tanwīn** is a silent *n* appended to indefinite nouns in pronunciation, shown by doubling the vowel mark: fatḥ (ـً), kasr (ـٍ), or ḍamm (ـٌ). A doubled mark = tanwīn; a single mark = a plain vowel.
+
+</div>

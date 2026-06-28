@@ -1,5 +1,6 @@
 ---
 title: "أسلوب الشرط في القرآن"
+title_en: "Conditional Constructions in the Qur'an"
 category: mustawa3
 kind: guide
 order: 21
@@ -59,6 +60,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## الهدف
 
@@ -181,3 +184,108 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة
 
 > أسلوب الشرط في القرآن على نوعين: **جازم** (إن، من، ما، مهما، متى، أينما، أيٌّ) يجزم فعل الشرط وجوابه، و**غير جازم** (إذا، لو، لولا، كلَّما) لا يغيِّر إعراب الفعل. والفرق الدلالي الرئيسي بين «إن» و«إذا»: «إن» للمحتمل أو المشكوك فيه، و«إذا» لما هو متوقَّع وقوعه.
+
+</div>
+
+<div data-lang-block="en">
+
+## Goal
+
+By the end of this lesson you will be able to:
+- Distinguish jussive from non-jussive conditional particles in the Qur'an
+- Parse the condition verb (*fiʿl al-sharṭ*) and its response (*jawāb al-sharṭ*)
+- Grasp the semantic difference between key conditional particles
+
+---
+
+## Rule: the conditional construction
+
+Every conditional sentence has three parts:
+
+**Conditional particle + condition verb + response verb**
+
+---
+
+### 1. Non-jussive particles
+
+These do not change the verb's ending (it stays indicative):
+
+| Particle | Meaning | Note |
+|---|---|---|
+| **إذا** | when (expected outcome) | the most common in the Qur'an |
+| **لو** | if (counterfactual) | the response did not happen because the condition did not |
+| **لولا** | were it not for | "were it not for X, Y would have happened" |
+| **كلَّما** | every time | repeated condition and response |
+
+---
+
+### 2. Jussive particles
+
+<Mermaid code={String.raw`flowchart TD
+  SH["Conditional particles"] --> J["Jussive<br/>(puts both verbs in jussive)"]
+  SH --> NJ["Non-jussive<br/>(no change to ending)"]
+  J --> J1["إنْ — مَن — ما — مهما"]
+  J --> J2["متى — أينما — أيٌّ"]
+  NJ --> NJ1["إذا — لو — لولا"]
+  NJ --> NJ2["كلَّما"]`} />
+
+These particles put **both** verbs into the jussive:
+
+| Particle | Meaning | Note |
+|---|---|---|
+| **إنْ** | if (possible / uncertain) | the foundational conditional particle |
+| **مَن** | whoever (rational beings) | carries a general, universal sense |
+| **ما** | whatever (non-rational / time) | "any thing" |
+| **مهما** | no matter what | emphasises totality |
+| **متى** | whenever | general time |
+| **أينما** | wherever | general place |
+| **أيٌّ** | whichever / whoever | followed by a noun it is added to |
+
+---
+
+### 3. Parsing the conditional sentence
+
+When a jussive particle applies:
+- **Condition verb**: jussive (sign: *sukūn*, drop of *nūn*, or drop of weak letter)
+- **Response verb**: jussive if it is a bare imperfect
+- **If the response begins with فاء** (the response *fāʾ*): the following verb does not need to be jussive
+
+---
+
+## From the Qur'an
+
+> ﴿إِن تَنصُرُوا اللَّهَ يَنصُرْكُمْ﴾ (Muḥammad: 7)
+
+*in tanṣurū Allāha yanṣurkum* — "If you support God, He will support you." **إنْ**: jussive particle. *Tanṣurū*: condition verb, jussive (drop of *nūn*). *Yanṣurkum*: response, jussive (*sukūn*).
+
+> ﴿مَن يَعْمَلْ سُوءًا يُجْزَ بِهِ﴾ (al-Nisāʾ: 123)
+
+*man yaʿmal sūʾan yujza bihi* — "Whoever does evil will be recompensed for it." **مَن**: jussive for rational beings. *Yaʿmal*: jussive (*sukūn*). *Yujza*: jussive (drop of *alif* — defective passive verb, originally *yujzā*).
+
+> ﴿إِذَا جَاءَ نَصْرُ اللَّهِ وَالْفَتْحُ﴾ (al-Naṣr: 1)
+
+*idhā jāʾa naṣru Allāhi wa-l-fatḥ* — "When God's help and the opening come." **إذا**: non-jussive. *Jāʾa*: past verb, ending unchanged.
+
+> ﴿وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا﴾ (al-Ṭalāq: 2)
+
+*wa-man yattaqi Allāha yajʿal lahu makhrajā* — "Whoever is mindful of God, He will make a way out for him." *Yattaqi*: jussive (drop of *yāʾ*). *Yajʿal*: jussive (*sukūn*).
+
+---
+
+## Vocabulary
+
+| Word | Root | Meaning | Qur'anic context |
+|---|---|---|---|
+| نَصَرَ / يَنصُرُ | ن ص ر | to help, to support | ﴿إِن تَنصُرُوا اللَّهَ يَنصُرْكُمْ﴾ |
+| يَتَّقِي | و ق ي | to be mindful of God | ﴿وَمَن يَتَّقِ اللَّهَ﴾ |
+| مَخْرَج | خ ر ج | a way out, an exit | ﴿يَجْعَل لَّهُ مَخْرَجًا﴾ |
+| يُجزَى | ج ز ي | to be recompensed | ﴿يُجْزَ بِهِ﴾ |
+| فَتْح | ف ت ح | opening, victory | ﴿نَصْرُ اللَّهِ وَالْفَتْحُ﴾ |
+
+---
+
+## In a nutshell
+
+> The Qur'an uses two types of conditional: **jussive** (إنْ, مَن, ما, مهما, متى, أينما, أيٌّ) — puts both verbs in the jussive — and **non-jussive** (إذا, لو, لولا, كلَّما) — leaves verb endings unchanged. Key semantic contrast: **إنْ** signals a possible or uncertain condition; **إذا** signals an expected one; **لو** is counterfactual — neither condition nor response actually occurred.
+
+</div>

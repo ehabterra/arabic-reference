@@ -6,11 +6,11 @@
 const clientId = import.meta.env.PUBLIC_GOOGLE_CLIENT_ID || '';
 ---
 <section class="dp-comments" id="dp-comments">
-  <h2 class="dp-comments__title">التعليقات</h2>
+  <h2 class="dp-comments__title" data-i18n="comments.title">التعليقات</h2>
 
   {clientId ? (
     <>
-      <p class="dp-comments__hint" id="dp-cmt-hint">سجّل الدخول بحساب Google للمشاركة في النقاش.</p>
+      <p class="dp-comments__hint" id="dp-cmt-hint" data-i18n="comments.hint">سجّل الدخول بحساب Google للمشاركة في النقاش.</p>
       <div class="dp-cmt-auth" id="dp-cmt-auth"></div>
       <form class="dp-cmt-form" id="dp-cmt-form" hidden>
         <textarea
@@ -20,13 +20,13 @@ const clientId = import.meta.env.PUBLIC_GOOGLE_CLIENT_ID || '';
           maxlength="2000"
           required
           placeholder="شارك بتعليقك أو سؤالك…"></textarea>
-        <button type="submit" class="dp-cmt-submit">نشر التعليق</button>
+        <button type="submit" class="dp-cmt-submit" data-i18n="comments.submit">نشر التعليق</button>
       </form>
-      <p class="dp-cmt-privacy">بنشر تعليقك يُحفَظ اسمك وصورتك ومعرّف حساب Google فقط — <strong>دون بريدك الإلكتروني</strong>. ويمكنك حذف تعليقك في أي وقت.</p>
+      <p class="dp-cmt-privacy" data-i18n-html="comments.privacy">بنشر تعليقك يُحفَظ اسمك وصورتك ومعرّف حساب Google فقط — <strong>دون بريدك الإلكتروني</strong>. ويمكنك حذف تعليقك في أي وقت.</p>
       <ul class="dp-cmt-list" id="dp-cmt-list" aria-live="polite"></ul>
     </>
   ) : (
-    <p class="dp-comments__hint">
+    <p class="dp-comments__hint" data-i18n-html="comments.notConfigured">
       التعليقات غير مُفعَّلة بعد — يلزم ضبط <code>PUBLIC_GOOGLE_CLIENT_ID</code>.
     </p>
   )}

@@ -1,5 +1,6 @@
 ---
 title: "قياس الحروف بالنقاط"
+title_en: "Measuring Letters with Dots: The Calligrapher's Ruler"
 category: usus
 kind: topic
 order: 2
@@ -59,6 +60,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## الهدف
 
@@ -154,3 +157,104 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة
 
 > النقطة هي القانون — تُحرّرك من التبعية للمسطرة. كلما تدرّبتَ كلّما أصبحت عينُك هي المسطرة.
+
+</div>
+
+<div data-lang-block="en">
+
+## Goal
+
+Before drawing a letter, you need to know **how tall it should be**. The dot system is the calligrapher's ruler — learn it and you will never need a millimetre measure again.
+
+---
+
+## What is a dot?
+
+The **dot** (نقطة, *nuqta*) in calligraphy terminology is the small impression the pen nib leaves when pressed flat onto the paper:
+
+- **Roughly square** when the pen has a straight-cut nib.
+- **Equal to the width of the pen nib** — whatever that width happens to be.
+
+> **Key insight:** Change your pen, change your dot — and change every single dimension with it.
+
+---
+
+## Visual representation of dots
+
+Imagine your pen nib leaving a square stamp ◆ with each press. Here is how Alif is measured:
+
+```
+◆  ← dot 1 (top of Alif)
+◆  ← dot 2
+◆  ← dot 3
+◆  ← dot 4
+──── ← baseline
+```
+
+This means **Alif in Naskh** is approximately **4 dots** tall above the baseline (verified visually against models).
+
+---
+
+## Dot-measurement diagram
+
+<Mermaid code={String.raw`flowchart LR
+  P["◆ Dot<br/>= pen-nib width"] --> A["Alif / Lam / Kaf<br/>≈ 4–5 dots"]
+  P --> S["Sin / Sad / Ayn<br/>≈ 2–3 dots"]
+  P --> B["Ba / Ta / Tha<br/>≈ 1–2 dots"]`} />
+
+---
+
+## Approximate letter heights in Naskh
+
+> **Note:** The numbers below are approximate, drawn from calligraphy sources. Visual verification against book models is required for precise confirmation.
+
+| Letter | Height in dots | Note |
+|---|---|---|
+| أ ل ك | ~4–5 dots | Tallest letters (verified visually) |
+| ط ظ | ~3–4 dots | Tall closed body |
+| ع غ ح خ ج | ~3 dots | Round-bodied letters |
+| س ش ص ض | ~2–3 dots | Medium-height letters |
+| م ف ق | ~2 dots | Round head above baseline |
+| ب ت ث ي | ~1–2 dots | Short letters close to baseline |
+
+---
+
+## Relative proportions: letters in relation to each other
+
+The exact count matters less than the **ratio** between letters:
+
+| Letter | Approximate ratio to Alif |
+|---|---|
+| أ (Alif) | 100% — the reference letter |
+| ل (Lam) | ~100% — equal to Alif |
+| ع (Ayn) isolated | ~60–70% |
+| ب (Ba) | ~25–30% |
+
+---
+
+## How dot systems differ across scripts
+
+| Script | Characteristics in the dot system |
+|---|---|
+| **Naskh** | Moderate ratios, balanced heights |
+| **Ruqʿa** | All letters shorter and more compact than Naskh |
+| **Thuluth** | Alif much taller (~7–9 dots) (verified visually) |
+| **Farisi** | Letters lean; the dot is rectangular not square |
+| **Diwani** | No fixed dot-count — greater freedom of proportion |
+
+---
+
+## Common mistakes
+
+- **Measuring letters with a ruler**: wrong — always measure with relative dots.
+- **Changing pens mid-session**: a different pen width throws all proportions off.
+- **Forgetting the dot is relative**: a dot from a 2 mm pen does not equal a dot from a 4 mm pen.
+- **Mechanical counting**: practice trains the eye for proportion — do not literally count every letter.
+
+---
+
+## In a nutshell
+
+> The dot is the law — it frees you from the ruler. The more you practise, the more your eye becomes the ruler.
+
+</div>

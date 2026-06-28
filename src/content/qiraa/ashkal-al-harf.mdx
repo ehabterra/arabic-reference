@@ -1,5 +1,6 @@
 ---
 title: "أشكال الحرف بحسب موضعه"
+title_en: "Letter Shapes by Position in a Word"
 category: huruf
 kind: topic
 order: 2
@@ -68,6 +69,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## الهدف
 
@@ -165,3 +168,106 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة
 
 > الحرف العربي يأخذ شكلًا من 4 أشكال بحسب موضعه: **مفرد — أوَّل — وسط — آخر**. 22 حرفًا تتصل من الجانبين، و6 حروف لا تتصل بما بعدها (ا د ذ ر ز و). معرفة هذه الأشكال ضرورة لا غنى عنها لتمييز الحروف داخل الكلمة.
+
+</div>
+
+<div data-lang-block="en">
+
+## Goal
+
+An Arabic letter does not always look the same. Its shape changes depending on where it falls in a word. This lesson covers the four positions and how each letter adapts.
+
+---
+
+## The Four Positions
+
+<Mermaid code={String.raw`flowchart LR
+  A["Isolated<br/>(standalone)"] --> B["Initial<br/>(connects to next)"]
+  B --> C["Medial<br/>(connects both sides)"]
+  C --> D["Final<br/>(connects to previous)"]`} />
+
+---
+
+## Table 1 — Letters That Connect on Both Sides
+
+| Letter | Isolated | Initial | Medial | Final |
+|---|---|---|---|---|
+| *Bāʾ* ب | ب | بـ | ـبـ | ـب |
+| *Tāʾ* ت | ت | تـ | ـتـ | ـت |
+| *Thāʾ* ث | ث | ثـ | ـثـ | ـث |
+| *Nūn* ن | ن | نـ | ـنـ | ـن |
+| *Yāʾ* ي | ي | يـ | ـيـ | ـي |
+| *Jīm* ج | ج | جـ | ـجـ | ـج |
+| *Ḥāʾ* ح | ح | حـ | ـحـ | ـح |
+| *Khāʾ* خ | خ | خـ | ـخـ | ـخ |
+| *Sīn* س | س | سـ | ـسـ | ـس |
+| *Shīn* ش | ش | شـ | ـشـ | ـش |
+| *Ṣād* ص | ص | صـ | ـصـ | ـص |
+| *Ḍād* ض | ض | ضـ | ـضـ | ـض |
+| *Ṭāʾ* ط | ط | طـ | ـطـ | ـط |
+| *Ẓāʾ* ظ | ظ | ظـ | ـظـ | ـظ |
+| *ʿAyn* ع | ع | عـ | ـعـ | ـع |
+| *Ghayn* غ | غ | غـ | ـغـ | ـغ |
+| *Fāʾ* ف | ف | فـ | ـفـ | ـف |
+| *Qāf* ق | ق | قـ | ـقـ | ـق |
+| *Kāf* ك | ك | كـ | ـكـ | ـك |
+| *Lām* ل | ل | لـ | ـلـ | ـل |
+| *Mīm* م | م | مـ | ـمـ | ـم |
+| *Hāʾ* ه | ه | هـ | ـهـ | ـه |
+
+---
+
+## Table 2 — The Six Non-Connecting Letters
+
+These 6 letters never connect to the letter that follows them, creating a visual break in the word:
+
+| Letter | Isolated | Initial | Medial | Final |
+|---|---|---|---|---|
+| *Alif* ا | ا | ا | ـا | ـا |
+| *Dāl* د | د | د | ـد | ـد |
+| *Dhāl* ذ | ذ | ذ | ـذ | ـذ |
+| *Rāʾ* ر | ر | ر | ـر | ـر |
+| *Zāy* ز | ز | ز | ـز | ـز |
+| *Wāw* و | و | و | ـو | ـو |
+
+> Notice that in initial and medial positions these letters look the same as isolated — because they do not connect forward.
+
+---
+
+## Worked Example: كَتَبَ (*kataba*, he wrote)
+
+| Position | Letter | Shape used | Note |
+|---|---|---|---|
+| Initial | ك | كـ | connects to next |
+| Medial | ت | ـتـ | connects both sides |
+| Final | ب | ـب | connects to previous only |
+
+→ Full word: **كَتَبَ**
+
+---
+
+## Worked Example with Non-Connector: دَار (*dār*, house)
+
+| Position | Letter | Shape used | Note |
+|---|---|---|---|
+| Initial | د | د | does not connect forward |
+| Medial | ا | ـا | does not connect forward |
+| Final | ر | ـر | does not connect forward |
+
+→ Full word: **دَار** (three visually separate units)
+
+---
+
+## Common Mistakes
+
+- **Reading letters in their isolated form inside a word.** You must recognise connected shapes like ـعـ inside «مَعلم» (*muʿallim*, teacher).
+- **Forgetting the six non-connectors**, which causes confusion about where one word ends and the next begins.
+- **Confusing ـهـ (medial hāʾ) and ـحـ (medial ḥāʾ).** The hāʾ looks more closed/looped; the ḥāʾ is more open.
+
+---
+
+## Summary
+
+> An Arabic letter takes one of **4 shapes** depending on its position: **isolated — initial — medial — final**. 22 letters connect on both sides; 6 letters (ا د ذ ر ز و) never connect forward. Mastering these shapes is essential to identifying letters inside words.
+
+</div>

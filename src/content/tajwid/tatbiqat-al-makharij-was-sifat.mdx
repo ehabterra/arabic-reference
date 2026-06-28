@@ -1,5 +1,6 @@
 ---
 title: "تطبيقات على المخارج والصفات"
+title_en: "Practical Applications of Makhārij and Ṣifāt"
 category: makharij
 kind: topic
 order: 4
@@ -60,6 +61,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## تطبيقات على المخارج والصفات
 
@@ -207,3 +210,156 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة
 
 > التطبيق العملي جوهر تعلُّم التجويد. طريقة تحديد المخرج: سكِّن الحرف وتلمَّس انقطاع الصوت. والتمييز بين المتشابهين يعتمد على الصفات لا المخرج وحده. الضاد والشين والفاء من أكثر الحروف التي يُخطَأ فيها — وعلاجها التلقّي من المشايخ والتدريب المتكرر المنتظم.
+
+</div>
+
+<div data-lang-block="en">
+
+## Practical applications of makhārij and ṣifāt
+
+This lesson is practical: we train in identifying articulation points (*makhārij*) and distinguishing phonetic characteristics (*ṣifāt*) through worked examples and direct phonetic analysis.
+
+---
+
+## 1. Finding a makhraj in practice
+
+### The concise method
+
+1. **Give** the letter a *sukūn* (quiescence).
+2. **Prefix** a *hamzat al-waṣl* («اِ»).
+3. **Pronounce** the syllable aloud.
+4. **Feel** where the sound terminates — that is its *makhraj*.
+
+### Applying the method to selected letters
+
+| Letter | Syllable | Where sound terminates | Makhraj |
+|---|---|---|---|
+| بـ *bāʾ* | اِبْ | Lips pressing shut | Lips (*shafatān*) |
+| دـ *dāl* | اِدْ | Tongue-tip + roots of upper incisors | Tongue — palatal (*naṭʿī*) |
+| قـ *qāf* | اِقْ | Farthest tongue-back + upper palate | Tongue — uvular (*lahawī*) |
+| حـ *ḥāʾ* | اِحْ | Mid-throat | Throat (*ḥalq*) |
+| مـ *mīm* | اِمْ | Lips pressing shut (+ nasal resonance) | Lips + *khayshūm* |
+
+---
+
+## 2. Distinguishing letters that share a makhraj
+
+<Mermaid code={String.raw`flowchart TD
+  A["Same makhraj —<br/>differ in ṣifa"] --> B["ح and ع<br/>mid-throat"]
+  A --> C["ذ and ظ<br/>tongue-tip"]
+  A --> D["ط and د and ت<br/>tongue-tip palatal"]
+  B --> E["ح: breathed (hams)<br/>ع: voiced (jahr)"]
+  C --> F["ذ: low open<br/>ظ: raised sealed"]
+  D --> G["ط: voiced + sealed<br/>د: voiced + open<br/>ت: breathed + open"]`} />
+
+### ح *ḥāʾ* and ع *ʿayn* — same makhraj, different ṣifa
+
+| Feature | ح *ḥāʾ* | ع *ʿayn* |
+|---|---|---|
+| Makhraj | Mid-throat | Mid-throat |
+| Voicing | **Breathed** (*mahmūs*) — breath flows freely | **Voiced** (*majhūr*) — breath is held back |
+| Practical distinction | Lighter, airier sound | Fuller, heavier sound |
+
+Try it: say «حَيّ» then «عَيّ» — feel the difference in breath flow.
+
+---
+
+### ذ *dhāl* and ظ *ẓāʾ* — same makhraj, different ṣifa
+
+| Feature | ذ *dhāl* | ظ *ẓāʾ* |
+|---|---|---|
+| Makhraj | Tongue-tip + upper-incisor edges | Tongue-tip + upper-incisor edges |
+| Tongue position | **Istifāl** — tongue stays low | **Istiʿlāʾ + Iṭbāq** — tongue rises and seals |
+| Practical distinction | Thin, light (*raqīq*) sound | Full, heavy (*mufakhkham*) sound |
+
+Try it: compare «ذَهَبَ» and «ظَلَمَ» — ظـ is heavy, ذـ is light.
+
+---
+
+### ط *ṭāʾ*, د *dāl*, ت *tāʾ* — shared palatal makhraj (*naṭʿī*)
+
+All three originate from the tongue-tip meeting the roots of the upper incisors — yet their *ṣifāt* differ:
+
+| Letter | Voiced (*Jahr*) | Breathed (*Hams*) | Sealed (*Iṭbāq*) | Raised (*Istiʿlāʾ*) |
+|---|---|---|---|---|
+| ط *ṭāʾ* | Yes | — | **Yes** | **Yes** |
+| د *dāl* | Yes | — | No | No |
+| ت *tāʾ* | — | Yes | No | No |
+
+> ط is the strongest of the three, combining voicing + sealing + raising + stopping (*shadda*).
+
+---
+
+## 3. Applied ṣifāt
+
+### Qalqala (قلقلة): degrees in flowing and pausing recitation
+
+| Letter | Example | State | Degree |
+|---|---|---|---|
+| بـ *bāʾ* | «كَبِير» (flowing) | Subtle | Lowest |
+| جـ *jīm* | «جَعَلَ» (flowing) | Subtle | Lowest |
+| دـ *dāl* | «أَحَد» (paused) | Clear | Middle |
+| قـ *qāf* | «الحَقّ» (paused on doubled) | Strongest | Highest |
+
+---
+
+### Ṣafīr (صفير): strength order for ص, ز, س
+
+| Letter | Example | Whistle strength | Reason |
+|---|---|---|---|
+| ص *ṣād* | «صَبَرَ» | Strongest | Sealed (*muṭbaqa*) + raised (*mustaʿliya*) |
+| ز *zāy* | «زَيت» | Middle | Voiced (*majhūr*) |
+| س *sīn* | «سَلِمَ» | Weakest | Breathed and open |
+
+---
+
+## 4. Phonetic analysis of key letters
+
+| Letter | Makhraj | Main ṣifāt |
+|---|---|---|
+| ض *ḍād* | Lateral tongue-edge + upper molars | Voiced, fricative, raised, sealed, elongated (*istiṭāla*) |
+| ش *shīn* | Mid-tongue + upper palate | Breathed, fricative, low, open, spreading (*tafashī*) |
+| ق *qāf* | Farthest tongue-back + palate | Voiced, stop, raised, open, qalqala |
+| م *mīm* | Both lips — pressed shut | Voiced, intermediate, low, open, agile (*mudhlaqa*), nasal (*ghunna*) |
+| هـ *hāʾ* | Farthest throat | Breathed, fricative, low, open |
+| س *sīn* | Tongue-tip just above lower incisors | Breathed, fricative, low, open, sibilant (*ṣafīr*) |
+
+---
+
+## 5. Common pronunciation errors and corrections
+
+| Common error | Letter | Correction |
+|---|---|---|
+| Pronouncing ض like دـ or تـ | ض *ḍād* | ض: lateral tongue-edge + molars, sealed and raised. دـ/تـ: tongue-tip, low and open — different *makhraj* and *ṣifa* |
+| Pronouncing شـ like سـ (without tafashī) | ش *shīn* | شـ requires broad air-spread in the mouth; سـ is focused and forward |
+| Ignoring qalqala of جـ and بـ | ج، ب | Qalqala is obligatory in all 5 letters (قطب جد), not only قـ and طـ |
+| Pronouncing فـ with both lips pressed shut | ف *fāʾ* | فـ: inner lower lip + upper incisors — not closed lips like بـ |
+| Rolling رـ audibly | ر *rāʾ* | Takrirr is intrinsic to رـ but must not be displayed audibly |
+| Confusing حـ and هـ | ح، هـ | حـ: mid-throat, breathed; هـ: farthest throat — different *makhraj* |
+
+---
+
+## 6. Self-test exercise
+
+Identify the *makhraj* and two key *ṣifāt* for each letter:
+
+| Letter | Makhraj | Two key ṣifāt |
+|---|---|---|
+| هـ *hāʾ* | ? | ? |
+| س *sīn* | ? | ? |
+| ل *lām* | ? | ? |
+| خ *khāʾ* | ? | ? |
+
+**Answers**:
+- **هـ *hāʾ***: farthest throat — breathed, fricative.
+- **س *sīn***: tongue-tip just above lower incisors — breathed, sibilant (*ṣafīr*).
+- **ل *lām***: lower tongue-edge + upper gum-ridge — voiced, intermediate (*tawassuṭ*), deflecting (*inḥirāf*).
+- **خ *khāʾ***: nearest throat — breathed, fricative, raised (*istiʿlāʾ*).
+
+---
+
+## Summary
+
+> Practical application is the heart of learning tajwīd. To find a *makhraj*: quiesce the letter and feel where the sound terminates. Distinguishing similar-*makhraj* letters depends on *ṣifāt*, not *makhraj* alone. ض, شـ, and فـ are the most commonly mispronounced — the remedy is direct transmission from authorised teachers and regular, sustained practice.
+
+</div>

@@ -1,5 +1,6 @@
 ---
 title: "الخبر والإنشاء في علم المعاني"
+title_en: "Declarative and Performative Speech: Khabar and Inshāʾ"
 category: maani
 kind: topic
 order: 10
@@ -59,6 +60,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## الخبر والإنشاء: المدخل
 
@@ -181,3 +184,124 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة القاعدة
 
 > الكلام إما **خبر** يحتمل الصدق والكذب، وإما **إنشاء** لا يحتملهما. الخبر ثلاثة أضرب: ابتدائي وطلبي وإنكاري — تُحدِّده حال المخاطَب. والإنشاء نوعان: **طلبي** يستدعي مطلوباً (الأمر والنهي والاستفهام والنداء والتمني)، و**غير طلبي** لا يستدعيه (المدح والذم والتعجب والعقود). وخروج الأسلوب عن معناه الحقيقي إلى غرض بلاغي هو ما يُميِّز كلام البلغاء ويُقوي أثره في النفوس.
+
+</div>
+
+<div data-lang-block="en">
+
+## ʿIlm al-maʿānī and the primacy of khabar/inshāʾ
+
+**ʿIlm al-maʿānī** (science of meanings) studies sentences from the angle of their **fitness for the occasion and audience** (*muqtaḍā al-ḥāl*). Its most fundamental distinction is between:
+
+- **Khabar** (خبر) — declarative statement: makes a claim about reality.
+- **Inshāʾ** (إنشاء) — performative statement: does not report reality but enacts meaning in the moment of utterance.
+
+---
+
+## 1. Khabar (declarative speech)
+
+### Definition
+**Khabar** is a statement that **can be true or false** by reference to reality, independently of the speaker's status.
+
+- *al-shamsu mushriqatun* — "The sun is shining." (True by day, false at night.)
+- *Zaydun qādimun* — "Zayd is coming." (May or may not be so.)
+
+> **Important nuance:** Truth/falsity is a property of the **statement structure**, not the speaker. The Prophet's ﷺ words are always true — but the grammatical form of any sentence is structurally capable of being verified against reality.
+
+### The three registers of khabar
+
+The appropriate register depends on the **state of the addressee**:
+
+| Register | Addressee | Intensifiers used | Example |
+|---|---|---|---|
+| **Ibtidāʾī** (plain) | Blank slate; no prior opinion | None | *al-ʿilmu nāfiʿun* — "Knowledge is beneficial" |
+| **Ṭalabī** (supported) | Hesitant or doubting | One (*inna*, *qad*, *lām*) | *inna l-ʿilma nāfiʿun* |
+| **Inkārī** (emphatic) | Outright denying | Two or more | *wa-llāhi inna l-ʿilma la-nāfiʿun* |
+
+### Tools of intensification (*tawkīd*)
+
+- **Inna / anna:** *inna l-ḥaqqa wāḍiḥun*
+- **Emphatic lām** (*lām al-muzḥliqā*): *inna l-ḥaqqa **la-**wāḍiḥun*
+- **Qad** (perfect aspect): *qad najaḥa l-ṭālibu* — "The student has indeed succeeded"
+- **Oath:** *wa-llāhi la-afʿalanna*
+- **Nominal sentence** is inherently more stable than a verbal one (implies permanence and constancy)
+
+---
+
+## 2. Inshāʾ (performative speech)
+
+### Definition
+**Inshāʾ** is speech that **cannot be true or false** — because it does not report a state of affairs but **creates** meaning in the very act of utterance.
+
+- *ijlis* — "Sit down!" Can't be true or false; only complied with or refused.
+- *hal ḥaḍarta?* — "Did you attend?" Requests information; asserts nothing.
+
+### Types of inshāʾ
+
+<Mermaid code={String.raw`flowchart TD
+  A["Inshāʾ"] --> B["Ṭalabī<br/>(requests something not yet achieved)"]
+  A --> C["Ghayr ṭalabī<br/>(enacts without requesting)"]
+  B --> B1["Amr — command"]
+  B --> B2["Nahy — prohibition"]
+  B --> B3["Istifhām — question"]
+  B --> B4["Nidāʾ — vocative"]
+  B --> B5["Tamannī — wish"]
+  C --> C1["Madḥ / dhamm<br/>(niʿma / biʾsa)"]
+  C --> C2["Taʿajjub — exclamation"]
+  C --> C3["ʿAqd formulas — contracts"]`} />
+
+#### A. Inshāʾ ṭalabī (requestive)
+
+Demands something that does not yet exist at the time of utterance:
+
+| Type | Arabic | Example |
+|---|---|---|
+| **Amr** (command) | أمر | *iqraʾ kitābaka* — "Read your book!" |
+| **Nahy** (prohibition) | نهي | *lā tuhmil wājibaka* — "Don't neglect your duty!" |
+| **Istifhām** (question) | استفهام | *ayna dhahabta?* — "Where did you go?" |
+| **Nidāʾ** (vocative) | نداء | *yā ayyuhā l-ṭullābu* — "O students!" |
+| **Tamannī** (wish for the distant/impossible) | تمنٍّ | *layta l-shabāba yaʿūdu* — "If only youth would return!" |
+
+#### B. Inshāʾ ghayr ṭalabī (non-requestive)
+
+Enacts meaning without demanding a response:
+
+- **Praise/blame:** *niʿma l-rajulu l-amīnu* — "How excellent is the trustworthy man!" (*niʿma* performs the praise).
+- **Exclamation:** *mā ajmala l-samāʾa!* — "How beautiful is the sky!"
+- **Contract formulas:** *biʿtuka hādhā l-kitāba* — "I sell you this book" (the sale *is* the utterance).
+
+---
+
+## 3. The rhetorical purposes of requestive inshāʾ
+
+### Commands (*amr*) beyond their literal sense
+
+| Utterance | Apparent form | Rhetorical purpose |
+|---|---|---|
+| *rabbi ghfir lī* — "My Lord, forgive me" | Command | **Duʿāʾ** — supplication (inferior to superior) |
+| *kulū wa-shrabū* — "Eat and drink" | Command | **Ibāḥa** — permission (no obligation implied) |
+| *sali l-ʿulamāʾa in kunta lā taʿlamu* | Command | **Irshād** — guidance/advice |
+| *dhụq innaka anta l-ʿazīzu l-karīmu* (44:49) | Command | **Tawbīkh/tahakkum** — sarcastic reproach |
+
+### Prohibitions (*nahy*) beyond their literal sense
+
+| Utterance | Rhetorical purpose |
+|---|---|
+| *rabbanā lā tuʾākhidhnā* — "Our Lord, do not take us to task" | **Duʿāʾ** — supplication |
+| *lā taḥzan inna llāha maʿanā* (9:40) — "Do not grieve; God is with us" | **Reassurance** and steadying of the heart |
+
+### Questions (*istifhām*) beyond their literal sense
+
+| Utterance | Rhetorical purpose |
+|---|---|
+| *a-fa-lā tubṣirūna?* — "Do you not see?" | **Tawbīkh** — reproach |
+| *man yamliku mā lā yamliku siwāhu?* | **Taʿajjub** — wonderment |
+| *hal jazāʾu l-iḥsāni illā l-iḥsān?* (55:60) | **Taqrīr** — affirmation by rhetorical question |
+
+---
+
+## In a nutshell
+
+> A statement is either **khabar** (can be true/false — it reports) or **inshāʾ** (cannot — it enacts). Khabar comes in three registers calibrated to the addressee: **ibtidāʾī** (plain, no intensifier), **ṭalabī** (one intensifier), **inkārī** (two or more). Inshāʾ divides into **ṭalabī** (command, prohibition, question, call, wish) and **ghayr ṭalabī** (praise, exclamation, contracts). Moving a form beyond its literal purpose — a command as supplication, a question as reproach — is the mark of eloquent, context-sensitive Arabic.
+
+</div>

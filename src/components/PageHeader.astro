@@ -13,20 +13,34 @@ const eyebrow =
   <p class="dp-hero__eyebrow">{eyebrow}{d.difficulty ? ` · ${d.difficulty}` : ''}</p>
   <h1><span data-lang-block="ar">{d.title}</span><span data-lang-block="en">{d.title_en ?? d.title}</span></h1>
   {d.intent && <p class="dp-hero__lede" data-i18n-html={`intent.${slug}`}>{d.intent}</p>}
-  {d.aka && <p class="dp-kicker" style="margin-top:.9rem">يُعرف أيضاً بـ — {d.aka}</p>}
+  {d.aka && (
+    <p class="dp-kicker" style="margin-top:.9rem">
+      <span data-lang-block="ar">يُعرف أيضاً بـ — {d.aka}</span>
+      <span data-lang-block="en"><span data-i18n="pageheader.aka">Also known as —</span> {d.aka}</span>
+    </p>
+  )}
   <div class="dp-badges" style="margin-top:1.1rem">
     <span class="dp-badge" data-cat={d.category}><span class="dp-dot"></span>{catLabel}</span>
     {d.difficulty && <span class="dp-badge dp-badge--muted">{d.difficulty}</span>}
-    {minutes && <span class="dp-badge dp-badge--muted">⏱ {minutes} دقيقة قراءة</span>}
-    <span class="dp-badge dp-badge--muted">{d.status === 'ready' ? 'مكتمل' : 'مسودة — المزيد قادم'}</span>
+    {minutes && (
+      <span class="dp-badge dp-badge--muted">
+        ⏱ {minutes}
+        <span data-lang-block="ar"> دقيقة قراءة</span>
+        <span data-lang-block="en"> <span data-i18n="pageheader.minutesRead">min read</span></span>
+      </span>
+    )}
+    <span class="dp-badge dp-badge--muted">
+      <span data-lang-block="ar">{d.status === 'ready' ? 'مكتمل' : 'مسودة — المزيد قادم'}</span>
+      <span data-lang-block="en">{d.status === 'ready' ? <span data-i18n="pageheader.ready">Complete</span> : <span data-i18n="pageheader.draft">Draft — more coming</span>}</span>
+    </span>
   </div>
   {(d.source || d.playground) && (
     <div class="dp-hero__cta">
       {d.playground && (
-        <a class="dp-btn dp-btn--primary" href={d.playground} target="_blank" rel="noopener">▶ تشغيل في Go Playground</a>
+        <a class="dp-btn dp-btn--primary" href={d.playground} target="_blank" rel="noopener" data-i18n="pageheader.playground">▶ تشغيل في Go Playground</a>
       )}
       {d.source && (
-        <a class="dp-btn dp-btn--ghost" href={d.source} target="_blank" rel="noopener">⌨ عرض المصدر</a>
+        <a class="dp-btn dp-btn--ghost" href={d.source} target="_blank" rel="noopener" data-i18n="pageheader.source">⌨ عرض المصدر</a>
       )}
     </div>
   )}

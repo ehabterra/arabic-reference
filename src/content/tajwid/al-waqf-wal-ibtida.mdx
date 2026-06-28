@@ -1,5 +1,6 @@
 ---
 title: "الوقف والابتداء"
+title_en: "Pausing and Resumption (Al-Waqf wa-l-Ibtidāʾ)"
 category: tilawa
 kind: topic
 order: 21
@@ -60,6 +61,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## الوقف والابتداء
 
@@ -196,3 +199,137 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة
 
 > الوقف قطع مع تنفس بنية الاستئناف، والقطع إنهاء كلي، والسكت قطع دون تنفس. أنواع الوقف الاختياري أربعة: **التام** أحسنها، **الكافي** جيِّد، **الحسن** مقبول، **القبيح** مرفوض اختياراً. والسكت لحفص في ستة مواضع بعينها. والابتداء مشروط باستقلال المعنى — فمعرفة الوقف والابتداء حِفاظٌ على المعنى القرآني قبل أن يكون فناً أدائياً.
+
+</div>
+
+<div data-lang-block="en">
+
+## Pausing and resumption — الوقف والابتداء (*al-waqf wa-l-ibtidāʾ*)
+
+Waqf and ibtidāʾ are among the subtlest chapters of Qurʾanic recitation — pausing in the wrong place can distort or invert meaning even when the phonetic recitation is otherwise correct.
+
+---
+
+## 1. Key definitions
+
+| Term | Definition |
+|---|---|
+| **الوقف** (*al-waqf* — pause) | Stopping the recitation with a breath, intending to resume — may occur at the end of an āya or within it |
+| **القطع** (*al-qaṭʿ* — cessation) | Ending the recitation completely with no intention to resume — requires a new *istiʿādha* when returning |
+| **السكت** (*al-sakt* — brief hold) | Cutting the sound without breathing, for exactly 2 beats, at specific prescribed positions |
+| **الابتداء** (*al-ibtidāʾ* — resumption) | Starting the recitation again after a waqf or qaṭʿ |
+
+---
+
+## 2. Types of waqf
+
+### Iḍṭirārī (اضطراري) — Involuntary
+Occurs due to an external factor beyond the reciter's control: breathlessness, sneezing, forgetting, coughing.
+
+**Ruling**: The reciter returns to the word paused on, or slightly before it, depending on meaning.
+
+### Intiẓārī (انتظاري) — Waiting-waqf
+Used when combining multiple variant readings — the reciter pauses to deliver different forms of the same word.
+
+### Ikhtibārī (اختباري) — Testing-waqf
+Occurs in a teaching or examination context — completeness of meaning is not required.
+
+### Ikhtiyārī (اختياري) — Intentional waqf
+The pause chosen voluntarily by the reciter — this is the type discussed in detail in tajwīd.
+
+---
+
+## 3. Four types of intentional waqf
+
+| Type | Definition | Muṣḥaf symbol |
+|---|---|---|
+| **التام (اللازم)** (*tāmm*) | Complete meaning; no grammatical or semantic connection to what follows | م / قلى |
+| **الكافي** (*kāfī*) | Complete meaning grammatically; semantic connection remains | ج / صل |
+| **الحسن** (*ḥasan*) | Meaningful in itself but grammatically connected to what follows | صلي |
+| **القبيح** (*qabīḥ*) | Meaning incomplete or misleading | لا |
+
+<Mermaid code={String.raw`flowchart TD
+  A["Intentional Waqf"] --> B["Tāmm<br/>best waqf and resumption"]
+  A --> C["Kāfī<br/>good — resumption fine"]
+  A --> D["Ḥasan<br/>good pause — poor resumption"]
+  A --> E["Qabīḥ<br/>not permitted intentionally"]`} />
+
+**Details**:
+- **Tāmm**: finest of all pauses — both pausing and resuming at this point are excellent.
+- **Kāfī**: pausing is good; resuming at the next word is fine.
+- **Ḥasan**: pausing is acceptable; resuming is poor because the text is grammatically tied to what precedes.
+- **Qabīḥ**: must not be done intentionally; if forced, resume from far enough back to restore meaning.
+
+> **Waqf al-murāqaba (المعانقة)**: marked with three dots (∴) at two adjacent positions — pause at one of the two, not both.
+
+---
+
+## 4. Ibtidāʾ (resumption)
+
+**Two types**:
+
+| Type | Definition |
+|---|---|
+| **Ḥasan** | The resumed passage stands alone in meaning — not harmed by disconnection from what preceded |
+| **Qabīḥ** | Suggests a wrong meaning or corrupts sense |
+
+**Rule**: Every *tāmm* waqf has a good ibtidāʾ. Sometimes ibtidāʾ is acceptable at a point where the waqf itself would be poor (e.g., after an involuntary stop).
+
+---
+
+## 5. How to pause on a final letter
+
+| Situation | How to pause |
+|---|---|
+| Fatḥatān tanwīn (ً) | Becomes an alif — «حَكِيماً» → «حَكِيمَا» |
+| Kasratān or ḍammatān tanwīn | Final consonant takes sukūn — «عَلِيمٍ» → «عَلِيم» |
+| Tāʾ marbūṭa (ة) | Pronounced as a silent hāʾ — «رَحمَةً» → «رَحمَهْ» |
+
+---
+
+## 6. Sakt positions for Ḥafṣ (Shāṭibiyya)
+
+**Al-sakt**: cutting the sound without breathing, for exactly 2 beats — at specific established positions only.
+
+**The 6 sakt positions for Ḥafṣ**:
+
+| # | Position | Sūra |
+|---|---|---|
+| 1 | On alif of «عِوَجَا» before «قَيِّماً» | Al-Kahf |
+| 2 | On alif of «مَرقَدِنا» | Yāsīn |
+| 3 | On nūn of «وَقِيلَ مَن رَاق» | Al-Qiyāma |
+| 4 | On lām of «كَلَّا بَل رَانَ» | Al-Muṭaffifīn |
+| 5 | On hāʾ of «مَاليَه» before «هَلَكَ» — or assimilation (two options) | Al-Ḥāqqa |
+| 6 | Between Sūrat al-Anfāl and al-Tawba on «عَلِيمٌ» then begin «بَرَاءَةٌ» without *basmala* | — |
+
+---
+
+## 7. Waqf symbols in the Muṣḥaf
+
+| Symbol | Meaning |
+|---|---|
+| م | Lāzim waqf — must pause here |
+| لا | Do not pause here |
+| ج | Permitted — pausing and connecting are equal |
+| صلي | Connecting is preferred over pausing |
+| قلى | Pausing is preferred over connecting |
+| ∴ | Murāqaba — pause at one of the two positions, not both |
+
+---
+
+## Common mistakes
+
+- **Always pausing at the end of each āya**: end-of-āya is not automatic proof of complete meaning — the pause may still be qabīḥ.
+- **Resuming mid-sentence**: may corrupt meaning even if the phonetics are correct.
+- **Ignoring the prescribed sakt positions**: the 6 positions are an established transmission from Ḥafṣ — omitting them is a departure from the narration.
+- **A qabīḥ waqf that corrupts creed**: e.g. stopping on «لا تقربوا الصلاة» without continuing «وأنتم سكارى».
+- **Confusing waqf and qaṭʿ**: qaṭʿ requires a new *istiʿādha* when returning; waqf does not.
+- **Extending or shortening sakt**: the sakt is exactly 2 beats.
+
+---
+
+## Summary
+
+> Waqf is stopping with a breath and intending to resume; qaṭʿ is complete cessation; sakt is stopping without breathing. Intentional waqf has four types: **tāmm** (best), **kāfī** (good), **ḥasan** (acceptable), **qabīḥ** (rejected when intentional). Sakt in Ḥafṣ's recitation occurs at 6 specific positions. Ibtidāʾ requires the resumed passage to stand alone in meaning — knowledge of waqf and ibtidāʾ is, before anything else, a safeguard for the meaning of the Qurʾan.
+
+</div>

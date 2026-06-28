@@ -1,5 +1,6 @@
 ---
 title: "الشدة وحروف المدّ"
+title_en: "Shadda and the Long Vowels (Madd)"
 category: harakat
 kind: topic
 order: 12
@@ -71,6 +72,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## الهدف
 
@@ -183,3 +186,122 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة
 
 > **الشدة (ّ)** تعني حرفًا مضعَّفًا = حرف ساكن + حرف متحرك بنفس الصورة، مُدغَمَيْن. **حروف المدّ ثلاثة**: الألف الساكنة بعد فتحة، والواو الساكنة بعد ضمة، والياء الساكنة بعد كسرة. هذه الأصوات الطويلة أساس التلاوة الصحيحة.
+
+</div>
+
+<div data-lang-block="en">
+
+## Goal
+
+This lesson covers two interrelated features:
+
+1. **Shadda (الشدة)** — consonant doubling: the first copy is silent, the second carries a vowel.
+2. **The three long vowels (حروف المدّ)** — long *ā*, *ū*, and *ī* sounds that extend a short vowel.
+
+---
+
+## Part 1 — Shadda (Consonant Doubling)
+
+### What is shadda?
+
+A letter with a shadda is **doubled**: it represents two identical consecutive letters fused into one — the first silent, the second with a vowel.
+
+> بَبَّ = بَ + بْ + بَ → (merged) → بَبَّ
+
+### Shadda combined with vowels
+
+| Shadda with | Symbol | Example |
+|---|---|---|
+| Fatḥa | ـَّ | رَبَّنَا (*Rabbanā*, Our Lord) |
+| Kasra | ـِّ | رَبِّ (*Rabbi*, My Lord) |
+| Ḍamma | ـُّ | عَدُوٌّ (*ʿaduwwun*, enemy) |
+| Sukūn (pause) | ـّْ | شَدَّ paused: *shadd* |
+
+<div style="display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0;align-items:center">
+<button class="dp-speak" data-speak="بَّ"><span class="khat-sample" style="font-size:1.4rem">بَّ</span> <span class="dp-speak__icon">🔊</span></button>
+<button class="dp-speak" data-speak="رَبِّ"><span class="khat-sample" style="font-size:1.4rem">رَبِّ</span> <span class="dp-speak__icon">🔊</span></button>
+</div>
+
+### Quranic examples
+
+| Word | Doubled letter | Vowel on it |
+|---|---|---|
+| رَبِّ (*Rabbi*) | بّ | kasra |
+| إِنَّ (*inna*, indeed) | نّ | fatḥa |
+| الحَقُّ (*al-ḥaqqu*, the Truth) | قّ | ḍamma |
+| شَدِيد (*shadīd*, severe) | no shadda | — |
+
+---
+
+## Part 2 — Long Vowels (حروف المدّ)
+
+### The golden rule
+
+There are **three** long-vowel letters, each requiring one specific condition:
+
+| Long-vowel letter | Condition | Example |
+|---|---|---|
+| Silent *alif* (ا) | preceded by **fatḥa** | كِتَـ**ا**ب (*kitāb* — the *tāʾ* has fatḥa) |
+| Silent *wāw* (و) | preceded by **ḍamma** | نُـ**و**ح (*Nūḥ* — the *nūn* has ḍamma) |
+| Silent *yāʾ* (ي) | preceded by **kasra** | كَرِ**ي**م (*karīm* — the *rāʾ* has kasra) |
+
+<div style="display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0;align-items:center">
+<button class="dp-speak" data-speak="بَا"><span class="khat-sample" style="font-size:1.4rem">بَا</span> <span class="dp-speak__icon">🔊</span></button>
+<button class="dp-speak" data-speak="بُو"><span class="khat-sample" style="font-size:1.4rem">بُو</span> <span class="dp-speak__icon">🔊</span></button>
+<button class="dp-speak" data-speak="بِي"><span class="khat-sample" style="font-size:1.4rem">بِي</span> <span class="dp-speak__icon">🔊</span></button>
+</div>
+
+> **Note:** The *alif* is always silent when functioning as a long vowel (it never carries a vowel itself). A *wāw* or *yāʾ* that **does** carry a vowel is NOT a long vowel — it is a plain consonant.
+
+---
+
+## Long-Vowel Diagram
+
+<Mermaid code={String.raw`flowchart TD
+  A["Three Long Vowels — حروف المدّ"] --> B["Silent alif (ا)<br/>preceded by fatḥa<br/>example: كِتَاب"]
+  A --> C["Silent wāw (و)<br/>preceded by ḍamma<br/>example: نُوح"]
+  A --> D["Silent yāʾ (ي)<br/>preceded by kasra<br/>example: كَرِيم"]
+  B --> B1["sound: ā (long)"]
+  C --> C1["sound: ū (long)"]
+  D --> D1["sound: ī (long)"]`} />
+
+---
+
+## Plain Letter vs. Long Vowel
+
+| Case | Letter | Pronunciation |
+|---|---|---|
+| *wāw* with vowel (not madd) | وَلَد (*walad*, boy) | *wa* — short |
+| *wāw* silent after ḍamma (madd) | نُوح (*Nūḥ*) | *nū* — long |
+
+| Case | Letter | Pronunciation |
+|---|---|---|
+| *yāʾ* with vowel (not madd) | يَد (*yad*, hand) | *ya* — short |
+| *yāʾ* silent after kasra (madd) | كَرِيم (*karīm*) | *rī* — long |
+
+---
+
+## Shadda Combined with Long Vowel
+
+Shadda and a long vowel often appear together:
+
+| Word | Analysis |
+|---|---|
+| دَابَّة (*dābbah*, an animal) | دَا (long ā) + بَّة (doubled *bāʾ*) |
+| الضَّالِّين (*aḍ-ḍāllīn*, the astray) | الضَّا (long ā after doubled *ḍād*) + لِّين (doubled *lām* + long ī) |
+
+---
+
+## Common Mistakes
+
+- **Assuming every *wāw* or *yāʾ* is a long vowel.** Check: is the letter silent AND is the letter before it the correct vowel? Both conditions must hold.
+- **Reading a doubled letter lightly.** A shadda letter is heavy and slightly extended — worth two counts.
+- **Confusing a moving *wāw* (consonant) with a silent *wāw* (long vowel).**
+
+---
+
+## Summary
+
+> **Shadda (ّ)** doubles a consonant: silent first copy + vowelled second copy, merged. **The three long vowels**: silent *alif* after fatḥa (ā), silent *wāw* after ḍamma (ū), silent *yāʾ* after kasra (ī). These long sounds are the foundation of correct Quranic recitation.
+
+</div>

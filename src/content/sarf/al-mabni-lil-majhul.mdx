@@ -1,5 +1,6 @@
 ---
 title: "الفعل المبني للمعلوم والمجهول"
+title_en: "Active and Passive Voice in Arabic Morphology"
 category: afaal
 kind: topic
 order: 12
@@ -59,6 +60,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## الفعل المبني للمعلوم والمجهول
 
@@ -166,3 +169,108 @@ import Mermaid from '../../components/Mermaid.astro';
 > — **الماضي:** ضُمَّ أوَّله وكُسِر ما قبل آخره (كَتَبَ ← كُتِبَ).  
 > — **المضارع:** ضُمَّ أوَّله وفُتِح ما قبل آخره (يَكتُبُ ← يُكتَبُ).  
 > وتسري القاعدة ذاتها على الثلاثي وغيره. والمفعول به يُرفَع بعد الحذف ويُسمَّى **نائب الفاعل**.
+
+</div>
+
+<div data-lang-block="en">
+
+## Active and Passive Voice in Arabic
+
+### Key terms
+
+- **Active voice** (المبني للمعلوم, *al-mabnī lil-maʿlūm*): the doer (agent/subject) of the verb is mentioned in the sentence. This is the default in Arabic.
+- **Passive voice** (المبني للمجهول, *al-mabnī lil-majhūl*): the doer is omitted, and the verb's internal pattern changes to signal this.
+
+**Why use the passive?**
+- The doer is unknown: سُرِقَ المتاعُ (*The goods were stolen*).
+- The doer is deliberately left unspecified: عُوقِبَ المذنبُ (*The culprit was punished*).
+- The focus is on the recipient: خُلِقَ الإنسانُ ضَعيفاً (*Man was created weak*).
+- Brevity when the doer is obvious: أُعلِنَ عن النتائج (*The results were announced*).
+
+---
+
+## Forming the passive
+
+<Mermaid code={String.raw`flowchart LR
+  A["Active voice
+كَتَبَ / يَكتُبُ"] --> B["Omit the agent"]
+  B --> C["Passive voice
+كُتِبَ / يُكتَبُ"]
+  C --> D["Substitute subject<br/>raised to nominative"]
+  A --> A1["Past: raise 1st vowel,<br/>lower penultimate"]
+  C --> C1["Present: raise 1st vowel,<br/>open penultimate"]`} />
+
+### Past tense rule
+
+> **Raise (*ḍamma*) the first vowel; lower (*kasra*) the vowel on the letter before the last.**
+
+**Trilateral sound verbs:**
+
+| Active | Passive | Note |
+|---|---|---|
+| كَتَبَ (*kataba*) | كُتِبَ (*kutiba*) | 1st raised, penultimate lowered |
+| نَصَرَ (*naṣara*) | نُصِرَ (*nuṣira*) | |
+| فَتَحَ (*fataḥa*) | فُتِحَ (*futiḥa*) | |
+| ضَرَبَ (*ḍaraba*) | ضُرِبَ (*ḍuriba*) | |
+
+**Non-trilateral (augmented) — same rule:**
+
+| Active | Passive |
+|---|---|
+| أَكرَمَ (*akrama*) | أُكرِمَ (*ukrima*) |
+| دَرَّسَ (*darrasa*) | دُرِّسَ (*durrisā*) |
+| اِستَخرَجَ (*istakhraja*) | اُستُخرِجَ (*ustukhrija*) |
+| اِنتَخَبَ (*intakhaba*) | اُنتُخِبَ (*untukhibā*) |
+
+### Present tense rule
+
+> **Raise (*ḍamma*) the first vowel; open (*fatḥa*) the vowel on the letter before the last.**
+
+**Trilateral sound verbs:**
+
+| Active | Passive | Note |
+|---|---|---|
+| يَكتُبُ (*yaktub*) | يُكتَبُ (*yuktab*) | 1st raised, penultimate opened |
+| يَنصُرُ (*yanṣur*) | يُنصَرُ (*yunṣar*) | |
+| يَفتَحُ (*yaftaḥ*) | يُفتَحُ (*yuftaḥ*) | |
+
+**Non-trilateral:**
+
+| Active | Passive |
+|---|---|
+| يُكرِمُ (*yukrimu*) | يُكرَمُ (*yukramu*) |
+| يُدَرِّسُ (*yudarrisu*) | يُدَرَّسُ (*yudarrasu*) |
+| يَستَخرِجُ (*yastakhriju*) | يُستَخرَجُ (*yustakhraju*) |
+
+---
+
+## The substitute subject — نائب الفاعل (*nāʾib al-fāʿil*)
+
+When the doer is omitted, the **direct object** (مفعول به) is promoted to become the **substitute subject** (نائب الفاعل) and takes the nominative case (رفع):
+
+| Active sentence | Passive sentence | Substitute subject |
+|---|---|---|
+| كَتَبَ الطالبُ **الدرسَ** | كُتِبَ **الدرسُ** | الدرسُ (nominative) |
+| شَرَحَ المعلمُ **القاعدةَ** | شُرِحَتِ **القاعدةُ** | القاعدةُ (nominative) |
+| أَعطَى المديرُ **الموظَّفَ** جائزةً | أُعطِيَ **الموظَّفُ** جائزةً | الموظَّفُ (nominative) |
+
+---
+
+## Quranic examples
+
+| Verse | Verb type | Substitute subject |
+|---|---|---|
+| ﴿خُلِقَ الإنسانُ مِن عَجَل﴾ | past passive | الإنسانُ |
+| ﴿وَإِذَا الصُّحُفُ نُشِرَت﴾ | past passive | الصُّحُفُ |
+| ﴿يُرفَعُ لَهُ عَمَلٌ صَالِح﴾ | present passive | عَمَلٌ |
+
+---
+
+## Summary
+
+> **Active:** the doer is stated. **Passive:** the doer is omitted and the verb's pattern changes:  
+> — **Past:** raise the 1st vowel, lower the penultimate (كَتَبَ → كُتِبَ).  
+> — **Present:** raise the 1st vowel, open the penultimate (يَكتُبُ → يُكتَبُ).  
+> The same rule applies to trilateral and augmented verbs alike. The direct object is promoted to **substitute subject** (نائب الفاعل) and takes the nominative.
+
+</div>

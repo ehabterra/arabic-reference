@@ -1,5 +1,6 @@
 ---
 title: "المدود (الطبيعي والفرعي وأقسامهما)"
+title_en: "The Prolongations (Al-Mudūd): Natural and Extended"
 category: ahkam
 kind: topic
 order: 12
@@ -60,6 +61,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## المدود
 
@@ -242,3 +245,180 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة
 
 > المدود نوعان: **طبيعي** مقداره حركتان ثابتتان لا يتوقف على همز ولا سكون، و**فرعي** بسببَيه الهمزة والسكون. أقوى الفرعي المدُّ اللازم (6 حركات)، ثم الواجب المتصل، ثم الجائز المنفصل، ثم العارض للسكون، ثم البدل بالقصر لحفص — وعند اجتماع سببين يُقدَّم الأقوى.
+
+</div>
+
+<div data-lang-block="en">
+
+## The prolongations — المدود (*al-mudūd*)
+
+**المد** (*al-madd*) linguistically: extension and elongation.
+
+**Technically**: extending the voice upon one of the three *ḥurūf al-madd* (prolongation letters) when a hamza or sukūn follows.
+
+<Mermaid code={String.raw`flowchart TD
+  A["Mudūd"] --> B["Ṭabīʿī — Natural<br/>2 beats always"]
+  A --> C["Farʿī — Extended"]
+  C --> D["Caused by hamza"]
+  C --> E["Caused by sukūn"]
+  D --> F["Muttaṣil — obligatory<br/>4–5 beats"]
+  D --> G["Munfaṣil — permitted<br/>4–5 beats"]
+  D --> H["Badal — permitted<br/>2 beats (Ḥafṣ)"]
+  E --> I["Lāzim — 6 beats"]
+  E --> J["ʿĀriḍ li-l-sukūn<br/>2 or 4 or 6 beats"]`} />
+
+**The 3 prolongation letters** (حروف المد):
+- Alif «ا» — quiescent, preceded by fatḥa.
+- Wāw «و» — quiescent, preceded by ḍamma.
+- Yāʾ «ي» — quiescent, preceded by kasra.
+
+---
+
+## 1. Al-Madd al-Ṭabīʿī (المد الطبيعي) — Natural prolongation
+
+**Definition**: Prolongation that depends on neither hamza nor sukūn — the letter itself cannot stand without it.
+
+**Length**: **2 beats** — fixed, never more or less.
+
+**Why "ṭabīʿī" (natural)**: a sound natural constitution neither adds to nor subtracts from it.
+
+| Prolongation letter | Short example |
+|---|---|
+| Alif | قَالَ |
+| Wāw | يَقُولُ |
+| Yāʾ | قِيلَ |
+
+**Annexed to the natural madd** (also 2 beats):
+- **Madd al-tamkīn**: doubled yāʾ followed by a *madd yāʾ* — e.g. «النَّبِيِّين».
+- **Madd al-ṣila al-ṣughrā**: pronoun هـ between two vowelled letters when not followed by hamza.
+- **Madd al-ʿiwaḍ**: the fatḥatān tanwīn paused on, replaced by alif — e.g. «حَكِيماً» → «حَكِيمَا».
+
+---
+
+## 2. Al-Madd al-Farʿī (المد الفرعي) — Extended prolongation
+
+**Definition**: Prolongation beyond 2 beats, caused by **hamza** or **sukūn**.
+
+**Two causes**:
+1. **Hamza**: a heavy letter requiring extra vocal space.
+2. **Sukūn**: demands additional extension when the prolongation letter meets it.
+
+---
+
+### Extended prolongations caused by hamza
+
+#### Madd Muttaṣil (المد المتصل) — Connected, obligatory
+**Definition**: Hamza follows the prolongation letter **within the same word**.
+
+**Ruling**: **Obligatory** (*wājib*) — cannot be shortened to 2 beats.
+
+**Length**: 4 or 5 beats connecting; 4, 5, or 6 beats when pausing (Ḥafṣ).
+
+| Short example |
+|---|
+| جَاءَ |
+| السَّمَاء |
+| يَشَاءُ |
+
+#### Madd Munfaṣil (المد المنفصل) — Separate, permitted
+**Definition**: Hamza follows the prolongation letter in **the next word** — madd-letter ends word 1, hamza begins word 2.
+
+**Ruling**: Permitted (*jāʾiz*).
+
+**Length**: 4 or 5 beats (Ḥafṣ, Shāṭibiyya path).
+
+| Short example |
+|---|
+| وَفِي أَنفُسِكُم |
+| قُوا أَنفُسَكُم |
+
+#### Madd al-Badal (مد البدل) — Substitution prolongation
+**Definition**: A prolongation letter follows a hamza — the madd-letter is a substitute for a formerly quiescent hamza.
+
+**Why "badal"**: the madd-letter replaced a quiescent hamza — e.g. «آمَنَ» was originally «أَأمَنَ»; the second hamza (quiescent) was replaced by alif.
+
+**Ruling for Ḥafṣ (Shāṭibiyya)**: 2 beats (*qaṣr*) — the standard position.
+
+| Example | Original |
+|---|---|
+| آمَنَ | أَأمَنَ |
+| إِيمَان | إِئمَان |
+| أُوتِيَ | أُؤتِيَ |
+
+---
+
+### Extended prolongations caused by sukūn
+
+#### Madd Lāzim (المد اللازم) — Obligatory prolongation
+**Definition**: An **original, fixed sukūn** (present when connecting and pausing) follows the prolongation letter.
+
+**Ruling**: **Obligatory** — always 6 beats.
+
+**Four sub-types**:
+
+| Sub-type | Definition | Short example |
+|---|---|---|
+| Kalimī muthaqqal | Doubled sukūn (*shaddad*) after madd in a word | الطَّامَّة |
+| Kalimī mukhaffaf | Non-doubled original sukūn after madd in a word | آلآنَ (Yūnus) |
+| Ḥarfī muthaqqal | Detached letter whose name has 3 sounds, middle is madd, followed by doubling in the next | الم — lām and mīm |
+| Ḥarfī mukhaffaf | Detached letter whose name has 3 sounds, middle is madd, no doubling | ن — ق — ص |
+
+> **Note on ʿayn (ع)**: In the openings of «كهيعص» and «عسق», the عـ may be prolonged 4 or 6 beats — a matter of scholarly disagreement; do not fix one option.
+
+#### Madd ʿĀriḍ li-l-Sukūn (المد العارض للسكون) — Incidental-pause prolongation
+**Definition**: A prolongation letter (or *līn* letter) is followed by a letter that receives an **incidental sukūn because of pausing** — not an original sukūn.
+
+**Ruling**: Permitted — 2, 4, or 6 beats (all three valid; 6 preferred in measured recitation).
+
+| Short example (paused) |
+|---|
+| نَستَعِين |
+| الرَّحِيم |
+
+**Madd al-Līn al-ʿĀriḍ**: quiescent واو or ياء preceded by fatḥa, before a letter paused on — e.g. «خَوف» and «بَيت» paused. Same ruling: 2, 4, or 6.
+
+---
+
+## Summary table
+
+| Type | Cause | Ruling | Length (Ḥafṣ / Shāṭibiyya) |
+|---|---|---|---|
+| Muttaṣil | Hamza in same word | Obligatory | 4–5 connecting / 4–6 pausing |
+| Munfaṣil | Hamza in next word | Permitted | 4–5 |
+| Badal | Madd after hamza | Permitted | 2 (short) |
+| Lāzim | Original sukūn after madd | Obligatory | 6 |
+| ʿĀriḍ li-l-sukūn | Pause-sukūn after madd | Permitted | 2 or 4 or 6 |
+
+---
+
+## The rule of the stronger cause
+
+When two causes coexist, the stronger overrides:
+
+**Lāzim > Muttaṣil > Munfaṣil > ʿĀriḍ li-l-sukūn > Badal**
+
+---
+
+## Madd al-Ṣila al-Kubrā
+
+When the pronoun هـ is followed by a *hamzat al-qaṭʿ* in the next word, the هـ is prolonged so a madd-letter appears between it and the hamza — recited like the munfaṣil: 4 or 5 beats.
+
+Example: إِنَّهُ أَنَا اللهُ
+
+---
+
+## Common mistakes
+
+- **Shortening the muttaṣil**: cannot be recited at 2 beats — it is obligatory.
+- **Lengthening the badal**: for Ḥafṣ from the Shāṭibiyya path, badal is 2 beats only.
+- **Confusing muttaṣil and munfaṣil**: the test is one word vs. two — hamza in the same word = muttaṣil; next word = munfaṣil.
+- **Neglecting madd al-līn al-ʿāriḍ**: minimum is 2 beats — do not shorten further when pausing.
+- **Equating lāzim with muttaṣil**: lāzim is always 6; muttaṣil is 4 or 5.
+
+---
+
+## Summary
+
+> There are two types: **ṭabīʿī** (natural) — always 2 beats, dependent on neither hamza nor sukūn — and **farʿī** (extended), caused by hamza or sukūn. Of the extended types: **lāzim** is strongest (6 beats), then the **obligatory muttaṣil**, then the **permitted munfaṣil**, then the **ʿāriḍ li-l-sukūn**, then the **badal** at 2 beats for Ḥafṣ. When two causes coexist, the stronger takes precedence.
+
+</div>

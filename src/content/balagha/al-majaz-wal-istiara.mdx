@@ -1,5 +1,6 @@
 ---
 title: "الحقيقة والمجاز والاستعارة (مدخل)"
+title_en: "Figurative Language and Metaphor: Ḥaqīqa, Majāz, and Istiʿāra"
 category: bayan
 kind: topic
 order: 3
@@ -60,6 +61,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## الحقيقة والمجاز: الأساس
 
@@ -202,3 +205,126 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة
 
 > **المجاز** استعمال اللفظ في غير معناه لعلاقة مع قرينة. و**الاستعارة** مجازٌ علاقتُه المشابهة، وهي تشبيهٌ حُذف أحدُ طرفيه. في **التصريحية** يُذكر المشبَّه به صراحةً، وفي **المكنية** يُحذف ويُبقى لازمه. أما **المجاز المرسَل** فعلاقته غير المشابهة: كالجزئية والكلية والسببية وغيرها. وسر بلاغة الاستعارة أنها تُقرِّب الغائبَ وتُحيي المعنى المجرَّد بصورة حسِّية لا تُنسى.
+
+</div>
+
+<div data-lang-block="en">
+
+## Literal vs. figurative: the foundation
+
+Before studying *istiʿāra* (metaphor), we need the underlying distinction: **ḥaqīqa** (literal use) vs. **majāz** (figurative use).
+
+---
+
+## 1. Ḥaqīqa and Majāz
+
+### Ḥaqīqa (literal)
+**Ḥaqīqa** is a word used in **its original, established meaning**.
+
+*sharibtu l-māʾa* — "I drank water." *jāʾa l-rajulu* — "The man came." Each word carries its standard, recognised sense.
+
+### Majāz (figurative)
+**Majāz** is a word used in a **non-literal sense**, linked to the original meaning by a **relation** (*ʿalāqa*), accompanied by a **contextual marker** (*qarīna*) that prevents the literal reading.
+
+Two indispensable conditions:
+1. **Relation** (*ʿalāqa*): a conceptual link between the word's original and its transferred meaning.
+2. **Marker** (*qarīna*): something in context that blocks the literal interpretation.
+
+**Two main types of majāz:**
+
+| Type | Relation | Example |
+|---|---|---|
+| **Istiʿāra** (metaphor) | Resemblance | *raʾaytu asadan yuḥāḍiru* — "I saw a lion lecturing" (= a brave/imposing man) |
+| **Majāz mursāl** (free synecdoche) | Other than resemblance | *qaraʾtu l-Mutanabbī* — "I read al-Mutanabbī" (= his poetry) |
+
+---
+
+## 2. Majāz mursāl and its relations
+
+<Mermaid code={String.raw`flowchart TD
+  A["Majāz"] --> B["Istiʿāra<br/>(relation: resemblance)"]
+  A --> C["Majāz Mursāl<br/>(relation: other than resemblance)"]
+  B --> B1["Taṣrīḥiyya<br/>(mushabbah bihi stated)"]
+  B --> B2["Makniyya<br/>(mushabbah bihi dropped)"]
+  C --> C1["Juzʾiyya — part for whole"]
+  C --> C2["Kulliyya — whole for part"]
+  C --> C3["Sababiyya — cause for effect"]
+  C --> C4["Mussababiyya — effect for cause"]
+  C --> C5["Maḥalliyya — place for occupant"]`} />
+
+**Majāz mursāl** ("free" metonymy/synecdoche) — called *mursāl* because it is not tied to a single fixed relation.
+
+| Relation | Definition | Example |
+|---|---|---|
+| **Juzʾiyya** (part for whole) | Part named, whole meant | *baʿathnā ʿuyūnan li-l-tajassus* — "We sent eyes to spy" (= agents) |
+| **Kulliyya** (whole for part) | Whole named, part meant | *jaʿalū aṣābiʿahum fī ādhānihim* — "fingers in ears" (= fingertips, 71:7) |
+| **Sababiyya** (cause for effect) | Cause named, effect meant | *raʿat al-māshiyatu l-ghaytha* — "The cattle grazed the rain" (= the grass it produced) |
+| **Mussababiyya** (effect for cause) | Effect named, cause meant | *amṭarat al-samāʾu nabātan* — "The sky rained plants" (= water that grows them) |
+| **Maḥalliyya** (place for occupant) | Place named, its inhabitants meant | *fī l-qaryati khayrun* — "In the village there is good" (= its people) |
+
+---
+
+## 3. Istiʿāra (metaphor)
+
+### Definition
+**Istiʿāra** is using a word in a non-literal sense for a relation of **resemblance**, with a marker blocking the literal reading. At root it is a **simile with one term deleted** — instead of *Zaydun ka-l-asad* ("Zayd is like a lion"), we say *raʾaytu asadan* ("I saw a lion"), meaning Zayd.
+
+### Simile vs. Metaphor
+
+| | Tashbīh (simile) | Istiʿāra (metaphor) |
+|---|---|---|
+| **Attitude to the two terms** | Acknowledges the distinction | Collapses the distance — claims identity |
+| **Example** | *Muḥammadun **ka-**l-asadi* | *raʾaytu **asadan*** (meaning Muḥammad) |
+| **Effect** | Explicit comparison | As if the compared *is* the comparand |
+
+### Two main types
+
+#### Istiʿāra taṣrīḥiyya (explicit metaphor)
+The **mushabbah bihi** (comparand) is **stated**; the *mushabbah* (subject) is dropped.
+
+- *raʾaytu **asadan** yuʿallimu l-aṭfāla* — "I saw **a lion** teaching children." The lion is stated; the brave/imposing man is understood.
+- The marker (*qarīna*): "teaching children" — lions don't teach.
+
+#### Istiʿāra makniyya (implicit metaphor)
+The **mushabbah bihi** is **dropped**; only an attribute (*lāzim*) belonging to it is kept.
+
+- *khāḍat al-maniyyatu **aẓfārahā** fī l-shujʿāni* — "Death plunged **its talons** into the brave." The comparand (a beast of prey) is dropped; the **talons** (*aẓfār*) remain as its trace.
+- *yabtasimu l-bustānu* — "The garden **smiles**." The comparand (a person) is dropped; smiling is its attribute.
+
+| Type | Mushabbah | Mushabbah bihi | What appears |
+|---|---|---|---|
+| **Taṣrīḥiyya** | dropped | **stated** | the comparand |
+| **Makniyya** | stated | **dropped** (attribute remains) | subject + attribute of comparand |
+
+---
+
+## 4. Further classifications
+
+### By type of borrowed word
+
+| Class | Definition | Example |
+|---|---|---|
+| **Aṣliyya** | Borrowed from a primary noun | *raʾaytu asadan* (*asad* = solid noun) |
+| **Tabaʿiyya** | Borrowed from a derived form or verb | *nahashatkhu l-ḥayātu* — "Life gnawed at him" |
+
+### By accompanying context
+
+| Class | Definition | Example |
+|---|---|---|
+| **Murashhaha** | A property of the *mushabbah bihi* is added | *raʾaytu asadan **yaftarisu** aʿdāʾahu* — "I saw a lion **mauling** its enemies" |
+| **Mujarrada** | A property of the *mushabbah* is added | *raʾaytu asadan **faṣīḥa l-lisān*** — "a lion **eloquent of tongue**" |
+| **Muṭlaqa** | Neither added | *raʾaytu asadan* |
+
+---
+
+## 5. The rhetorical power of istiʿāra
+
+Metaphor makes the listener **receive an image directly** rather than processing a stated comparison. *al-ʿilmu yuḍīʾu l-qalba* ("Knowledge illuminates the heart") — the soul does not pause to analyse; it *sees* the illumination. Metaphor thus **brings the absent near, animates the inert, and clothes the abstract in perceptible form**.
+
+---
+
+## In a nutshell
+
+> **Majāz** is a word used figuratively for a relation + a blocking marker. **Istiʿāra** is majāz whose relation is resemblance — a simile with a dropped term. In **taṣrīḥiyya** the comparand is stated; in **makniyya** it is dropped and only its attribute remains. **Majāz mursāl** covers all other figurative uses (part for whole, cause for effect, etc.). The rhetorical secret of metaphor: it collapses the gap between compared and comparand and makes the abstract perceptible.
+
+</div>

@@ -44,8 +44,8 @@ const trackIcons: Record<string, string> = {
 ---
 <BaseLayout>
   <header class="dp-hero">
-    <p class="dp-hero__eyebrow">مرجع تفاعلي للغة العربية</p>
-    <h1>المرجع العربي</h1>
+    <p class="dp-hero__eyebrow" data-i18n="home.eyebrow">مرجع تفاعلي للغة العربية</p>
+    <h1 data-i18n="home.h1">المرجع العربي</h1>
     <p class="dp-hero__lede">{SITE_DESC}</p>
   </header>
 
@@ -93,15 +93,21 @@ const trackIcons: Record<string, string> = {
     </p>
   </div>
 
-  <h2 class="dp-section-head" style="border:0;margin-top:2.4rem;">اختر مساراً</h2>
+  <h2 class="dp-section-head" style="border:0;margin-top:2.4rem;" data-i18n="home.chooseTrack">اختر مساراً</h2>
   <div class="dp-topics">
     {TRACKS.map((track) => (
       <a class="dp-topic" data-cat={track.categories[0]?.key} href={`/${track.route}/`}>
         <div class="dp-topic__icon">{trackIcons[track.key] ?? '📚'}</div>
-        <h3>{track.title}</h3>
-        <p>{track.blurb}</p>
-        <span class="dp-topic__stat">{track.categories.length} <span>أقسام</span></span>
-        <span class="dp-topic__go">ادخل →</span>
+        <h3>
+          <span data-lang-block="ar">{track.title}</span>
+          <span data-lang-block="en">{track.title_en ?? track.title}</span>
+        </h3>
+        <p>
+          <span data-lang-block="ar">{track.blurb}</span>
+          <span data-lang-block="en">{track.blurb_en ?? track.blurb}</span>
+        </p>
+        <span class="dp-topic__stat">{track.categories.length} <span data-i18n="home.track.sections">أقسام</span></span>
+        <span class="dp-topic__go" data-i18n="home.track.enter">ادخل →</span>
       </a>
     ))}
   </div>
@@ -116,27 +122,51 @@ const trackIcons: Record<string, string> = {
     <div class="dp-toplikes" data-dp-mylikes-grid></div>
   </section>
 
-  <h2 class="dp-section-head" style="border:0;margin-top:2.8rem;">كيف يعمل المرجع</h2>
+  <h2 class="dp-section-head" style="border:0;margin-top:2.8rem;" data-i18n="home.howItWorks">كيف يعمل المرجع</h2>
   <div class="dp-features">
     <div class="dp-feature">
       <div class="dp-feature__icon">📊</div>
-      <h3>مخططات توضيحية</h3>
-      <p>مخططات مرموز تجعل العلاقات واضحة قبل أن تقرأ سطراً واحداً.</p>
+      <h3>
+        <span data-lang-block="ar">مخططات توضيحية</span>
+        <span data-lang-block="en" data-i18n="home.feature.diagrams.title">Visual diagrams</span>
+      </h3>
+      <p>
+        <span data-lang-block="ar">مخططات مرموز تجعل العلاقات واضحة قبل أن تقرأ سطراً واحداً.</span>
+        <span data-lang-block="en" data-i18n="home.feature.diagrams.body">Structured charts make relationships clear before you read a single line.</span>
+      </p>
     </div>
     <div class="dp-feature">
       <div class="dp-feature__icon">📝</div>
-      <h3>أمثلة تطبيقية</h3>
-      <p>كل مفهوم مدعوم بأمثلة أصيلة من اللغة العربية الفصيحة.</p>
+      <h3>
+        <span data-lang-block="ar">أمثلة تطبيقية</span>
+        <span data-lang-block="en" data-i18n="home.feature.examples.title">Applied examples</span>
+      </h3>
+      <p>
+        <span data-lang-block="ar">كل مفهوم مدعوم بأمثلة أصيلة من اللغة العربية الفصيحة.</span>
+        <span data-lang-block="en" data-i18n="home.feature.examples.body">Every concept backed by authentic classical Arabic examples.</span>
+      </p>
     </div>
     <div class="dp-feature">
       <div class="dp-feature__icon">🧠</div>
-      <h3>مصنوع للحفظ</h3>
-      <p>اختبار في كل درس وتتبُّع للتقدم يحوّل القراءة السلبية إلى رحلة تُكملها.</p>
+      <h3>
+        <span data-lang-block="ar">مصنوع للحفظ</span>
+        <span data-lang-block="en" data-i18n="home.feature.memory.title">Made for retention</span>
+      </h3>
+      <p>
+        <span data-lang-block="ar">اختبار في كل درس وتتبُّع للتقدم يحوّل القراءة السلبية إلى رحلة تُكملها.</span>
+        <span data-lang-block="en" data-i18n="home.feature.memory.body">A quiz per lesson and progress tracking turns passive reading into a journey you complete.</span>
+      </p>
     </div>
     <div class="dp-feature">
       <div class="dp-feature__icon">📚</div>
-      <h3>مصادر موثَّقة</h3>
-      <p>كل قاعدة مرتبطة بمصادرها من كتب النحو والبلاغة والتجويد المعتمدة.</p>
+      <h3>
+        <span data-lang-block="ar">مصادر موثَّقة</span>
+        <span data-lang-block="en" data-i18n="home.feature.sources.title">Cited sources</span>
+      </h3>
+      <p>
+        <span data-lang-block="ar">كل قاعدة مرتبطة بمصادرها من كتب النحو والبلاغة والتجويد المعتمدة.</span>
+        <span data-lang-block="en" data-i18n="home.feature.sources.body">Every rule linked to its sources in accredited nahw, balagha, and tajwid texts.</span>
+      </p>
     </div>
   </div>
 </BaseLayout>

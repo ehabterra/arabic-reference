@@ -1,5 +1,6 @@
 ---
 title: "الفصل والوصل"
+title_en: "Connection and Separation: Waṣl and Faṣl"
 category: maani
 kind: topic
 order: 12
@@ -59,6 +60,8 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## الفصل والوصل: المدخل
 
@@ -154,3 +157,104 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة القاعدة
 
 > **الوصل** عطف جملة على أخرى بالواو — يُستخدم حين بين الجملتَين جامعٌ معنوي. **الفصل** ترك العطف — وله أربعة مواضع: كمال الاتصال (الثانية بيان)، وكمال الانقطاع (تباين تام)، وشبه كمال الاتصال وهو **الاستئناف البياني** (الثانية جواب مستدعًى)، وشبه كمال الانقطاع. واختيار الفصل أو الوصل في موضعه هو من أدق مظاهر البلاغة وأعمق أثراً في صياغة الكلام.
+
+</div>
+
+<div data-lang-block="en">
+
+## Waṣl and faṣl: the core question
+
+When multiple sentences follow one another, every eloquent writer faces a pivotal question: **should the second sentence be joined to the first with the conjunction *waw* (و, "and"), or left without it?**
+
+This is **faṣl wa-waṣl** — one of the most refined topics in *ʿilm al-maʿānī*, with far-reaching consequences for stylistic beauty and precision.
+
+---
+
+## 1. Definitions
+
+| Term | Arabic | Meaning |
+|---|---|---|
+| **Waṣl** | الوصل | Joining two sentences with the conjunction *waw* |
+| **Faṣl** | الفصل | Leaving two sentences without *waw* — letting the second stand alone |
+
+---
+
+## 2. When to use waṣl (connection)
+
+The *waw* is used when a **semantic link** (*jāmiʿ maʿnawī*) exists between the two sentences **and** they are of the same grammatical type (both declarative or both performative).
+
+**What counts as a semantic link?**
+
+1. **Shared circumstance:** both sentences describe the same event or linked state.
+   - *jāʾa l-rabīʿu **wa**-azharati l-ḥadāʾiqu* — "Spring came **and** the gardens bloomed."
+2. **Shared topic:** both fall under one overarching idea.
+   - *al-ʿilmu nūrun **wa**-l-jahlu ẓalāmun* — "Knowledge is light **and** ignorance is darkness."
+3. **Matching type:** a performative sentence is not normally joined with *waw* to a declarative one.
+
+---
+
+## 3. When to use faṣl (separation)
+
+The *waw* is dropped in four principal situations:
+
+<Mermaid code={String.raw`flowchart TD
+  A["Two sentences"] --> B["Waṣl with waw<br/>(semantic link + matching type)"]
+  A --> C["Faṣl (no waw)"]
+  C --> C1["Kamāl al-ittiṣāl<br/>(2nd = gloss or emphasis of 1st)"]
+  C --> C2["Kamāl al-inqiṭāʿ<br/>(total divergence: decl. vs. perf.)"]
+  C --> C3["Shibh kamāl al-ittiṣāl<br/>(Istīnāf bayānī:<br/>2nd answers an implied question)"]
+  C --> C4["Shibh kamāl al-inqiṭāʿ<br/>(resemblance with a difference<br/>that prevents joining)"]`} />
+
+### 1. Kamāl al-ittiṣāl (perfect connectedness)
+
+The second sentence is a **gloss, explanation, or reinforcement** of the first — they are so close they function as one unit. Adding *waw* would falsely imply they are coordinate:
+
+- *qāla l-shāʿiru yaʿtadhiru: akhṭaʾtu — lam akun aqṣidu l-isāʾata* — the second sentence explains the first.
+- *hādhā huwa l-ḥaqqu: al-ʿilmu khayru mā yatrukuhu l-insānu* — the second interprets the first.
+
+### 2. Kamāl al-inqiṭāʿ (perfect disconnectedness)
+
+The two sentences **diverge completely** — either declarative vs. performative, or totally unrelated in meaning. No common ground exists for *waw*:
+
+- *jāʾa Zaydun. hal anta musāfirun?* — declarative then interrogative.
+- *akaltu. ayna kunta l-bāriḥata?* — complete semantic disjunction.
+
+### 3. Shibh kamāl al-ittiṣāl — al-istīnāf al-bayānī (explanatory resumption)
+
+**The most frequent and important case of faṣl.** The second sentence is an **implicit answer** to a question raised by the first — even though no question is stated in the text:
+
+- *kasaba l-ṭālibu jāʾizatan — dhākara asābīʿa* — the second answers "how did he win the prize?"
+- *intaṣara l-jaysh — kāna l-iʿdādu wa-l-takhṭīṭu muḥkamayni* — answers "why did the army win?"
+
+### 4. Shibh kamāl al-inqiṭāʿ
+
+Sentences resemble each other in some way but a difference prevents joining — e.g. a parenthetical clause (*jumla iʿtirāḍiyya*):
+
+- *al-ʿulamāʾu — warathatu l-anbiyāʾi — yaḥmilūna amānatan thaqīlatan* — the parenthetical is not coordinated with *waw*.
+
+---
+
+## 4. Comparative table
+
+| Situation | Principle | Example |
+|---|---|---|
+| **Waṣl** | Semantic link + matching type | *dhākara wa-tafawwaqa* |
+| **Faṣl — kamāl al-ittiṣāl** | 2nd = gloss of 1st | *qāla: insarifū — l-ijtimāʿu intahā* |
+| **Faṣl — kamāl al-inqiṭāʿ** | Total divergence in type or meaning | *jalasa. hal anta bi-khayr?* |
+| **Faṣl — istīnāf bayānī** | 2nd answers an implied question | *najaḥa — ijtahada ṭawīlan* |
+
+---
+
+## 5. The rhetorical stakes
+
+- **Waṣl** gives speech flow and cohesion, linking related thoughts into a felt sequence.
+- **Faṣl** gives each sentence its own weight and can create a momentary pause — the reader senses a question and the next sentence answers it.
+- Choosing the wrong one is a stylistic flaw: *waw* in a *faṣl* slot falsely implies equivalence between unequal things; no *waw* in a *waṣl* slot severs ideas that belong together.
+
+---
+
+## In a nutshell
+
+> **Waṣl** joins two sentences with *waw* — used when a semantic link and type-match exist. **Faṣl** leaves them unjoined — in four cases: *kamāl al-ittiṣāl* (2nd glosses the 1st), *kamāl al-inqiṭāʿ* (total divergence), ***istīnāf bayānī*** (2nd answers an implied question — the most frequent case), and *shibh kamāl al-inqiṭāʿ* (partial difference preventing junction). Getting this right is one of the subtlest marks of eloquence in Arabic prose.
+
+</div>
