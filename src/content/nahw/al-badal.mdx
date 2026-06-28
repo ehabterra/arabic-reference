@@ -1,5 +1,6 @@
 ---
 title: "البدل"
+title_en: "Al-Badal: The Appositive Substitute"
 category: tawabi
 kind: topic
 order: 43
@@ -58,6 +59,8 @@ quiz:
     explain: "«نصفَهُ» جزءٌ من «الكتاب» فهو بدل بعض من كل. والضمير «هُ» يعود على الكتاب وهو شرط في هذا النوع. وجاء منصوبًا تابعًا للمبدل منه المنصوب."
 ---
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## البدل
 
@@ -169,3 +172,103 @@ import Mermaid from '../../components/Mermaid.astro';
 ### خلاصة القاعدة
 
 > البدل تابعٌ هو المقصود الحقيقي بالكلام؛ أنواعه: مطابق (هو المبدل منه)، وبعض من كل (جزء منه)، واشتمال (مرتبط به). وكلٌّ يتبع المبدل منه في الإعراب، والأخيران يلزمهما ضمير.
+
+</div>
+
+<div data-lang-block="en">
+
+## Al-Badal — البدل: The Appositive Substitute
+
+The **badal** (بدل, substitute/appositive) carries the *true intended* meaning of a sentence. The noun it follows (المبدل منه, *al-mubdal minh*) is a kind of preamble or introduction. The badal always **takes the same grammatical case** as the mubdal minh.
+
+<Mermaid code={String.raw`flowchart TD
+  A["Badal — البدل"] --> B["Full substitute — بدل مطابق
+(badal = mubdal minh)
+«جاء أخوكَ محمدٌ»"]
+  A --> C["Partial substitute — بدل بعض من كل
+(badal is a part of mubdal minh)
+← pronoun required"]
+  A --> D["Inclusive substitute — بدل اشتمال
+(something related to mubdal minh)
+← pronoun required"]`} />
+
+---
+
+## Definition
+
+The **badal** is placed after the **mubdal minh** (المبدل منه), and it is the actual intended referent. The mubdal minh is the preamble. The badal always takes the **same case** as the mubdal minh.
+
+Example: **جاء أخوكَ محمدٌ** (*jāʾa akhūka Muḥammadun* — "Your brother Muhammad came") — the real intended person is Muhammad; أخوكَ is the introduction.
+
+---
+
+## Three types
+
+### 1. Full substitute — البدل المطابق
+
+The badal equals the mubdal minh completely; it can replace it:
+- **جاء أخوكَ محمدٌ** — محمد is أخوك.
+- **مررتُ بصديقي عليٍّ** (*marartu bi-ṣadīqī ʿAliyyin* — "I passed by my friend Ali").
+
+### 2. Partial substitute — بدل البعض من الكل
+
+The badal is a **part** of the mubdal minh. A **pronoun referring to the mubdal minh is obligatory**:
+- **أكلتُ الرغيفَ نصفَهُ** (*akaltu r-raghīfa niṣfahū* — "I ate the loaf — half of it") — the pronoun ه refers to الرغيفَ.
+- **قرأتُ الكتابَ بابَهُ الأولَ** (*qaraʾtu l-kitāba bābahu l-awwala* — "I read the book — its first chapter").
+
+### 3. Inclusive substitute — بدل الاشتمال
+
+The badal is something **associated with** the mubdal minh but is neither it nor a physical part. A **pronoun is obligatory**:
+- **أعجبني محمدٌ علمُهُ** (*aʿjabanī Muḥammadun ʿilmuhu* — "Muhammad impressed me — his knowledge").
+- **نفعني الكتابُ أسلوبُهُ** (*nafaʿanī l-kitābu uslūbuhu* — "The book benefited me — its style").
+
+---
+
+## Rule
+
+> The badal follows the mubdal minh in **grammatical case**. Partial and inclusive substitutes **require a pronoun** that refers to the mubdal minh.
+
+---
+
+## Comparison table
+
+| Type | Criterion | Pronoun? | Example |
+|---|---|---|---|
+| Full (مطابق) | badal = mubdal minh | not required | **جاء أخوكَ محمدٌ** |
+| Partial (بعض من كل) | badal is a part | required | **أكلتُ الخبزَ نصفَهُ** |
+| Inclusive (اشتمال) | badal is related | required | **أعجبني الأستاذُ أسلوبُهُ** |
+
+---
+
+## Parsing example
+
+**جاء أخوكَ محمدٌ** ("Your brother Muhammad came")
+
+| Word | Parsing |
+|---|---|
+| أخوكَ | nominative subject (wāw, from the five nouns); muḍāf; ك is muḍāf ilayhi |
+| محمدٌ | **full substitute** (بدل مطابق), nominative |
+
+---
+
+## Badal vs. naʿt
+
+- The **naʿt** adds a description; the manʿūt is the primary referent.
+- The **badal** is the primary referent; the mubdal minh is the preamble.
+
+**جاء الرجلُ الكريمُ** (naʿt) = the man described as noble is meant.
+**جاء الرجلُ محمدٌ** (badal) = Muhammad specifically is meant.
+
+---
+
+## Common mistakes
+
+- Omitting the pronoun from partial or inclusive substitute: ***أكلتُ الرغيفَ نصفَ*** — correct: **نصفَهُ**.
+- Giving the badal the wrong case: ***مررتُ بمحمدٍ أخوكَ*** — correct: **أخِيكَ** (genitive).
+- Confusing badal with naʿt or tawkīd — key test: if you remove the mubdal minh and the meaning still holds, it is badal.
+
+## In a nutshell
+
+> The badal is the true intended referent; it follows the mubdal minh in case. Types: full (equals mubdal minh), partial (a part of it, pronoun required), and inclusive (related to it, pronoun required).
+
+</div>

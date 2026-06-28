@@ -1,5 +1,6 @@
 ---
 title: "نائب الفاعل"
+title_en: "The Passive Subject (Nāʾib al-Fāʿil)"
 category: marfuaat
 kind: topic
 order: 11
@@ -60,6 +61,8 @@ quiz:
     explain: "يصحّ أن يقع نائب الفاعل مفعولًا به أو ظرفًا أو مصدرًا أو جارًّا ومجرورًا. مثال: «صِيمَ رمضانُ» — رمضانُ ظرف زمان في محلّ رفع نائب فاعل."
 ---
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## نائب الفاعل
 
@@ -146,3 +149,94 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة القاعدة
 
 > **نائب الفاعل** اسمٌ مرفوعٌ يحلُّ محلَّ الفاعل المحذوف بعد بناء الفعل للمجهول. الفعل الماضي يُبنى للمجهول بضمِّ أوَّله وكسر ما قبل آخره؛ والمضارع بضمِّ أوَّله وفتح ما قبل آخره.
+
+</div>
+
+<div data-lang-block="en">
+
+## The Passive Subject — نائب الفاعل (*nāʾib al-fāʿil*)
+
+When the doer of an action is unknown, irrelevant, or deliberately omitted, Arabic uses the **passive voice** (المبني للمجهول, *al-mabnī lil-majhūl*). The verb changes form, and a new element — **نائب الفاعل** ("deputy of the subject") — steps into the subject slot.
+
+---
+
+## Definition
+
+The **نائب الفاعل** is a **nominative noun** that comes after a **passive verb**, standing in for the deleted agent.
+
+- **كُتِبَ الدرسُ** (*kutiba d-darsu* — "The lesson was written") — the doer is unknown/omitted; الدرسُ stands in as the passive subject.
+- **يُكرَمُ المجتهدُ** (*yukramu l-mujtahidu* — "The diligent one is honoured") — verb is passive; المجتهدُ is the passive subject.
+
+---
+
+## The rule
+
+> **The نائب الفاعل is always nominative** — exactly like the فاعل it replaces.
+
+<Mermaid code={String.raw`flowchart LR
+  A["Active past: كَتَبَ"] --> B["Passive past: كُتِبَ"]
+  C["Active imperfect: يَكتُبُ"] --> D["Passive imperfect: يُكتَبُ"]`} />
+
+---
+
+## Forming the passive
+
+### Past tense
+
+First vowel → ḍamma; vowel before the final letter → kasra:
+
+| Active | Passive |
+|---|---|
+| **كَتَبَ** (*kataba* — wrote) | **كُتِبَ** (*kutiba* — was written) |
+| **شَرَحَ** (*sharaḥa* — explained) | **شُرِحَ** (*shurḥa* — was explained) |
+| **أَكرمَ** (*akrama* — honoured) | **أُكرِمَ** (*ukrima* — was honoured) |
+| **اِستخرجَ** (*istakhraja* — extracted) | **اُستُخرِجَ** (*ustukhrijа* — was extracted) |
+
+### Imperfect tense
+
+First vowel → ḍamma; vowel before the final letter → fatḥa:
+
+| Active | Passive |
+|---|---|
+| **يكتُبُ** (*yaktub* — writes) | **يُكتَبُ** (*yuktab* — is written) |
+| **يشرحُ** (*yashraḥ* — explains) | **يُشرَحُ** (*yushraḥ* — is explained) |
+| **يُكرِمُ** (*yukrimu* — honours) | **يُكرَمُ** (*yukramu* — is honoured) |
+
+---
+
+## What can be the passive subject?
+
+| Type | Example |
+|---|---|
+| Former direct object | **كُتِبَ الدرسُ** (*kutiba d-darsu* — "The lesson was written") |
+| Adverb of time | **صِيمَ رمضانُ** (*ṣīma Ramaḍānu* — "Ramadan was fasted") |
+| Adverb of place | **جُلِسَ أمامَكَ** (*julisa amāmaka* — "Sitting was done in front of you") |
+| Verbal noun (مصدر) | **سِيرَ سيرٌ طويل** (*sīra sayrun ṭawīl* — "A long journey was walked") |
+| Prepositional phrase | **نُظِرَ في الأمرِ** (*nuẓira fī l-amri* — "The matter was looked into") |
+
+---
+
+## Parsing example
+
+**فُتِحَ البابُ** (*futiḥa l-bābu* — "The door was opened")
+
+| Word | Parsing |
+|---|---|
+| فُتِحَ | Passive past-tense verb, indeclinable (built on fatḥa) |
+| البابُ | **Passive subject (نائب فاعل)**, nominative, ḍamma |
+
+---
+
+## Common mistakes
+
+- Putting the passive subject in accusative: **كُتِبَ الدرسَ** ✗ → correct: **كُتِبَ الدرسُ**.
+- Confusing subject and passive subject: the **فاعل** follows an **active verb**; the **نائب الفاعل** follows a **passive verb** (first vowel = ḍamma).
+- Leaving the verb active while removing the doer: **كَتَبَ الدرسُ** ✗ (implies the lesson *wrote itself*) → correct: **كُتِبَ الدرسُ**.
+
+---
+
+## Summary
+
+> The **نائب الفاعل** is a **nominative noun** replacing a deleted agent after a passive verb. To form the passive: for past tense, change the first vowel to ḍamma and the pre-final vowel to kasra; for the imperfect, change the first vowel to ḍamma and the pre-final vowel to fatḥa.
+
+</div>

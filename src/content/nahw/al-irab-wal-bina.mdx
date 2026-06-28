@@ -1,5 +1,6 @@
 ---
 title: "الإعراب والبناء وأحوال الإعراب"
+title_en: "Grammatical States (Iʿrāb) and Indeclinability (Binā')"
 category: kalam
 kind: topic
 order: 4
@@ -58,6 +59,8 @@ quiz:
     explain: "الجرّ خاصٌّ بالأسماء فقط؛ أما الرفع والنصب فيشترك فيهما الاسمُ والفعلُ المضارع. والجزم خاصٌّ بالفعل المضارع."
 ---
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## الإعراب: التغيُّر بتغيُّر العوامل
 
@@ -183,3 +186,124 @@ import Mermaid from '../../components/Mermaid.astro';
 - **الإعراب:** تغيُّر آخر الكلمة بتغيُّر العامل ⟵ الكلمة معربة.
 - **البناء:** ثبات آخر الكلمة مهما تغيَّر العامل ⟵ الكلمة مبنية.
 - أحوال الإعراب أربعة: **الرفع والنصب** (للاسم والفعل المضارع)، **الجرّ** (للاسم وحده)، **الجزم** (للفعل المضارع وحده).
+
+</div>
+
+<div data-lang-block="en">
+
+## Declension (Iʿrāb) — endings that change
+
+**الإعراب** (*al-iʿrāb*) is the **change in a word's final ending** caused by its grammatical role. A word whose ending changes is called **معرب** (*muʿrab*, declinable).
+
+| Sentence | Role of *Muḥammad* | Ending | State |
+|---|---|---|---|
+| **جاءَ محمدٌ** (*jāʾa Muḥammadun* — "Muhammad came") | subject (فاعل) | *-un* | nominative (رفع) |
+| **رأيتُ محمدًا** (*raʾaytu Muḥammadan* — "I saw Muhammad") | object (مفعول به) | *-an* | accusative (نصب) |
+| **مررتُ بمحمدٍ** (*marartu bi-Muḥammadin* — "I passed by Muhammad") | after preposition | *-in* | genitive (جرّ) |
+
+The root never changes — only the ending signals grammatical role.
+
+---
+
+## Indeclinability (Binā') — fixed endings
+
+**البناء** (*al-binā'*) is when a word's ending **stays fixed** no matter what role it plays. Such a word is called **مبني** (*mabnī*, indeclinable).
+
+| Word | Always ends in | Type of binā' |
+|---|---|---|
+| **كَمْ** (*kam*, "how many") | sukūn (ْ) | built on sukūn |
+| **أينَ** (*ayna*, "where") | fatḥa (َ) | built on fatḥa |
+| **هؤلاءِ** (*hāʾulāʾi*, "these") | kasra (ِ) | built on kasra |
+| **حيثُ** (*ḥaythu*, "wherever") | ḍamma (ُ) | built on ḍamma |
+
+> All **particles** (حروف) are indeclinable. Past-tense and command verbs are indeclinable. Most **nouns** are declinable, but pronouns, demonstratives, relative pronouns, and certain adverbs are not.
+
+---
+
+## Who is declinable and who is not?
+
+| Word type | Rule |
+|---|---|
+| Nouns | Declinable by default; exceptions are indeclinable |
+| Imperfect verb (مضارع) | Declinable unless نون التوكيد or نون النسوة is attached |
+| Past-tense and command verbs | Always indeclinable |
+| Particles (حروف) | Always indeclinable |
+
+<Mermaid code={String.raw`flowchart LR
+  A["Iʿrāb (declension)"] --> B["Nominative رفع<br/>(noun + imperfect verb)"]
+  A --> C["Accusative نصب<br/>(noun + imperfect verb)"]
+  A --> D["Genitive جرّ<br/>(nouns only)"]
+  A --> E["Jussive جزم<br/>(imperfect verb only)"]`} />
+
+---
+
+## The Four Grammatical States
+
+### 1. Nominative (الرفع, *ar-rafʿ*)
+
+Applies to **nouns** in roles such as subject (فاعل), topic (مبتدأ), and predicate (خبر).
+Also applies to the **imperfect verb** when no accusative or jussive particle precedes it.
+
+**كتبَ الطالبُ الدرسَ** (*kataba ṭ-ṭālibu d-darsa*) — **يكتُبُ** (imperfect, nominative), **الطالبُ** (subject, nominative).
+
+### 2. Accusative (النصب, *an-naṣb*)
+
+Applies to **nouns** in roles such as direct object (مفعول به), circumstantial (حال), and specification (تمييز).
+Also applies to the **imperfect verb** after particles like أن، لن، كي.
+
+**لن يُهملَ الطالبُ درسَه** — **درسَه** (accusative), **يُهملَ** (accusative after لن).
+
+### 3. Genitive (الجرّ, *al-jarr*)
+
+**Nouns only.** Triggered by prepositions (حروف الجر) or by the possessive construction (إضافة).
+
+**ذهبتُ إلى المدرسةِ** (*dhahabtu ilā l-madrasa* — "I went to the school") — **المدرسةِ** (genitive after إلى).
+
+### 4. Jussive (الجزم, *al-jazm*)
+
+**Imperfect verbs only.** Triggered by particles like لم، لما، لام الأمر، لا الناهية.
+
+**لم يكتُبْ محمدٌ** (*lam yaktub Muḥammad* — "Muhammad did not write") — **يكتُبْ** (jussive after لم).
+
+---
+
+## Summary table
+
+| Grammatical state | Applies to |
+|---|---|
+| Nominative (رفع) | Noun + imperfect verb |
+| Accusative (نصب) | Noun + imperfect verb |
+| Genitive (جرّ) | **Noun only** |
+| Jussive (جزم) | **Imperfect verb only** |
+
+> Nouns and the imperfect verb share nominative and accusative. Only **nouns** take the genitive; only the **imperfect verb** takes the jussive.
+
+---
+
+## Parsing example
+
+**لم يخرُجِ الطالبُ من الفصلِ** (*lam yakhruji ṭ-ṭālibu mina l-faṣli* — "The student did not leave the classroom")
+
+- **لم**: jussive particle, indeclinable.
+- **يخرُجِ**: imperfect verb, jussive (by لم), marked by sukūn (kasra added to break a double-sukūn cluster).
+- **الطالبُ**: subject (فاعل), nominative (*-u*).
+- **مِن**: preposition, indeclinable.
+- **الفصلِ**: noun, genitive after مِن (*-i*).
+
+---
+
+## Common mistakes
+
+- Assuming all nouns are declinable — **هو** (*huwa*, "he") is a pronoun, always fixed.
+- Trying to decline the past tense — **كتبَ** (*kataba*) is always fixed on fatḥa.
+- Declining particles — **في** (*fī*, "in") has no iʿrāb position.
+
+---
+
+## Summary
+
+- **Iʿrāb**: a word whose ending changes with its grammatical role → **declinable** (معرب).
+- **Binā'**: a word whose ending never changes → **indeclinable** (مبني).
+- Four states: **nominative and accusative** (noun + imperfect verb), **genitive** (noun only), **jussive** (imperfect verb only).
+
+</div>

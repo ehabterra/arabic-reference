@@ -1,5 +1,6 @@
 ---
 title: "النعت (الصفة)"
+title_en: "An-Naʿt: The Arabic Adjective"
 category: tawabi
 kind: topic
 order: 40
@@ -58,6 +59,8 @@ quiz:
     explain: "النعت الحقيقي يتبع منعوته في الأوجه الأربعة بما فيها التأنيث والتذكير؛ فـ«طالبةً» مؤنثة فيجب أن يكون النعت «مجتهدةً» مؤنثًا مثله."
 ---
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## النعت (الصفة)
 
@@ -171,3 +174,110 @@ import Mermaid from '../../components/Mermaid.astro';
 ### خلاصة القاعدة
 
 > النعت تابعٌ يصف المنعوتَ؛ الحقيقيُّ يتبعه في أربعة أوجه (إعراب، تعريف، تذكير، عدد)، والسببيُّ يتبعه في الإعراب والتعريف ويطابق ما بعده في التذكير والتأنيث.
+
+</div>
+
+<div data-lang-block="en">
+
+## An-Naʿt — النعت (الصفة): The Arabic Adjective
+
+Arabic adjectives (**naʿt**, نعت, or **ṣifa**, صفة) follow the noun they describe (the **manʿūt**, المنعوت) and agree with it in **four features**. This is a key difference from English, where adjectives precede the noun and have no agreement.
+
+<Mermaid code={String.raw`flowchart TD
+  A["Naʿt — النعت"] --> B["True naʿt — نعت حقيقي
+(describes the noun itself)
+← agrees in 4 features"]
+  A --> C["Causal naʿt — نعت سببي
+(describes a linked noun)
+← agrees in case + definiteness only"]
+  B --> D["Single word
+«طالبٌ مجتهدٌ»"]
+  B --> E["Clause
+«رجلٌ يحملُ كتابًا»"]
+  B --> F["Prepositional phrase
+«كتابٌ على الرفِّ»"]`} />
+
+---
+
+## Definition
+
+The **naʿt** (النعت / الصفة) describes a quality of its **manʿūt** (المنعوت), completing its meaning and removing ambiguity.
+
+- **جاء طالبٌ مجتهدٌ** (*jāʾa ṭālibun mujtahidun* — "A diligent student came") — **مجتهدٌ** describes the student.
+- **قرأتُ الكتابَ المفيدَ** (*qaraʾtu l-kitāba l-mufīda* — "I read the useful book") — **المفيدَ** specifies which book.
+
+---
+
+## Types of naʿt
+
+### 1. True naʿt — النعت الحقيقي
+
+Describes the **manʿūt itself**. Agrees in **four features**:
+1. **Case** (nominative / accusative / genitive)
+2. **Definiteness** (definite / indefinite)
+3. **Gender** (masculine / feminine)
+4. **Number** (singular / dual / plural)
+
+Example: **جاء طالبٌ مجتهدٌ** / **جاء طالبانِ مجتهدانِ** / **جاء طلابٌ مجتهدونَ**.
+
+### 2. Causal naʿt — النعت السببي
+
+Describes a noun **linked to** the manʿūt, not the manʿūt itself. Agrees with the manʿūt in case and definiteness, matches the following noun in gender, and is always **singular**.
+
+- **رأيتُ المعلِّمَ المجتهدَ طالبُهُ** (*raʾaytu l-muʿallima l-mujtahida ṭālibuhu* — "I saw the teacher whose student is diligent") — المجتهدَ describes the student, not the teacher directly.
+
+---
+
+## Rule
+
+> True naʿt agrees with its manʿūt in **four features** (case, definiteness, gender, number). Causal naʿt agrees in case and definiteness only, and is singular matching the following noun in gender.
+
+---
+
+## Agreement table (true naʿt)
+
+| Manʿūt | Matching naʿt |
+|---|---|
+| طالبٌ (masc. sg. indef. nom.) | مجتهدٌ |
+| طالبةٌ (fem. sg. indef. nom.) | مجتهدةٌ |
+| الطالبَيْنِ (masc. dual def. acc./gen.) | المجتهدَيْنِ |
+| الطالباتِ (fem. pl. def. gen.) | المجتهداتِ |
+| الطلابَ (masc. pl. def. acc.) | المجتهدِينَ |
+
+---
+
+## Three forms of the naʿt
+
+**a) Single-word naʿt** — agrees fully in all four features:
+> **جاء رجلٌ كريمٌ / رأيتُ رجلًا كريمًا / مررتُ برجلٍ كريمٍ**
+
+**b) Clausal naʿt** — a verbal or nominal clause after an **indefinite** noun (after a definite noun it becomes ḥāl):
+> **جاء رجلٌ يحملُ كتابًا** (*jāʾa rajulun yaḥmilu kitāban* — "A man came carrying a book").
+
+**c) Prepositional-phrase naʿt** — after an indefinite noun:
+> **رأيتُ كتابًا على الرفِّ** (*raʾaytu kitāban ʿalā r-raffi* — "I saw a book on the shelf").
+
+---
+
+## Parsing example
+
+**قرأتُ كتابًا مفيدًا** ("I read a useful book")
+
+| Word | Parsing |
+|---|---|
+| كتابًا | direct object, accusative, indefinite |
+| مفيدًا | **naʿt**, accusative, indefinite, masculine singular — matches كتابًا in all four features |
+
+---
+
+## Common mistakes
+
+- Mismatching definiteness: ***جاء رجلٌ الكريمُ*** — correct: **رجلٌ كريمٌ** (indef.) or **الرجلُ الكريمُ** (def.).
+- Mismatching gender: ***جاءت طالبةٌ مجتهدٌ*** — correct: **مجتهدةٌ**.
+- Writing a clausal naʿt after a **definite** noun: **جاء الرجلُ يحملُ كتابًا** — here the clause is **ḥāl**, not naʿt.
+
+## In a nutshell
+
+> The naʿt follows its noun and agrees in four features (case, definiteness, gender, number) for the true naʿt; the causal naʿt agrees only in case and definiteness, and is always singular matching the following noun in gender.
+
+</div>

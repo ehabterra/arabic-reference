@@ -1,5 +1,6 @@
 ---
 title: "المبتدأ والخبر"
+title_en: "The Subject and Predicate (Mubtadaʾ and Khabar)"
 category: marfuaat
 kind: topic
 order: 12
@@ -59,6 +60,8 @@ quiz:
     explain: "«يجتهدُ» جملة فعلية مؤلَّفة من فعل وفاعل مستتر، تقع في محلّ رفع خبرًا للمبتدأ «محمدٌ»."
 ---
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## المبتدأ والخبر
 
@@ -165,3 +168,118 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة القاعدة
 
 > **المبتدأ** اسمٌ مرفوعٌ في صدر الجملة الاسمية. **الخبر** ما يُتمُّ به المعنى ويكون مرفوعًا أيضًا. والخبر ثلاثة أنواع: **مفرد**، و**جملة** (اسمية أو فعلية)، و**شبه جملة** (ظرف أو جار ومجرور).
+
+</div>
+
+<div data-lang-block="en">
+
+## The Nominal Sentence's Two Pillars
+
+The nominal sentence (الجملة الاسمية) rests on two compulsory elements — both nominative in the base form:
+
+- **المبتدأ** (*al-mubtadaʾ*) — the **topic**: the noun the sentence speaks *about*.
+- **الخبر** (*al-khabar*) — the **comment / predicate**: the information conveyed *about* the topic.
+
+---
+
+## 1. The Topic (المبتدأ)
+
+### Definition
+
+A **nominative noun** that opens the nominal sentence and is spoken about by the comment.
+
+- **الصدقُ منجاةٌ** (*aṣ-ṣidqu manjātun* — "Honesty is salvation") — الصدقُ: topic, nominative with ḍamma.
+- **محمدٌ مجتهدٌ** (*Muḥammadun mujtahidun* — "Muhammad is diligent") — محمدٌ: topic.
+
+### Rule
+
+The topic is **always nominative**. It is usually a definite noun (with الـ, a possessive, a proper name, a pronoun, or a relative pronoun).
+
+---
+
+## 2. The Comment (الخبر)
+
+### Definition
+
+The part that **completes the sentence's meaning** — the predicate attached to the topic.
+
+- **الصدقُ منجاةٌ** — منجاةٌ: comment, nominative with ḍamma + tanwīn.
+
+### Rule
+
+The comment is **always nominative** in the basic nominal sentence (before any abrogating particle — ناسخ — is added).
+
+<Mermaid code={String.raw`flowchart TD
+  A["Nominal sentence"] --> B["Topic مبتدأ — nominative"]
+  A --> C["Comment خبر — nominative"]
+  C --> D["Single word — مفرد"]
+  C --> E["Clause — جملة"]
+  C --> F["Quasi-sentence — شبه جملة"]`} />
+
+---
+
+## Types of comment (خبر)
+
+### 1. Single-word comment (خبر مفرد)
+
+One word, nominative:
+
+| Sentence | Comment |
+|---|---|
+| **العِلمُ نورٌ** (*al-ʿilmu nūrun* — "Knowledge is light") | نورٌ |
+| **محمدٌ طبيبٌ** (*Muḥammadun ṭabībun* — "Muhammad is a doctor") | طبيبٌ |
+
+### 2. Clause comment (خبر جملة)
+
+A complete clause (nominal or verbal) functioning as predicate:
+
+- **محمدٌ أبوه كريمٌ** (*Muḥammadun abūhu karīmun* — "Muhammad — his father is generous") — the nominal clause (أبوه كريمٌ) is the comment.
+- **محمدٌ يجتهدُ** (*Muḥammadun yajtahidu* — "Muhammad is diligent") — the verbal clause (يجتهدُ) is the comment.
+
+> **Requirement:** the clause comment must contain a **pronoun that refers back to the topic** (called الرابط, the link).
+
+### 3. Quasi-sentence comment (خبر شبه الجملة)
+
+A prepositional phrase (جار ومجرور) or adverb (ظرف) acting as predicate:
+
+- **المعلمُ في الفصلِ** (*al-muʿallimu fī l-faṣli* — "The teacher is in the classroom") — في الفصلِ: prepositional phrase as comment.
+- **الكتابُ فوقَ المكتبِ** (*al-kitābu fawqa l-maktabi* — "The book is above the desk") — فوقَ المكتب: adverb as comment.
+
+---
+
+## Comparison table
+
+| | Topic (مبتدأ) | Comment (خبر) |
+|---|---|---|
+| **Position** | Sentence-opening | After the topic |
+| **Function** | What is spoken about | What is said about it |
+| **Case** | Nominative | Nominative |
+| **Common form** | Definite | Indefinite or definite |
+
+---
+
+## Parsing example
+
+**الكتابُ خيرُ جليسٍ** (*al-kitābu khayru jalīsin* — "A book is the best companion")
+
+| Word | Parsing |
+|---|---|
+| الكتابُ | **Topic (مبتدأ)**, nominative, ḍamma |
+| خيرُ | **Comment (خبر)**, nominative, ḍamma; first term of a possessive construction |
+| جليسٍ | Second term of possessive (مضاف إليه), genitive, kasra + tanwīn |
+
+---
+
+## Common mistakes
+
+- Making the topic accusative: **محمدًا مجتهدٌ** ✗ → correct: **محمدٌ مجتهدٌ** (unless إنّ or a similar particle enters).
+- Making the comment accusative: **محمدٌ مجتهدًا** ✗ → correct: **محمدٌ مجتهدٌ** (unless كان or a similar particle enters).
+- Forgetting the referential pronoun (رابط) in a clause comment: **محمدٌ يسافرُ أخوه** — the pronoun must refer to محمد, not to someone else.
+
+---
+
+## Summary
+
+> The **مبتدأ** is a nominative noun at the head of a nominal sentence. The **خبر** completes its meaning and is also nominative. The comment may be a **single word** (مفرد), a **clause** (جملة), or a **quasi-sentence** (شبه جملة — prepositional phrase or adverb).
+
+</div>

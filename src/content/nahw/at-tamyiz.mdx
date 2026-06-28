@@ -1,5 +1,6 @@
 ---
 title: "التمييز"
+title_en: "At-Tamyīz: The Specifying Complement"
 category: mansubat
 kind: topic
 order: 22
@@ -58,6 +59,8 @@ quiz:
     explain: "الحال يُجيب «كيف» ويبيّن هيئة صاحبه وقت الفعل؛ والتمييز يُجيب «من أيّ شيء / من أيّ ناحية» ويُزيل الإبهام عن ذاتٍ مُبهَمة أو نسبة في الجملة."
 ---
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## التمييز
 
@@ -148,3 +151,85 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة القاعدة
 
 > **التمييز** اسمٌ نكرةٌ منصوبٌ يُزيل الإبهامَ: إمّا عن ذاتٍ مُبهَمة (تمييز الذات)، أو عن نسبةٍ في الجملة (تمييز النسبة). ويُجيب عن «من أيّ شيء؟» أو «من أيّ ناحية؟».
+
+</div>
+
+<div data-lang-block="en">
+
+## At-Tamyīz — التمييز: The Specifying Complement
+
+**Tamyīz** is an Arabic grammatical device that removes ambiguity (إبهام, *ibhām*) from either a vague noun or an unclear predication. It is always **indefinite and accusative**, answering "of what?" or "in what respect?".
+
+<Mermaid code={String.raw`flowchart TD
+  A["Tamyīz — التمييز"] --> B["Entity tamyīz — تمييز الذات
+(removes noun ambiguity)"]
+  A --> C["Relational tamyīz — تمييز النسبة
+(removes sentence ambiguity)"]
+  B --> D["Weight / volume / area / number
+«كيلوغرامًا تفاحًا»"]
+  C --> E["«طابَ محمدٌ نفسًا»
+(good in what respect?)"]`} />
+
+---
+
+## Definition
+
+**Tamyīz** (التمييز) is an **indefinite accusative** noun that removes ambiguity: either from a vague noun before it (entity tamyīz) or from the relational ambiguity in a whole sentence (relational tamyīz).
+
+---
+
+## Types of tamyīz
+
+### 1. Entity tamyīz — تمييز الذات
+
+Specifies a vague measurement (weight, volume, area, or number):
+
+| Vague expression | Example | Gloss |
+|---|---|---|
+| Weight | **اشتريتُ كيلوغرامًا زيتًا** | "I bought a kilogram of oil" |
+| Volume | **ملأتُ الإناءَ عسلًا** | "I filled the vessel with honey" |
+| Area | **حفرتُ مترًا عُمقًا** | "I dug one metre in depth" |
+
+### 2. Relational tamyīz — تمييز النسبة
+
+Clarifies *in what respect* the whole sentence holds:
+
+- **طابَ محمدٌ نفسًا** (*ṭāba Muḥammadun nafsan* — "Muhammad is good in spirit") — good in what? In spirit.
+- **ازدادَ الطالبُ علمًا** (*izdāda ṭ-ṭālibu ʿilman* — "The student increased in knowledge").
+- **امتلأَ الإناءُ ماءً** (*imtalaʾa l-ināʾu māʾan* — "The vessel filled with water").
+
+---
+
+## Number tamyīz
+
+| Number | Tamyīz form | Example |
+|---|---|---|
+| 3 – 10 | plural genitive | **ثلاثةُ طلابٍ** "three students" |
+| 11 – 99 | singular accusative | **خمسةَ عشرَ طالبًا** "fifteen students" |
+| 100 / 1000 | singular genitive | **مئةُ طالبٍ** "a hundred students" |
+
+---
+
+## Parsing example
+
+**ازدادَ محمدٌ علمًا** ("Muhammad increased in knowledge")
+
+| Word | Parsing |
+|---|---|
+| ازدادَ | past verb |
+| محمدٌ | nominative subject |
+| علمًا | **tamyīz**, indefinite accusative |
+
+---
+
+## Common mistakes
+
+- Marking tamyīz nominative: ***طابَ محمدٌ نفسٌ*** — correct: **نفسًا**.
+- Confusing tamyīz with ḥāl: ḥāl describes the state of its owner ("how?"); tamyīz specifies "of what?" or "in what respect?". Compare: **جاءَ الطالبُ فرِحًا** (ḥāl) vs. **طابَ الطالبُ نفسًا** (tamyīz).
+- Marking number 11–99 tamyīz genitive: ***خمسةَ عشرَ طالبٍ*** — correct: **طالبًا** (singular accusative).
+
+## In a nutshell
+
+> **Tamyīz** is an indefinite accusative noun removing ambiguity: from a vague entity (entity tamyīz) or from a relational ambiguity (relational tamyīz). It answers "of what?" or "in what respect?".
+
+</div>

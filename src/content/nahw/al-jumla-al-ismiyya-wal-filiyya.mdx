@@ -1,5 +1,6 @@
 ---
 title: "الجملة الاسمية والجملة الفعلية"
+title_en: "The Nominal and Verbal Sentence"
 category: kalam
 kind: topic
 order: 3
@@ -58,6 +59,8 @@ quiz:
     explain: "«يسافرُ الطالبُ» تبدأ بفعل مضارع ← فعلية. «الطالبُ مسافرٌ» و«الطالبُ يسافرُ» تبدآن باسم ← اسميّتان."
 ---
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## ما الجملة؟
 
@@ -163,3 +166,105 @@ import Mermaid from '../../components/Mermaid.astro';
 - **الاسمية:** تبدأ باسمٍ، ركناها المبتدأ والخبر (كلاهما مرفوع في الأصل).
 - **الفعلية:** تبدأ بفعلٍ، ركناها الفعل والفاعل (الفاعل مرفوع دائمًا).
 - العبرة بـ**صدر** الجملة لا بمعناها ولا بمجمل كلماتها.
+
+</div>
+
+<div data-lang-block="en">
+
+## What is a Sentence (الجملة, *al-jumla*)?
+
+A **sentence** is two or more words that together deliver a complete, standalone meaning — one you can stop on without feeling something is missing. **العِلمُ** (*al-ʿilm*, "knowledge") alone is not a sentence; **العِلمُ نورٌ** (*al-ʿilmu nūrun*, "Knowledge is light") is.
+
+Arabic has **two sentence types**, determined solely by the **first word**:
+
+<Mermaid code={String.raw`flowchart TD
+  A["Sentence — الجملة"] --> B["Nominal — اسمية<br/>(starts with a noun)"]
+  A --> C["Verbal — فعلية<br/>(starts with a verb)"]
+  B --> D["Topic (مبتدأ) + Comment (خبر)"]
+  C --> E["Verb (فعل) + Subject (فاعل)"]`} />
+
+---
+
+## 1. The Nominal Sentence (الجملة الاسمية, *al-jumla al-ismiyya*)
+
+A sentence that **begins with a noun**. It has two compulsory parts:
+
+- **المبتدأ** (*al-mubtadaʾ*) — the **topic**: the noun the sentence is about; always **nominative** (مرفوع).
+- **الخبر** (*al-khabar*) — the **comment/predicate**: what is said about the topic; also **nominative** by default.
+
+| Sentence | Topic (مبتدأ) | Comment (خبر) |
+|---|---|---|
+| **العِلمُ نورٌ** (*al-ʿilmu nūrun* — "Knowledge is light") | العِلمُ (nominative) | نورٌ (nominative) |
+| **البستانُ جميلٌ** (*al-bustānu jamīlun* — "The garden is beautiful") | البستانُ | جميلٌ |
+| **اللهُ غفورٌ رحيمٌ** (*Allāhu ghafūrun raḥīmun* — "God is Forgiving, Merciful") | اللهُ | غفورٌ رحيمٌ |
+
+### Types of comment (خبر)
+
+The comment is not always a single word:
+
+- **Single word (مفرد):** **محمدٌ مسافرٌ** (*Muḥammadun musāfirun* — "Muhammad is travelling").
+- **Verbal clause (جملة فعلية):** **محمدٌ سافرَ** (*Muḥammadun sāfara* — "Muhammad travelled").
+- **Quasi-sentence (شبه جملة):** **الكتابُ على الطاولةِ** (*al-kitābu ʿalā aṭ-ṭāwilati* — "The book is on the table").
+
+---
+
+## 2. The Verbal Sentence (الجملة الفعلية, *al-jumla al-fiʿliyya*)
+
+A sentence that **begins with a verb**. Its two core elements:
+
+- **الفعل** (*al-fiʿl*) — the **verb**: the opening element.
+- **الفاعل** (*al-fāʿil*) — the **subject/doer**: always **nominative** (مرفوع).
+- Optionally: **المفعول به** (*al-mafʿūl bihi*) — the **direct object** (accusative, منصوب).
+
+| Sentence | Verb | Subject | Object |
+|---|---|---|---|
+| **طلعَتِ الشمسُ** (*ṭalaʿati sh-shamsu* — "The sun rose") | طلعَتِ | الشمسُ (nominative) | — |
+| **كتبَ محمدٌ الدرسَ** (*kataba Muḥammadun ad-darsa* — "Muhammad wrote the lesson") | كتبَ | محمدٌ (nominative) | الدرسَ (accusative) |
+| **قرأَ الطالبُ القرآنَ** (*qaraʾa aṭ-ṭālibu l-Qurʾāna* — "The student read the Qurʾān") | قرأَ | الطالبُ (nominative) | القرآنَ (accusative) |
+
+---
+
+## The key rule: the first word decides
+
+> The sentence type is determined by its **opening word**, not by its overall content.
+
+| Sentence | First word | Type |
+|---|---|---|
+| **محمدٌ سافرَ** (*Muḥammadun sāfara* — "Muhammad travelled") | محمدٌ (noun) | **Nominal** |
+| **سافرَ محمدٌ** (*sāfara Muḥammadun* — "Muhammad travelled") | سافرَ (verb) | **Verbal** |
+
+Both carry the same meaning but belong to different types because of word order.
+
+---
+
+## Parsing example
+
+### Nominal: **العِلمُ نورٌ** (*al-ʿilmu nūrun* — "Knowledge is light")
+
+- **العِلمُ**: topic (مبتدأ), nominative, marked by *-u* (ḍamma).
+- **نورٌ**: comment (خبر), nominative, marked by *-un* (ḍamma + tanwīn).
+
+### Verbal: **كتبَ محمدٌ الدرسَ** (*kataba Muḥammadun ad-darsa* — "Muhammad wrote the lesson")
+
+- **كتبَ**: past-tense verb, indeclinable (built on fatḥa).
+- **محمدٌ**: subject (فاعل), nominative (*-un*).
+- **الدرسَ**: direct object (مفعول به), accusative (*-a*).
+
+---
+
+## Common mistakes
+
+- Classifying **محمدٌ سافرَ** as verbal because it contains a verb — it is **nominal** (opens with a noun).
+- Mixing up subject and object by position — grammar (case endings), not word order, decides who is who.
+- Thinking a verbal sentence always needs an object — **طلعَتِ الشمسُ** is complete with verb + subject only.
+
+---
+
+## Summary
+
+- A sentence delivers a complete meaning you can stop on.
+- **Nominal** (اسمية): starts with a noun; built from topic (مبتدأ) + comment (خبر), both nominative by default.
+- **Verbal** (فعلية): starts with a verb; built from verb (فعل) + subject (فاعل, always nominative).
+- The **first word** determines the sentence type.
+
+</div>

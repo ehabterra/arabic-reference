@@ -1,5 +1,6 @@
 ---
 title: "العطف (حروفه والمعطوف)"
+title_en: "Al-ʿAṭf: Coordinating Conjunctions"
 category: tawabi
 kind: topic
 order: 41
@@ -58,6 +59,8 @@ quiz:
     explain: "«الكتابَ» معطوفٌ بالواو على «القلمَ» المنصوب؛ والمعطوف يتبع المعطوف عليه في الإعراب، فهو منصوب بالفتحة."
 ---
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## العطف (حروفه والمعطوف)
 
@@ -153,3 +156,92 @@ import Mermaid from '../../components/Mermaid.astro';
 ### خلاصة القاعدة
 
 > العطف ربطٌ بين اثنين بحرف عطف؛ المعطوف يتبع المعطوف عليه في الإعراب. ولكل حرف معنًى محدَّد (الواو جمع، الفاء ترتيب مع تعقيب، ثم ترتيب مع تراخٍ، لا نفي، بل إضراب).
+
+</div>
+
+<div data-lang-block="en">
+
+## Al-ʿAṭf — العطف: Coordinating Conjunctions
+
+Arabic **coordinating conjunctions** (حروف العطف, *ḥurūf al-ʿaṭf*) connect two words or clauses. The conjoined word (المعطوف, *al-maʿṭūf*) always **follows the first word** (المعطوف عليه, *al-maʿṭūf ʿalayhi*) in **grammatical case**. Each conjunction also carries a distinct meaning.
+
+<Mermaid code={String.raw`flowchart TD
+  A["Conjunctions — حروف العطف"] --> B["Joint without order
+الواو — and"]
+  A --> C["Order + immediate
+الفاء — then (immediately)"]
+  A --> D["Order + time gap
+ثم — then (later)"]
+  A --> E["Choice or doubt
+أو — or"]
+  A --> F["Negates the second
+لا — not (the second)"]
+  A --> G["Replaces the first
+بل — rather"]`} />
+
+---
+
+## Definition
+
+A **conjunction** (حرف عطف) links two items. The **maʿṭūf** shares (or contrasts in) the ruling of the **maʿṭūf ʿalayhi** and takes the **same grammatical case**.
+
+---
+
+## Conjunctions and their meanings
+
+| Conjunction | Meaning | Example |
+|---|---|---|
+| الواو | joint — both share the ruling, no order implied | **جاء محمدٌ وعليٌّ** "Muhammad and Ali came" |
+| الفاء | order + immediate succession | **دخل الأستاذُ فالطلابُ** "The teacher entered, then immediately the students" |
+| ثم | order + time gap | **دخل محمدٌ ثم خرجَ** "Muhammad entered, then (later) left" |
+| أو | choice, permission, or doubt | **خذ كتابًا أو قلمًا** "Take a book or a pen" |
+| أم | balance (after سواء or interrogative ء) | **سواءٌ علينا أقمتَ أم سافرتَ** |
+| لا | negates the second; affirms the first | **جاء محمدٌ لا عليٌّ** "Muhammad came, not Ali" |
+| بل | replaces — cancels the first, affirms the second | **جاء محمدٌ بل عليٌّ** "Rather, Ali came" |
+| لكن | corrective (after negation or prohibition) | **ما جاء محمدٌ لكن عليٌّ** |
+| حتى | gradation — the second is the extreme of the first | **مات الناسُ حتى الأنبياءُ** "People died, even prophets" |
+
+---
+
+## Rule
+
+> The **maʿṭūf** follows the **maʿṭūf ʿalayhi** in **grammatical case** (nominative, accusative, genitive, or jussive). Agreement in definiteness or gender is not required.
+
+---
+
+## Parsing examples
+
+**جاء محمدٌ وعليٌّ** ("Muhammad and Ali came")
+
+| Word | Parsing |
+|---|---|
+| محمدٌ | nominative subject |
+| و | conjunction |
+| عليٌّ | **maʿṭūf**, nominative — follows محمدٌ |
+
+**رأيتُ خالدًا وسعيدًا** — **سعيدًا** accusative maʿṭūf.
+
+**مررتُ بالمسجدِ والمكتبةِ** — **المكتبةِ** genitive maʿṭūf.
+
+**لم يكتُبْ محمدٌ ولم يَقرأْ** — **يَقرأْ** jussive maʿṭūf.
+
+---
+
+## Note: conjunction wāw vs. accompaniment wāw
+
+- **Conjunction واو:** the maʿṭūf shares the ruling. **جاء محمدٌ وعليٌّ** — both came.
+- **Accompaniment واو (واو المعية):** indicates company only; what follows is **accusative** (مفعول معه). **سار الجيشُ والنهرَ** — "The army marched alongside the river" (the river did not march); **النهرَ** is accusative regardless.
+
+---
+
+## Common mistakes
+
+- Giving the maʿṭūf the wrong case: ***جاء محمدٌ وعليًّا*** — correct: **وعليٌّ**.
+- Using بل to mean "and also": بل cancels what precedes it in affirmative sentences.
+- Treating حتى as a preposition here — as a conjunction it passes on the case of the preceding noun.
+
+## In a nutshell
+
+> The maʿṭūf always takes the same **grammatical case** as the maʿṭūf ʿalayhi. Each conjunction carries a specific meaning: و (joint), ف (immediate order), ثم (delayed order), لا (negates second), بل (replaces first with second).
+
+</div>

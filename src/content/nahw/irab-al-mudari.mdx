@@ -1,5 +1,6 @@
 ---
 title: "إعراب الفعل المضارع: رفعه ونصبه وجزمه"
+title_en: "Inflection of the Imperfect Verb (Muḍāriʿ)"
 category: asalib
 kind: topic
 order: 50
@@ -58,6 +59,8 @@ quiz:
     explain: "«يدعو» معتل الآخر بالواو؛ عند الجزم تُحذف الواو فيصبح «لم يَدعُ». أما الصحيح الآخر فيُجزم بالسكون، والأفعال الخمسة بحذف النون."
 ---
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## إعراب الفعل المضارع: رفعه ونصبه وجزمه
 
@@ -201,3 +204,134 @@ import Mermaid from '../../components/Mermaid.astro';
 ### خلاصة القاعدة
 
 > المضارع يُرفع بلا ناصب ولا جازم؛ يُنصب بـ«أن/ لن/ كي/ لام التعليل/ فاء السببية/ حتى»؛ ويُجزم بـ«لم/ لمّا/ لام الأمر/ لا الناهية» وبأدوات الشرط. وعلامة رفعه الضمة ونصبه الفتحة وجزمه السكون، أو ما ينوب عن ذلك.
+
+</div>
+
+<div data-lang-block="en">
+
+## Inflection of the Imperfect Verb — إعراب الفعل المضارع
+
+The Arabic **imperfect verb** (الفعل المضارع, *al-fiʿl al-muḍāriʿ*) is the only Arabic verb that is **inflected** (معرب, *muʿrab*) — its ending changes according to preceding operators. It has three states: **nominative** (مرفوع), **accusative** (منصوب), and **jussive** (مجزوم).
+
+<Mermaid code={String.raw`flowchart TD
+  A["Imperfect verb — الفعل المضارع"] --> B["Nominative — مرفوع
+(no operator)"]
+  A --> C["Accusative — منصوب
+(accusative particle)"]
+  A --> D["Jussive — مجزوم
+(jussive particle)"]
+  B --> E["ḍamma / nūn retained"]
+  C --> F["أن / لن / كي / lām of purpose
+fāʾ of causation / حتى"]
+  D --> G["لم / لمّا / lā prohibitive
+lām of command / conditional particles"]`} />
+
+---
+
+## Introduction
+
+Unlike the past tense and imperative (which are indeclinable), the imperfect verb is **inflected**. It shares **nominative and accusative** with nouns, and has its own **jussive** state (corresponding to the genitive of nouns).
+
+> **Exception:** the imperfect connected to **nūn al-niswah** (نون النسوة) is built on *sukūn*; that connected to **nūn al-tawkīd** is built on *fatḥa*.
+
+---
+
+## 1. Nominative imperfect — المرفوع
+
+**Condition:** no preceding accusative or jussive operator.
+
+**Primary sign:** ḍamma.
+**Secondary sign:** retained nūn (in the five verb forms).
+
+- **يَكتُبُ الطالبُ كلَّ يومٍ** (*yaktub uṭ-ṭālibu kulla yawmin* — "The student writes every day") — ḍamma.
+- **الطلابُ يكتبونَ الدرسَ** — retained nūn (five verb forms).
+
+---
+
+## 2. Accusative imperfect — المنصوب
+
+**Condition:** preceded by an accusative particle.
+
+### Accusative particles
+
+| Particle | Meaning | Example |
+|---|---|---|
+| أَنْ | expectation / verbal-noun maker | **أُريدُ أَنْ أَكتُبَ** "I want to write" |
+| لَنْ | future negation | **لَنْ أَكذِبَ** "I will never lie" |
+| كَيْ | purpose | **اجتهدتُ كَيْ أَنجحَ** "I strove to succeed" |
+| لام التعليل | purpose (lām) | **جئتُ لِأَتعلَّمَ** "I came to learn" |
+| فاء السببية | causation (after negation/request) | **لا تكسلْ فتندمَ** "Don't be lazy, or you'll regret it" |
+| حتى | purpose or limit | **اجتهدْ حتى تَنجحَ** "Strive until you succeed" |
+
+**Signs of accusative:**
+- Visible *fatḥa* for sound-final and yāʾ/wāw-final verbs.
+- Implied *fatḥa* for ʾalif-final verbs (**يسعى** → **لن يسعَى**).
+- Dropped nūn in the five verb forms.
+
+---
+
+## 3. Jussive imperfect — المجزوم
+
+**Condition:** preceded by a jussive operator.
+
+### Jussive operators — one verb
+
+| Operator | Meaning | Example |
+|---|---|---|
+| لَمْ | negation of past | **لَمْ يَكتُبْ** "He did not write" |
+| لَمَّا | ongoing negation up to now | **لَمَّا يَأكُلْ بعدُ** "He hasn't eaten yet" |
+| لام الأمر | command (third person) | **لِيَكتُبِ الطالبُ** "Let the student write" |
+| لا الناهية | prohibition | **لا تَكذِبْ** "Do not lie" |
+
+### Jussive operators — two verbs (conditional particles)
+
+Both the conditional verb and its response are jussive:
+
+| Particle | Example |
+|---|---|
+| إِنْ | **إِنْ تَجتهِدْ تَنجَحْ** "If you strive, you will succeed" |
+| مَنْ | **مَنْ يَعملْ خيرًا يَجِدْهُ** "Whoever does good will find it" |
+| مَتى | **مَتى تَأتِ أُكرِمْكَ** "Whenever you come, I will honour you" |
+| أَيْنَ | **أَيْنَ تَذهَبْ أَذهَبْ** "Wherever you go, I will go" |
+
+**Signs of jussive:**
+- *Sukūn* for sound-final verbs.
+- Dropped final weak letter for weak-final verbs: **يدعو → لم يَدعُ**, **يسعى → لم يَسعَ**, **يرمي → لم يَرمِ**.
+- Dropped nūn in the five verb forms.
+
+---
+
+## Full summary table
+
+| State | Condition | Primary sign | Secondary sign |
+|---|---|---|---|
+| Nominative | no operator | ḍamma | retained nūn (five verb forms) |
+| Accusative | accusative particle | fatḥa | dropped nūn (five verb forms) |
+| Jussive | jussive operator | sukūn | dropped weak letter — or dropped nūn (five forms) |
+
+---
+
+## Parsing example
+
+**لَمْ يَكتُبِ الطالبُ الدرسَ** ("The student did not write the lesson")
+
+| Word | Parsing |
+|---|---|
+| لم | jussive particle (negates past) |
+| يكتُبْ | imperfect, **jussive** by لم; sign: sukūn |
+| الطالبُ | nominative subject |
+
+---
+
+## Common mistakes
+
+- Leaving the imperfect nominative after لم: ***لم يكتُبُ*** — correct: **لم يكتُبْ** (sukūn).
+- Making the imperfect jussive after لن: ***لن يكتُبْ*** — correct: **لن يكتُبَ** (fatḥa).
+- Confusing **لا الناهية** (jussive, prohibition) with **لا النافية** (no effect): **لا تكذِبْ** is jussive; **لا يكذِبُ** stays nominative.
+- Forgetting to make the response verb jussive: ***إن تجتهِدْ تنجَحُ*** — correct: **تنجَحْ**.
+
+## In a nutshell
+
+> The imperfect is **nominative** with no operator (ḍamma); **accusative** after أن/لن/كي/لام/فاء/حتى (fatḥa); **jussive** after لم/لمّا/لام الأمر/لا الناهية and conditional particles (sukūn). Weak-final verbs drop the weak letter when jussive; the five verb forms use retained/dropped nūn.
+
+</div>

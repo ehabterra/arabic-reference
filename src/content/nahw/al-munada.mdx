@@ -1,5 +1,6 @@
 ---
 title: "المنادى"
+title_en: "Al-Munādā: The Vocative"
 category: mansubat
 kind: topic
 order: 24
@@ -60,6 +61,8 @@ quiz:
     explain: "«رجلُ» هنا نكرة مقصودة، أي النداء موجَّهٌ لشخص بعينه؛ وحكمها البناء على الضمّ في محلّ نصب، كالعلَم المفرد تمامًا."
 ---
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## المنادى
 
@@ -181,3 +184,116 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة القاعدة
 
 > **المنادى** اسمٌ يقع بعد أداة نداء. يُبنى على الضمّ في محلّ نصب إذا كان علمًا مفردًا أو نكرةً مقصودة. ويُنصب بالفتحة إذا كان مضافًا أو شبيهًا بالمضاف أو نكرةً غير مقصودة.
+
+</div>
+
+<div data-lang-block="en">
+
+## Al-Munādā — المنادى: The Vocative
+
+The **vocative** calls or addresses someone. Arabic has several vocative particles; **يا** (*yā*) is the most versatile. The called noun (المنادى, *al-munādā*) is either **built on ḍamma** (nominative-shaped, in place of accusative) or **properly accusative** with *fatḥa*, depending on its type.
+
+<Mermaid code={String.raw`flowchart TD
+  A["Vocative — المنادى"] --> B["Built on ḍamma
+(in place of accusative)"]
+  A --> C["Accusative — fatḥa"]
+  B --> D["Proper noun
+«يا محمدُ»"]
+  B --> E["Specific indefinite
+«يا رجلُ»"]
+  C --> F["Genitive construct — مضاف
+«يا طالبَ العلمِ»"]
+  C --> G["Quasi-genitive-construct
+«يا كريمًا خُلُقُه»"]
+  C --> H["Non-specific indefinite
+«يا غافلًا»"]`} />
+
+---
+
+## Definition
+
+The **munādā** (المنادى) follows a vocative particle. Grammatically it is **in place of accusative**; its surface form depends on its type.
+
+---
+
+## Vocative particles
+
+| Particle | Used for | Example |
+|---|---|---|
+| **يا** | near or far — most versatile | **يا محمدُ** |
+| **أيا / هيا** | distant addressee | **أيا نائمُ، انتبِهْ** |
+| **أَ / أيْ** | close addressee | **أيْ بُنيَّ، اسمعْ** |
+| **وا** | lamentation (ندبة, *nadba*) | **وا محمداه** |
+
+---
+
+## Rule
+
+> 1. **Built on ḍamma** (in place of accusative) — for a **proper noun** or a **specific indefinite**.
+> 2. **Accusative** (fatḥa) — for a **genitive construct** (مضاف), a **quasi-genitive-construct**, or a **non-specific indefinite**.
+
+---
+
+## Types
+
+### 1. Proper noun — built on ḍamma
+
+- **يا محمدُ، أَقبِلْ** (*yā Muḥammadu, aqbil* — "O Muhammad, come!") — built on ḍamma, in place of accusative.
+- **يا فاطمةُ، اسمعي** (*yā Fāṭimatu, ismaʿī*).
+
+### 2. Specific indefinite — built on ḍamma
+
+- **يا رجلُ، انتبِهْ** (*yā rajulu, intabih* — "O man, pay attention!") — addressed to one specific person.
+- **يا طالبُ، اجتهِدْ** — built on ḍamma.
+
+### 3. Genitive construct (muḍāf) — accusative
+
+- **يا طالبَ العِلمِ، اجتهِدْ** (*yā ṭāliba l-ʿilmi, ijtahid* — "O seeker of knowledge, strive!") — **طالبَ**: accusative fatḥa.
+- **يا عبدَ اللهِ، أَقبِلْ** (*yā ʿabda llāhi, aqbil*).
+
+### 4. Quasi-genitive-construct — accusative
+
+- **يا كريمًا خُلُقُه، أَقبِلْ** (*yā karīman khuluquhu* — "O noble-charactered one, come!").
+
+### 5. Non-specific indefinite — accusative
+
+- **يا غافلًا والموتُ يطلبُه** (*yā ghāfilan* — "O heedless one, while death pursues him") — no specific person intended.
+
+---
+
+## Summary table
+
+| Type | Parsing | Example |
+|---|---|---|
+| Proper noun | built on ḍamma, place of accusative | **يا محمدُ** |
+| Specific indefinite | built on ḍamma, place of accusative | **يا رجلُ** |
+| Muḍāf (genitive construct) | accusative (fatḥa) | **يا طالبَ العلمِ** |
+| Quasi-muḍāf | accusative | **يا كريمًا خُلُقُه** |
+| Non-specific indefinite | accusative | **يا غافلًا** |
+
+---
+
+## Parsing example
+
+**يا عبدَ اللهِ، أقبِلْ** ("O servant of God, come!")
+
+| Word | Parsing |
+|---|---|
+| يا | vocative particle |
+| عبدَ | **munādā**, accusative (fatḥa) — genitive construct (muḍāf) |
+| اللهِ | genitive — مضاف إليه |
+| أقبِلْ | imperative verb; implied subject: أنتَ |
+
+---
+
+## Common mistakes
+
+- Making the muḍāf munādā nominative: ***يا طالبُ العلمِ*** — correct: **يا طالبَ العلمِ**.
+- Making the proper noun munādā accusative: ***يا محمدًا*** — correct: **يا محمدُ** (built on ḍamma).
+- Using **وا** for ordinary address: **وا محمدُ** conveys grief/lamentation; for ordinary address use **يا محمدُ**.
+
+## In a nutshell
+
+> The munādā is built on ḍamma (in place of accusative) for a proper noun or specific indefinite; it is accusative (fatḥa) for a genitive construct, quasi-genitive-construct, or non-specific indefinite.
+
+</div>

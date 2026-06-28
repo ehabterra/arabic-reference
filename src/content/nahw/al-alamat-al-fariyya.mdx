@@ -1,5 +1,6 @@
 ---
 title: "علامات الإعراب الفرعية"
+title_en: "Secondary Case Markers"
 category: kalam
 kind: topic
 order: 6
@@ -58,6 +59,8 @@ quiz:
     explain: "الأسماء الخمسة تُرفع بالواو، وتُنصب بالألف، وتُجرّ بالياء. مثال: «مررتُ بأبيكَ» — أبيكَ مجرور بالياء نيابةً عن الكسرة."
 ---
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## لماذا علامات فرعية؟
 
@@ -234,3 +237,145 @@ import Mermaid from '../../components/Mermaid.astro';
 - **الكسرة** ← نصب جمع المؤنث السالم.
 - **الفتحة** ← جرّ الممنوع من الصرف.
 - **ثبوت النون/حذفها** ← رفع/نصب وجزم الأفعال الخمسة.
+
+</div>
+
+<div data-lang-block="en">
+
+## Why secondary markers?
+
+The four **primary** case signs (ḍamma, fatḥa, kasra, sukūn) are the default. But certain word classes cannot carry them on their final letter, so **secondary markers** (العلامات الفرعية, *al-ʿalāmāt al-farʿiyya*) stand in instead.
+
+There are five such word classes:
+
+1. The Five Nouns (الأسماء الخمسة)
+2. The Dual (المثنى)
+3. Sound Masculine Plural (جمع المذكر السالم)
+4. Sound Feminine Plural (جمع المؤنث السالم) — secondary in accusative only
+5. The Five Verb Forms (الأفعال الخمسة)
+
+<Mermaid code={String.raw`flowchart TD
+  A["Secondary markers"] --> B["Five Nouns<br/>nom:و acc:ا gen:ي"]
+  A --> C["Dual<br/>nom:ا acc/gen:ي"]
+  A --> D["Sound masc. plural<br/>nom:و acc/gen:ي"]
+  A --> E["Diptotes<br/>gen with fatḥa"]
+  A --> F["Five Verb Forms<br/>nom:ن kept acc/juss:ن dropped"]`} />
+
+---
+
+## 1. The Five Nouns (الأسماء الخمسة)
+
+**What they are:** أبٌ (*ab*, father), أخٌ (*akh*, brother), حَمٌ (*ḥam*, father-in-law), فُوٌ (*fū*, mouth), ذو (*dhū*, owner of).
+
+**Condition:** they must be in a possessive construction (مضافة) to a noun other than ياء المتكلم.
+
+| State | Marker | Example |
+|---|---|---|
+| Nominative | **و** (wāw) instead of ḍamma | **جاء أبوكَ** (*jāʾa abūka* — "Your father came") |
+| Accusative | **ا** (alif) instead of fatḥa | **رأيتُ أباكَ** (*raʾaytu abāka* — "I saw your father") |
+| Genitive | **ي** (yāʾ) instead of kasra | **مررتُ بأبيكَ** (*marartu bi-abīka* — "I passed by your father") |
+
+---
+
+## 2. The Dual (المثنى, *al-muthannā*)
+
+Two of something, formed by adding **ـانِ** in the nominative or **ـيْنِ** in the accusative/genitive.
+
+| State | Marker | Example |
+|---|---|---|
+| Nominative | **ا** (alif + *-ni*) instead of ḍamma | **جاء الطالبانِ** (*jāʾa ṭ-ṭālibāni* — "The two students came") |
+| Accusative | **ي** (yāʾ + *-ni*) instead of fatḥa | **رأيتُ الطالبَينِ** (*raʾaytu ṭ-ṭālibayni* — "I saw the two students") |
+| Genitive | **ي** (yāʾ + *-ni*) instead of kasra | **مررتُ بالطالبَينِ** (*marartu biṭ-ṭālibayni*) |
+
+> Accusative and genitive share the same form (ـيْنِ) — context tells them apart.
+
+---
+
+## 3. Sound Masculine Plural (جمع المذكر السالم)
+
+Males and rational beings, formed by adding **ـونَ** (nominative) or **ـينَ** (accusative/genitive), preserving the singular root intact.
+
+| State | Marker | Example |
+|---|---|---|
+| Nominative | **و** (wāw + *-na*) instead of ḍamma | **جاء المعلمونَ** (*jāʾa l-muʿallimūna* — "The teachers came") |
+| Accusative | **ي** (yāʾ + *-na*) instead of fatḥa | **رأيتُ المعلمِينَ** (*raʾaytu l-muʿallimīna*) |
+| Genitive | **ي** (yāʾ + *-na*) instead of kasra | **سلَّمتُ على المعلمِينَ** |
+
+> In a possessive construction the *-na* suffix drops: **معلِّمو المدرسةِ** (*muʿallimū l-madrasa* — "the school's teachers").
+
+---
+
+## 4. Sound Feminine Plural (جمع المؤنث السالم)
+
+Formed by adding **ـات** to the singular. The secondary marker appears in the **accusative only**:
+
+| State | Marker | Example |
+|---|---|---|
+| Nominative | Ḍamma (primary) | **جاءت المعلماتُ** (*jāʾati l-muʿallimātu*) |
+| **Accusative** | **Kasra** instead of fatḥa | **رأيتُ المعلماتِ** (*raʾaytu l-muʿallimāti*) |
+| Genitive | Kasra (primary) | **سلَّمتُ على المعلماتِ** |
+
+---
+
+## 5. Diptotes (الممنوع من الصرف, *al-mamnūʿ min aṣ-ṣarf*)
+
+Certain nouns **reject tanwīn** and use **fatḥa** in the genitive instead of kasra (when without الـ or a possessive):
+
+| State | Marker | Example |
+|---|---|---|
+| Nominative | Ḍamma (primary) | **جاء أحمدُ** (*jāʾa Aḥmadu*) |
+| Accusative | Fatḥa (primary) | **رأيتُ أحمدَ** (*raʾaytu Aḥmada*) |
+| **Genitive** | **Fatḥa** instead of kasra | **مررتُ بأحمدَ** (*marartu bi-Aḥmada*) |
+
+> Exception: with الـ or in a possessive, it reverts to kasra: **مررتُ بالأحمدِ**.
+
+**Common causes of diptotism:** a name + femininity (*Fāṭima*), a name + verb-pattern (*Aḥmad*), extra alif-nūn (*Ramaḍān*), among others.
+
+---
+
+## 6. The Five Verb Forms (الأفعال الخمسة)
+
+Any imperfect verb attached to: **ألف الاثنين** (يكتبانِ), **واو الجماعة** (يكتبونَ), or **ياء المخاطبة** (تكتبِينَ).
+
+| State | Marker | Example |
+|---|---|---|
+| Nominative | **Retention of نون** instead of ḍamma | **يكتبونَ / يكتبانِ** |
+| Accusative | **Dropping نون** instead of fatḥa | **لن يكتبوا / لن يكتبا** |
+| Jussive | **Dropping نون** instead of sukūn | **لم يكتبوا / لم يكتبا** |
+
+---
+
+## Master summary table
+
+| Word | Nominative | Accusative | Genitive / Jussive |
+|---|---|---|---|
+| Five Nouns (الأسماء الخمسة) | **و** (wāw) | **ا** (alif) | **ي** (yāʾ) |
+| Dual (مثنى) | **ا** (alif) | **ي** (yāʾ) | **ي** (yāʾ) |
+| Sound Masc. Pl. (ج.م.سالم) | **و** (wāw) | **ي** (yāʾ) | **ي** (yāʾ) |
+| Sound Fem. Pl. (ج.م.سالم) | Ḍamma | **Kasra** | Kasra |
+| Diptote (ممنوع من الصرف) | Ḍamma | Fatḥa | **Fatḥa** |
+| Five Verb Forms (أفعال خمسة) | نون retained | نون dropped | نون dropped |
+
+---
+
+## Common mistakes
+
+- Marking the dual with ḍamma: **الطالبانُ** ✗ → correct: **الطالبانِ** (alif-suffix, not ḍamma).
+- Putting the sound fem. plural in accusative with fatḥa: **رأيتُ المعلماتَ** ✗ → correct: **المعلماتِ** (kasra).
+- Putting a diptote in the genitive with kasra + tanwīn: **مررتُ بأحمدٍ** ✗ → correct: **بأحمدَ** (fatḥa, no tanwīn).
+- Jussive of الأفعال الخمسة with sukūn: **لم يكتبونْ** ✗ → correct: **لم يكتبوا** (drop the نون).
+
+---
+
+## Summary
+
+Secondary markers **substitute** the primary ones in specific word classes:
+
+- **و** → nominative of Five Nouns and Sound Masc. Plural.
+- **ا** → nominative of Dual; accusative of Five Nouns.
+- **ي** → accusative/genitive of Dual and Sound Masc. Plural; genitive of Five Nouns.
+- **Kasra** → accusative of Sound Fem. Plural.
+- **Fatḥa** → genitive of Diptotes.
+- **Retention / dropping of نون** → nominative / accusative and jussive of Five Verb Forms.
+
+</div>

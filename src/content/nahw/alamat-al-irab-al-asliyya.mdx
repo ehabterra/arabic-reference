@@ -1,5 +1,6 @@
 ---
 title: "علامات الإعراب الأصلية"
+title_en: "The Four Primary Case Endings"
 category: kalam
 kind: topic
 order: 5
@@ -58,6 +59,8 @@ quiz:
     explain: "«الفتى» اسم مقصور آخره ألف تتعذَّر عليها الحركة؛ فهو مرفوع بضمّة مقدَّرة على الألف منع من ظهورها التعذُّر."
 ---
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## مقدّمة: الأصلي والفرعي
 
@@ -195,3 +198,135 @@ import Mermaid from '../../components/Mermaid.astro';
 4. **السكون** ← للجزم (فعل مضارع فقط).
 
 وتكون هذه العلامات ظاهرة (مكتوبة) أو مقدَّرة (محذوفة لمانع).
+
+</div>
+
+<div data-lang-block="en">
+
+## Primary vs. Secondary Signs
+
+Arabic case endings come in two layers: **primary** (أصلية, *aṣliyya*) — the default — and **secondary** (فرعية, *farʿiyya*) — substitutes used in specific structures (covered in the next lesson).
+
+This lesson covers the **four primary signs**:
+
+| Grammatical state | Primary sign |
+|---|---|
+| Nominative (رفع) | Ḍamma ( ُ ) |
+| Accusative (نصب) | Fatḥa ( َ ) |
+| Genitive (جرّ) | Kasra ( ِ ) |
+| Jussive (جزم) | Sukūn ( ْ ) |
+
+<Mermaid code={String.raw`flowchart LR
+  A["Primary case signs"] --> B["Ḍamma ُ → Nominative"]
+  A --> C["Fatḥa َ → Accusative"]
+  A --> D["Kasra ِ → Genitive"]
+  A --> E["Sukūn ْ → Jussive"]`} />
+
+---
+
+## 1. Ḍamma (ُ) — Nominative
+
+### On nouns
+
+Nominative roles (subject فاعل, topic مبتدأ, predicate خبر, etc.) take ḍamma:
+
+- **جاءَ الطالبُ** (*jāʾa ṭ-ṭālibu* — "The student came") — subject, nominative with ḍamma.
+- **العِلمُ نورٌ** (*al-ʿilmu nūrun* — "Knowledge is light") — العِلمُ: topic; نورٌ: predicate.
+
+### On the imperfect verb
+
+The imperfect verb is nominative (its base state) when no accusative or jussive particle precedes it:
+
+- **يكتُبُ محمدٌ الدرسَ** (*yaktubu Muḥammadun ad-darsa* — "Muhammad writes the lesson") — يكتُبُ: nominative with ḍamma.
+
+---
+
+## 2. Fatḥa (َ) — Accusative
+
+### On nouns
+
+Accusative roles (direct object مفعول به, circumstantial حال, specification تمييز, etc.):
+
+- **رأيتُ الطالبَ** (*raʾaytu ṭ-ṭāliba* — "I saw the student") — الطالبَ: object, accusative with fatḥa.
+- **جاء الضيفُ مبتسِمًا** (*jāʾa ḍ-ḍayfu mubtasiman* — "The guest came smiling") — مبتسِمًا: circumstantial, accusative.
+
+### On the imperfect verb
+
+After accusative particles (أن، لن، كي):
+
+- **لن يُهملَ الطالبُ درسَه** (*lan yuhmala ṭ-ṭālibu* — "The student will not neglect his lesson") — يُهملَ: accusative after لن, marked by fatḥa.
+
+---
+
+## 3. Kasra (ِ) — Genitive (nouns only)
+
+The genitive is **exclusive to nouns**. It is triggered by:
+
+1. **A preposition:** **ذهبتُ إلى المدرسةِ** (*dhahabtu ilā l-madrasa* — "I went to the school") — المدرسةِ: genitive after إلى.
+2. **Possessive construction (إضافة):** **كتابُ الطالبِ** (*kitābu ṭ-ṭālibi* — "the student's book") — الطالبِ: genitive (second term of iḍāfa).
+
+---
+
+## 4. Sukūn (ْ) — Jussive (imperfect verb only)
+
+The jussive is **exclusive to the imperfect verb**, triggered by particles like لم، لما، لام الأمر، لا الناهية:
+
+- **لم يكتُبْ محمدٌ** (*lam yaktub Muḥammad* — "Muhammad did not write") — يكتُبْ: jussive with sukūn.
+
+---
+
+## Summary table
+
+| State | Sign | Applies to |
+|---|---|---|
+| Nominative | Ḍamma ُ | Noun + imperfect verb |
+| Accusative | Fatḥa َ | Noun + imperfect verb |
+| Genitive | Kasra ِ | **Noun only** |
+| Jussive | Sukūn ْ | **Imperfect verb only** |
+
+---
+
+## Parsing example
+
+**يقرأُ الطالبُ كتابَ النحوِ** (*yaqraʾu ṭ-ṭālibu kitāba n-naḥwi* — "The student reads the grammar book")
+
+- **يقرأُ**: imperfect verb, nominative (ḍamma).
+- **الطالبُ**: subject (فاعل), nominative (ḍamma).
+- **كتابَ**: direct object (مفعول به), accusative (fatḥa); also first term of a possessive construction.
+- **النحوِ**: second term of possessive (مضاف إليه), genitive (kasra).
+
+---
+
+## Estimated endings (الإعراب التقديري)
+
+Sometimes the vowel **cannot be written** because of a phonetic constraint; we then say the ending is **estimated** (*muqaddara*):
+
+- **Defective nouns ending in ألف** (اسم مقصور like الفتى): all three vowels are estimated on the ألف.
+  **جاء الفتى** (*jāʾa l-fatā* — "The lad came") — الفتى: nominative with estimated ḍamma on the ألف.
+- **Defective nouns ending in ياء** (اسم منقوص like القاضي): nominative and genitive are estimated.
+  **جاء القاضي** (*jāʾa l-qāḍī* — "The judge came") — القاضي: nominative with estimated ḍamma on the ياء.
+- **Nouns suffixed with ياء المتكلم** ("my"): all vowels are estimated.
+
+---
+
+## Common mistakes
+
+- Calling the signs "ḍamm / fatḥ / kasr" — correct names: **ḍamma / fatḥa / kasra / sukūn**.
+- Applying the jussive to nouns — only imperfect verbs take the jussive.
+- Applying the genitive to verbs — only nouns take the genitive.
+- Assuming a final ألف always means accusative — it may be a defective noun with an estimated vowel.
+
+---
+
+## Summary
+
+The four primary case signs:
+
+1. **Ḍamma** ← nominative (noun + imperfect verb).
+2. **Fatḥa** ← accusative (noun + imperfect verb).
+3. **Kasra** ← genitive (noun only).
+4. **Sukūn** ← jussive (imperfect verb only).
+
+Signs are either **visible** (written on the letter) or **estimated** (implied but blocked by a phonetic constraint).
+
+</div>

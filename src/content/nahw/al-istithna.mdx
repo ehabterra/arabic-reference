@@ -1,5 +1,6 @@
 ---
 title: "الاستثناء"
+title_en: "Al-Istithnaʾ: Exception Constructions"
 category: mansubat
 kind: topic
 order: 23
@@ -58,6 +59,8 @@ quiz:
     explain: "في الاستثناء المفرَّغ لا مستثنى منه ظاهر؛ وما بعد «إلا» يُعرَب بحسب حاجة الجملة: فاعل إن احتاجت فاعلًا، ومفعولًا به إن احتاجت مفعولًا، وهكذا."
 ---
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## الاستثناء
 
@@ -161,3 +164,105 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة القاعدة
 
 > **المستثنى بإلا** منصوبٌ في الكلام المثبت التام، وجائز النصب أو الإتباع في المنفي التام، وما بعد «إلا» في المفرَّغ يُعرَب بحسب موقعه. أما «غير» و«سوى» فما بعدهما مضافٌ إليه مجرور دائمًا.
+
+</div>
+
+<div data-lang-block="en">
+
+## Al-Istithnaʾ — الاستثناء: Exception Constructions
+
+The Arabic **exception construction** excludes one item from a general statement. The most common exception particle is **إلا** (*illā*, "except"). The parsing of the excepted noun depends on whether the sentence is affirmative or negative, and whether the excepted-from noun (المستثنى منه) is present.
+
+<Mermaid code={String.raw`flowchart TD
+  A["Exception with إلا"] --> B["Affirmative complete
+← excepted noun: accusative (obligatory)"]
+  A --> C["Negative complete
+← accusative OR agreement (badal)"]
+  A --> D["Negative incomplete — مفرَّغ
+← parsed by its own role in the sentence"]`} />
+
+---
+
+## Definition
+
+The **excepted noun** (المستثنى, *al-mustathnaA*) is excluded from a general ruling by an exception particle. In the most common case it is **accusative**.
+
+---
+
+## Exception particles
+
+| Particle | What follows it |
+|---|---|
+| **إلا** | parsed according to sentence type (see below) |
+| **غير / سوى** | always genitive (مضاف إليه); غير and سوى themselves take the parsing of the excepted noun with إلا |
+| **خلا / عدا / حاشا** | accusative (if treated as verbs) or genitive (if treated as prepositions) |
+
+---
+
+## Rules for the excepted noun with إلا
+
+### 1. Affirmative complete sentence — منصوب وجوبًا
+
+The excepted noun is **obligatorily accusative**:
+
+- **جاءَ الطلابُ إلا محمدًا** (*jāʾa ṭ-ṭullābu illā Muḥammadan* — "The students came except Muhammad").
+- **قرأتُ الكتبَ إلا كتابًا** (*qaraʾtu l-kutuba illā kitāban* — "I read the books except one").
+
+### 2. Negative complete sentence — نصب أو إتباع
+
+Accusative (exception) **or** agreement with the excepted-from noun (substitute, بدل):
+
+- **ما جاءَ أحدٌ إلا محمدًا** — accusative exception.
+- **ما جاءَ أحدٌ إلا محمدٌ** — nominative, as badal of the nominative أحدٌ.
+
+### 3. Negative incomplete — مفرَّغ
+
+No explicit excepted-from noun; what follows إلا takes whatever role the sentence needs:
+
+- **ما جاءَ إلا محمدٌ** (*mā jāʾa illā Muḥammadun* — "None came but Muhammad") — **محمدٌ** is the nominative subject.
+- **ما رأيتُ إلا محمدًا** (*mā raʾaytu illā Muḥammadan* — "I saw none but Muhammad") — **محمدًا** is the accusative object.
+
+---
+
+## Summary table
+
+| Sentence type | Parsing of excepted noun | Example |
+|---|---|---|
+| Affirmative complete | accusative (obligatory) | **جاءَ القومُ إلا زيدًا** |
+| Negative complete | accusative or agreement | **ما جاءَ أحدٌ إلا زيدًا / زيدٌ** |
+| Negative incomplete (مفرَّغ) | by sentence role | **ما جاءَ إلا زيدٌ** (subject) |
+
+---
+
+## Exception with غير and سوى
+
+**غير** and **سوى** take the same parsing as the excepted noun with إلا, and what follows them is always **genitive** (مضاف إليه):
+
+- **جاءَ الطلابُ غيرَ محمدٍ** (*jāʾa ṭ-ṭullābu ghayra Muḥammadin* — "The students came except Muhammad") — **غيرَ**: accusative; **محمدٍ**: genitive (مضاف إليه).
+
+---
+
+## Parsing example
+
+**ذاكرَ الطلابُ إلا واحدًا** ("The students studied except one")
+
+| Word | Parsing |
+|---|---|
+| ذاكرَ | past verb |
+| الطلابُ | nominative subject |
+| إلا | exception particle |
+| واحدًا | **excepted noun**, accusative (affirmative complete sentence) |
+
+---
+
+## Common mistakes
+
+- Marking the excepted noun nominative in an affirmative sentence: ***جاءَ الطلابُ إلا محمدٌ*** — correct: **محمدًا**.
+- Marking it accusative in a مفرَّغ sentence: ***ما جاءَ إلا محمدًا*** — correct: **محمدٌ** (subject).
+- Marking the noun after غير accusative: ***غيرَ محمدًا*** — correct: **محمدٍ** (genitive, مضاف إليه).
+
+## In a nutshell
+
+> The excepted noun with إلا is **accusative** in an affirmative complete sentence; accusative or agreeing in a negative complete sentence; and parsed by its sentence role in the مفرَّغ. After غير and سوى what follows is always **genitive**.
+
+</div>

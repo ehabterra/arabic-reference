@@ -1,5 +1,6 @@
 ---
 title: "التوكيد"
+title_en: "At-Tawkīd: Emphasis in Arabic Grammar"
 category: tawabi
 kind: topic
 order: 42
@@ -58,6 +59,8 @@ quiz:
     explain: "«كِلتا» خاصّةٌ بالمثنى المؤنث مثل «حضرتِ الطالبتانِ كِلتاهما»؛ أما «كِلا» فللمثنى المذكر، و«كلّ» للجمع."
 ---
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## التوكيد
 
@@ -167,3 +170,109 @@ import Mermaid from '../../components/Mermaid.astro';
 ### خلاصة القاعدة
 
 > التوكيد تابعٌ لتقوية المعنى: اللفظيُّ بتكرار اللفظ، والمعنويُّ بألفاظ محدَّدة (نفس، عين، كلا، كلتا، كل، جميع) مضافة لضمير يعود على المؤكَّد. وكلاهما يتبع المؤكَّد في الإعراب.
+
+</div>
+
+<div data-lang-block="en">
+
+## At-Tawkīd — التوكيد: Emphasis in Arabic Grammar
+
+**Tawkīd** (توكيد, emphasis/confirmation) reinforces a meaning and removes doubt, the possibility of metaphor, or inadvertent misunderstanding. It follows its **antecedent** (المؤكَّد, *al-muʾakkad*) in grammatical case. There are two types: **verbal** (لفظي) and **semantic** (معنوي).
+
+<Mermaid code={String.raw`flowchart TD
+  A["Tawkīd — التوكيد"] --> B["Verbal — لفظي
+(repeat the same word
+or a synonym)"]
+  A --> C["Semantic — معنوي
+(fixed words + pronoun)"]
+  C --> D["نفس / عين
+(singular and plural)"]
+  C --> E["كِلا / كِلتا
+(dual)"]
+  C --> F["كلّ / جميع / عامة
+(plural 3+)"]`} />
+
+---
+
+## Definition
+
+**Tawkīd** follows the noun or verb it emphasises (the **muʾakkad**, المؤكَّد) in **grammatical case**. It rules out ambiguity, doubt, or metaphorical interpretation.
+
+---
+
+## 1. Verbal tawkīd — التوكيد اللفظي
+
+Repetition of the exact same word — noun, verb, particle, or clause — or its synonym:
+
+- **جاء جاء محمدٌ** (*jāʾa jāʾa Muḥammadun* — "Muhammad really came") — verb repeated.
+- **محمدٌ محمدٌ مسافرٌ** — noun repeated.
+- **لا لا أكذبُ** — particle repeated.
+
+*Parsing:* the tawkīd is parsed exactly as the element it repeats.
+
+---
+
+## 2. Semantic tawkīd — التوكيد المعنوي
+
+Uses fixed words **added to a pronoun** (ضمير) that refers back to the muʾakkad. **The pronoun is obligatory.**
+
+### Tawkīd words
+
+| Word | Used with | Example |
+|---|---|---|
+| نَفْس | singular and plural | **جاء محمدٌ نَفْسُهُ** "Muhammad himself came" |
+| عَيْن | singular and plural | **رأيتُ الأستاذَ عَيْنَهُ** "I saw the teacher himself" |
+| كِلا | masculine dual | **جاء الرجلانِ كِلاهما** "Both men came" |
+| كِلتا | feminine dual | **حضرتِ المرأتانِ كِلتاهما** "Both women attended" |
+| كُلّ | plural (3+) | **رأيتُ الطلابَ كلَّهم** "I saw all the students" |
+| جَمِيع | plural | **حضر الطلابُ جميعُهم** "All the students attended" |
+| عامَّة | plural | **جاء الناسُ عامَّتُهم** "All the people came" |
+
+---
+
+## Rule
+
+> Semantic tawkīd follows the muʾakkad in **grammatical case**, and its words are attached to a **pronoun** agreeing with the muʾakkad in gender and number.
+
+---
+
+## Parsing examples
+
+**جاء الرجلُ نَفْسُهُ** ("The man himself came")
+
+| Word | Parsing |
+|---|---|
+| الرجلُ | nominative subject |
+| نفسُهُ | **semantic tawkīd**, nominative; muḍāf; ه is muḍāf ilayhi |
+
+**رأيتُ المديرَيْنِ كِلَيْهِما** ("I saw both directors")
+
+| Word | Parsing |
+|---|---|
+| المديرَيْنِ | direct object, accusative (yāʾ, dual) |
+| كِلَيْهِما | **semantic tawkīd**, accusative (yāʾ, dual); هما is muḍāf ilayhi |
+
+---
+
+## Tawkīd vs. naʿt vs. badal
+
+| | Tawkīd | Naʿt | Badal |
+|---|---|---|---|
+| Purpose | strengthen / confirm meaning | describe the noun | replace with the true intended referent |
+| Form | repetition or fixed words | descriptive adjective | the intended noun itself |
+| Pronoun required? | yes (semantic tawkīd) | no | yes (partial and inclusive badal) |
+
+---
+
+## Common mistakes
+
+- Using كِلتا with a masculine dual: ***جاء الرجلانِ كِلتاهما*** — correct: **كِلاهما**.
+- Dropping the pronoun: ***رأيتُ الطلابَ كلَّ*** — correct: **كلَّهم**.
+- Using كلّ for a dual: ***جاء الرجلانِ كلُّهما*** — correct: **كِلاهما**.
+- Marking tawkīd with the wrong case: ***رأيتُ محمدًا نفسُهُ*** — correct: **نفسَهُ** (accusative).
+
+## In a nutshell
+
+> Tawkīd strengthens meaning: verbal tawkīd repeats the word; semantic tawkīd uses fixed words (نفس، عين، كلا، كلتا، كل، جميع) with a pronoun referring to the muʾakkad. Both follow the muʾakkad in grammatical case.
+
+</div>

@@ -1,5 +1,6 @@
 ---
 title: "الفاعل"
+title_en: "The Subject (al-Fāʿil)"
 category: marfuaat
 kind: topic
 order: 10
@@ -59,6 +60,8 @@ quiz:
     explain: "مع فعل الأمر للمخاطب المفرد يكون الفاعل ضميرًا مستترًا وجوبًا تقديره «أنتَ»، ولا يجوز ذكره. أما مع الغائب فهو مستترٌ جوازًا."
 ---
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## الفاعل
 
@@ -150,3 +153,100 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة القاعدة
 
 > **الفاعل** اسمٌ يأتي بعد الفعل ويدلُّ على من قام به أو اتّصف به، وهو **مرفوعٌ دائمًا** بالضمّة أو نائبها.
+
+</div>
+
+<div data-lang-block="en">
+
+## The Subject — الفاعل (*al-fāʿil*)
+
+The **فاعل** (*fāʿil*) is an essential part of every verbal sentence — you cannot have a verbal sentence without one. Identifying it correctly is the first step to parsing Arabic accurately.
+
+---
+
+## Definition
+
+The **فاعل** is a **nominative noun** that indicates **who performed the action** (or to whom a quality applies).
+
+- **كَتَبَ محمدٌ الدرسَ** (*kataba Muḥammadun ad-darsa* — "Muhammad wrote the lesson") — محمدٌ is the one who wrote → subject.
+- **طَلَعَتِ الشمسُ** (*ṭalaʿati sh-shamsu* — "The sun rose") — الشمسُ is what rose → subject.
+- **نامَ الطفلُ** (*nāma ṭ-ṭiflu* — "The child slept") — الطفلُ is who slept → subject.
+
+---
+
+## The rule
+
+> **The subject is always nominative** — marked by ḍamma or a secondary substitute (wāw for the sound masculine plural and the Five Nouns, alif for the dual).
+
+---
+
+## Types of subject
+
+### 1. Explicit noun (اسم ظاهر)
+
+The most common type — a visible noun after the verb:
+
+| Sentence | Subject | Nominative marker |
+|---|---|---|
+| **كَتَبَ محمدٌ** (*kataba Muḥammadun* — "Muhammad wrote") | محمدٌ | Ḍamma |
+| **جاءَ الأستاذانِ** (*jāʾa l-ustādhāni* — "The two professors came") | الأستاذانِ | Alif (dual) |
+| **فازَ المعلّمونَ** (*fāza l-muʿallimūna* — "The teachers won") | المعلّمونَ | Wāw (sound masc. pl.) |
+| **جاءَ أبوكَ** (*jāʾa abūka* — "Your father came") | أبوكَ | Wāw (Five Nouns) |
+
+### 2. Hidden pronoun (ضمير مستتر)
+
+Sometimes the subject is implied, not spoken:
+
+- **اجتهِدْ في درسك** (*ijtahid fī darsika* — "Study hard!") — implied subject **أنتَ** (*you*), compulsorily hidden (مستتر وجوبًا) with a command verb.
+- **محمدٌ يكتُبُ الدرسَ** (*Muḥammadun yaktubu* — "Muhammad writes the lesson") — يكتُبُ has a hidden subject **هو** (*he*), optionally hidden (مستتر جوازًا).
+
+### 3. Attached visible pronoun (ضمير متصل بارز)
+
+- **كتبْتُ الدرسَ** (*katabtu ad-darsa* — "I wrote the lesson") — the تُ (*-tu*, I) is a nominative pronoun attached to the verb, serving as the subject.
+- **الطالباتُ يكتُبْنَ** (*aṭ-ṭālibātu yaktubna* — "The female students write") — نَ (*-na*) is an attached pronoun as subject.
+
+<Mermaid code={String.raw`flowchart TD
+  A["Subject الفاعل — always nominative"] --> B["Explicit noun<br/>اسم ظاهر"]
+  A --> C["Hidden pronoun<br/>ضمير مستتر"]
+  A --> D["Attached pronoun<br/>ضمير متصل بارز"]
+  C --> E["Compulsory hidden (أنتَ)<br/>with command verb"]
+  C --> F["Optional hidden (هو/هي)<br/>with third-person verb"]`} />
+
+---
+
+## Position of the subject
+
+The subject normally **follows the verb** immediately. It may follow a direct object if there is no ambiguity:
+
+- **أكرمَ الأستاذُ الطالبَ** (*akrama l-ustādhu ṭ-ṭāliba* — "The professor honoured the student") — standard order.
+- **أكرمَ الطالبَ الأستاذُ** — allowed; case endings show who did what.
+
+> The subject cannot be moved **before** the verb in a verbal sentence — if it is, the sentence becomes nominal and the noun becomes a topic (مبتدأ).
+
+---
+
+## Parsing example
+
+**كَتَبَ الطالبُ الدرسَ** (*kataba ṭ-ṭālibu d-darsa* — "The student wrote the lesson")
+
+| Word | Parsing |
+|---|---|
+| كَتَبَ | Past-tense verb, indeclinable (built on fatḥa) |
+| الطالبُ | **Subject (فاعل)**, nominative, marked by ḍamma |
+| الدرسَ | Direct object (مفعول به), accusative, marked by fatḥa |
+
+---
+
+## Common mistakes
+
+- Making the subject accusative: **كتبَ محمدًا** ✗ → correct: **كتبَ محمدٌ**.
+- Confusing the subject (فاعل) with the topic (مبتدأ): the subject comes **after a verb**; the topic is at the **start of a nominal sentence**.
+- Marking the direct object as nominative because it comes first: **أكرمَ الطالبَ الأستاذُ** — الطالبَ remains the object (accusative) and الأستاذُ remains the subject (nominative), regardless of position.
+
+---
+
+## Summary
+
+> The **فاعل** is a noun after a verb that indicates who performed the action. It is **always nominative** — marked by ḍamma or a secondary substitute. It may be an explicit noun, a hidden pronoun, or an attached pronoun.
+
+</div>

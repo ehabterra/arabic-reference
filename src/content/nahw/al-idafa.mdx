@@ -1,5 +1,6 @@
 ---
 title: "الإضافة (المضاف والمضاف إليه)"
+title_en: "Al-Iḍāfa: The Genitive Construction"
 category: majrurat
 kind: topic
 order: 31
@@ -58,6 +59,8 @@ quiz:
     explain: "الاسم يكتسب التعريف من المضاف إليه المعرفة؛ فـ«كتابُ محمدٍ» صار معرفةً بالإضافة إلى عَلَم. أما الإضافة إلى نكرة فتُبقيه نكرةً."
 ---
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## الإضافة (المضاف والمضاف إليه)
 
@@ -166,3 +169,103 @@ import Mermaid from '../../components/Mermaid.astro';
 ### خلاصة القاعدة
 
 > في الإضافة: المضاف يأخذ إعرابه من موقعه في الجملة، ويُحذَف تنوينه أو نونه؛ والمضاف إليه مجرورٌ دائمًا بالكسرة أو نائبها.
+
+</div>
+
+<div data-lang-block="en">
+
+## Al-Iḍāfa — الإضافة: The Genitive (Possessive) Construction
+
+**Iḍāfa** (إضافة, "addition/annexation") is the Arabic possessive and genitive construction. It links two nouns: the first (**المضاف**, *al-muḍāf* — the possessed/defined noun) and the second (**المضاف إليه**, *al-muḍāf ilayhi* — the possessor/defining noun). The second noun is always **genitive**.
+
+<Mermaid code={String.raw`flowchart TD
+  A["Iḍāfa — تركيب الإضافة"] --> B["First noun — المضاف
+(takes its case from the sentence;
+tanwīn / nūn removed)"]
+  A --> C["Second noun — المضاف إليه
+(always genitive)"]
+  B --> D["Singular → tanwīn dropped
+«كتابُ محمدٍ»"]
+  B --> E["Dual / sound masc. plural
+→ nūn dropped
+«طالبا الفصلِ»"]`} />
+
+---
+
+## Definition
+
+**Iḍāfa** is a two-noun construction in which the muḍāf is defined or specified by the muḍāf ilayhi. The muḍāf ilayhi is always **genitive** (مجرور).
+
+Example: **كتابُ الطالبِ** (*kitābu ṭ-ṭālibi* — "the student's book") — **كتابُ** is the muḍāf; **الطالبِ** is the muḍāf ilayhi (genitive, kasra).
+
+---
+
+## What is removed from the muḍāf
+
+| Type of muḍāf | Removed | Before iḍāfa | After iḍāfa |
+|---|---|---|---|
+| Singular | tanwīn | كتابٌ | كتابُ محمدٍ |
+| Dual | nūn | طالبانِ | طالبا الفصلِ |
+| Sound masculine plural | nūn | معلِّمونَ | معلِّمو المدرسةِ |
+
+---
+
+## Rule
+
+> The **muḍāf ilayhi** is always **genitive**. The **muḍāf** loses its tanwīn (if singular) or its nūn (if dual or sound masculine plural), and takes its own case from the sentence.
+
+---
+
+## Types of iḍāfa
+
+### 1. Semantic iḍāfa — الإضافة المعنوية / المحضة
+
+Defines or specifies the muḍāf:
+- **كتابُ محمدٍ** (*kitābu Muḥammadin* — "Muhammad's book") — the book becomes definite.
+- **بابُ بيتٍ** (*bābu baytin* — "a house door") — specified but not definite.
+
+### 2. Verbal-noun iḍāfa — الإضافة اللفظية / غير المحضة
+
+An active participle, passive participle, or quasi-active participle added to its own complement; does not truly define:
+- **هو كاتبُ الدرسِ الآنَ** (*huwa kātibu d-darsi l-āna* — "He is (currently) writing the lesson").
+- **حَسَنُ الخُلُقِ** (*ḥasanu l-khuluqi* — "of good character").
+
+---
+
+## Iḍāfa and definiteness
+
+- Muḍāf + **definite** muḍāf ilayhi → whole phrase is **definite**: **كتابُ محمدٍ**.
+- Muḍāf + **indefinite** muḍāf ilayhi → whole phrase is **indefinite**: **كتابُ طالبٍ**.
+
+---
+
+## Parsing examples
+
+**قرأتُ كتابَ العلمِ** ("I read the book of knowledge")
+
+| Word | Parsing |
+|---|---|
+| كتابَ | direct object, accusative — muḍāf (no tanwīn) |
+| العلمِ | **muḍāf ilayhi**, genitive (kasra) |
+
+**جاء مُعلِّمو المدرسةِ** ("The teachers of the school came")
+
+| Word | Parsing |
+|---|---|
+| مُعلِّمو | nominative subject (wāw); nūn dropped for iḍāfa — muḍāf |
+| المدرسةِ | **muḍāf ilayhi**, genitive (kasra) |
+
+---
+
+## Common mistakes
+
+- Adding tanwīn to the muḍāf: ***كتابٌ محمدٍ*** — correct: **كتابُ محمدٍ**.
+- Marking the muḍāf ilayhi nominative: ***كتابُ الطالبُ*** — correct: **كتابُ الطالبِ**.
+- Keeping the nūn of a dual: ***طالبانِ المدرسةِ*** — correct: **طالبا المدرسةِ**.
+- Keeping the nūn of a sound masculine plural: ***معلِّمونَ المدرسةِ*** — correct: **معلِّمو المدرسةِ**.
+
+## In a nutshell
+
+> In iḍāfa: the muḍāf takes its case from the sentence and loses its tanwīn or nūn; the muḍāf ilayhi is always **genitive** (kasra or its substitute).
+
+</div>

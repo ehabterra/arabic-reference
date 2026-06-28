@@ -1,5 +1,6 @@
 ---
 title: "الحال"
+title_en: "Al-Ḥāl: The Circumstantial Qualifier"
 category: mansubat
 kind: topic
 order: 21
@@ -58,6 +59,8 @@ quiz:
     explain: "«وجهُه مشرقٌ» جملةٌ اسمية وقعت حالًا في محلّ نصب؛ وترتبط بصاحبها «محمدٌ» بالضمير «هُ»."
 ---
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## الحال
 
@@ -156,3 +159,101 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة القاعدة
 
 > **الحال** اسمٌ نكرةٌ منصوبٌ يُبيِّن هيئة صاحبه (المعرفة) وقت وقوع الفعل؛ ويُجيب عن «كيف؟». وقد يكون مفردًا أو جملةً (اسمية أو فعلية).
+
+</div>
+
+<div data-lang-block="en">
+
+## Al-Ḥāl — الحال: The Circumstantial Qualifier
+
+The **ḥāl** describes the **temporary state or manner** of a noun at the exact moment of the action — answering "how?" or "in what state?". It is one of the most nuanced categories in Arabic grammar.
+
+<Mermaid code={String.raw`flowchart TD
+  A["Ḥāl — الحال"] --> B["Simple ḥāl
+(one accusative word)"]
+  A --> C["Clausal ḥāl"]
+  C --> D["Verbal clause
+«وهو يبتسمُ»"]
+  C --> E["Nominal clause
+«وجهُه مشرقٌ»"]`} />
+
+---
+
+## Definition
+
+The **ḥāl** (الحال) is an **indefinite accusative** word or clause describing the **state** of its owner (صاحب الحال, *ṣāḥib al-ḥāl*) at the time of the verb.
+
+- **جاءَ الوفدُ مُبتهِجًا** (*jāʾa l-wafdu mubtahijan* — "The delegation came joyfully").
+- **وقفتُ صامتًا** (*waqaftu ṣāmitan* — "I stood in silence").
+- **سافرَ محمدٌ مسرورًا** (*sāfara Muḥammadun masrūran* — "Muhammad travelled happily").
+
+---
+
+## Rule
+
+> The **ḥāl** is an **indefinite accusative** noun or clause that describes the **state** of a (usually definite) owner at the time of the action; it answers "how?".
+
+---
+
+## Conditions of the ḥāl
+
+| Condition | Explanation |
+|---|---|
+| **Indefinite** (نكرة) | Always indefinite in its base form |
+| **Accusative** (منصوب) | Grammatical case is accusative |
+| **Usually derived** (مشتق) | Typically an active participle, passive participle, or quasi-active participle |
+| **Owner is definite** | The noun whose state it describes is usually definite |
+
+---
+
+## Types of ḥāl
+
+### 1. Simple ḥāl — most common
+
+A single accusative word:
+
+- **جاءَ الطالبُ فرِحًا** (*jāʾa ṭ-ṭālibu fariḥan* — "The student came happy").
+- **عادَ المسافرُ سالمًا** (*ʿāda l-musāfiru sāliman* — "The traveller returned safe").
+- **رجعَ الجنديُّ منتصِرًا** (*rajaʿa l-jundiyyu muntaṣiran* — "The soldier returned victorious").
+
+### 2. Clausal ḥāl
+
+A nominal or verbal clause acting as the ḥāl, requiring a **linking pronoun** or **واو الحال** (*wāw al-ḥāl*):
+
+- **جاءَ محمدٌ وهو يبتسمُ** (*jāʾa Muḥammadun wa-huwa yabtasimu* — "Muhammad came while smiling") — verbal clause.
+- **جاءَ محمدٌ وجهُه مشرقٌ** (*jāʾa Muḥammadun wajhuhu mušriqun* — "Muhammad came with his face glowing") — nominal clause.
+
+---
+
+## Owner of the ḥāl
+
+The **owner** (صاحب الحال) is the noun whose state is described, usually **definite**:
+
+- Subject: **جاءَ الأستاذُ مُبتسِمًا** (*jāʾa l-ustāḏu mubtasiman* — "The teacher came smiling").
+- Object: **رأيتُ محمدًا جالسًا** (*raʾaytu Muḥammadan jālisan* — "I saw Muhammad sitting").
+
+---
+
+## Parsing example
+
+**رجعَ الجنديُّ منتصِرًا** ("The soldier returned victorious")
+
+| Word | Parsing |
+|---|---|
+| رجعَ | past verb |
+| الجنديُّ | nominative subject |
+| منتصِرًا | **ḥāl**, accusative; owner is الجنديُّ |
+
+---
+
+## Common mistakes
+
+- Marking the ḥāl nominative: ***جاءَ الطالبُ فرِحٌ*** — correct: **فرِحًا**.
+- Confusing ḥāl with naʿt: naʿt follows its noun in all four features (case, definiteness, gender, number); ḥāl is always accusative and describes a **temporary state**. Compare: **جاءَ الطالبُ المجتهدُ** (naʿt, nominative) vs. **جاءَ الطالبُ مجتهدًا** (ḥāl, accusative).
+- Confusing ḥāl with tamyīz: ḥāl answers "how?"; tamyīz answers "in what respect?".
+
+## In a nutshell
+
+> The **ḥāl** is an indefinite accusative word or clause describing the temporary state of a definite noun at the time of the action; it answers "how?" and may be a single word or a clause (verbal or nominal).
+
+</div>

@@ -1,5 +1,6 @@
 ---
 title: "المفاعيل"
+title_en: "The Four Objects (Mafāʿīl)"
 category: mansubat
 kind: topic
 order: 20
@@ -61,6 +62,8 @@ quiz:
     explain: "«ساعةً» ظرف زمان منصوب يتضمَّن معنى «في» (انتظرتُ في ساعةٍ)؛ وهو المفعول فيه (الظرف الزماني)."
 ---
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## المفاعيل
 
@@ -183,3 +186,107 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة القاعدة
 
 > المفاعيل أربعةٌ: **المفعول به** (مَن وقع عليه الفعل)، و**المطلق** (مصدر لتوكيد الفعل أو بيان نوعه)، و**لأجله** (مصدر قلبي يبيّن السبب)، و**فيه** (ظرف الزمان أو المكان). وكلّها **منصوبة**.
+
+</div>
+
+<div data-lang-block="en">
+
+## The Four Objects — المفاعيل (*al-mafāʿīl*)
+
+Arabic verbs can take up to four kinds of **accusative** complement called **objects** (مفاعيل, *mafāʿīl*). All four are always **accusative** (منصوب, *manṣūb*), and each answers a different question about the action.
+
+<Mermaid code={String.raw`flowchart TD
+  A["Objects — المفاعيل"] --> B["Direct object — مفعول به
+(what / whom?)"]
+  A --> C["Absolute object — مفعول مطلق
+(emphasis / type / number)"]
+  A --> D["Causal object — مفعول لأجله
+(why?)"]
+  A --> E["Adverbial object — مفعول فيه
+(when / where?)"]
+  E --> F["Time adverb — ظرف زمان
+«يومَ الجمعةِ»"]
+  E --> G["Place adverb — ظرف مكان
+«أمامَ المعلمِ»"]`} />
+
+---
+
+## 1. Direct object — المفعول به (*al-mafʿūl bih*)
+
+The entity that **receives** the action of the verb. Always accusative.
+
+- **كتبَ محمدٌ الدرسَ** (*kataba Muḥammadun ad-darsa* — "Muhammad wrote the lesson") — **الدرسَ** is the direct object.
+- **رأيتُ الهِلالَ** (*raʾaytu l-hilāla* — "I saw the crescent").
+- **أكرمتُ الضيوفَ** (*akramtu ḍ-ḍuyūfa* — "I honoured the guests").
+
+---
+
+## 2. Absolute object — المفعول المطلق (*al-mafʿūl al-muṭlaq*)
+
+An accusative **verbal noun** (مصدر, *maṣdar*) derived from the same root as the verb, serving one of three purposes:
+
+1. **Emphasis:** **اجتهدَ الطالبُ اجتهادًا** (*ijtahada ṭ-ṭālibu ijtihādan* — "The student strove intensely").
+2. **Type:** **سارَ الجيشُ سيرَ الفاتحين** (*sāra l-jayšu sayra l-fātiḥīn* — "The army marched as conquerors march").
+3. **Number:** **ضربتُه ضربتَيْن** (*ḍarabtuhu ḍarbatayni* — "I struck him twice").
+
+---
+
+## 3. Causal object — المفعول لأجله (*al-mafʿūl liʾajlih*)
+
+An accusative verbal noun of *inner feeling* answering **why** the action was done. Must share the verb's subject and time.
+
+- **وقفتُ احترامًا للمعلمِ** (*waqaftu iḥtirāman lil-muʿallim* — "I stood out of respect for the teacher").
+- **جئتُ رغبةً في العلمِ** (*jiʾtu raghbatan fī l-ʿilm* — "I came desiring knowledge").
+
+---
+
+## 4. Adverbial object — المفعول فيه (*al-mafʿūl fīh*)
+
+An accusative noun implying **في** ("in/at") that gives the **time** or **place** of the action.
+
+| Type | Example | Gloss |
+|---|---|---|
+| Time (ظرف زمان) | **جئتُ يومَ الجمعةِ** | "I came on Friday" |
+| Place (ظرف مكان) | **وقفتُ أمامَ المعلمِ** | "I stood in front of the teacher" |
+
+Common time adverbs: **يومَ، ليلةَ، ساعةَ، قبلَ، بعدَ، عندَ**.
+Common place adverbs: **أمامَ، وراءَ، فوقَ، تحتَ، يمينَ، شمالَ**.
+
+---
+
+## Comparison table
+
+| Object | Answers | Case | Example |
+|---|---|---|---|
+| **به** (direct) | what/whom? | accusative | **قرأتُ الكتابَ** |
+| **مطلق** (absolute) | how? / how many? | accusative | **نامَ نومًا عميقًا** |
+| **لأجله** (causal) | why? | accusative | **قمتُ إجلالًا للأستاذِ** |
+| **فيه** (adverbial) | when/where? | accusative | **صُمتُ يومَ الخميسِ** |
+
+---
+
+## Parsing example
+
+**ذاكرَ الطالبُ الدرسَ ساعةً اجتهادًا** ("The student studied the lesson for an hour out of diligence")
+
+| Word | Parsing |
+|---|---|
+| ذاكرَ | past verb |
+| الطالبُ | nominative subject |
+| الدرسَ | **direct object** (مفعول به), accusative |
+| ساعةً | **adverbial object** (ظرف زمان), accusative |
+| اجتهادًا | **absolute object** (مفعول مطلق), accusative |
+
+---
+
+## Common mistakes
+
+- Marking the direct object nominative: ***كتبَ محمدٌ الدرسُ*** — correct: **الدرسَ**.
+- Confusing the absolute object (always a verbal noun from the same root) with the direct object.
+- Confusing the causal object ("why?") with ḥāl ("how?").
+
+## In a nutshell
+
+> All four objects are **accusative**: **مفعول به** (who/what receives the action), **مطلق** (verbal noun qualifying the verb), **لأجله** (motive noun answering why), **فيه** (time or place adverb).
+
+</div>

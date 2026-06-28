@@ -1,5 +1,6 @@
 ---
 title: "الأفعال الخمسة"
+title_en: "The Five Verb Forms (Al-Afʿāl al-Khamsa)"
 category: asalib
 kind: topic
 order: 51
@@ -58,6 +59,8 @@ quiz:
     explain: "«تذهبينَ» فعل مضارع اتصل بياء المخاطبة، وهو من الأفعال الخمسة؛ وعلامة رفعه ثبوت النون نيابةً عن الضمة."
 ---
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## الأفعال الخمسة
 
@@ -169,3 +172,108 @@ import Mermaid from '../../components/Mermaid.astro';
 ### خلاصة القاعدة
 
 > الأفعال الخمسة هي المضارع المتصل بألف الاثنين أو واو الجماعة أو ياء المخاطبة؛ تُرفع بثبوت النون وتُنصب وتُجزم بحذفها.
+
+</div>
+
+<div data-lang-block="en">
+
+## The Five Verb Forms — الأفعال الخمسة (*al-Afʿāl al-Khamsa*)
+
+**Al-Afʿāl al-Khamsa** ("the five verb forms") refers to the five patterns of the Arabic imperfect verb that carry a pronoun suffix ending in **ān** (ألف الاثنين), **ūn** (واو الجماعة), or **īn** (ياء المخاطبة). These forms are special: they are **inflected by the nūn** — nūn is retained in the nominative and dropped in the accusative and jussive.
+
+<Mermaid code={String.raw`flowchart TD
+  A["Five verb forms — الأفعال الخمسة"] --> B["Nominative
+← nūn retained"]
+  A --> C["Accusative (after لن / أن / كي ...)
+← nūn dropped"]
+  A --> D["Jussive (after لم / conditional)
+← nūn dropped"]
+  B --> E["«يكتُبانِ / يكتُبونَ / تكتُبينَ»"]
+  C --> F["«لن يكتُبا / لن يكتُبوا»"]
+  D --> G["«لم يكتُبا / لم يكتُبوا»"]`} />
+
+---
+
+## Definition
+
+Any imperfect verb connected to:
+- **ā** (ألف الاثنين) — dual masculine or dual feminine subject
+- **ū** (واو الجماعة) — third-person or second-person masculine plural subject
+- **ī** (ياء المخاطبة) — second-person feminine singular subject
+
+Named "five" because there are exactly five such patterns.
+
+---
+
+## The five patterns
+
+| # | Pattern | Pronoun attached | Nominative example |
+|---|---|---|---|
+| 1 | يَفعلانِ | ā — 3rd masc. dual | يكتُبانِ "they (two m.) write" |
+| 2 | تَفعلانِ | ā — 2nd dual or 3rd fem. dual | تكتُبانِ "you (two) write" |
+| 3 | يَفعلونَ | ū — 3rd masc. plural | يكتُبونَ "they write" |
+| 4 | تَفعلونَ | ū — 2nd masc. plural | تكتُبونَ "you (pl. m.) write" |
+| 5 | تَفعلينَ | ī — 2nd fem. singular | تكتُبينَ "you (f. sg.) write" |
+
+---
+
+## Rule
+
+> The five verb forms are **nominative** with nūn retained, and **accusative / jussive** with nūn dropped.
+
+---
+
+## Inflection table
+
+| State | Sign | يكتُبانِ | يكتُبونَ | تكتُبينَ |
+|---|---|---|---|---|
+| Nominative | nūn retained | يَكتُبانِ | يَكتُبونَ | تَكتُبينَ |
+| Accusative | nūn dropped | لن يَكتُبا | لن يَكتُبوا | لن تَكتُبي |
+| Jussive | nūn dropped | لم يَكتُبا | لم يَكتُبوا | لم تَكتُبي |
+
+---
+
+## Parsing examples
+
+**الطالبانِ يَكتُبانِ الدرسَ** ("The two students are writing the lesson")
+
+| Word | Parsing |
+|---|---|
+| الطالبانِ | nominative subject (dual, ā) |
+| يكتُبانِ | imperfect, **nominative** — sign: **retained nūn**; ā is the dual subject pronoun |
+| الدرسَ | direct object, accusative |
+
+**لن يَكتُبوا الواجبَ** ("They will not write the homework")
+
+| Word | Parsing |
+|---|---|
+| لن | accusative particle |
+| يكتُبوا | imperfect, **accusative** by لن — sign: **dropped nūn**; wāw is the subject pronoun |
+| الواجبَ | direct object, accusative |
+
+**إِنْ تَكتُبا بِإتقانٍ تَنجحا** ("If you two write with precision, you will succeed")
+
+**تكتُبا** — conditional verb, jussive (nūn dropped). **تنجحا** — response, jussive (nūn dropped).
+
+---
+
+## Important distinction: five forms vs. nūn al-niswah
+
+The imperfect connected to **nūn al-niswah** (نون النسوة, for plural feminine third person) is **built on sukūn** and is NOT one of the five verb forms:
+
+> **الطالباتُ يَكتُبْنَ** — **يكتُبْنَ** is indeclinable (built), not inflected. The نَ here is nūn al-niswah, not a sign of inflection.
+
+---
+
+## Common mistakes
+
+- Keeping nūn after a jussive particle: ***لم يكتُبانِ*** — correct: **لم يَكتُبا**.
+- Keeping nūn after an accusative particle: ***لن يكتُبونَ*** — correct: **لن يَكتُبوا**.
+- Treating **يكتُبْنَ** (nūn al-niswah) as one of the five verb forms — it is indeclinable.
+- Writing the plural wāw without the *alif fāriqa*: nominative is **يكتُبونَ**; accusative/jussive is **يكتُبوا** (with alif fāriqa).
+
+## In a nutshell
+
+> The five verb forms are the imperfect patterns ending in ān / ūn / īn (dual and plural pronouns). They are **nominative** with retained nūn and **accusative / jussive** with dropped nūn.
+
+</div>

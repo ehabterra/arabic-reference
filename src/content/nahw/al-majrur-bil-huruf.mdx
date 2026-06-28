@@ -1,5 +1,6 @@
 ---
 title: "المجرور بحروف الجر"
+title_en: "Nouns Governed by Prepositions"
 category: majrurat
 kind: topic
 order: 30
@@ -58,6 +59,8 @@ quiz:
     explain: "«المصطفى» اسم معتل الآخر بالألف؛ يُجرُّ بالكسرة المقدَّرة على الألف للتعذُّر (يتعذَّر النطق بالكسرة على الألف)."
 ---
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## المجرور بحروف الجر
 
@@ -162,3 +165,98 @@ bدون إضافة ولا «ال»)"]`} />
 ### خلاصة القاعدة
 
 > حروف الجر مبنيّةٌ تدخل على الأسماء فتجرُّها. علامة الجر الكسرة أصلًا، والياء أو الفتحة فرعًا في مواضع محدَّدة. ولا يدخل حرف الجر على فعل ولا حرف.
+
+</div>
+
+<div data-lang-block="en">
+
+## Nouns Governed by Prepositions — المجرور بحروف الجر
+
+In Arabic, every **preposition** (حرف جر, *ḥarf jarr*) places the noun following it in the **genitive case** (مجرور, *majrūr*). Prepositions are indeclinable particles that add meaning such as direction, location, origin, or instrument.
+
+<Mermaid code={String.raw`flowchart TD
+  A["Governed noun — الاسم المجرور"] --> B["Primary sign
+kasra — الكسرة"]
+  A --> C["Secondary signs"]
+  C --> D["Yāʾ — ياء
+dual / sound masc. plural
+/ the five nouns"]
+  C --> E["Fatḥa — فتحة
+diptote (ممنوع من الصرف)
+no iḍāfa and no ال"]`} />
+
+---
+
+## Definition
+
+A **preposition** (حرف جر) is an indeclinable particle that governs a noun, placing it in the **genitive case** (مجرور). It links that noun in meaning to the verb, noun, or adjective that precedes it.
+
+---
+
+## Common prepositions and their meanings
+
+| Preposition | Core meaning | Example |
+|---|---|---|
+| مِنْ | from; partitive | **سافرتُ مِنَ القاهرةِ** "I travelled from Cairo" |
+| إِلى | to (direction) | **ذهبتُ إِلى المدرسةِ** "I went to school" |
+| عَنْ | away from | **ابتعدتُ عَنِ الشرِّ** "I stayed away from evil" |
+| عَلى | on / over | **الكتابُ عَلى الطاولةِ** "The book is on the table" |
+| فِي | in / at | **درستُ فِي البيتِ** "I studied at home" |
+| الباء | with / by means of | **كتبتُ بِالقلمِ** "I wrote with the pen" |
+| اللام | for / belonging to | **الكتابُ لِلطالبِ** "The book is for the student" |
+| الكاف | like / as | **هو كَالأسدِ** "He is like a lion" |
+| حَتّى | until / up to | **صُمتُ حَتّى المغربِ** "I fasted until sunset" |
+| مُنْذُ / مُذْ | since (time) | **ما رأيتُه مُنْذُ أسبوعٍ** "I have not seen him for a week" |
+| رُبَّ | rhetorical "how many" | **رُبَّ رجلٍ كريمٍ لقيتُه** |
+
+---
+
+## Rule
+
+> Every noun following a preposition is **genitive**. The primary sign is the **kasra**; secondary signs replace it in specific noun types.
+
+---
+
+## Genitive signs
+
+| Noun type | Genitive sign |
+|---|---|
+| Regular singular and broken plural | kasra (primary) |
+| Dual | yāʾ (secondary) |
+| Sound masculine plural | yāʾ (secondary) |
+| The five nouns (أب أخ حم فو ذو) | yāʾ (secondary) |
+| Diptote (without iḍāfa or ال) | fatḥa (secondary) |
+
+---
+
+## Parsing examples
+
+**ذهبتُ إِلى المسجدِ** ("I went to the mosque")
+
+| Word | Parsing |
+|---|---|
+| إِلى | preposition |
+| المسجدِ | genitive, governed by إِلى; sign: **kasra** |
+
+**مررتُ بِالمعلِّمِينَ** ("I passed by the teachers")
+
+| Word | Parsing |
+|---|---|
+| بِ | preposition |
+| المعلِّمِينَ | genitive, governed by الباء; sign: **yāʾ** (sound masculine plural) |
+
+**مررتُ بِإبراهيمَ** ("I passed by Ibrāhīm") — diptote: genitive sign is **fatḥa** (no ال, not in iḍāfa).
+
+---
+
+## Common mistakes
+
+- Leaving the noun nominative after a preposition: ***ذهبتُ إلى البيتُ*** — correct: **البيتِ**.
+- Marking a diptote with kasra: ***مررتُ بأحمدٍ*** — correct: **بأحمدَ** (fatḥa, no tanwīn).
+- Thinking **قد / لم / لن** are prepositions — they enter upon verbs, not nouns.
+
+## In a nutshell
+
+> Prepositions are indeclinable and always place the following noun in the **genitive case**. Primary sign: kasra. Secondary: yāʾ for duals, sound masculine plurals, and the five nouns; fatḥa for diptotes (when not in iḍāfa and without ال).
+
+</div>

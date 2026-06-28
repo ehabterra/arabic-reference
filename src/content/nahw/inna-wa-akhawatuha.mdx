@@ -1,5 +1,6 @@
 ---
 title: "إنّ وأخواتها"
+title_en: "Inna and its Sisters"
 category: marfuaat
 kind: topic
 order: 14
@@ -61,6 +62,8 @@ quiz:
     explain: "إنَّ وأخواتها حروف تنصب المبتدأ (اسمها) وترفع الخبر (خبرها)؛ وهذا عكس كان التي ترفع الاسم وتنصب الخبر."
 ---
 import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
 
 ## إنّ وأخواتها
 
@@ -140,3 +143,100 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة القاعدة
 
 > **إنّ وأخواتها** (إنَّ، أنَّ، كأنَّ، لكنَّ، ليتَ، لعلَّ) حروفٌ ناسخة تنصب المبتدأ (اسمها) وترفع الخبر (خبرها). وهي بهذا عكسُ كان وأخواتها.
+
+</div>
+
+<div data-lang-block="en">
+
+## Inna and its Sisters — إنّ وأخواتها
+
+**إنّ** (*inna*) and its sisters are **particles** (حروف — not verbs) that enter the nominal sentence and change its endings — but in the **opposite direction** from كان:
+
+- **كان**: keeps the topic nominative, makes the predicate accusative.
+- **إنّ**: makes the topic **accusative** (اسمها), keeps the predicate **nominative** (خبرها).
+
+---
+
+## The rule
+
+> **إنّ وأخواتها** put their topic in the accusative (اسمها منصوب) and keep their predicate nominative (خبرها مرفوع).
+
+**Example:**
+
+- Before: **العِلمُ نورٌ** (*al-ʿilmu nūrun* — "Knowledge is light") — both nominative.
+- After: **إنَّ العِلمَ نورٌ** (*inna l-ʿilma nūrun* — "Indeed, knowledge is light") — العِلمَ (accusative, اسم إنّ), نورٌ (nominative, خبر إنّ).
+
+<Mermaid code={String.raw`flowchart TD
+  A["إنّ and sisters"] --> B["إنَّ / أنَّ: emphasis (توكيد)"]
+  A --> C["كأنَّ: resemblance (تشبيه)"]
+  A --> D["لكنَّ: contrast (استدراك)"]
+  A --> E["ليتَ: wish (تمنّي)"]
+  A --> F["لعلَّ: hope (ترجّي)"]`} />
+
+---
+
+## The sisters and their meanings
+
+| Particle | Meaning |
+|---|---|
+| **إنَّ** (*inna*) | Emphasis / assertion |
+| **أنَّ** (*anna*) | Emphasis (in positions where a verbal noun fits) |
+| **كأنَّ** (*kaʾanna*) | Resemblance / simile |
+| **لكنَّ** (*lākinna*) | Contrast / concession |
+| **ليتَ** (*layta*) | Wish (often for something unlikely or impossible) |
+| **لعلَّ** (*laʿalla*) | Hope / expectation |
+
+---
+
+## Examples
+
+- **إنَّ المعلمَ صبورٌ** (*inna l-muʿallima ṣabūrun* — "Indeed the teacher is patient") — المعلمَ: accusative (اسم إنّ); صبورٌ: nominative (خبرها).
+- **كأنَّ الغيمَ قطنٌ** (*kaʾanna l-ghayma quṭnun* — "The cloud is like cotton") — الغيمَ: accusative; قطنٌ: nominative.
+- **ليتَ الشبابَ يعودُ** (*layta sh-shabāba yaʿūdu* — "Would that youth could return!") — الشبابَ: accusative; يعودُ: verbal clause as nominative predicate.
+- **لعلَّ الغائبَ قادمٌ** (*laʿalla l-ghāʾiba qādimun* — "Perhaps the absent one is coming") — الغائبَ: accusative; قادمٌ: nominative.
+- **لكنَّ محمدًا مجتهدٌ** (*lākinna Muḥammadan mujtahidun* — "But Muhammad is diligent") — محمدًا: accusative; مجتهدٌ: nominative.
+
+---
+
+## إنَّ vs. أنَّ
+
+- **إنَّ** (hamza with *kasra*, i.e. *inna*): opens a clause or follows a verb of saying: **قالَ: إنَّ محمدًا مسافرٌ** (*qāla: inna Muḥammadan musāfirun* — "He said: Muhammad is travelling").
+- **أنَّ** (hamza with *fatḥa*, i.e. *anna*): occupies a position where a verbal noun would fit: **عَلِمتُ أنَّ محمدًا مسافرٌ** = **عَلِمتُ سفرَ محمدٍ** ("I knew of Muhammad's travelling").
+
+---
+
+## Parsing example
+
+**إنَّ الطالبَ مجتهدٌ** (*inna ṭ-ṭāliba mujtahidun* — "Indeed the student is diligent")
+
+| Word | Parsing |
+|---|---|
+| إنَّ | Particle of emphasis and accusation (حرف توكيد ونصب), indeclinable |
+| الطالبَ | **اسم إنّ**, accusative, fatḥa |
+| مجتهدٌ | **خبر إنّ**, nominative, ḍamma + tanwīn |
+
+---
+
+## Kāna vs. Inna — the key contrast
+
+| | كان وأخواتها | إنّ وأخواتها |
+|---|---|---|
+| **Word class** | Verbs (أفعال) | Particles (حروف) |
+| **Noun (اسمها)** | **Nominative** (مرفوع) | **Accusative** (منصوب) |
+| **Predicate (خبرها)** | **Accusative** (منصوب) | **Nominative** (مرفوع) |
+
+---
+
+## Common mistakes
+
+- Making اسم إنّ nominative: **إنَّ العِلمُ نورٌ** ✗ → correct: **إنَّ العِلمَ نورٌ**.
+- Making خبر إنّ accusative: **إنَّ العِلمَ نورًا** ✗ → correct: **إنَّ العِلمَ نورٌ**.
+- Treating إنّ like كان — they are opposites: إنّ makes the **topic** accusative; كان makes the **predicate** accusative.
+
+---
+
+## Summary
+
+> **إنّ وأخواتها** (إنَّ، أنَّ، كأنَّ، لكنَّ، ليتَ، لعلَّ) are particles that enter the nominal sentence and **make the topic accusative** (اسمها) while **keeping the predicate nominative** (خبرها). They are the grammatical mirror image of كان وأخواتها.
+
+</div>
