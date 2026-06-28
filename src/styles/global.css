@@ -1442,3 +1442,7 @@ mark.dp-hl[data-has-note]::after,
 .dp-cmt-privacy { color: var(--dp-muted); font-size: .78rem; margin: -.6rem 0 1.2rem; }
 .dp-cmt__del { font: inherit; font-size: .75rem; cursor: pointer; background: transparent; color: var(--dp-muted); border: 1px solid var(--dp-border); border-radius: 6px; padding: .05rem .5rem; margin-inline-start: auto; }
 .dp-cmt__del:hover { color: #fff; background: #c0392b; border-color: #c0392b; }
+.dp-cmt-me { display: flex; align-items: center; gap: .55rem; font-size: .9rem; }
+.dp-cmt-me .dp-cmt__av { width: 30px; height: 30px; }
+.dp-cmt-signout { font: inherit; font-size: .75rem; cursor: pointer; background: transparent; color: var(--dp-muted); border: 1px solid var(--dp-border); border-radius: 999px; padding: .1rem .6rem; margin-inline-start: auto; }
+.dp-cmt-signout:hover { color: var(--dp-text); border-color: var(--dp-border-strong); }

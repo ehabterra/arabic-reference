@@ -44,9 +44,10 @@ const clientId = import.meta.env.PUBLIC_GOOGLE_CLIENT_ID || '';
         const authEl = document.getElementById('dp-cmt-auth');
         let credential = null;
         let mySub = null;
+        const LS_KEY = 'dp-cmt-id';
 
-        const jwtSub = (t) => {
-          try { return JSON.parse(atob((t.split('.')[1] || '').replace(/-/g, '+').replace(/_/g, '/'))).sub; }
+        const jwtPayload = (t) => {
+          try { return JSON.parse(atob((t.split('.')[1] || '').replace(/-/g, '+').replace(/_/g, '/'))); }
           catch { return null; }
         };
         const esc = (s) => {
@@ -78,11 +79,41 @@ const clientId = import.meta.env.PUBLIC_GOOGLE_CLIENT_ID || '';
           } catch (e) { /* leave list as-is */ }
         }
 
+        function renderSignedIn(name, picture) {
+          if (!authEl) return;
+          authEl.innerHTML =
+            '<div class="dp-cmt-me">' +
+            (picture ? '<img class="dp-cmt__av" src="' + esc(picture) + '" alt="" referrerpolicy="no-referrer" />' : '') +
+            '<span>مسجَّل الدخول: <strong>' + esc(name) + '</strong></span>' +
+            '<button type="button" class="dp-cmt-signout" id="dp-cmt-signout">تسجيل الخروج</button></div>';
+          const so = document.getElementById('dp-cmt-signout');
+          if (so) so.addEventListener('click', signOut);
+          if (form) form.hidden = false;
+          if (hint) hint.hidden = true;
+        }
+
+        function renderButton() {
+          if (!(window.google && google.accounts && google.accounts.id) || !authEl) return;
+          authEl.innerHTML = '';
+          google.accounts.id.renderButton(authEl, { theme: 'outline', size: 'large', text: 'signin_with', shape: 'pill', locale: 'ar' });
+        }
+
+        function signOut() {
+          credential = null; mySub = null;
+          try { localStorage.removeItem(LS_KEY); } catch (e) {}
+          try { google.accounts.id.disableAutoSelect(); } catch (e) {}
+          if (form) form.hidden = true;
+          if (hint) { hint.hidden = false; hint.textContent = 'سجّل الدخول بحساب Google للمشاركة في النقاش.'; }
+          renderButton();
+          load();
+        }
+
         window.__dpCmtCredential = function (resp) {
           credential = resp && resp.credential;
-          mySub = jwtSub(credential || '');
-          if (form) form.hidden = false;
-          if (hint) hint.textContent = 'أنت مسجَّل الدخول — اكتب تعليقك بالأسفل.';
+          const p = jwtPayload(credential || '') || {};
+          mySub = p.sub || null;
+          try { localStorage.setItem(LS_KEY, JSON.stringify({ name: p.name, picture: p.picture })); } catch (e) {}
+          renderSignedIn(p.name || 'مستخدم', p.picture);
           load(); // re-render so your own comments show a delete button
         };
 
@@ -90,9 +121,19 @@ const clientId = import.meta.env.PUBLIC_GOOGLE_CLIENT_ID || '';
           if (!(window.google && google.accounts && google.accounts.id)) {
             return setTimeout(initGSI, 300);
           }
-          google.accounts.id.initialize({ client_id: clientId, callback: window.__dpCmtCredential });
-          if (authEl) google.accounts.id.renderButton(authEl, { theme: 'outline', size: 'large', text: 'signin_with', shape: 'pill', locale: 'ar' });
+          // auto_select silently re-signs-in returning visitors (no click each refresh).
+          google.accounts.id.initialize({ client_id: clientId, callback: window.__dpCmtCredential, auto_select: true });
+          renderButton();
+          google.accounts.id.prompt();
         }
+
+        // Optimistically show the last identity instantly while GSI re-issues a
+        // fresh token in the background, so a refresh doesn't look logged-out.
+        try {
+          const cached = JSON.parse(localStorage.getItem(LS_KEY) || 'null');
+          if (cached && cached.name) renderSignedIn(cached.name, cached.picture);
+        } catch (e) {}
+
         initGSI();
 
         if (form) {
