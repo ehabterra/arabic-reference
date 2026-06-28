@@ -163,7 +163,7 @@ img { max-width: 100%; }
 }
 .dp-hero__eyebrow { font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--dp-muted); margin-bottom: .6rem; }
 .dp-hero h1 {
-  margin: 0 0 .7rem; line-height: 1.08; font-size: clamp(2rem, 5vw, 3.1rem); letter-spacing: -.02em;
+  margin: 0 0 .7rem; font-size: clamp(2rem, 5vw, 3.1rem); letter-spacing: -.02em;
   background: linear-gradient(92deg, #fff, var(--dp-accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 .dp-hero__lede { font-size: 1.15rem; color: var(--dp-muted); max-width: 64ch; margin: 0; }

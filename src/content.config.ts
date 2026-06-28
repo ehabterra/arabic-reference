@@ -10,10 +10,12 @@ const refSchema = z.object({
     'harakat',
     'tarkib',
     // nahw categories
+    'kalam',
     'marfuaat',
     'mansubat',
     'majrurat',
-    'jumal',
+    'tawabi',
+    'asalib',
     // sarf categories
     'mizan',
     'afaal',
