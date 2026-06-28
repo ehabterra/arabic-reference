@@ -14,8 +14,8 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "go-reference",
-      "database_id": "82c227d9-df1b-42d9-b757-620af62149eb"
+      "database_name": "arabic",
+      "database_id": "826775ce-5586-4bdf-8494-2daf629145bc"
     }
   ],
   "observability": {
