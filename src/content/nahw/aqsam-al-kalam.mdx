@@ -59,6 +59,8 @@ quiz:
 ---
 import Mermaid from '../../components/Mermaid.astro';
 
+<div data-lang-block="ar">
+
 ## الكلام وأقسامه
 
 الكلمة العربية ثلاثة أقسام لا رابع لها: **الاسم** و**الفعل** و**الحرف**. هذا التقسيم أساسُ علم النحو كلِّه، فلا يصحّ الإعراب دون معرفة قسم الكلمة أولًا.
@@ -157,3 +159,49 @@ import Mermaid from '../../components/Mermaid.astro';
 ## خلاصة القاعدة
 
 > الكلمة العربية إمّا **اسمٌ** (دلَّ على معنًى بلا زمن)، أو **فعلٌ** (دلَّ على حدثٍ بزمن)، أو **حرفٌ** (دلَّ على معنًى في غيره). ولكلٍّ علاماتٌ تُميِّزه، ويكفي وجود علامة واحدة.
+
+</div>
+
+<div data-lang-block="en">
+
+## Words in Arabic come in three kinds
+
+Every Arabic word is exactly one of three kinds — a **noun** (اسم, *ism*), a **verb** (فعل, *fiʿl*), or a **particle** (حرف, *ḥarf*). Identifying a word's kind is the first step of all grammar (إعراب): you can't parse a word until you know what it is.
+
+<Mermaid code={String.raw`flowchart TD
+  A["Word — الكلمة"] --> B["Noun — اسم"]
+  A --> C["Verb — فعل"]
+  A --> D["Particle — حرف"]
+  B --> E["takes جرّ / تنوين / الـ"]
+  C --> F["past / present / command"]
+  D --> G["no noun- or verb-sign"]`} />
+
+---
+
+## 1. The noun — الاسم (*al-ism*)
+
+A **noun** names a person, thing, place, or abstract meaning, **with no built-in time**: **محمدٌ** (*Muḥammad*), **كتابٌ** (*kitāb*, a book), **شجرةٌ** (*shajara*, a tree), **مكّة** (*Makka*), **هو** (*huwa*, he).
+
+**Signs of a noun** (any one is enough): it can take **tanwīn** (كتابٌ), the article **الـ** (الكتاب), a preposition before it (في الكتابِ, *in the book*), or the vocative (يا محمدُ, *O Muḥammad*).
+
+## 2. The verb — الفعل (*al-fiʿl*)
+
+A **verb** expresses an action tied to a **time**: past **كتبَ** (*kataba*, he wrote), present **يكتُب** (*yaktub*, he writes), command **اكتُبْ** (*uktub*, write!).
+
+**Signs of a verb:** the past accepts the subject‑*tāʾ* (كتبْتُ, *I wrote*) and the silent feminine *tāʾ* (كتبَتْ, *she wrote*); the present accepts **لم** and **السين/سوف** (سيكتُب, *he will write*).
+
+## 3. The particle — الحرف (*al-ḥarf*)
+
+A **particle** carries no meaning by itself — only together with other words: **في** (in), **مِن** (from), **هل** (a question marker), **لم** (did not), **إنَّ** (indeed). Its defining sign is the *absence* of any sign: it takes neither noun‑signs nor verb‑signs.
+
+---
+
+## Common mistakes
+- Treating a verbal noun (مصدر) as a verb: **كتابةٌ** (*kitāba*, writing) is a **noun** — it takes tanwīn and الـ.
+- Thinking **أن / إن** are verbs — they are particles.
+- Classing **هو / هي** as verbs — they are detached pronouns, i.e. nouns.
+
+## In a nutshell
+> Every Arabic word is a **noun** (a meaning with no time), a **verb** (an action with a time), or a **particle** (meaning only through others). Each has signs that identify it — and one sign is enough.
+
+</div>

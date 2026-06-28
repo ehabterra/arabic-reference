@@ -4,7 +4,7 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import { getCollection } from 'astro:content';
 import { SITE_TITLE, SITE_DESC } from '../lib/consts';
-import ar from '../i18n/ar.json';
+import en from '../i18n/en.json';
 
 interface Props { title?: string; description?: string; }
 const { title, description } = Astro.props;
@@ -85,7 +85,7 @@ const searchIndex = [
       </div>
     </div>
     <script type="application/json" id="dp-search-index" set:html={JSON.stringify(searchIndex)}></script>
-    <script type="application/json" id="dp-i18n" set:html={JSON.stringify(ar)}></script>
+    <script type="application/json" id="dp-i18n" set:html={JSON.stringify(en)}></script>
 
     <script>
       import '../scripts/progress.js';

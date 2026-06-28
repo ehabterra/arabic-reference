@@ -321,43 +321,43 @@ function initLang() {
   let dict = {};
   const src = document.getElementById('dp-i18n');
   if (src) { try { dict = JSON.parse(src.textContent || '{}'); } catch {} }
+  // Arabic is the base (hardcoded) language; English is the overlay dict (#dp-i18n
+  // now holds en.json). So we cache the original Arabic and swap to English on toggle.
   let content = [];
-  const csrc = document.getElementById('dp-content-ar');
+  const csrc = document.getElementById('dp-content-en');
   if (csrc) { try { content = JSON.parse(csrc.textContent || '[]'); } catch {} }
   let blocks = null;
 
   function apply(lang) {
-    const ar = lang === 'ar';
+    const en = lang === 'en';
     document.querySelectorAll('[data-i18n]').forEach((n) => {
-      if (n.dataset.en == null) n.dataset.en = n.textContent;
+      if (n.dataset.ar == null) n.dataset.ar = n.textContent;
       const t = dict[n.getAttribute('data-i18n')];
-      n.textContent = ar && t ? t : n.dataset.en;
+      n.textContent = en && t ? t : n.dataset.ar;
     });
     document.querySelectorAll('[data-i18n-html]').forEach((n) => {
-      if (n.dataset.enHtml == null) n.dataset.enHtml = n.innerHTML;
+      if (n.dataset.arHtml == null) n.dataset.arHtml = n.innerHTML;
       const t = dict[n.getAttribute('data-i18n-html')];
-      n.innerHTML = ar && t ? t : n.dataset.enHtml;
+      n.innerHTML = en && t ? t : n.dataset.arHtml;
     });
     if (content.length) {
       if (!blocks) blocks = i18nBlocks();
       blocks.forEach((el, i) => {
-        if (el.dataset.enHtml == null) el.dataset.enHtml = el.innerHTML;
+        if (el.dataset.arHtml == null) el.dataset.arHtml = el.innerHTML;
         const t = content[i];
-        el.innerHTML = ar && t ? t : el.dataset.enHtml;
+        el.innerHTML = en && t ? t : el.dataset.arHtml;
       });
     }
     root.dataset.lang = lang;
-    root.dir = ar ? 'rtl' : 'ltr';
-    if (btn) btn.textContent = ar ? 'EN' : 'عربي';
-    markExternalLinks(); // AR content swaps innerHTML → re-mark new anchors
-    // the innerHTML swaps above wipe any injected nodes (e.g. highlight marks);
-    // let listeners re-apply themselves against the now-current language
+    root.dir = en ? 'ltr' : 'rtl';
+    if (btn) btn.textContent = en ? 'عربي' : 'EN';
+    markExternalLinks();
     window.dispatchEvent(new CustomEvent('dp:lang', { detail: { lang } }));
   }
 
-  apply(root.dataset.lang === 'ar' ? 'ar' : 'en'); // honor the persisted choice on load
+  apply(root.dataset.lang === 'en' ? 'en' : 'ar'); // honor the persisted choice on load
   if (btn) btn.addEventListener('click', () => {
-    const next = root.dataset.lang === 'ar' ? 'en' : 'ar';
+    const next = root.dataset.lang === 'en' ? 'ar' : 'en';
     try { localStorage.setItem('dp-lang', next); } catch {}
     apply(next);
   });
