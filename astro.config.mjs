@@ -40,7 +40,7 @@ function rehypeHeadingIds() {
 // https://astro.build/config
 export default defineConfig({
   // Update to your custom domain once attached to the Worker.
-  site: 'https://go-reference.workers.dev',
+  site: 'https://arabic-reference.workers.dev',
   integrations: [mdx(), react()],
   adapter: cloudflare({
     // Expose wrangler.jsonc bindings (D1) under `astro dev` via Miniflare.
