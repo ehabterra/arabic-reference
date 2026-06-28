@@ -13,7 +13,6 @@ const collections = [
   { base: '/tajwid', name: 'التجويد', entries: await getCollection('tajwid') },
   { base: '/khat', name: 'الخط العربي', entries: await getCollection('khat') },
   { base: '/quran-arabic', name: 'عربية القرآن', entries: await getCollection('quranArabic') },
-  { base: '/nonnative', name: 'العربية لغير الناطقين بها', entries: await getCollection('nonnative') },
 ];
 const bank = collections.flatMap((c) =>
   c.entries

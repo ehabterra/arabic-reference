@@ -14,18 +14,26 @@ direction** differ.
 
 ---
 
-## The 8 Tracks
+## The 7 Tracks
 
-| # | Track key      | Route           | Title                       | Categories (keys)                         |
-|---|----------------|-----------------|-----------------------------|-------------------------------------------|
-| 1 | `qiraa`        | `/qiraa/`       | القراءة والكتابة            | huruf, harakat, tarkib                    |
-| 2 | `nahw`         | `/nahw/`        | النحو                       | marfuaat, mansubat, majrurat, jumal       |
-| 3 | `sarf`         | `/sarf/`        | الصرف                       | mizan, afaal, mushtaqqat                  |
-| 4 | `balagha`      | `/balagha/`     | البلاغة                     | maani, bayan, badi                        |
-| 5 | `tajwid`       | `/tajwid/`      | التجويد                     | makharij, ahkam, tilawa                   |
-| 6 | `khat`         | `/khat/`        | الخط العربي                 | usus, ruqaa, naskh                        |
-| 7 | `quranArabic`  | `/quran-arabic/`| عربية القرآن                | alfaz, nahwq, balaghaq                    |
-| 8 | `nonnative`    | `/nonnative/`   | العربية لغير الناطقين بها   | asasiyat, qawaid, mufradat                |
+| # | Track key      | Route            | Title                  | Categories (keys)                                      |
+|---|----------------|------------------|------------------------|--------------------------------------------------------|
+| 1 | `qiraa`        | `/qiraa/`        | القراءة والكتابة       | huruf, harakat, tarkib                                 |
+| 2 | `nahw`         | `/nahw/`         | النحو                  | kalam, marfuaat, mansubat, majrurat, tawabi, asalib    |
+| 3 | `sarf`         | `/sarf/`         | الصرف                  | mizan, afaal, mushtaqqat                               |
+| 4 | `balagha`      | `/balagha/`      | البلاغة                | maani, bayan, badi, balaghaq                           |
+| 5 | `tajwid`       | `/tajwid/`       | التجويد                | makharij, ahkam, tilawa                                |
+| 6 | `khat`         | `/khat/`         | الخط العربي            | usus, naskh, ruqaa, khutut_okhra                       |
+| 7 | `quranArabic`  | `/quran-arabic/` | عربية القرآن           | mustawa1, mustawa2, mustawa3, qiraaq, alfaz            |
+
+**Taxonomy notes:**
+- The former `nonnative` track (8th track) has been **merged into `quranArabic`**, which
+  is restructured as a leveled course (مبتدئ → متوسط → متقدّم) that also serves
+  non-native Arabic learners.
+- `balaghaq` (بلاغة القرآن التطبيقية) is now a category under `balagha`, not under
+  `quranArabic`.
+- `usus` under `khat` now covers both calligraphy fundamentals and handwriting basics.
+- `khutut_okhra` is a new `khat` category covering Farsi/Diwani and other artistic scripts.
 
 ---
 
@@ -36,11 +44,11 @@ src/content/
   qiraa/          ← القراءة والكتابة lessons
   nahw/           ← النحو lessons
   sarf/           ← الصرف lessons
-  balagha/        ← البلاغة lessons
+  balagha/        ← البلاغة lessons  (incl. balaghaq category)
   tajwid/         ← التجويد lessons
-  khat/           ← الخط العربي lessons
+  khat/           ← الخط العربي lessons  (incl. khutut_okhra category)
   quran-arabic/   ← عربية القرآن lessons (collection key: quranArabic)
-  nonnative/      ← العربية لغير الناطقين lessons
+                     levels: mustawa1 / mustawa2 / mustawa3 / qiraaq / alfaz
 ```
 
 Each file is `.md` or `.mdx` with frontmatter validated by `src/content.config.ts`.
@@ -55,7 +63,7 @@ Each file is `.md` or `.mdx` with frontmatter validated by `src/content.config.t
 ```yaml
 ---
 title: "عنوان الدرس"
-category: <one of the 25 category keys>
+category: <one of the 29 category keys>
 order: <integer — controls sort order within the category>
 difficulty: "ابدأ هنا"   # or any descriptive string
 status: stub              # change to 'ready' when complete
@@ -75,7 +83,7 @@ sources:
 
 ```
 src/pages/
-  index.astro              ← Homepage — lists all 8 tracks
+  index.astro              ← Homepage — lists all 7 tracks
   review.astro             ← Spaced-repetition review session
   glossary.astro           ← Glossary page
   highlights.astro         ← Highlights page
@@ -89,7 +97,6 @@ src/pages/
   tajwid/
   khat/
   quran-arabic/            ← route uses hyphen; collection key is quranArabic
-  nonnative/
 ```
 
 ---

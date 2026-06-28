@@ -10,10 +10,9 @@ const balagha = await getCollection('balagha');
 const tajwid = await getCollection('tajwid');
 const khat = await getCollection('khat');
 const quranArabic = await getCollection('quranArabic');
-const nonnative = await getCollection('nonnative');
 
 // unified progress across every page in the reference
-const allSlugs = [...qiraa, ...nahw, ...sarf, ...balagha, ...tajwid, ...khat, ...quranArabic, ...nonnative].map((p) => p.id).join(',');
+const allSlugs = [...qiraa, ...nahw, ...sarf, ...balagha, ...tajwid, ...khat, ...quranArabic].map((p) => p.id).join(',');
 
 // Ordered per-track manifest for the resume card
 const trackList = [
@@ -24,7 +23,6 @@ const trackList = [
   { base: '/tajwid', name: 'التجويد', entries: tajwid },
   { base: '/khat', name: 'الخط العربي', entries: khat },
   { base: '/quran-arabic', name: 'عربية القرآن', entries: quranArabic },
-  { base: '/nonnative', name: 'العربية لغير الناطقين بها', entries: nonnative },
 ];
 const resumeManifest = trackList.map((t) => ({
   base: t.base,
@@ -42,7 +40,6 @@ const trackIcons: Record<string, string> = {
   tajwid: '🗣️',
   khat: '🖋️',
   quranArabic: '📿',
-  nonnative: '🌍',
 };
 ---
 <BaseLayout>

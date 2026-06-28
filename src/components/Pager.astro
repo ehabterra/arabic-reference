@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 const { slug, collection = 'qiraa', base = '/qiraa' } = Astro.props as {
   slug: string;
-  collection?: 'qiraa' | 'nahw' | 'sarf' | 'balagha' | 'tajwid' | 'khat' | 'quranArabic' | 'nonnative';
+  collection?: 'qiraa' | 'nahw' | 'sarf' | 'balagha' | 'tajwid' | 'khat' | 'quranArabic';
   base?: string;
 };
 const all = (await getCollection(collection)).sort((a, b) => a.data.order - b.data.order);

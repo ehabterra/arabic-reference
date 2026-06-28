@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 const { related, collection = 'qiraa', base = '/qiraa', heading = 'دروس ذات صلة' } = Astro.props as {
   related: string[];
-  collection?: 'qiraa' | 'nahw' | 'sarf' | 'balagha' | 'tajwid' | 'khat' | 'quranArabic' | 'nonnative';
+  collection?: 'qiraa' | 'nahw' | 'sarf' | 'balagha' | 'tajwid' | 'khat' | 'quranArabic';
   base?: string;
   heading?: string;
 };

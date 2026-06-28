@@ -9,7 +9,7 @@ interface Props {
   blurb: string;
   titleKey?: string;
   blurbKey?: string;
-  collection?: 'qiraa' | 'nahw' | 'sarf' | 'balagha' | 'tajwid' | 'khat' | 'quranArabic' | 'nonnative';
+  collection?: 'qiraa' | 'nahw' | 'sarf' | 'balagha' | 'tajwid' | 'khat' | 'quranArabic';
   base?: string;
 }
 const { cat, title, blurb, collection = 'qiraa', base = '/qiraa' } = Astro.props;

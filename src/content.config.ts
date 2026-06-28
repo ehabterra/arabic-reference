@@ -24,22 +24,22 @@ const refSchema = z.object({
     'maani',
     'bayan',
     'badi',
+    'balaghaq',
     // tajwid categories
     'makharij',
     'ahkam',
     'tilawa',
     // khat categories
     'usus',
-    'ruqaa',
     'naskh',
+    'ruqaa',
+    'khutut_okhra',
     // quran-arabic categories
+    'mustawa1',
+    'mustawa2',
+    'mustawa3',
+    'qiraaq',
     'alfaz',
-    'nahwq',
-    'balaghaq',
-    // nonnative categories
-    'asasiyat',
-    'qawaid',
-    'mufradat',
   ]),
   kind: z.enum(['pattern', 'guide', 'topic']).default('pattern'),
   order: z.number(),
@@ -106,9 +106,4 @@ const quranArabic = defineCollection({
   schema: refSchema,
 });
 
-const nonnative = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/nonnative' }),
-  schema: refSchema,
-});
-
-export const collections = { qiraa, nahw, sarf, balagha, tajwid, khat, quranArabic, nonnative };
+export const collections = { qiraa, nahw, sarf, balagha, tajwid, khat, quranArabic };

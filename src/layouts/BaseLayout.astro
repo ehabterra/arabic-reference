@@ -19,7 +19,6 @@ const balagha = await getCollection('balagha');
 const tajwid = await getCollection('tajwid');
 const khat = await getCollection('khat');
 const quranArabic = await getCollection('quranArabic');
-const nonnative = await getCollection('nonnative');
 const searchIndex = [
   ...qiraa.map((p) => ({ t: p.data.title, u: `/qiraa/${p.id}/`, c: p.data.category, s: 'القراءة والكتابة', i: p.data.intent, d: p.data.difficulty })),
   ...nahw.map((p) => ({ t: p.data.title, u: `/nahw/${p.id}/`, c: p.data.category, s: 'النحو', i: p.data.intent, d: p.data.difficulty })),
@@ -28,7 +27,6 @@ const searchIndex = [
   ...tajwid.map((p) => ({ t: p.data.title, u: `/tajwid/${p.id}/`, c: p.data.category, s: 'التجويد', i: p.data.intent, d: p.data.difficulty })),
   ...khat.map((p) => ({ t: p.data.title, u: `/khat/${p.id}/`, c: p.data.category, s: 'الخط العربي', i: p.data.intent, d: p.data.difficulty })),
   ...quranArabic.map((p) => ({ t: p.data.title, u: `/quran-arabic/${p.id}/`, c: p.data.category, s: 'عربية القرآن', i: p.data.intent, d: p.data.difficulty })),
-  ...nonnative.map((p) => ({ t: p.data.title, u: `/nonnative/${p.id}/`, c: p.data.category, s: 'العربية لغير الناطقين بها', i: p.data.intent, d: p.data.difficulty })),
 ];
 ---
 <!doctype html>
