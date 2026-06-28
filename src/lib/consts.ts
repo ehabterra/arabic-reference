@@ -90,8 +90,8 @@ export const TRACKS: TrackMeta[] = [
   },
   {
     key: 'quranArabic',
-    route: 'quran-arabic',
-    title: 'عربية القرآن',
+    route: 'arabic-via-quran',
+    title: 'العربية عبر القرآن',
     blurb: 'دورة متدرّجة لتعلُّم العربية عبر القرآن من المبتدئ إلى المتقدّم — وأساسٌ لغير الناطقين بها.',
     categories: [
       { key: 'mustawa1', title: 'المستوى الأول (مبتدئ)', blurb: 'المستوى الأول: أساسيات العربية للمبتدئين عبر القرآن' },
