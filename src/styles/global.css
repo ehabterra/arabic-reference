@@ -1410,3 +1410,18 @@ mark.dp-hl[data-has-note]::after,
   cursor: pointer;
 }
 .dp-hl-optout input { accent-color: var(--dp-accent); cursor: pointer; }
+
+/* ── Calligraphic script samples (used in الخط / القراءة lessons) ── */
+.khat-sample { display: inline-block; font-size: 2.6rem; line-height: 2; padding: .1em .35em; color: var(--dp-text); }
+.khat-naskh  { font-family: "Amiri", "Noto Naskh Arabic", serif; }
+.khat-ruqaa  { font-family: "Aref Ruqaa", "Amiri", serif; }
+.khat-kufi   { font-family: "Reem Kufi", "Amiri", sans-serif; letter-spacing: .02em; }
+.khat-farisi { font-family: "Noto Nastaliq Urdu", "Amiri", serif; line-height: 2.9; font-size: 2.2rem; }
+.khat-card { display: grid; gap: .45rem; place-items: center; border: 1px solid var(--dp-border); border-radius: 12px; background: var(--dp-surface); padding: 1rem 1.2rem; margin: .7rem 0; }
+.khat-card__label { font-size: .8rem; color: var(--dp-muted); font-family: var(--font-sans); }
+.khat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .7rem; margin: .8rem 0; }
+
+/* ── Pronounce (text-to-speech) button ──────────────────────────── */
+.dp-speak { display: inline-flex; align-items: center; gap: .3em; font: inherit; cursor: pointer; background: var(--dp-surface-2); color: var(--dp-text); border: 1px solid var(--dp-border); border-radius: 999px; padding: .1em .6em; line-height: 1.7; transition: background .15s, transform .1s; }
+.dp-speak:hover { background: var(--dp-accent); color: #fff; }
+.dp-speak.is-speaking { transform: scale(1.08); background: var(--dp-accent); color: #fff; }
