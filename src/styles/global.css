@@ -710,8 +710,8 @@ main.dp-container { animation: dp-fade .45s var(--dp-ease) both; }
 [dir="rtl"] pre,
 [dir="rtl"] .dp-mermaid,
 [dir="rtl"] .dp-pg,
-[dir="rtl"] table { direction: ltr; text-align: left; }
-[dir="rtl"] code { direction: ltr; unicode-bidi: isolate; }
+[dir="rtl"] table { direction: rtl; text-align: right; }
+[dir="rtl"] code { direction: rtl; unicode-bidi: isolate; }
 
 /* Code blocks and Latin/transliteration always stay LTR even inside RTL prose */
 .dp-prose pre, .dp-prose code, pre[class*="language-"] { direction: ltr; text-align: left; unicode-bidi: isolate; }
