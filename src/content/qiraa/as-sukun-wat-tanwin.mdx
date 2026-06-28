@@ -114,6 +114,13 @@ import Mermaid from '../../components/Mermaid.astro';
 | تنوين الكسر | ـٍ | صوت «اِن» | كِتَابٍ |
 | تنوين الضم | ـٌ | صوت «أُن» | كِتَابٌ |
 
+<div style="display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0;align-items:center">
+<button class="dp-speak" data-speak="بًا"><span class="khat-sample" style="font-size:1.4rem">بًا</span> <span class="dp-speak__icon">🔊</span></button>
+<button class="dp-speak" data-speak="بٌ"><span class="khat-sample" style="font-size:1.4rem">بٌ</span> <span class="dp-speak__icon">🔊</span></button>
+<button class="dp-speak" data-speak="بٍ"><span class="khat-sample" style="font-size:1.4rem">بٍ</span> <span class="dp-speak__icon">🔊</span></button>
+<button class="dp-speak" data-speak="أَبْ"><span class="khat-sample" style="font-size:1.4rem">أَبْ</span> <span class="dp-speak__icon">🔊</span></button>
+</div>
+
 ### مخطط التنوين
 
 <Mermaid code={String.raw`flowchart TD
