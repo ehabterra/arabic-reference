@@ -87,7 +87,7 @@ export const GET: APIRoute = async ({ url, locals }) => {
     await ensureSchema(db);
     const { results } = await db
       .prepare(
-        `SELECT id, name, picture, body, created_at
+        `SELECT id, name, picture, body, created_at, user_sub
            FROM comments WHERE slug = ?1 AND hidden = 0
            ORDER BY created_at DESC, id DESC LIMIT 200`
       )

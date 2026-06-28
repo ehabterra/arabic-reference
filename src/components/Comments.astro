@@ -22,6 +22,7 @@ const clientId = import.meta.env.PUBLIC_GOOGLE_CLIENT_ID || '';
           placeholder="شارك بتعليقك أو سؤالك…"></textarea>
         <button type="submit" class="dp-cmt-submit">نشر التعليق</button>
       </form>
+      <p class="dp-cmt-privacy">بنشر تعليقك يُحفَظ اسمك وصورتك ومعرّف حساب Google فقط — <strong>دون بريدك الإلكتروني</strong>. ويمكنك حذف تعليقك في أي وقت.</p>
       <ul class="dp-cmt-list" id="dp-cmt-list" aria-live="polite"></ul>
     </>
   ) : (
@@ -42,7 +43,12 @@ const clientId = import.meta.env.PUBLIC_GOOGLE_CLIENT_ID || '';
         const hint = document.getElementById('dp-cmt-hint');
         const authEl = document.getElementById('dp-cmt-auth');
         let credential = null;
+        let mySub = null;
 
+        const jwtSub = (t) => {
+          try { return JSON.parse(atob((t.split('.')[1] || '').replace(/-/g, '+').replace(/_/g, '/'))).sub; }
+          catch { return null; }
+        };
         const esc = (s) => {
           const d = document.createElement('div');
           d.textContent = s == null ? '' : String(s);
@@ -63,7 +69,9 @@ const clientId = import.meta.env.PUBLIC_GOOGLE_CLIENT_ID || '';
               ? items.map((c) =>
                   '<li class="dp-cmt">' +
                   (c.picture ? '<img class="dp-cmt__av" src="' + esc(c.picture) + '" alt="" referrerpolicy="no-referrer" />' : '<span class="dp-cmt__av dp-cmt__av--none"></span>') +
-                  '<div class="dp-cmt__main"><div class="dp-cmt__head"><span class="dp-cmt__name">' + esc(c.name) + '</span><time class="dp-cmt__time">' + fmt(c.created_at) + '</time></div>' +
+                  '<div class="dp-cmt__main"><div class="dp-cmt__head"><span class="dp-cmt__name">' + esc(c.name) + '</span><time class="dp-cmt__time">' + fmt(c.created_at) + '</time>' +
+                  ((mySub && c.user_sub === mySub) ? '<button class="dp-cmt__del" data-del="' + c.id + '">حذف</button>' : '') +
+                  '</div>' +
                   '<p class="dp-cmt__text">' + esc(c.body) + '</p></div></li>'
                 ).join('')
               : '<li class="dp-cmt-empty">لا توجد تعليقات بعد. كن أوّل المشاركين.</li>';
@@ -72,8 +80,10 @@ const clientId = import.meta.env.PUBLIC_GOOGLE_CLIENT_ID || '';
 
         window.__dpCmtCredential = function (resp) {
           credential = resp && resp.credential;
+          mySub = jwtSub(credential || '');
           if (form) form.hidden = false;
           if (hint) hint.textContent = 'أنت مسجَّل الدخول — اكتب تعليقك بالأسفل.';
+          load(); // re-render so your own comments show a delete button
         };
 
         function initGSI() {
@@ -102,6 +112,22 @@ const clientId = import.meta.env.PUBLIC_GOOGLE_CLIENT_ID || '';
               if (r.ok) { ta.value = ''; await load(); }
               else { const er = await r.json().catch(() => ({})); alert(er.error || 'تعذّر نشر التعليق.'); }
             } finally { btn.disabled = false; }
+          });
+        }
+
+        if (listEl) {
+          listEl.addEventListener('click', async (e) => {
+            const b = e.target.closest('[data-del]');
+            if (!b || !credential) return;
+            if (!confirm('حذف تعليقك؟ لا يمكن التراجع.')) return;
+            try {
+              const r = await fetch('/api/comments', {
+                method: 'DELETE',
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify({ id: Number(b.getAttribute('data-del')), credential }),
+              });
+              if (r.ok) await load();
+            } catch (e) { /* ignore */ }
           });
         }
 

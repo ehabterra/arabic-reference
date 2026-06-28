@@ -1439,3 +1439,6 @@ mark.dp-hl[data-has-note]::after,
 .dp-cmt__time { color: var(--dp-muted); font-size: .78rem; }
 .dp-cmt__text { margin: 0; white-space: pre-wrap; overflow-wrap: break-word; }
 .dp-cmt-empty { color: var(--dp-muted); list-style: none; }
+.dp-cmt-privacy { color: var(--dp-muted); font-size: .78rem; margin: -.6rem 0 1.2rem; }
+.dp-cmt__del { font: inherit; font-size: .75rem; cursor: pointer; background: transparent; color: var(--dp-muted); border: 1px solid var(--dp-border); border-radius: 6px; padding: .05rem .5rem; margin-inline-start: auto; }
+.dp-cmt__del:hover { color: #fff; background: #c0392b; border-color: #c0392b; }
