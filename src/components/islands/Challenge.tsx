@@ -139,11 +139,11 @@ export default function Challenge({ id, title = 'bug.go', brief, code, expected,
         </pre>
       )}
       {showHint && hint && <div className="dp-chal__hint">💡 {hint}</div>}
-      {status === ‘pass’ && <div className="dp-chal__pass">✓ تم الإصلاح — الناتج متطابق. عمل رائع!</div>}
-      {out && status !== ‘pass’ && (
-        <div className={`dp-pg__out ${status === ‘err’ ? ‘dp-pg__out--err’ : ‘’}`}>{out}</div>
+      {status === 'pass' && <div className="dp-chal__pass">✓ تم الإصلاح — الناتج متطابق. عمل رائع!</div>}
+      {out && status !== 'pass' && (
+        <div className={`dp-pg__out ${status === 'err' ? 'dp-pg__out--err' : ''}`}>{out}</div>
       )}
-      {status === ‘fail’ && (
+      {status === 'fail' && (
         <div className="dp-chal__nomatch">يعمل البرنامج، لكن الناتج لا يطابق المتوقع بعد.</div>
       )}
     </div>
