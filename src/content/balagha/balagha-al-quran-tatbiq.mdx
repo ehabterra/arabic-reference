@@ -44,17 +44,17 @@ quiz:
   - q: "«وَاخْفِضْ لَهُمَا جَنَاحَ الذُّلِّ» — ما الصورة البيانية في هذه العبارة؟"
     q_en: "In 'wa-khfiḍ lahumā janāḥa l-dhull' (Lower to them both the wing of humility, 17:24) — what is the figurative image?"
     options:
-      - text: "استعارة تصريحية: شبَّه التواضع للوالدَين بطائر يخفض جناحه، فاستُعير «الجناح» للتواضع"
-        text_en: "Istiʿāra taṣrīḥiyya (explicit metaphor): humility before parents is likened to a bird lowering its wing; 'the wing' (janāḥ) is borrowed for the act of humble deference"
+      - text: "استعارة مكنية: شُبِّه «الذلُّ» بطائرٍ، فحُذف المشبَّه به (الطائر) وأُبقيت إحدى لوازمه وهي «الجناح»"
+        text_en: "Istiʿāra makniyya (implicit metaphor): 'humility' (al-dhull) is likened to a bird; the likened-to (the bird) is deleted and one of its attributes — 'the wing' (janāḥ) — is retained"
         correct: true
+      - text: "استعارة تصريحية: استُعير لفظ «الجناح» مكان لفظ التواضع"
+        text_en: "Istiʿāra taṣrīḥiyya: the word 'wing' (janāḥ) is borrowed in place of the word for humility"
+        correct: false
       - text: "كناية عن موصوف"
         text_en: "Kināya about a person (ʿan mawṣūf)"
         correct: false
-      - text: "مجاز مرسل علاقته السببية"
-        text_en: "Majāz mursāl with a cause-for-effect (sababiyya) relation"
-        correct: false
-    explain: "«جناح الذل» استعارة: شُبِّه التواضع والانكسار أمام الوالدَين بالطائر الذي يخفض جناحه إذلالاً وخضوعاً. فاستُعير «الجناح» للتواضع، وهو لفظٌ من عالَم الطيور يُعطي المعنى المجرد (التذلل) صورةً محسوسةً حيَّة وحركيةً تُقرِّبه للنفس أشد من أي تصريح."
-    explain_en: "Janāḥ al-dhull is an istiʿāra taṣrīḥiyya (explicit metaphor): humility and deference before parents is likened to a bird that lowers its wing in submission. The word 'janāḥ' (wing) is borrowed from the bird-world and applied to the abstract concept of deference (dhull), giving it a vivid, physical, kinetic image far more evocative than any direct statement."
+    explain: "«جناح الذل» استعارة مكنية: شُبِّه «الذلُّ» (المشبَّه، وهو مذكور) بطائرٍ (المشبَّه به، وهو محذوف)، ودلَّ عليه بذكر لازمٍ من لوازمه وهو «الجناح» — وإثباتُ الجناح للذل قرينةُ المكنية. وهذا يُعطي المعنى المجرد صورةً محسوسةً حيَّة. (وذكرُ «الجناح» نفسه استعارة تخييلية.)"
+    explain_en: "Janāḥ al-dhull is an istiʿāra makniyya (implicit metaphor): 'humility' (al-dhull, the likened, stated) is likened to a bird (the likened-to, deleted), signalled by retaining one of the bird's attributes — 'the wing' (janāḥ); ascribing a 'wing' to humility is the tell-tale qarīna of makniyya. It gives the abstract idea a vivid, physical image. (The word 'janāḥ' itself is an istiʿāra takhyīliyya.)"
   - q: "ما الغرض البلاغي من تكرار «إيَّاك» مرتَين في «إيَّاكَ نعبدُ وإيَّاكَ نستعين»؟"
     q_en: "What is the rhetorical purpose of repeating 'iyyāka' twice in 'iyyāka naʿbudu wa-iyyāka nastaʿīnu' (1:5)?"
     options:
@@ -150,11 +150,11 @@ import Mermaid from '../../components/Mermaid.astro';
 
 ### الظاهرة
 
-**استعارة تصريحية** — من علم البيان.
+**استعارة مكنية** — من علم البيان.
 
 ### التحليل
 
-الجناح وخفضه صورةٌ من عالَم الطيور: الطائر حين يُذعن لعُشِّه أو فراخه يخفض جناحيه اختياراً. استُعيرت هذه الصورة للتواضع الكامل أمام الوالدَين — فصار التذللُ لهما جناحاً خفيضاً.
+شُبِّه «الذلُّ» بطائرٍ يخفض جناحيه إذعاناً، فحُذف المشبَّه به (الطائر) وأُبقيت إحدى لوازمه وهي «الجناح»؛ وإثباتُ الجناح للذل قرينةُ المكنية. والطائر حين يُذعن لعُشِّه أو فراخه يخفض جناحيه اختياراً — فصار التذللُ للوالدَين جناحاً خفيضاً. (وذكرُ «الجناح» استعارة تخييلية.)
 
 ### السرُّ البلاغي
 
@@ -169,13 +169,13 @@ import Mermaid from '../../components/Mermaid.astro';
 <Mermaid code={String.raw`flowchart LR
   A["الآيات الثلاث"] --> B["وَلَكُمْ فِي الْقِصَاصِ حَيَاةٌ<br/>← إيجاز قصر (معاني)"]
   A --> C["إِيَّاكَ نَعْبُدُ<br/>← قصر بالتقديم (معاني)<br/>+ تكرار (بديع)"]
-  A --> D["وَاخْفِضْ لَهُمَا جَنَاحَ الذُّلِّ<br/>← استعارة تصريحية (بيان)"]`} />
+  A --> D["وَاخْفِضْ لَهُمَا جَنَاحَ الذُّلِّ<br/>← استعارة مكنية (بيان)"]`} />
 
 | العبارة | الظاهرة البلاغية | الأثر |
 |---|---|---|
 | «وَلَكُمْ فِي الْقِصَاصِ حَيَاةٌ» | إيجاز قصر (معاني) | معنى تشريعي فلسفي في ألفاظ قليلة |
 | «إِيَّاكَ نَعْبُدُ» | قصر بالتقديم (معاني) + تكرار (بديع) | إعلان التوحيد وحصر العبادة |
-| «وَاخْفِضْ لَهُمَا جَنَاحَ الذُّلِّ» | استعارة تصريحية (بيان) | تصوير التواضع بصورة حيَّة محسوسة |
+| «وَاخْفِضْ لَهُمَا جَنَاحَ الذُّلِّ» | استعارة مكنية (بيان) | تصوير التواضع بصورة حيَّة محسوسة |
 
 > **درس المنهج:** الآيات الثلاث تُثبت أن الجمال البلاغي في القرآن ليس زينةً مضافةً بل صميمُ الأداء — اللفظُ والمعنى والصورة يعمل كل منها في خدمة الآخر. ولهذا يُعجز القرآن مَن يحاول مضاهاته: ليس لأن أسرار بلاغته خفيةٌ، بل لأن هذا التناسق الكامل لا يصدر إلا عن الحكيم العليم.
 
@@ -248,13 +248,13 @@ Classical rhetoricians compared this phrase with the pre-Islamic proverb *al-qat
 *wa-khfiḍ lahumā janāḥa l-dhull min al-raḥma* — "Lower to them both the wing of humility out of mercy."
 
 ### The device
-**Istiʿāra taṣrīḥiyya** (explicit metaphor) — from *ʿilm al-bayān*.
+**Istiʿāra makniyya** (implicit metaphor) — from *ʿilm al-bayān*.
 
 ### Analysis
 
-The image belongs to the world of birds: a bird **lowers its wing** in submission before its nest or chicks. This living scene is transplanted onto the relationship with parents — the child is the bird, total deference is the lowered wing.
+'Humility' (*al-dhull*) is likened to a bird that **lowers its wing** in submission; the likened-to (the bird) is deleted and one of its attributes — 'the wing' (*janāḥ*) — is retained. Ascribing a wing to *dhull* is the qarīna that marks the makniyya. A bird lowers its wings willingly before its nest or chicks — so deference to parents becomes a lowered wing. (The word *janāḥ* itself is an istiʿāra takhyīliyya.)
 
-*Janāḥ* (wing) is borrowed from the bird-world and applied to humility (*dhull*):
+*Janāḥ* (wing), an attribute of the deleted bird, is applied to humility (*dhull*):
 
 - *al-dhull* alone would be a cold, abstract concept.
 - Pairing it with *janāḥ* gives it movement, posture, and embodied reality.
@@ -273,13 +273,13 @@ The image belongs to the world of birds: a bird **lowers its wing** in submissio
 <Mermaid code={String.raw`flowchart LR
   A["Three Passages"] --> B["wa-lakum fī l-qiṣāṣi ḥayātun<br/>← Ījāz qaṣr (maʿānī)"]
   A --> C["iyyāka naʿbudu<br/>← Qaṣr by fronting (maʿānī)<br/>+ Repetition (badīʿ)"]
-  A --> D["wa-khfiḍ lahumā janāḥa l-dhull<br/>← Istiʿāra taṣrīḥiyya (bayān)"]`} />
+  A --> D["wa-khfiḍ lahumā janāḥa l-dhull<br/>← Istiʿāra makniyya (bayān)"]`} />
 
 | Passage | Device | Effect |
 |---|---|---|
 | *wa-lakum fī l-qiṣāṣi ḥayātun* | Ījāz qaṣr (*maʿānī*) | A philosophical-legislative truth in five words |
 | *iyyāka naʿbudu* | Qaṣr by fronting + repetition (*maʿānī* + *badīʿ*) | Monotheism embedded in the sentence's architecture |
-| *wa-khfiḍ lahumā janāḥa l-dhull* | Explicit metaphor (*bayān*) | Abstract filial deference given a vivid, physical image |
+| *wa-khfiḍ lahumā janāḥa l-dhull* | Implicit metaphor — makniyya (*bayān*) | Abstract filial deference given a vivid, physical image |
 
 > **The lesson of method:** Qurʾānic rhetoric is not ornamentation added to meaning — it *is* the meaning. Word, image, and structure work as one. This seamless unity of form and meaning is what generations of Arab rhetoricians have pointed to when they say the Qurʾān is inimitable: not because its secrets are hidden, but because that complete harmony arises only from the All-Wise and All-Knowing.
 

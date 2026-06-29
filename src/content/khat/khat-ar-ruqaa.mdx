@@ -58,8 +58,8 @@ quiz:
   - q: "ما وجه الشبه الأكبر بين النسخ والرقعة؟"
     q_en: "What is the greatest similarity between Naskh and Ruqʿa?"
     options:
-      - text: "زاوية ارتكاز القلم (~45 درجة) والجذر الشكلي للحروف"
-        text_en: "The pen angle (~45 degrees) and the shared letter shapes at root level"
+      - text: "الجذر الشكلي للحروف — الرقعة وريثة النسخ في بنية الحروف"
+        text_en: "The shared letter shapes at root level — Ruqʿa descends from Naskh's forms"
         correct: true
       - text: "الارتفاعات والأبعاد متطابقة تمامًا"
         text_en: "Heights and proportions are completely identical"
@@ -67,8 +67,8 @@ quiz:
       - text: "كلاهما يُشكَّل كاملًا"
         text_en: "Both are fully vocalized"
         correct: false
-    explain: "الرقعة وريثة النسخ — زاوية القلم والجذر الشكلي مشتركان، لكن الرقعة أقصر وأسرع وتحذف الأسنان والتشكيل."
-    explain_en: "Ruqʿa is Naskh's descendant — they share pen angle and letter-shape roots, but Ruqʿa is shorter, faster, and drops the teeth and vocalization."
+    explain: "الرقعة وريثة النسخ في الجذر الشكلي للحروف؛ أما زاوية القلم فمتقاربة لا متطابقة (النسخ ~70°، الرقعة ~50–60°)، والرقعة أقصر وأسرع وتحذف الأسنان والتشكيل."
+    explain_en: "Ruqʿa descends from Naskh in its letter-shape roots; their pen angles are close but not identical (Naskh ~70°, Ruqʿa ~50–60°), and Ruqʿa is shorter, faster, and drops the teeth and vocalization."
   - q: "الخطوط الأفقية في الرقعة:"
     q_en: "Horizontal strokes in Ruqʿa:"
     options:
@@ -130,7 +130,7 @@ import Calligraphy from '../../components/Calligraphy.astro';
 | التشكيل | كاملٌ عادةً | **نادر** |
 | السرعة | متوسطة | **سريع جدًّا** |
 | الاستخدام | المصاحف والكتب | **الكتابة اليومية** |
-| زاوية ارتكاز القلم | ~45 درجة | ~45 درجة |
+| زاوية ارتكاز القلم | ~70 درجة | ~50–60 درجة |
 | الذيول | نازلة تحت السطر | **قصيرة مكثّفة** |
 | الصعوبة | متوسطة | **أسهل للمبتدئ** |
 
@@ -157,7 +157,7 @@ import Calligraphy from '../../components/Calligraphy.astro';
 3. **الحروف المفردة فوق السطر** ما عدا ذوات الذيول.
 4. **المسافات بين الحروف متساوية** بصريًّا.
 
-<Calligraphy kind="nib-angle" angle={45} script="الرقعة" scriptEn="Ruqʿa" />
+<Calligraphy kind="nib-angle" angle={55} script="الرقعة" scriptEn="Ruqʿa" />
 
 ---
 
@@ -231,7 +231,7 @@ Ruqʿa (الرقعة, *al-ruqʿa*) is your everyday script — for notes, letter
 | Vocalization | Usually full | **Rarely used** |
 | Speed | Medium | **Very fast** |
 | Use | Books & Quran | **Daily writing** |
-| Pen angle | ~45° | ~45° |
+| Pen angle | ~70° | ~50–60° |
 | Descenders | Drop below baseline | **Short, compact** |
 | Difficulty | Medium | **Easier for beginners** |
 
@@ -258,7 +258,7 @@ Ruqʿa (الرقعة, *al-ruqʿa*) is your everyday script — for notes, letter
 3. **Isolated letters sit above the baseline** except descenders.
 4. **Inter-letter spacing is visually equal**.
 
-<Calligraphy kind="nib-angle" angle={45} script="الرقعة" scriptEn="Ruqʿa" />
+<Calligraphy kind="nib-angle" angle={55} script="الرقعة" scriptEn="Ruqʿa" />
 
 ---
 

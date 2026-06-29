@@ -44,17 +44,17 @@ quiz:
   - q: "زاوية ارتكاز القلم في الخط الفارسي:"
     q_en: "The pen angle in Farisi script:"
     options:
+      - text: "نحو 70 درجة (كالنسخ والثلث)"
+        text_en: "About 70 degrees (as in Naskh and Thuluth)"
+        correct: true
       - text: "نحو 10–15 درجة (ميلٌ شبه أفقي)"
         text_en: "About 10–15 degrees (nearly flat angle)"
-        correct: true
-      - text: "45 درجة كالنسخ"
-        text_en: "45 degrees, as in Naskh"
         correct: false
       - text: "90 درجة (عمودي تام)"
         text_en: "90 degrees (perfectly vertical)"
         correct: false
-    explain: "الزاوية المنخفضة جدًّا هي سبب الفروق البصرية الكبيرة بين الفارسي والنسخ — التخين والتنحيف يأتيان من اتجاه مغاير."
-    explain_en: "The very low angle is the reason for the large visual differences between Farisi and Naskh — the thick and thin strokes come from a completely different direction."
+    explain: "زاوية ارتكاز القلم في الفارسي قريبة من النسخ والثلث (~70°)؛ وتميُّزه عن النسخ لا يأتي من الزاوية بل من ميل الحروف لليسار والسطر المنحدر المتموّج والامتدادات."
+    explain_en: "The pen-bearing angle in Farisi is close to Naskh and Thuluth (~70°); what sets it apart from Naskh is not the angle but the leftward lean of its strokes, its sloping undulating baseline, and its elongations."
   - q: "نقاط الحروف في الخط الفارسي:"
     q_en: "The letter dots in Farisi script:"
     options:
@@ -67,8 +67,8 @@ quiz:
       - text: "مثلثة الشكل"
         text_en: "Triangular in shape"
         correct: false
-    explain: "طبيعة زاوية القلم الفارسي المنخفضة تجعل النقطة مائلة ممدودة لا مربَّعة — وهذا يُعطي الخط طابعه الانسيابي."
-    explain_en: "The low pen angle of Farisi causes the dot impression to be elongated and slanted rather than square — this gives the script its flowing, undulating character."
+    explain: "طبيعة الخط الفارسي وقصّة قلمه تجعل النقطة مائلة ممدودة لا مربَّعة — وهذا يُعطي الخط طابعه الانسيابي."
+    explain_en: "The nature of Farisi and the way its pen is cut make the dot impression elongated and slanted rather than square — this gives the script its flowing, undulating character."
   - q: "الخط الفارسي بارز بشكل خاص في:"
     q_en: "Farisi script is especially prominent in:"
     options:
@@ -132,18 +132,18 @@ import Calligraphy from '../../components/Calligraphy.astro';
 
 | الخط | زاوية ارتكاز القلم |
 |---|---|
-| النسخ والرقعة | ~45 درجة |
-| الثلث | ~30 درجة |
-| **الفارسي / النستعليق** | **~10–15 درجة** |
+| النسخ والثلث | ~70 درجة |
+| الرقعة | ~50–60 درجة |
+| **الفارسي / النستعليق** | **~70 درجة (كالنسخ)** |
 
-الزاوية المنخفضة تُنتج تبايناً مختلفًا تمامًا: التخين والتنحيف في الفارسي يأتيان من اتجاه مغاير للنسخ.
+زاوية القلم في الفارسي قريبة من النسخ والثلث؛ لكن تميُّزه يأتي من ميل الحروف لليسار وانحدار السطر المتموّج، لا من زاوية القلم.
 
-<Calligraphy kind="nib-angle" angle={12} script="الفارسي" scriptEn="Farisi/Nastaliq" />
+<Calligraphy kind="nib-angle" angle={70} script="الفارسي" scriptEn="Farisi/Nastaliq" />
 
 ### 3. النقاط
 
 - في النسخ: النقطة **مربَّعة** (عرض القلم = الطول).
-- في الفارسي: النقطة **بيضاوية مائلة** نتيجة الزاوية المنخفضة [يُتحقَّق بصريًّا].
+- في الفارسي: النقطة **بيضاوية مائلة** بحكم طبيعة الخط وقصّة القلم [يُتحقَّق بصريًّا].
 
 ### 4. اتجاه التدويرات
 
@@ -156,7 +156,7 @@ import Calligraphy from '../../components/Calligraphy.astro';
 | الخاصية | النسخ | الفارسي / النستعليق |
 |---|---|---|
 | ميل الرأسيات | يمين | **يسار** |
-| زاوية القلم | ~45° | **~10–15°** |
+| زاوية القلم | ~70° | ~70° (متقاربة) |
 | شكل النقطة | مربَّعة | **بيضاوية مائلة** |
 | التشكيل | كامل | نادر |
 | الاستخدام | العربية | الفارسية والأوردو والتركية |
@@ -189,7 +189,7 @@ import Calligraphy from '../../components/Calligraphy.astro';
 ## أخطاء شائعة
 
 - **الخلط بين التعليق والنستعليق**: النستعليق أرقى وأدق — ليس مجرد تعليق بنمط آخر.
-- **الكتابة بزاوية النسخ**: زاوية 45 درجة تُفسد الفارسي تمامًا.
+- **تثبيت الحروف على سطرٍ أفقي صارم**: الفارسي يقوم على سطرٍ منحدرٍ متموّج — تسطيحه يُفقده روحه.
 - **إهمال الميل اليساري**: ألفٌ قائمة في الفارسي تبدو غريبة بصريًّا.
 - **تطبيقه على النص العربي القرآني**: الفارسي غير ملائم للمصاحف — النسخ هو الخيار.
 
@@ -243,20 +243,20 @@ Alif, Lam, and Kaf all lean left in Farisi — the single most visible differenc
 
 ### 2. Pen angle
 
-| Script | Pen-to-paper angle |
+| Script | Pen-bearing angle |
 |---|---|
-| Naskh and Ruqʿa | ~45° |
-| Thuluth | ~30° |
-| **Farisi / Nastaliq** | **~10–15°** |
+| Naskh and Thuluth | ~70° |
+| Ruqʿa | ~50–60° |
+| **Farisi / Nastaliq** | **~70° (as in Naskh)** |
 
-The very low angle produces a completely different thick-thin contrast: the weight falls in directions opposite to Naskh.
+Farisi's pen angle is close to Naskh and Thuluth; what sets it apart is the leftward lean of its strokes and its sloping, undulating baseline — not the pen angle.
 
-<Calligraphy kind="nib-angle" angle={12} script="الفارسي" scriptEn="Farisi/Nastaliq" />
+<Calligraphy kind="nib-angle" angle={70} script="الفارسي" scriptEn="Farisi/Nastaliq" />
 
 ### 3. Dot shape
 
 - In Naskh: dots are **square** (nib width equals nib height).
-- In Farisi: dots are **oval and slanted**, a direct consequence of the low pen angle (verified visually against models).
+- In Farisi: dots are **oval and slanted**, a consequence of the script's nature and the way its pen is cut (verified visually against models).
 
 ### 4. Direction of curves
 
@@ -269,7 +269,7 @@ In Farisi, most curved letters **curve toward the left**, giving the script its 
 | Feature | Naskh | Farisi / Nastaliq |
 |---|---|---|
 | Vertical lean | Right | **Left** |
-| Pen angle | ~45° | **~10–15°** |
+| Pen angle | ~70° | ~70° (close) |
 | Dot shape | Square | **Oval, slanted** |
 | Vocalization | Full | Rare |
 | Primary use | Arabic texts | Persian, Urdu, Ottoman Turkish |
@@ -302,7 +302,7 @@ In Farisi, most curved letters **curve toward the left**, giving the script its 
 ## Common mistakes
 
 - **Confusing Taʿliq with Nastaliq**: Nastaliq is more refined — it is not simply Taʿliq in another style.
-- **Using Naskh's 45° angle**: a 45° angle destroys Farisi completely.
+- **Forcing a rigid horizontal baseline**: Farisi relies on a sloping, undulating line — flattening it strips the script of its spirit.
 - **Ignoring the left lean**: a perfectly upright Alif looks visually wrong in Farisi.
 - **Using it for Quranic text**: Farisi is not suited for the Quran — Naskh is the correct choice.
 
