@@ -1,4 +1,4 @@
-# المرجع العربي · The Arabic Reference
+# تعلم العربية · The Arabic Reference
 
 A bilingual (Arabic‑first), interactive reference for learning the **Arabic language
 sciences** — grammar, morphology, rhetoric, recitation, calligraphy, reading & writing,
