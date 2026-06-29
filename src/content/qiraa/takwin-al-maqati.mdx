@@ -12,60 +12,90 @@ sources:
 related: []
 quiz:
   - q: "ما المكوِّنان الأساسيان للمقطع؟"
+    q_en: "What are the two basic components of a syllable?"
     options:
       - text: "حرفان متحرِّكان"
+        text_en: "Two vowelled letters"
         correct: false
       - text: "حرف متحرِّك + حرف ساكن"
+        text_en: "A vowelled letter + a silent letter"
         correct: false
       - text: "حرف + حركة"
+        text_en: "A letter + a vowel mark"
         correct: true
       - text: "حركتان"
+        text_en: "Two vowel marks"
         correct: false
     explain: "المقطع الأساسي في العربية = حرف + حركة (CV). مثال: بَ = باء + فتحة. يمكن أن يُغلق بحرف ساكن: بَيْ."
+    explain_en: "The basic Arabic syllable = a consonant + a vowel mark (CV). Example: بَ = bāʾ + fatḥa. It may be closed by a silent consonant: بَيْ (CVC)."
   - q: "كلمة «كَتَبَ» تتكون من كم مقطع؟"
+    q_en: "How many syllables does the word كَتَبَ (kataba, he wrote) contain?"
     options:
       - text: "مقطع واحد"
+        text_en: "1 syllable"
         correct: false
       - text: "مقطعَيْن"
+        text_en: "2 syllables"
         correct: false
       - text: "3 مقاطع"
+        text_en: "3 syllables"
         correct: true
       - text: "4 مقاطع"
+        text_en: "4 syllables"
         correct: false
     explain: "كَ + تَ + بَ: كل حرف متحرك يكوِّن مقطعًا مفتوحًا. المجموع 3 مقاطع."
+    explain_en: "كَ + تَ + بَ — each vowelled letter forms one open syllable. Total: 3 syllables."
   - q: "أيٌّ من التالي مقطع مغلق؟"
+    q_en: "Which of the following is a closed syllable?"
     options:
       - text: "كَ"
+        text_en: "كَ (ka — open syllable)"
         correct: false
       - text: "بِ"
+        text_en: "بِ (bi — open syllable)"
         correct: false
       - text: "بَيْ"
+        text_en: "بَيْ (bay — closed syllable)"
         correct: true
       - text: "تُ"
+        text_en: "تُ (tu — open syllable)"
         correct: false
     explain: "المقطع المغلق = حرف + حركة + حرف ساكن (CVC). مثال: بَيْ (باء + فتحة + ياء ساكنة). أما كَ وبِ وتُ فمقاطع مفتوحة (CV)."
+    explain_en: "A closed syllable = consonant + vowel + silent consonant (CVC). Example: بَيْ (bāʾ + fatḥa + silent yāʾ). كَ, بِ, and تُ are all open syllables (CV)."
   - q: "في منهج القراءة التجميعية، ما الخطوة التي تسبق قراءة الكلمة كاملة؟"
+    q_en: "In the syllable-blending method, what step comes just before reading the whole word?"
     options:
       - text: "حفظ الكلمة بصريًا"
+        text_en: "Memorising the word visually as a whole"
         correct: false
       - text: "هجاء كل حرف على حدة"
+        text_en: "Spelling out each letter by name individually"
         correct: false
       - text: "قراءة المقاطع ثم وصلها"
+        text_en: "Reading the syllables and then blending them together"
         correct: true
       - text: "سماع الكلمة أولًا"
+        text_en: "Listening to the word first"
         correct: false
     explain: "المنهج التجميعي: اقرأ المقاطع واحدًا واحدًا ثم اجمعها: كَ + تَ + بَ = كَتَبَ. هذا أسرع وأثبت من هجاء الحروف المفردة."
+    explain_en: "The blending method: read each syllable in turn, then join them — كَ + تَ + بَ = كَتَبَ. This is faster and more reliable than letter-by-letter spelling."
   - q: "ما الكلمة التي تتكون من مقطع ممدود ومقطع مغلق؟"
+    q_en: "Which word consists of a long open syllable followed by a closed syllable?"
     options:
       - text: "كَتَبَ"
+        text_en: "كَتَبَ (kataba, he wrote)"
         correct: false
       - text: "بَيْت"
+        text_en: "بَيْت (bayt, house)"
         correct: true
       - text: "رَجَع"
+        text_en: "رَجَع (rajaʿa, he returned)"
         correct: false
       - text: "قَلَم"
+        text_en: "قَلَم (qalam, pen)"
         correct: false
     explain: "بَيْت = بَيْ (مقطع ممدود بالياء الساكنة) + تْ (حرف ساكن في الوقف). أما الكلمات الأخرى فمقاطعها مفتوحة."
+    explain_en: "بَيْت = بَيْ (a long syllable closed by the silent yāʾ) + تْ (final silent letter at pause). The other words consist only of short open syllables."
 ---
 
 import Mermaid from '../../components/Mermaid.astro';

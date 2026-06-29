@@ -1,22 +1,31 @@
-# The Go Reference
+# المرجع العربي · The Arabic Reference
 
-A visual, Go-first reference for Go engineers — spanning the whole stack from the language
-itself to internals, systems and architecture — with diagrams, **runnable** Go code, quizzes
-and progress tracking. Built with [Astro](https://astro.build) + MDX.
+A bilingual (Arabic‑first), interactive reference for learning the **Arabic language
+sciences** — grammar, morphology, rhetoric, recitation, calligraphy, reading & writing,
+and Arabic through the Qur'an. RTL‑first, with diagrams, pronunciation audio, quizzes,
+highlights and progress tracking. Built with [Astro](https://astro.build) + MDX.
 
-Eleven tracks today (more can be added the same way):
+Every lesson is **bilingual**: Arabic is the base, with an English overlay for non‑Arabic
+speakers learning Arabic (a toggle in the nav switches the whole UI, lesson bodies, titles
+and quizzes between عربي and EN).
 
-- **`/fundamentals/`** — the language itself: syntax and types, functions and pointers, structs, methods and interfaces, generics, and idiomatic errors.
-- **`/patterns/`** — all 23 Gang-of-Four patterns + 9 Go concurrency patterns.
-- **`/concurrency/`** — a deep guide: Foundations → Building Blocks → Coordination & Scale → Runtime.
-- **`/dsa/`** — data structures & algorithms, from Big-O to graphs and dynamic programming.
-- **`/stdlib/`** — the standard library & tooling: fmt/io, encoding/json, files and CLIs, slog, testing, benchmarks, the race detector and pprof.
-- **`/web/`** — networking & web: TCP/UDP, net/http, routing and middleware, REST and gRPC, WebSockets, TLS, and database/sql.
-- **`/internals/`** — how Go runs under the hood: stack/heap, escape analysis, the allocator and GC, interfaces' itab, the scheduler, and the toolchain.
-- **`/systems/`** — systems programming: syscalls and file descriptors, processes and signals, file watching, pipes and Unix sockets, mmap.
-- **`/security/`** — offensive and defensive security: authorized testing, recon, fuzzing, cryptography done right, and secure coding.
-- **`/cloud/`** — cloud-native: containers and Kubernetes, health and lifecycle, observability, messaging, and resilience patterns.
-- **`/architecture/`** — designing systems that last: DDD, hexagonal/clean architecture, Go project layout, and the monolith-vs-microservices decision.
+## Seven tracks
+
+- **`/qiraa/`** — القراءة والكتابة — letters, vowels (ḥarakāt), madd, and connected reading (Nūr al‑Bayān method).
+- **`/nahw/`** — النحو — grammar: iʿrāb, the nominatives/accusatives/genitives, followers (tawābiʿ), verbs & constructions.
+- **`/sarf/`** — الصرف — morphology: the mīzān, verb forms, derivatives and plurals.
+- **`/balagha/`** — البلاغة — rhetoric: maʿānī, bayān, badīʿ, and applied Qur'anic rhetoric.
+- **`/tajwid/`** — التجويد — recitation: makhārij, ṣifāt, rules of nūn/mīm, and the mudūd.
+- **`/khat/`** — الخط العربي — calligraphy: Naskh, Ruqʿa, and the artistic scripts.
+- **`/arabic-via-quran/`** — العربية عبر القرآن — a graded course (beginner → advanced) for learners, including non‑natives.
+
+## Features
+
+- **Bilingual** content and chrome (Arabic base + English overlay).
+- **Diagrams** (Mermaid), **pronunciation audio** (browser text‑to‑speech), and **calligraphic script samples** rendered with real Naskh/Ruqʿa/Kufi/Nastaliq webfonts.
+- **Quizzes** (bilingual), **highlights**, **spaced review**, and **progress tracking** (saved per‑browser, optionally synced).
+- **Comments** gated behind **Google sign‑in**, stored in Cloudflare **D1** with a first‑party session (no anonymous posts; sign in once, stays signed in).
+- **Manuscript‑inspired design** — ink‑green + gold illumination, parchment light theme — and **RTL‑first** layout.
 
 ## Develop
 
@@ -27,77 +36,91 @@ pnpm build    # build (output → dist/, including the SSR Worker)
 pnpm preview  # serve the production build
 ```
 
-> The in-page **Go Playground** "Run" button posts to the Astro endpoint `src/pages/api/run.ts`,
-> which proxies the official Go Playground compile API. It runs under `pnpm dev` and deploys
-> as part of the Cloudflare Worker — so "Run" works both locally and in production.
+### Configuration (`.env`)
+
+```bash
+# Comments: a Google OAuth Web Client ID (https://console.cloud.google.com/apis/credentials).
+# Add your origin(s) under "Authorized JavaScript origins". Leave empty to disable comments.
+PUBLIC_GOOGLE_CLIENT_ID=
+```
+
+See `.env.example`. Comments, likes and sessions use the Cloudflare **D1** binding `DB`
+(`wrangler.jsonc`); their tables self‑create on first use.
 
 ## How it's organized
 
 | Path | What |
 |---|---|
-| `src/content/<track>/*.{md,mdx}` | Track pages, one file each — one folder per track (`patterns/`, `concurrency/`, `fundamentals/`, `dsa/`, `stdlib/`, `web/`, `internals/`, `systems/`, `security/`, `cloud/`, `architecture/`). |
-| `src/content.config.ts` | Shared front-matter schema; one collection per track. |
-| `src/pages/index.astro` | The hub home (track picker). |
-| `src/pages/<track>/` | Each track's landing (`index.astro`) + page route (`[...slug].astro`). |
-| `src/layouts/` | `BaseLayout` (site chrome) and `PageLayout` (the per-page anatomy, used by every track). |
-| `src/components/` | UI pieces: `Card`, `CategorySection`, `PageHeader`, `Callout`, `Mermaid`, … and `islands/Playground.tsx` (the React runnable editor). |
-| `src/lib/consts.ts` | Site metadata + the category lists for each track. |
-| `src/scripts/` | `progress.js` (localStorage progress, quiz, TOC) and `mermaid.js` (lazy diagrams). |
-| `src/pages/api/run.ts` | On-demand endpoint proxying the Go Playground compile API. |
-| `astro.config.mjs` | Astro config — uses the Cloudflare adapter for SSR on Workers. |
-| `wrangler.jsonc` | Cloudflare Worker config (entry, static assets, compatibility flags). |
+| `src/content/<track>/*.mdx` | Lessons, one file each — one folder per track (`qiraa/`, `nahw/`, `sarf/`, `balagha/`, `tajwid/`, `khat/`, `quran-arabic/`). |
+| `src/content.config.ts` | Shared front‑matter schema (incl. bilingual `title_en` and quiz `*_en`); one collection per track. |
+| `src/pages/index.astro` | The home hub (track picker). |
+| `src/pages/<track>/` | Each track's landing (`index.astro`) + lesson route (`[...slug].astro`). |
+| `src/layouts/` | `BaseLayout` (chrome) and `PageLayout` (per‑lesson anatomy). |
+| `src/components/` | UI pieces: `Card`, `PageHeader`, `Mermaid`, `QuizBlock`, `Comments`, … |
+| `src/lib/consts.ts` | Site metadata + the tracks and categories (bilingual). |
+| `src/lib/auth.ts` | Google verify + D1 session helpers. |
+| `src/scripts/` | `progress.js` (progress/quiz/TOC), `mermaid.js`, `speak.js` (TTS), `ui.js` (theme + language toggle). |
+| `src/pages/api/` | `comments.ts`, `auth.ts` (session), `likes.ts`, `progress.ts`, `state.ts`. |
+| `sources/` | Private study digests synthesized from classical Arabic textbooks (with page citations) — what the lessons are authored from. The books themselves are **not** reproduced. |
+| `wrangler.jsonc` | Cloudflare Worker config (entry, static assets, D1 binding). |
 
-## Authoring a page
+## Authoring a lesson
 
-A page is a single `.mdx` file in the relevant collection (`src/content/<track>/`). Front
-matter (`title`, `category`, `order`, `intent`, `related`,
-`when_use`/`when_avoid`, `quiz`, …) drives the header, badges, related cards, trade-offs and quiz.
-Write the body with `<Callout>`, `<Mermaid code={…} />` and `<Playground client:visible code={…} />`.
-See `concurrency/channels.mdx` or `patterns/strategy.mdx` as templates.
+A lesson is a single `.mdx` file in `src/content/<track>/`. Front matter
+(`title`, `title_en`, `category`, `order`, `difficulty`, `status`, `intent`, `sources`,
+`quiz` with `q_en`/`text_en`/`explain_en`) drives the header, badges and quiz. Write the
+body as two language blocks:
 
-Adding a whole new **track** = a new collection in `content.config.ts`, a `src/content/<track>/`
-folder, a landing + `[...slug].astro` under `src/pages/<track>/`, and a category list in
-`consts.ts`. The shared components already take `collection` / `base` props.
+```mdx
+import Mermaid from '../../components/Mermaid.astro';
+
+<div data-lang-block="ar">
+
+## العنوان بالعربية
+… الدرس بالعربية مع الأمثلة والمخططات …
+
+</div>
+
+<div data-lang-block="en">
+
+## English heading
+… the lesson in English, keeping the Arabic examples + transliteration …
+
+</div>
+```
+
+Use `<Mermaid code={String.raw`flowchart TD …`} />` for diagrams (real newlines, not `\n`).
+See `nahw/aqsam-al-kalam.mdx` as the template.
 
 ## Deploy to Cloudflare Workers
 
-The site runs as a Cloudflare Worker (SSR via the `@astrojs/cloudflare` adapter), with
-static assets served from `dist/`. Build first, then deploy with Wrangler:
+The site runs as a Cloudflare Worker (SSR via `@astrojs/cloudflare`), static assets from `dist/`:
 
 ```bash
 pnpm build
 pnpm wrangler deploy
 ```
 
-The Worker entry, static-assets binding, and compatibility settings live in `wrangler.jsonc`.
-No env vars are required. Connecting the GitHub repo to Cloudflare's CI (build command
-`pnpm build`) deploys automatically on push.
+Provision a D1 database (`wrangler d1 create arabic-reference`, paste its `database_id` into
+`wrangler.jsonc`) and set `PUBLIC_GOOGLE_CLIENT_ID` for comments. Connecting the GitHub repo
+to Cloudflare CI (build `pnpm build`) deploys on push.
 
 ## Content status
 
-Eleven tracks, ~198 pages in total:
+Seven tracks, **88 bilingual lessons**:
 
-| Track | Pages |
+| Track | Lessons |
 |---|---|
-| Go Fundamentals (`/fundamentals/`) | 18 |
-| Design Patterns (`/patterns/`) | 35 |
-| Concurrency (`/concurrency/`) | 15 |
-| Data Structures & Algorithms (`/dsa/`) | 18 |
-| Standard Library & Tooling (`/stdlib/`) | 18 |
-| Networking & Web (`/web/`) | 21 |
-| Go Internals (`/internals/`) | 12 |
-| Systems Programming (`/systems/`) | 10 |
-| Security (`/security/`) | 22 |
-| Cloud-Native (`/cloud/`) | 23 |
-| Architecture (`/architecture/`) | 6 |
-
-## Contributing
-
-Contributions are welcome — from a one-line typo fix to a whole new track. See
-[CONTRIBUTING.md](./CONTRIBUTING.md) for the workflow, the project layout, and a
-page-authoring checklist.
+| القراءة والكتابة (`/qiraa/`) | 8 |
+| النحو (`/nahw/`) | 25 |
+| الصرف (`/sarf/`) | 10 |
+| البلاغة (`/balagha/`) | 11 |
+| التجويد (`/tajwid/`) | 10 |
+| الخط العربي (`/khat/`) | 6 |
+| العربية عبر القرآن (`/arabic-via-quran/`) | 18 |
 
 ## License
 
-Licensed under the [Apache License 2.0](./LICENSE) — see [LICENSE](./LICENSE) and
-[NOTICE](./NOTICE). This covers both the code and the written content.
+Licensed under the [Apache License 2.0](./LICENSE) for the code. The lesson content is
+original, synthesized from classical sources (cited per lesson); the source textbooks
+themselves are not redistributed.

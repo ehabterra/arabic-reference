@@ -1,88 +1,86 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-// Each term: t=term, k=i18n key suffix, en=English definition (HTML), href=external ref.
-// The Arabic definition lives in src/i18n/ar.json under `glossary.<k>`.
-const groups: { key: string; title: string; terms: { t: string; k: string; en: string; href?: string }[] }[] = [
+// Bilingual glossary of the Arabic language sciences. Each term carries an
+// Arabic term + definition (base) and an English term + definition (overlay);
+// the active one shows via the site-wide [data-lang-block] toggle.
+interface Term { ar: string; en: string; defAr: string; defEn: string }
+const groups: { ar: string; en: string; terms: Term[] }[] = [
   {
-    key: 'containers',
-    title: 'Containers & Orchestration',
+    ar: 'النحو', en: 'Grammar (Naḥw)',
     terms: [
-      { t: 'Container', k: 'container', en: 'An isolated process started from an image, sharing the host kernel — far lighter than a virtual machine.' },
-      { t: 'Image', k: 'image', en: 'An immutable, layered snapshot of an app plus its runtime; you run an image as a container.' },
-      { t: 'Docker', k: 'docker', href: 'https://docs.docker.com/get-started/', en: 'The standard engine for building and running containers from a <code>Dockerfile</code> recipe.' },
-      { t: 'Registry', k: 'registry', en: 'A server that stores and distributes container images (Docker Hub, GHCR, ECR).' },
-      { t: 'Kubernetes (K8s)', k: 'kubernetes', href: 'https://kubernetes.io/docs/home/', en: 'An orchestrator that declaratively runs, scales, heals, and networks containers across a cluster.' },
-      { t: 'Helm', k: 'helm', href: 'https://helm.sh/', en: 'A package manager for Kubernetes — templated, versioned bundles of manifests called charts.' },
+      { ar: 'الإعراب', en: 'Iʿrāb — inflection', defAr: 'تغيُّر آخر الكلمة بتغيُّر العوامل الداخلة عليها رفعًا أو نصبًا أو جرًّا أو جزمًا.', defEn: 'The change in a word’s ending according to its grammatical role: nominative, accusative, genitive, or jussive.' },
+      { ar: 'البناء', en: 'Bināʾ — indeclinability', defAr: 'لزومُ آخر الكلمة حالةً واحدة لا تتغيّر مهما تغيّر العامل.', defEn: 'A word’s ending staying fixed regardless of its grammatical role.' },
+      { ar: 'الفاعل', en: 'Al-Fāʿil — the subject', defAr: 'اسمٌ مرفوع يدلّ على من فعل الفعل.', defEn: 'The nominative noun naming the doer of the action.' },
+      { ar: 'المفعول به', en: 'Al-Mafʿūl bih — the object', defAr: 'اسمٌ منصوب وقع عليه فعلُ الفاعل.', defEn: 'The accusative noun on which the action falls.' },
+      { ar: 'المبتدأ والخبر', en: 'Mubtadaʾ & Khabar', defAr: 'ركنا الجملة الاسمية: المبتدأ المُحدَّث عنه، والخبر ما يُكمِّل معناه.', defEn: 'The two pillars of a nominal sentence: the subject and what predicates it.' },
+      { ar: 'المرفوعات', en: 'Nominatives', defAr: 'الأسماء التي حكمها الرفع: الفاعل، نائبه، المبتدأ، الخبر…', defEn: 'Nouns that take the nominative case.' },
+      { ar: 'المنصوبات', en: 'Accusatives', defAr: 'الأسماء التي حكمها النصب: المفاعيل، الحال، التمييز، الاستثناء…', defEn: 'Nouns that take the accusative case.' },
+      { ar: 'المجرورات', en: 'Genitives', defAr: 'ما يُجرّ بحرف جرٍّ أو بالإضافة.', defEn: 'Nouns made genitive by a preposition or by annexation.' },
     ],
   },
   {
-    key: 'observability',
-    title: 'Observability',
+    ar: 'الصرف', en: 'Morphology (Ṣarf)',
     terms: [
-      { t: 'Prometheus', k: 'prometheus', href: 'https://prometheus.io/docs/', en: 'A pull-based metrics database and monitoring system that scrapes <code>/metrics</code> endpoints.' },
-      { t: 'Grafana', k: 'grafana', href: 'https://grafana.com/docs/', en: 'A dashboarding and visualization tool for metrics, logs, and traces.' },
-      { t: 'OpenTelemetry (OTel)', k: 'otel', href: 'https://opentelemetry.io/docs/languages/go/', en: 'A vendor-neutral standard and SDK for traces, metrics, and logs — instrument once, export anywhere.' },
-      { t: 'Jaeger', k: 'jaeger', href: 'https://www.jaegertracing.io/', en: 'A distributed-tracing backend for storing and exploring traces.' },
+      { ar: 'الميزان الصرفي', en: 'Al-Mīzān al-Ṣarfī', defAr: 'مقياسٌ يُوزَن به بناء الكلمة على الحروف «ف ع ل».', defEn: 'The root-template (f-ʿ-l) used to weigh a word’s pattern.' },
+      { ar: 'المجرّد والمزيد', en: 'Bare & Augmented', defAr: 'المجرّد حروفه كلُّها أصلية، والمزيد فيه حروف زائدة على الأصل.', defEn: 'A bare verb has only root letters; an augmented verb adds letters to the root.' },
+      { ar: 'المشتقّات', en: 'Derivatives', defAr: 'أسماء مأخوذة من المصدر: اسم الفاعل، اسم المفعول، الصفة المشبَّهة…', defEn: 'Nouns derived from the verbal noun (participles, etc.).' },
+      { ar: 'اسم الفاعل', en: 'Active participle', defAr: 'صفةٌ تدلّ على من قام بالفعل، كـ«كاتب».', defEn: 'A form naming the one performing the action (e.g. kātib, “writer”).' },
+      { ar: 'اسم المفعول', en: 'Passive participle', defAr: 'صفةٌ تدلّ على من وقع عليه الفعل، كـ«مكتوب».', defEn: 'A form naming the one the action falls upon (e.g. maktūb, “written”).' },
+      { ar: 'المصدر', en: 'Maṣdar — verbal noun', defAr: 'اسمٌ يدلّ على الحدث مجرَّدًا من الزمن، كـ«كتابة».', defEn: 'A noun naming the action itself, with no time (e.g. kitāba, “writing”).' },
+      { ar: 'الإعلال', en: 'Iʿlāl', defAr: 'تغييرٌ يلحق حرف العلّة (و/ا/ي) قلبًا أو حذفًا أو تسكينًا.', defEn: 'A change affecting a weak letter (w/ā/y) by substitution, deletion, or quiescence.' },
+      { ar: 'الإدغام', en: 'Idghām (morphology)', defAr: 'إدخال حرفٍ ساكن في مِثله المتحرّك فيصيران حرفًا مشدَّدًا.', defEn: 'Merging two identical letters into one doubled (shadda) letter.' },
     ],
   },
   {
-    key: 'messaging',
-    title: 'Messaging & Data',
+    ar: 'البلاغة', en: 'Rhetoric (Balāgha)',
     terms: [
-      { t: 'Redis', k: 'redis', href: 'https://redis.io/docs/latest/', en: 'An in-memory key–value store used for caching, sessions, queues, and rate limiting.' },
-      { t: 'NATS', k: 'nats', href: 'https://docs.nats.io/', en: 'A lightweight cloud-native messaging system (pub/sub, queue groups, JetStream).' },
-      { t: 'Kafka', k: 'kafka', href: 'https://kafka.apache.org/documentation/', en: 'A distributed, durable event-streaming log for high-throughput pub/sub.' },
-      { t: 'Message broker', k: 'broker', en: 'Middleware that receives, stores, and routes messages between producers and consumers.' },
-      { t: 'Outbox pattern', k: 'outbox', en: 'Write an event into the same DB transaction as the state change; a relay publishes it later — fixes the dual-write problem.' },
-      { t: 'CQRS', k: 'cqrs', en: 'Command Query Responsibility Segregation — separate write and read models.' },
-      { t: 'Event sourcing', k: 'eventsourcing', en: 'Store the sequence of events as the source of truth and derive state by replaying them.' },
-      { t: 'Saga', k: 'saga', en: 'A multi-service transaction modeled as a sequence of local steps, each with a compensating undo.' },
-      { t: 'Idempotency', k: 'idempotency', en: 'Processing the same request/message twice has the same effect as once — the key to safe retries.' },
+      { ar: 'البلاغة', en: 'Balāgha', defAr: 'مطابقةُ الكلام لمقتضى الحال مع فصاحته.', defEn: 'Eloquence: fitting speech to its context while remaining clear and correct.' },
+      { ar: 'التشبيه', en: 'Tashbīh — simile', defAr: 'عقدُ مشابهةٍ بين شيئين بأداةٍ مذكورة أو مقدَّرة.', defEn: 'Likening one thing to another using a comparison particle.' },
+      { ar: 'الاستعارة', en: 'Istiʿāra — metaphor', defAr: 'تشبيهٌ حُذف أحدُ طرفيه؛ مجازٌ علاقته المشابهة.', defEn: 'A metaphor: a simile with one of its two sides omitted.' },
+      { ar: 'المجاز', en: 'Majāz', defAr: 'استعمال اللفظ في غير معناه الأصلي لعلاقةٍ مع قرينةٍ مانعة.', defEn: 'Figurative use of a word for a related sense, with a clue barring the literal one.' },
+      { ar: 'الكناية', en: 'Kināya — metonymy', defAr: 'لفظٌ أُريد به لازمُ معناه مع جواز إرادة الأصل.', defEn: 'A word meant for an implied associate of its literal sense.' },
+      { ar: 'القصر', en: 'Qaṣr — restriction', defAr: 'تخصيصُ شيءٍ بشيءٍ بطريقٍ مخصوص.', defEn: 'Confining one thing to another by a specific device.' },
+      { ar: 'الطباق', en: 'Ṭibāq — antithesis', defAr: 'الجمعُ بين الشيء وضدِّه في الكلام.', defEn: 'Pairing a thing with its opposite.' },
+      { ar: 'الجناس', en: 'Jinās — paronomasia', defAr: 'تشابهُ لفظين في النطق واختلافهما في المعنى.', defEn: 'Two words alike in sound but different in meaning.' },
     ],
   },
   {
-    key: 'networking',
-    title: 'Networking & Protocols',
+    ar: 'التجويد', en: 'Recitation (Tajwīd)',
     terms: [
-      { t: 'IPC', k: 'ipc', en: 'Inter-process communication — OS mechanisms (pipes, sockets, shared memory, signals) for processes to exchange data.' },
-      { t: 'Socket', k: 'socket', en: 'An endpoint for network (or local) communication; in Go, the <code>net.Conn</code> behind a connection.' },
-      { t: 'Pipe', k: 'pipe', en: 'A one-directional, in-kernel byte stream connecting a write end to a read end.' },
-      { t: 'RPC', k: 'rpc', en: 'Remote Procedure Call — invoking a function on another process or host as if it were local.' },
-      { t: 'gRPC', k: 'grpc', href: 'https://grpc.io/docs/', en: 'A high-performance RPC framework using protobuf over HTTP/2, with generated typed clients.' },
-      { t: 'Protocol Buffers', k: 'protobuf', href: 'https://protobuf.dev/', en: "Google's typed, compact binary serialization format and interface description language." },
-      { t: 'TLS', k: 'tls', en: 'Transport Layer Security — encrypts and authenticates network connections (the S in HTTPS).' },
-      { t: 'mTLS', k: 'mtls', en: 'Mutual TLS — both client and server present and verify certificates, common in service meshes.' },
-      { t: 'CIDR', k: 'cidr', en: 'Classless Inter-Domain Routing — an IP range written as address/prefix, e.g. <code>10.0.0.0/8</code>.' },
-      { t: 'SNI', k: 'sni', en: 'Server Name Indication — the TLS field naming the host being connected to (sent before encryption).' },
+      { ar: 'التجويد', en: 'Tajwīd', defAr: 'إعطاءُ كلِّ حرفٍ حقَّه ومستحقَّه في التلاوة.', defEn: 'Giving each letter its due articulation and qualities in recitation.' },
+      { ar: 'المخرج', en: 'Makhraj', defAr: 'موضعُ خروج الحرف من الفم أو الحلق أو الخيشوم.', defEn: 'The point from which a letter is articulated.' },
+      { ar: 'الصفة', en: 'Ṣifa', defAr: 'كيفيةٌ تُميِّز الحرف، كالهمس والجهر والشدّة والرخاوة.', defEn: 'A quality distinguishing a letter (whispered/voiced, etc.).' },
+      { ar: 'الإظهار', en: 'Iẓhār', defAr: 'إخراجُ النون الساكنة والتنوين واضحًا عند حروف الحلق الستة.', defEn: 'Pronouncing a quiescent nūn/tanwīn clearly before the six throat letters.' },
+      { ar: 'الإدغام', en: 'Idghām (recitation)', defAr: 'إدخالُ النون الساكنة في الحرف التالي من حروف «يرملون».', defEn: 'Merging a quiescent nūn into a following yarmalūn letter.' },
+      { ar: 'الإقلاب', en: 'Iqlāb', defAr: 'قلبُ النون الساكنة والتنوين ميمًا مخفاةً عند الباء.', defEn: 'Converting a quiescent nūn/tanwīn into a hidden mīm before bāʾ.' },
+      { ar: 'الإخفاء', en: 'Ikhfāʾ', defAr: 'نطقُ النون بحالةٍ بين الإظهار والإدغام مع الغنّة.', defEn: 'Pronouncing the nūn midway between iẓhār and idghām, with nasalization.' },
+      { ar: 'المدّ', en: 'Madd', defAr: 'إطالةُ الصوت بحرفٍ من حروف المدّ (ا و ي).', defEn: 'Prolonging the sound on a madd letter (ā/w/y).' },
+      { ar: 'الغنّة', en: 'Ghunna', defAr: 'صوتٌ يخرج من الخيشوم يصاحب النون والميم.', defEn: 'The nasal sound accompanying nūn and mīm.' },
+      { ar: 'القلقلة', en: 'Qalqala', defAr: 'اضطرابُ الحرف الساكن عند النطق في حروف «قطب جد».', defEn: 'The slight “bounce” of certain quiescent letters (q ṭ b j d).' },
     ],
   },
   {
-    key: 'security',
-    title: 'Security & Cryptography',
+    ar: 'الخط العربي', en: 'Calligraphy (Khaṭṭ)',
     terms: [
-      { t: 'AEAD', k: 'aead', en: 'Authenticated Encryption with Associated Data — encrypts and authenticates in one step (e.g. AES-GCM).' },
-      { t: 'KDF', k: 'kdf', en: 'Key Derivation Function — derives a key from a password/secret; slow KDFs (argon2, bcrypt) protect passwords.' },
-      { t: 'HMAC', k: 'hmac', en: 'Hash-based Message Authentication Code — proves a message’s integrity and origin with a shared key.' },
-      { t: 'Nonce', k: 'nonce', en: 'A “number used once” — a unique value per encryption that must never repeat under the same key.' },
-      { t: 'CSP', k: 'csp', en: 'Content Security Policy — a response header restricting which resources a page may load (mitigates XSS).' },
-      { t: 'HSTS', k: 'hsts', en: 'HTTP Strict Transport Security — a header forcing browsers to use HTTPS.' },
-      { t: 'JWT', k: 'jwt', en: 'JSON Web Token — a signed (not encrypted) token carrying claims; always verify the algorithm and expiry.' },
-      { t: 'OWASP', k: 'owasp', href: 'https://owasp.org/www-project-top-ten/', en: 'Open Worldwide Application Security Project — best known for the OWASP Top 10 web risks.' },
-      { t: 'CVE', k: 'cve', en: 'Common Vulnerabilities and Exposures — a public identifier for a known security flaw.' },
-      { t: 'SBOM', k: 'sbom', en: 'Software Bill of Materials — an inventory of every component and dependency in a build.' },
+      { ar: 'الخط', en: 'Khaṭṭ', defAr: 'فنُّ الكتابة العربية الجميلة وفق قواعدَ وأوزان.', defEn: 'The art of beautiful Arabic writing by set rules and proportions.' },
+      { ar: 'النسخ', en: 'Naskh', defAr: 'خطٌّ متوازنٌ واضح؛ خطُّ المصاحف والطباعة.', defEn: 'A balanced, legible script — of muṣḥafs and print.' },
+      { ar: 'الرقعة', en: 'Ruqʿa', defAr: 'خطٌّ سريعٌ مختصر للكتابة اليومية.', defEn: 'A quick, compact everyday handwriting script.' },
+      { ar: 'الثلث', en: 'Thuluth', defAr: 'خطٌّ زخرفيٌّ رشيق يكثر في العناوين والزخارف.', defEn: 'A flowing decorative script common in titles and ornament.' },
+      { ar: 'الديواني', en: 'Dīwānī', defAr: 'خطٌّ منحنٍ متشابك نشأ في الدواوين العثمانية.', defEn: 'A curved, interlaced script that arose in the Ottoman chanceries.' },
+      { ar: 'قياس النقاط', en: 'Dot measurement', defAr: 'وحدةُ قياسٍ تُضبَط بها أبعادُ الحروف بنقاط القلم.', defEn: 'Measuring a letter’s proportions in units of the pen’s nib-dots.' },
     ],
   },
   {
-    key: 'architecture',
-    title: 'Architecture',
+    ar: 'القراءة والكتابة', en: 'Reading & Writing',
     terms: [
-      { t: 'Domain-Driven Design (DDD)', k: 'ddd', href: 'https://martinfowler.com/tags/domain%20driven%20design.html', en: 'Modeling software around the business domain and its shared language.' },
-      { t: 'Bounded context', k: 'boundedcontext', en: 'A self-contained part of the domain with its own model and vocabulary (a DDD concept).' },
-      { t: 'Hexagonal / Clean architecture', k: 'hexagonal', en: 'Ports & adapters — isolate core business logic from I/O (DB, HTTP) behind interfaces.' },
-      { t: '12-factor app', k: 'twelvefactor', href: 'https://12factor.net/', en: 'A methodology for portable, scalable cloud apps (config in the environment, stateless processes, …).' },
-      { t: 'Monolith', k: 'monolith', en: 'A single deployable application that contains all of a system’s features.' },
-      { t: 'Microservices', k: 'microservices', en: 'An architecture of small, independently-deployable services that each own their data.' },
+      { ar: 'الحرف', en: 'Ḥarf — letter', defAr: 'رمزٌ صوتيٌّ من حروف الهجاء، وعدّتها ثمانية وعشرون.', defEn: 'A letter of the alphabet (28 in all).' },
+      { ar: 'الحركة', en: 'Ḥaraka — short vowel', defAr: 'علامةُ الصوت القصير: الفتحة والضمّة والكسرة.', defEn: 'A short-vowel mark: fatḥa, ḍamma, kasra.' },
+      { ar: 'السكون', en: 'Sukūn', defAr: 'علامةُ خلوِّ الحرف من الحركة.', defEn: 'The mark of a vowelless (resting) consonant.' },
+      { ar: 'الشدّة', en: 'Shadda', defAr: 'علامةُ تضعيف الحرف ونطقِه مرّتين.', defEn: 'The mark doubling a consonant.' },
+      { ar: 'التنوين', en: 'Tanwīn — nunation', defAr: 'نونٌ ساكنة زائدة في آخر الاسم (ـٌ ـً ـٍ).', defEn: 'An extra n-sound at the end of a noun (-un/-an/-in).' },
+      { ar: 'المدّ', en: 'Madd (reading)', defAr: 'إطالةُ الحرف بألفٍ أو واوٍ أو ياءٍ ساكنة تجانس الحركة قبلها.', defEn: 'Lengthening a vowel with a matching ā/w/y.' },
+      { ar: 'المقطع', en: 'Syllable', defAr: 'وحدةُ نطقٍ مكوّنة من حرفٍ وحركةٍ فأكثر.', defEn: 'A unit of pronunciation: a consonant plus a vowel.' },
     ],
   },
 ];
@@ -96,23 +94,24 @@ const groups: { key: string; title: string; terms: { t: string; k: string; en: s
     <p class="dp-hero__eyebrow" data-i18n="glossary.eyebrow">مرجع</p>
     <h1 data-i18n="glossary.h1">المسرد</h1>
     <p class="dp-hero__lede" data-i18n-html="glossary.lede">
-      مصطلحات أساسية عبر علوم اللغة العربية، مع تعريفات موجزة.
+      مصطلحاتٌ أساسية عبر علوم اللغة العربية، مع تعريفاتٍ موجزة.
     </p>
   </header>
 
   {groups.map((g) => (
     <section class="dp-gloss-sec">
-      <h2 class="dp-section-head" data-i18n={`glossary.grp.${g.key}`}>{g.title}</h2>
+      <h2 class="dp-section-head">
+        <span data-lang-block="ar">{g.ar}</span><span data-lang-block="en">{g.en}</span>
+      </h2>
       <dl class="dp-gloss">
         {g.terms.map((term) => (
           <div class="dp-gloss__item">
             <dt class="dp-gloss__term">
-              {term.t}
-              {term.href && (
-                <a class="dp-gloss__link" href={term.href} target="_blank" rel="noopener" aria-label={`Learn ${term.t} (external)`}>↗</a>
-              )}
+              <span data-lang-block="ar">{term.ar}</span><span data-lang-block="en">{term.en}</span>
             </dt>
-            <dd class="dp-gloss__def" data-i18n-html={`glossary.${term.k}`} set:html={term.en} />
+            <dd class="dp-gloss__def">
+              <span data-lang-block="ar" set:html={term.defAr} /><span data-lang-block="en" set:html={term.defEn} />
+            </dd>
           </div>
         ))}
       </dl>
