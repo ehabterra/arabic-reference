@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
 import { getDB, json, type D1Database } from '../../lib/social-db';
+import { verifyGoogle, getSessionUser, COOKIE } from '../../lib/auth';
 
 // Per-page comments, stored in Cloudflare D1 (binding `DB`). Unlike the
 // anonymous likes endpoint, posting REQUIRES a Google sign-in: the browser
@@ -47,37 +48,6 @@ function ensureSchema(db: D1Database) {
   return ready;
 }
 
-interface GoogleClaims {
-  sub: string;
-  name: string;
-  picture?: string;
-  email?: string;
-}
-
-// Verify a Google ID token by asking Google's tokeninfo endpoint, which checks
-// the signature and expiry for us. We then confirm the audience is OUR client.
-async function verifyGoogle(credential: string): Promise<GoogleClaims | null> {
-  if (!credential || !CLIENT_ID) return null;
-  try {
-    const r = await fetch(
-      'https://oauth2.googleapis.com/tokeninfo?id_token=' + encodeURIComponent(credential)
-    );
-    if (!r.ok) return null;
-    const p: any = await r.json();
-    if (p.aud !== CLIENT_ID) return null;
-    if (p.iss !== 'accounts.google.com' && p.iss !== 'https://accounts.google.com') return null;
-    if (!p.sub) return null;
-    return {
-      sub: String(p.sub),
-      name: String(p.name || p.email || 'مستخدم'),
-      picture: p.picture ? String(p.picture) : undefined,
-      email: p.email ? String(p.email) : undefined,
-    };
-  } catch {
-    return null;
-  }
-}
-
 export const GET: APIRoute = async ({ url, locals }) => {
   const db = getDB(locals);
   if (!db) return json({ error: 'Comments are not configured.' }, 503);
@@ -99,7 +69,7 @@ export const GET: APIRoute = async ({ url, locals }) => {
   }
 };
 
-export const POST: APIRoute = async ({ request, locals }) => {
+export const POST: APIRoute = async ({ request, cookies, locals }) => {
   if (!CLIENT_ID) return json({ error: 'التعليقات غير مُفعَّلة (لم يُضبط معرّف Google).' }, 503);
   let slug = '';
   let credential = '';
@@ -116,11 +86,12 @@ export const POST: APIRoute = async ({ request, locals }) => {
   if (!body) return json({ error: 'التعليق فارغ.' }, 400);
   if (body.length > MAX_BODY) return json({ error: 'التعليق طويل جدًّا.' }, 400);
 
-  const claims = await verifyGoogle(credential);
-  if (!claims) return json({ error: 'تعذّر التحقّق من تسجيل الدخول. أعد المحاولة.' }, 401);
-
   const db = getDB(locals);
   if (!db) return json({ error: 'Comments are not configured.' }, 503);
+  // Prefer the first-party session cookie; fall back to a fresh Google token.
+  const claims =
+    (await getSessionUser(db, cookies.get(COOKIE)?.value)) || (await verifyGoogle(credential));
+  if (!claims) return json({ error: 'تسجيل الدخول مطلوب.' }, 401);
   try {
     await ensureSchema(db);
     const row = await db
@@ -137,7 +108,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
   }
 };
 
-export const DELETE: APIRoute = async ({ request, locals }) => {
+export const DELETE: APIRoute = async ({ request, cookies, locals }) => {
   let id = 0;
   let credential = '';
   try {
@@ -148,11 +119,12 @@ export const DELETE: APIRoute = async ({ request, locals }) => {
     return json({ error: 'Invalid request body.' }, 400);
   }
   if (!id) return json({ error: 'Bad id.' }, 400);
-  const claims = await verifyGoogle(credential);
-  if (!claims) return json({ error: 'تسجيل الدخول مطلوب.' }, 401);
 
   const db = getDB(locals);
   if (!db) return json({ error: 'Comments are not configured.' }, 503);
+  const claims =
+    (await getSessionUser(db, cookies.get(COOKIE)?.value)) || (await verifyGoogle(credential));
+  if (!claims) return json({ error: 'تسجيل الدخول مطلوب.' }, 401);
   try {
     await ensureSchema(db);
     // Author-only delete: the token's sub must own the row.

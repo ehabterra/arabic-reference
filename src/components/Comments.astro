@@ -42,14 +42,9 @@ const clientId = import.meta.env.PUBLIC_GOOGLE_CLIENT_ID || '';
         const form = document.getElementById('dp-cmt-form');
         const hint = document.getElementById('dp-cmt-hint');
         const authEl = document.getElementById('dp-cmt-auth');
-        let credential = null;
         let mySub = null;
-        const LS_KEY = 'dp-cmt-id';
+        let signedIn = false;
 
-        const jwtPayload = (t) => {
-          try { return JSON.parse(atob((t.split('.')[1] || '').replace(/-/g, '+').replace(/_/g, '/'))); }
-          catch { return null; }
-        };
         const esc = (s) => {
           const d = document.createElement('div');
           d.textContent = s == null ? '' : String(s);
@@ -98,57 +93,70 @@ const clientId = import.meta.env.PUBLIC_GOOGLE_CLIENT_ID || '';
           google.accounts.id.renderButton(authEl, { theme: 'outline', size: 'large', text: 'signin_with', shape: 'pill', locale: 'ar' });
         }
 
-        function signOut() {
-          credential = null; mySub = null;
-          try { localStorage.removeItem(LS_KEY); } catch (e) {}
+        // Ask our own session endpoint who we are — this is what survives refreshes.
+        async function refreshSession() {
+          try {
+            const r = await fetch('/api/auth');
+            const d = await r.json();
+            if (d && d.user) {
+              signedIn = true; mySub = d.user.sub || null;
+              renderSignedIn(d.user.name || 'مستخدم', d.user.picture);
+              return true;
+            }
+          } catch (e) { /* ignore */ }
+          signedIn = false; mySub = null;
+          return false;
+        }
+
+        async function signOut() {
+          try { await fetch('/api/auth', { method: 'DELETE' }); } catch (e) {}
           try { google.accounts.id.disableAutoSelect(); } catch (e) {}
+          signedIn = false; mySub = null;
           if (form) form.hidden = true;
           if (hint) { hint.hidden = false; hint.textContent = 'سجّل الدخول بحساب Google للمشاركة في النقاش.'; }
           renderButton();
           load();
         }
 
-        window.__dpCmtCredential = function (resp) {
-          credential = resp && resp.credential;
-          const p = jwtPayload(credential || '') || {};
-          mySub = p.sub || null;
-          try { localStorage.setItem(LS_KEY, JSON.stringify({ name: p.name, picture: p.picture })); } catch (e) {}
-          renderSignedIn(p.name || 'مستخدم', p.picture);
-          load(); // re-render so your own comments show a delete button
+        // Google gives a one-time token; exchange it ONCE for a first-party session cookie.
+        window.__dpCmtCredential = async function (resp) {
+          const credential = resp && resp.credential;
+          if (!credential) return;
+          try {
+            const r = await fetch('/api/auth', {
+              method: 'POST',
+              headers: { 'content-type': 'application/json' },
+              body: JSON.stringify({ credential }),
+            });
+            if (r.ok) { await refreshSession(); await load(); }
+          } catch (e) { /* ignore */ }
         };
 
         function initGSI() {
           if (!(window.google && google.accounts && google.accounts.id)) {
             return setTimeout(initGSI, 300);
           }
-          // auto_select silently re-signs-in returning visitors (no click each refresh).
           google.accounts.id.initialize({ client_id: clientId, callback: window.__dpCmtCredential, auto_select: true });
-          renderButton();
-          google.accounts.id.prompt();
+          if (!signedIn) { renderButton(); google.accounts.id.prompt(); }
         }
 
-        // Optimistically show the last identity instantly while GSI re-issues a
-        // fresh token in the background, so a refresh doesn't look logged-out.
-        try {
-          const cached = JSON.parse(localStorage.getItem(LS_KEY) || 'null');
-          if (cached && cached.name) renderSignedIn(cached.name, cached.picture);
-        } catch (e) {}
-
-        initGSI();
+        // Boot: trust our session cookie first (no Google round-trip on refresh);
+        // only fall back to the Google button if there's no valid session.
+        refreshSession().then((ok) => { if (!ok) initGSI(); load(); });
 
         if (form) {
           form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const ta = document.getElementById('dp-cmt-text');
             const body = (ta.value || '').trim();
-            if (!body || !credential) return;
+            if (!body) return;
             const btn = form.querySelector('.dp-cmt-submit');
             btn.disabled = true;
             try {
               const r = await fetch('/api/comments', {
                 method: 'POST',
                 headers: { 'content-type': 'application/json' },
-                body: JSON.stringify({ slug, credential, body }),
+                body: JSON.stringify({ slug, body }),
               });
               if (r.ok) { ta.value = ''; await load(); }
               else { const er = await r.json().catch(() => ({})); alert(er.error || 'تعذّر نشر التعليق.'); }
@@ -159,20 +167,18 @@ const clientId = import.meta.env.PUBLIC_GOOGLE_CLIENT_ID || '';
         if (listEl) {
           listEl.addEventListener('click', async (e) => {
             const b = e.target.closest('[data-del]');
-            if (!b || !credential) return;
+            if (!b) return;
             if (!confirm('حذف تعليقك؟ لا يمكن التراجع.')) return;
             try {
               const r = await fetch('/api/comments', {
                 method: 'DELETE',
                 headers: { 'content-type': 'application/json' },
-                body: JSON.stringify({ id: Number(b.getAttribute('data-del')), credential }),
+                body: JSON.stringify({ id: Number(b.getAttribute('data-del')) }),
               });
               if (r.ok) await load();
             } catch (e) { /* ignore */ }
           });
         }
-
-        load();
       })();
     </script>
   </>

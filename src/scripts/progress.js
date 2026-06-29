@@ -628,40 +628,55 @@ function initToc() {
   const tocList = document.querySelector('[data-dp-toc]');
   const body = document.querySelector('.dp-article__body');
   if (!tocList || !body) return;
-  const heads = body.querySelectorAll('h2, h3');
-  if (!heads.length) {
-    const wrap = document.querySelector('.dp-article__toc');
-    if (wrap) wrap.style.display = 'none';
-    return;
-  }
-  const items = [];
-  heads.forEach((h) => {
-    // innerText reflects only the visible language (bilingual headings)
-    const label = (h.innerText || h.textContent || '').trim();
-    if (!label) return; // skip an empty (fully-hidden) heading
-    if (!h.id) h.id = slugify(label);
-    const li = document.createElement('li');
-    li.className = h.tagName === 'H3' ? 'lvl-3' : 'lvl-2';
-    const a = document.createElement('a');
-    a.href = '#' + h.id;
-    a.textContent = label;
-    li.appendChild(a);
-    tocList.appendChild(li);
-    items.push({ link: a, el: h });
-  });
+  const wrap = document.querySelector('.dp-article__toc');
+  let items = [];
+
+  const activeLang = () => (document.documentElement.dataset.lang === 'en' ? 'en' : 'ar');
+
   const spy = () => {
+    if (!items.length) return;
     const top = window.scrollY + 110;
     let current = items[0];
     for (const it of items) if (it.el.offsetTop <= top) current = it;
     items.forEach((it) => it.link.classList.toggle('is-active', it === current));
   };
+
+  function build() {
+    const lang = activeLang();
+    // Only headings inside the active language block (or outside any block) —
+    // bilingual lessons keep both AR and EN headings in the DOM.
+    const heads = [...body.querySelectorAll('h2, h3')].filter((h) => {
+      const blk = h.closest('[data-lang-block]');
+      return !blk || blk.getAttribute('data-lang-block') === lang;
+    });
+    tocList.innerHTML = '';
+    items = [];
+    if (!heads.length) { if (wrap) wrap.style.display = 'none'; return; }
+    if (wrap) wrap.style.display = '';
+    heads.forEach((h) => {
+      const label = (h.textContent || '').trim();
+      if (!label) return;
+      if (!h.id) h.id = slugify(label);
+      const li = document.createElement('li');
+      li.className = h.tagName === 'H3' ? 'lvl-3' : 'lvl-2';
+      const a = document.createElement('a');
+      a.href = '#' + h.id;
+      a.textContent = label;
+      li.appendChild(a);
+      tocList.appendChild(li);
+      items.push({ link: a, el: h });
+    });
+    spy();
+  }
+
   let ticking = false;
   window.addEventListener('scroll', () => {
     if (ticking) return;
     ticking = true;
     requestAnimationFrame(() => { spy(); ticking = false; });
   });
-  spy();
+  window.addEventListener('dp:lang', build); // rebuild TOC when language toggles
+  build();
 }
 
 // Make content headings self-linking: clicking one copies a deep link to it
