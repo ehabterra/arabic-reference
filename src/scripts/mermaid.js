@@ -15,16 +15,26 @@ async function renderMermaid() {
   const light = document.documentElement.dataset.theme === 'light';
   mermaid.initialize({
     startOnLoad: false,
-    theme: light ? 'neutral' : 'dark',
+    theme: light ? 'base' : 'dark',
     securityLevel: 'loose',
-    fontFamily: 'ui-sans-serif, system-ui, sans-serif',
+    fontFamily: '"IBM Plex Sans Arabic", ui-sans-serif, system-ui, sans-serif',
     themeVariables: light
-      ? { primaryBorderColor: '#0792b4', lineColor: '#0792b4', fontSize: '15px' }
+      ? {
+          primaryColor: '#fffdf7',
+          primaryTextColor: '#221d14',
+          primaryBorderColor: '#157a6e',
+          lineColor: '#9c7c1a',
+          secondaryColor: '#f4ecdb',
+          tertiaryColor: '#f6efe0',
+          fontSize: '15px',
+        }
       : {
-          primaryColor: '#1a2230',
-          primaryTextColor: '#e7ecf3',
-          primaryBorderColor: '#00add8',
-          lineColor: '#5dc9e2',
+          primaryColor: '#1b2a23',
+          primaryTextColor: '#f1ece0',
+          primaryBorderColor: '#28b89a',
+          lineColor: '#d8b24a',
+          secondaryColor: '#25372d',
+          tertiaryColor: '#142019',
           fontSize: '15px',
         },
   });
