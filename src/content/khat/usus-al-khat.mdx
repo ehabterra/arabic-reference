@@ -41,11 +41,11 @@ quiz:
         correct: false
     explain: "القلم البوصي مصنوعٌ من القصب، وتُشذَّب نهايته بالسكين لتكوين «القطّة» المائلة التي تُحدِّد طبيعة الخط."
     explain_en: "The reed pen is made from river reed; its tip is trimmed with a knife to form the angled «cut» (qatta) that determines the character of the script."
-  - q: "ما الزاوية المثالية لارتكاز القلم عند الكتابة بخط النسخ أو الرقعة؟"
-    q_en: "What is the ideal pen angle for writing Naskh or Ruqʿa script?"
+  - q: "ما الزاوية التقريبية لارتكاز القلم عند الكتابة بخط النسخ والثلث؟"
+    q_en: "What is the approximate pen-bearing angle for writing Naskh and Thuluth?"
     options:
-      - text: "نحو 45 درجة"
-        text_en: "About 45 degrees"
+      - text: "نحو 70 درجة"
+        text_en: "About 70 degrees"
         correct: true
       - text: "صفر درجة (أفقي تمامًا)"
         text_en: "Zero degrees (completely flat)"
@@ -53,8 +53,8 @@ quiz:
       - text: "90 درجة (عمودي تمامًا)"
         text_en: "90 degrees (perfectly vertical)"
         correct: false
-    explain: "زاوية الارتكاز نحو 45 درجة تُنتج التباين المناسب بين التخين والتنحيف في خطَّي النسخ والرقعة. الفارسي يحتاج زاوية أقل بكثير (~10–15 درجة)."
-    explain_en: "A pen angle of about 45 degrees produces the correct thick-thin contrast in Naskh and Ruqʿa. Farisi / Nastaliq requires a much lower angle (~10–15 degrees)."
+    explain: "زاوية الارتكاز نحو 70 درجة في النسخ والثلث (وكذلك الفارسي)، وتُنتج التباين المناسب بين التخين والتنحيف. والرقعة أقلّ قليلًا (~50–60)، والديواني أكبرها (~90–100)."
+    explain_en: "The pen-bearing angle is about 70 degrees in Naskh and Thuluth (and likewise Farisi), producing the correct thick-thin contrast. Ruqʿa is a little lower (~50–60), and Diwani is the highest (~90–100)."
   - q: "أيٌّ من التالي صحيح عن الجلسة الصحيحة للكتابة؟"
     q_en: "Which of the following is true about correct writing posture?"
     options:
@@ -157,13 +157,13 @@ import Calligraphy from '../../components/Calligraphy.astro';
 - **السبابة** تستقر فوق القلم.
 - **الوسطى** تُوجّه من الأسفل.
 - القلم **لا يُقبَض** بشدة — الإمساك الصحيح يُشبه حمل شيء ثمين لا عصر الليمون!
-- زاوية القلم مع سطح الورق: **نحو 45 درجة** لخطَّي النسخ والرقعة.
+- زاوية القلم مع سطح الورق: **نحو 70 درجة** في النسخ والثلث، و**50–60 درجة** في الرقعة.
 
-> **ملاحظة**: الزاوية تتغير حسب الخط — الفارسي يحتاج ميلًا أقرب إلى الأفق (نحو 10–15 درجة)، والديواني زاويةً مغايرة تمامًا.
+> **ملاحظة**: الزاوية تتغير حسب الخط — النسخ والثلث والفارسي نحو 70°، والرقعة 50–60°، والديواني أكبرها (90–100°).
 
 <Calligraphy kind="grip" />
 
-<Calligraphy kind="nib-angle" angle={45} script="النسخ والرقعة" scriptEn="Naskh & Ruqʿa" />
+<Calligraphy kind="nib-angle" angle={70} script="النسخ" scriptEn="Naskh" />
 
 ---
 
@@ -280,13 +280,13 @@ Correct grip:
 - **Index finger** rests on top.
 - **Middle finger** guides from below.
 - **Do not squeeze** — hold it like something precious, not a lemon to juice.
-- Pen angle against the paper surface: **about 45°** for Naskh and Ruqʿa.
+- Pen angle against the paper surface: **about 70°** for Naskh and Thuluth, **~50–60°** for Ruqʿa.
 
-> **Note:** The angle changes with the script — Farisi/Nastaliq requires a nearly flat angle (~10–15°), and Diwani uses a completely different orientation.
+> **Note:** The angle changes with the script — Naskh, Thuluth, and Farisi are ~70°; Ruqʿa ~50–60°; Diwani is the highest (~90–100°).
 
 <Calligraphy kind="grip" />
 
-<Calligraphy kind="nib-angle" angle={45} script="النسخ والرقعة" scriptEn="Naskh & Ruqʿa" />
+<Calligraphy kind="nib-angle" angle={70} script="النسخ" scriptEn="Naskh" />
 
 ---
 

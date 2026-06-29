@@ -182,12 +182,12 @@ import Mermaid from '../../components/Mermaid.astro';
 | القسم | الحروف | الحكم |
 |---|---|---|
 | مفخَّم دائماً | خ ص ض غ ط ق ظ (الاستعلاء) | تفخيم |
-| مرقَّق دائماً | باقي 25 حرفاً | ترقيق |
+| مرقَّق دائماً | باقي الحروف: 18 حرفاً | ترقيق |
 | دائر بين الحالين | الألف — لام الجلالة — الراء | بحسب الشرط |
 
 <Mermaid code={String.raw`flowchart TD
   A["حروف الهجاء"] --> B["مفخَّم دائماً<br/>الاستعلاء 7: خص ضغط قظ"]
-  A --> C["مرقَّق دائماً<br/>22 حرفاً"]
+  A --> C["مرقَّق دائماً<br/>18 حرفاً"]
   A --> D["دائر بين الحالين"]
   D --> E["الألف<br/>تتبع ما قبلها"]
   D --> F["لام الجلالة<br/>كسر→ترقيق - فتح-ضم→تفخيم"]
@@ -300,12 +300,12 @@ Has detailed contextual rules.
 | Group | Letters | Ruling |
 |---|---|---|
 | Always heavy | خ ص ض غ ط ق ظ (istiʿlāʾ) | Tafkhīm |
-| Always light | Remaining 25 letters | Tarqīq |
+| Always light | Remaining 18 letters | Tarqīq |
 | Alternating | Alif — Lām al-Jalāla — Rāʾ | Conditional |
 
 <Mermaid code={String.raw`flowchart TD
   A["Arabic Letters"] --> B["Always heavy<br/>Istiʿlāʾ 7: khṣ ḍghaṭ qẓ"]
-  A --> C["Always light<br/>25 letters"]
+  A --> C["Always light<br/>18 letters"]
   A --> D["Alternating"]
   D --> E["Alif<br/>follows what precedes it"]
   D --> F["Lām al-Jalāla<br/>kasra→light / fatḥa-ḍamma→heavy"]

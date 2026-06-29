@@ -58,17 +58,17 @@ quiz:
   - q: "«أضحكَ وأبكى» — ما نوع الطباق في هذه العبارة؟"
     q_en: "In 'aḍḥaka wa-abkā' (He made laugh and made cry, 53:43) — what type of ṭibāq is this?"
     options:
-      - text: "طباق سلب؛ لأن الفعلَين يتضمنان إثبات ضد ونفي ضده الآخر"
-        text_en: "Ṭibāq salb; because each verb implicitly affirms one opposite and negates the other"
-        correct: true
       - text: "طباق إيجاب؛ لأن الضدَّين ذُكرا في صيغتَين مثبتَتَين"
         text_en: "Ṭibāq ījāb; because both opposites appear in affirmative verb forms"
+        correct: true
+      - text: "طباق سلب؛ لأن الفعلَين يتضمنان إثبات ضد ونفي ضده الآخر"
+        text_en: "Ṭibāq salb; because each verb implicitly affirms one opposite and negates the other"
         correct: false
       - text: "مقابلة؛ لأن فيها أكثر من معنيَين متقابلَين"
         text_en: "Muqābala; because it contains more than one pair of contrasted meanings"
         correct: false
-    explain: "«أضحك وأبكى» طباق سلب لأن الفعلَين يحملان الضدَّين في هيئة الإثبات والنفي التضمنيين؛ فأضحك يُثبت الضحك وينفي البكاء، وأبكى يُثبت البكاء وينفي الضحك — وهذا جوهر طباق السلب."
-    explain_en: "This is ṭibāq salb because each verb carries its own implied negation of the other. 'Aḍḥaka' (He made laugh) implicitly affirms laughter and negates crying; 'abkā' (He made cry) affirms crying and negates laughter. The antithesis is built into the implicit negation within each verb — that is the essence of ṭibāq salb."
+    explain: "«أضحك وأبكى» طباق إيجاب لأن الضدَّين (الضحك والبكاء) ذُكرا بفعلَين مختلفَين كلاهما مثبت. أما طباق السلب فشرطه أن يَرِد الفعل الواحد نفسه مرةً مثبتاً ومرةً منفياً، كـ«تعلمُ ولا تجهلُ» و«فلا تخشَوُا الناسَ واخشَوْنِ»."
+    explain_en: "This is ṭibāq ījāb because the two opposites (laughing and crying) appear as two different verbs, both affirmative. Ṭibāq salb instead requires the *same* verb once affirmed and once negated — as in 'taʿlamu wa-lā tajhalu' and 'fa-lā takhshaw l-nāsa wa-khshawni'."
   - q: "أيٌّ مما يلي مثال صحيح على المقابلة لا على الطباق؟"
     q_en: "Which of the following is a correct example of muqābala — not ṭibāq?"
     options:
@@ -124,18 +124,18 @@ import Mermaid from '../../components/Mermaid.astro';
 |---|---|
 | «الليلُ والنهارُ» | ليل ↔ نهار |
 | «الموتُ والحياةُ» | موت ↔ حياة |
-| «الحلوُ والمرُّ» | حلو ↔ مرّ |
+| «أضحكَ وأبكى» (٥٣:٤٣) | ضحك ↔ بكاء |
+| «تُؤتِي الملكَ من تشاء وتنزِعُ الملكَ ممَّن تشاء» (٣:٢٦) | إيتاء ↔ نزع |
 | «خيرُ المال عينٌ ساهرة لعين نائمة» | ساهر ↔ نائم |
 
 #### 2. طباق السلب
 
-يُثبَت أحد المتضادَّين ويُنفى الآخر:
+يُثبَت أحد المتضادَّين ويُنفى الآخر — بأن يَرِد الضدُّ الواحد (الفعل نفسه) مرةً مثبتاً ومرةً منفياً:
 
 | المثال | الضدَّان |
 |---|---|
 | «تعلمُ ولا تجهلُ» | العلم ↔ نفي الجهل |
-| «أضحكَ وأبكى» | ضحك ↔ بكاء |
-| «قُلِ اللهم مالك الملك تُؤتِي الملكَ من تشاء وتنزِعُ الملكَ ممَّن تشاء» | إيتاء ↔ نزع |
+| «فلا تخشَوُا الناسَ واخشَوْنِ» (٥:٤٤) | خشية منفية ↔ خشية مثبتة |
 
 ---
 
@@ -236,18 +236,18 @@ Both opposites appear in **affirmative** forms:
 |---|---|
 | *al-laylu wa-l-nahāru* — "night and day" | night ↔ day |
 | *al-mawtu wa-l-ḥayātu* — "death and life" | death ↔ life |
-| *al-ḥulwu wa-l-murru* — "the sweet and the bitter" | sweet ↔ bitter |
+| *aḍḥaka wa-abkā* (53:43) — "He made laugh and made cry" | laughing ↔ crying |
+| *tuʾtī l-mulka man tashāʾu wa-tanziʿu l-mulka mimman tashāʾu* (3:26) | giving kingship ↔ taking it away |
 | *ʿaynun sāhiratun li-ʿaynin nāʾima* — "a wakeful eye for a sleeping eye" | wakeful ↔ sleeping |
 
 #### Ṭibāq salb (negative antithesis)
 
-One opposite is **affirmed**, the other **negated**:
+The **same** opposite (the same verb) appears once **affirmed** and once **negated**:
 
 | Example | Opposites |
 |---|---|
 | *taʿlamu wa-lā tajhalu* — "you know and you do not ignore" | knowledge ↔ negation of ignorance |
-| *aḍḥaka wa-abkā* (53:43) — "He made laugh and made cry" | laughing ↔ crying |
-| *tuʾtī l-mulka man tashāʾu wa-tanziʿu l-mulka mimman tashāʾu* (3:26) | giving kingship ↔ taking it away |
+| *fa-lā takhshaw l-nāsa wa-khshawni* (5:44) — "do not fear people, but fear Me" | fear negated ↔ fear affirmed |
 
 ---
 
