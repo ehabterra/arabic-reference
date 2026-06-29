@@ -1,4 +1,4 @@
-export const SITE_TITLE = 'المرجع العربي';
+export const SITE_TITLE = 'تعلم العربية';
 export const SITE_DESC =
   'مرجع تفاعلي لتعلُّم العربية: القراءة والكتابة، النحو، الصرف، البلاغة، التجويد، الخط، وعربية القرآن — بأمثلة ومخططات واختبارات وتتبُّع للتقدّم.';
 export const SITE_DESC_EN =
