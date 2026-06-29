@@ -1,0 +1,147 @@
+---
+// Original, hand-built line-art diagrams for calligraphy technique (no
+// copyrighted images). Objects (reed, nib, ink) use fixed natural tones;
+// baselines, arcs and labels use theme tokens so they read in light/dark.
+//   <Calligraphy kind="nib-angle" angle={30} script="النسخ" scriptEn="Naskh" />
+//   <Calligraphy kind="dot-measure" dots={5} />  | "nib-cut" | "grip" | "posture"
+interface Props {
+  kind: 'nib-angle' | 'nib-cut' | 'grip' | 'posture' | 'dot-measure';
+  angle?: number;
+  dots?: number;
+  script?: string;
+  scriptEn?: string;
+  captionAr?: string;
+  captionEn?: string;
+}
+const { kind, angle = 30, dots = 5, script = '', scriptEn = '', captionAr, captionEn } = Astro.props;
+const uid = `cal-${kind}-${Math.random().toString(36).slice(2, 8)}`;
+
+// nib-angle geometry: rotate a vertical qalam by (90 - angle) so it leans
+// to the upper-right at `angle` from the baseline; the broad nib sits at (130,112).
+const tipX = 130, tipY = 112;
+const rot = 90 - angle;
+const rad = (angle * Math.PI) / 180;
+const arcEndX = tipX + 36 * Math.cos(rad), arcEndY = tipY - 36 * Math.sin(rad);
+
+// dot-measure: a column of nib-dots (rhombi) stacked corner-to-corner.
+const alifTop = 24, alifBot = 178;
+const dh = (alifBot - alifTop) / dots;
+const dotCenters = Array.from({ length: dots }, (_, i) => alifTop + dh / 2 + i * dh);
+
+const defCap: Record<string, [string, string]> = {
+  'nib-angle': [`زاوية القلم إلى خط الأساس${script ? ` في ${script}` : ''}`, `Pen angle to the baseline${scriptEn ? ` in ${scriptEn}` : ''}`],
+  'nib-cut': ['قطّة القلم: الجَلْفة والشقّ وسِنّ الكتابة', 'The pen cut: the bevel, the slit (shaqq), and the writing edge'],
+  'dot-measure': [`قياس ارتفاع الألف بالنقاط (${dots} نقاط)`, `Measuring the alif’s height in nib-dots (${dots})`],
+  grip: ['مَسْك القلم بثلاث أصابع برفق', 'A light three-finger hold of the qalam'],
+  posture: ['الجِلْسة المعتدلة وميل الورقة', 'An upright posture and the tilt of the paper'],
+};
+const capAr = captionAr ?? defCap[kind][0];
+const capEn = captionEn ?? defCap[kind][1];
+---
+<figure class="dp-cal">
+  <div class="dp-cal__art">
+    {kind === 'nib-angle' && (
+      <svg viewBox="0 0 260 152" role="img" aria-label={capEn}>
+        <defs>
+          <linearGradient id={`${uid}-reed`} x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#e9d9a8" /><stop offset=".5" stop-color="#d8be78" /><stop offset="1" stop-color="#b48f3f" />
+          </linearGradient>
+        </defs>
+        {/* baseline */}
+        <line x1="18" y1="112" x2="246" y2="112" stroke="var(--dp-gold)" stroke-width="2" stroke-dasharray="7 5" />
+        {/* the broad-edge ink stroke the nib lays down */}
+        <line x1="78" y1="112" x2="128" y2="112" stroke="var(--dp-harakat)" stroke-width="7" stroke-linecap="round" opacity=".5" />
+        <g transform={`rotate(${rot} ${tipX} ${tipY})`}>
+          {/* reed body, tapered */}
+          <path d={`M ${tipX - 9} ${tipY - 14} L ${tipX - 7} ${tipY - 98} Q ${tipX} ${tipY - 104} ${tipX + 7} ${tipY - 98} L ${tipX + 9} ${tipY - 14} Z`} fill={`url(#${uid}-reed)`} stroke="#8a6c2e" stroke-width="1" />
+          <line x1={tipX} y1={tipY - 96} x2={tipX} y2={tipY - 18} stroke="#fff" stroke-width="1.4" opacity=".35" />
+          {/* cut nib (ink end) */}
+          <path d={`M ${tipX - 9} ${tipY - 14} L ${tipX + 9} ${tipY - 14} L ${tipX + 10} ${tipY} L ${tipX - 10} ${tipY} Z`} fill="#2c281f" />
+          <line x1={tipX - 10} y1={tipY} x2={tipX + 10} y2={tipY} stroke="var(--dp-gold)" stroke-width="2.5" />
+          <line x1={tipX} y1={tipY - 14} x2={tipX} y2={tipY} stroke="#9a9486" stroke-width="1" />
+        </g>
+        {/* angle arc + label */}
+        <path d={`M 166 112 A 36 36 0 0 0 ${arcEndX} ${arcEndY}`} fill="none" stroke="var(--dp-accent)" stroke-width="2" />
+        <text x="176" y="103" font-size="15" fill="var(--dp-accent)" font-weight="700">{angle}°</text>
+      </svg>
+    )}
+    {kind === 'nib-cut' && (
+      <svg viewBox="0 0 250 120" role="img" aria-label={capEn}>
+        <defs>
+          <linearGradient id={`${uid}-reedh`} x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ecdcab" /><stop offset=".5" stop-color="#d6bb73" /><stop offset="1" stop-color="#a9842f" />
+          </linearGradient>
+        </defs>
+        {/* reed body with node rings */}
+        <rect x="16" y="40" width="150" height="32" rx="16" fill={`url(#${uid}-reedh)`} stroke="#8a6c2e" stroke-width="1.2" />
+        <path d="M 60 41 q 4 15 0 30 M 104 41 q 4 15 0 30" fill="none" stroke="#8a6c2e" stroke-width="1" opacity=".4" />
+        {/* the bevel cut (jalfa) → broad writing edge */}
+        <path d="M 166 40 L 226 52 L 226 60 L 166 72 Z" fill="#2c281f" stroke="#1c1a14" stroke-width="1" />
+        <line x1="226" y1="52" x2="226" y2="60" stroke="var(--dp-gold)" stroke-width="3" />
+        {/* the slit (shaqq) */}
+        <line x1="120" y1="56" x2="224" y2="56" stroke="#0c0b08" stroke-width="1.6" />
+        {/* labels */}
+        <line x1="226" y1="46" x2="240" y2="30" stroke="var(--dp-muted)" stroke-width="1" />
+        <text x="242" y="28" font-size="10.5" fill="var(--dp-gold)" text-anchor="end">سِنّ · edge</text>
+        <text x="150" y="92" font-size="10.5" fill="var(--dp-accent)" text-anchor="middle">الشقّ · slit</text>
+      </svg>
+    )}
+    {kind === 'dot-measure' && (
+      <svg viewBox="0 0 160 200" role="img" aria-label={capEn}>
+        {/* baseline + alif (slightly tapered) */}
+        <line x1="20" y1="178" x2="140" y2="178" stroke="var(--dp-gold)" stroke-width="1.5" stroke-dasharray="6 4" />
+        <path d={`M 41 ${alifTop} q 6 0 6 7 L 46 ${alifBot} q 0 5 -5 5 q -5 0 -5 -5 L 35 ${alifTop + 7} q 0 -7 6 -7 Z`} fill="var(--dp-text)" />
+        {/* nib-dot column (rhombi, corner-to-corner) */}
+        {dotCenters.map((cy) => (
+          <path d={`M 92 ${cy - dh / 2 + 1} L ${92 + dh / 2 - 1} ${cy} L 92 ${cy + dh / 2 - 1} L ${92 - dh / 2 + 1} ${cy} Z`} fill="var(--dp-gold)" stroke="var(--dp-gold-2)" stroke-width=".6" />
+        ))}
+        {/* measurement bracket */}
+        <path d={`M 116 ${alifTop} h 6 V ${alifBot} h -6`} fill="none" stroke="var(--dp-accent)" stroke-width="1.4" />
+        <text x="128" y="104" font-size="13" fill="var(--dp-accent)" font-weight="700" transform="rotate(90 128 104)" text-anchor="middle">{dots}</text>
+      </svg>
+    )}
+    {kind === 'grip' && (
+      <svg viewBox="0 0 240 172" role="img" aria-label={capEn}>
+        <defs>
+          <linearGradient id={`${uid}-reedg`} x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#ecdcab" /><stop offset="1" stop-color="#b48f3f" />
+          </linearGradient>
+        </defs>
+        {/* paper */}
+        <line x1="18" y1="146" x2="222" y2="146" stroke="var(--dp-gold)" stroke-width="2" />
+        {/* qalam */}
+        <g transform="rotate(40 150 146)">
+          <rect x="142" y="40" width="16" height="106" rx="8" fill={`url(#${uid}-reedg)`} stroke="#8a6c2e" stroke-width="1" />
+          <path d="M 142 132 L 158 132 L 160 146 L 140 146 Z" fill="#2c281f" />
+        </g>
+        {/* stylised hand: palm + thumb cradling the pen */}
+        <path d="M 78 70 q 18 -16 40 -6 q 16 8 22 26 q 6 18 -4 34 q -10 14 -30 12 q -22 -2 -34 -22 q -10 -18 6 -34 Z" fill="#f0e2c6" stroke="#c9a85e" stroke-width="1.5" opacity=".92" />
+        {/* finger separations */}
+        <path d="M 96 64 q 6 18 2 40 M 116 62 q 8 18 4 42 M 134 70 q 6 16 0 36" fill="none" stroke="#c9a85e" stroke-width="1.2" opacity=".7" />
+        {/* three contact points on the pen */}
+        <circle cx="100" cy="96" r="9" fill="var(--dp-surface)" stroke="var(--dp-accent)" stroke-width="2" /><text x="100" y="100" font-size="10" fill="var(--dp-accent)" text-anchor="middle">١</text>
+        <circle cx="120" cy="104" r="9" fill="var(--dp-surface)" stroke="var(--dp-accent)" stroke-width="2" /><text x="120" y="108" font-size="10" fill="var(--dp-accent)" text-anchor="middle">٢</text>
+        <circle cx="118" cy="124" r="9" fill="var(--dp-surface)" stroke="var(--dp-accent)" stroke-width="2" /><text x="118" y="128" font-size="10" fill="var(--dp-accent)" text-anchor="middle">٣</text>
+      </svg>
+    )}
+    {kind === 'posture' && (
+      <svg viewBox="0 0 240 172" role="img" aria-label={capEn}>
+        {/* desk */}
+        <line x1="14" y1="134" x2="226" y2="134" stroke="var(--dp-text)" stroke-width="3" />
+        <rect x="120" y="104" width="86" height="58" rx="3" transform="rotate(-12 163 133)" fill="var(--dp-surface)" stroke="var(--dp-border-strong)" stroke-width="1.5" />
+        <line x1="132" y1="116" x2="196" y2="116" stroke="var(--dp-border-strong)" stroke-width="1" transform="rotate(-12 163 133)" opacity=".6" />
+        {/* upright seated figure */}
+        <circle cx="56" cy="48" r="15" fill="var(--dp-surface-2)" stroke="var(--dp-text)" stroke-width="2" />
+        <path d="M 56 63 Q 58 96 60 116" fill="none" stroke="var(--dp-text)" stroke-width="3" stroke-linecap="round" />
+        <path d="M 58 82 Q 96 96 132 116" fill="none" stroke="var(--dp-text)" stroke-width="3" stroke-linecap="round" />
+        <line x1="132" y1="116" x2="152" y2="106" stroke="var(--dp-gold)" stroke-width="4" stroke-linecap="round" />
+        {/* upright spine marker */}
+        <path d="M 44 116 L 44 60" fill="none" stroke="var(--dp-accent)" stroke-width="1.5" stroke-dasharray="4 4" />
+        <text x="40" y="92" font-size="10" fill="var(--dp-accent)" text-anchor="end" transform="rotate(-90 40 92)">ظهر مستقيم</text>
+      </svg>
+    )}
+  </div>
+  <figcaption class="dp-cal__cap">
+    <span data-lang-block="ar">{capAr}</span><span data-lang-block="en">{capEn}</span>
+  </figcaption>
+</figure>

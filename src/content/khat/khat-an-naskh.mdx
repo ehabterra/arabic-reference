@@ -7,6 +7,7 @@ order: 10
 difficulty: "متوسط"
 status: ready
 intent: "تعلّم خصائص خط النسخ وقواعده وأشكال حروفه المفردة والموصولة في مواضعها الأربعة."
+intent_en: "Learn the characteristics and rules of Naskh script and the letter forms — isolated and joined — in their four positions."
 sources:
   - book: "علم نفسك الخطوط العربية"
   - book: "الخط العربي (وزارة التعليم)"
@@ -85,6 +86,7 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+import Calligraphy from '../../components/Calligraphy.astro';
 
 <div data-lang-block="ar">
 
@@ -182,6 +184,8 @@ import Mermaid from '../../components/Mermaid.astro';
 5. **أسنان السين والشين**: ثلاثة أسنان واضحة بمسافات متدرِّجة.
 6. **الحروف الدائرية** (ج، ح، خ، ع، غ): التدوير عميق ومتسق.
 7. **ذيول ما تحت السطر**: تنزل بحرية ولا تتداخل مع السطر التالي.
+
+<Calligraphy kind="nib-angle" angle={45} script="النسخ" scriptEn="Naskh" />
 
 ---
 
@@ -308,6 +312,8 @@ Letters that share a body shape are grouped and taught together:
 5. **Teeth of Sin and Shin**: three clear, graduated teeth — never flattened.
 6. **Round letters** (ج ح خ ع غ): the curve is deep and consistent.
 7. **Descenders** drop freely below the baseline and must not crowd the line below.
+
+<Calligraphy kind="nib-angle" angle={45} script="النسخ" scriptEn="Naskh" />
 
 ---
 

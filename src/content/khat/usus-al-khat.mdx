@@ -7,6 +7,7 @@ order: 1
 difficulty: "مبتدئ"
 status: ready
 intent: "التعرف على أدوات الخط العربي ومسك القلم والجلسة الصحيحة قبل الشروع في تعلّم أي خط."
+intent_en: "Get acquainted with the tools of Arabic calligraphy, the correct pen grip, and the right posture before beginning to learn any script."
 sources:
   - book: "علم نفسك الخطوط العربية"
   - book: "الخط العربي (وزارة التعليم)"
@@ -85,6 +86,7 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+import Calligraphy from '../../components/Calligraphy.astro';
 
 <div data-lang-block="ar">
 
@@ -143,6 +145,8 @@ import Mermaid from '../../components/Mermaid.astro';
 - **ورق الراسمين السميك**: للتدريب بالأقلام العريضة.
 - ضع تحت الورقة **وسادة مرنة خفيفة** لتحسين امتصاص القلم.
 
+<Calligraphy kind="nib-cut" />
+
 ---
 
 ## ثانيًا: مسك القلم
@@ -157,9 +161,15 @@ import Mermaid from '../../components/Mermaid.astro';
 
 > **ملاحظة**: الزاوية تتغير حسب الخط — الفارسي يحتاج ميلًا أقرب إلى الأفق (نحو 10–15 درجة)، والديواني زاويةً مغايرة تمامًا.
 
+<Calligraphy kind="grip" />
+
+<Calligraphy kind="nib-angle" angle={45} script="النسخ والرقعة" scriptEn="Naskh & Ruqʿa" />
+
 ---
 
 ## ثالثًا: الجلسة الصحيحة
+
+<Calligraphy kind="posture" />
 
 | العنصر | الصواب |
 |---|---|
@@ -259,6 +269,8 @@ Calligraphy marker pens come in fixed widths (1 mm, 1.5 mm, 2 mm …) with a fac
 - **Thick cartridge paper**: for practice with wide pens.
 - Place a **soft pad** under the sheet to improve ink absorption.
 
+<Calligraphy kind="nib-cut" />
+
 ---
 
 ## 2. Pen grip
@@ -272,9 +284,15 @@ Correct grip:
 
 > **Note:** The angle changes with the script — Farisi/Nastaliq requires a nearly flat angle (~10–15°), and Diwani uses a completely different orientation.
 
+<Calligraphy kind="grip" />
+
+<Calligraphy kind="nib-angle" angle={45} script="النسخ والرقعة" scriptEn="Naskh & Ruqʿa" />
+
 ---
 
 ## 3. Correct posture
+
+<Calligraphy kind="posture" />
 
 | Element | Correct position |
 |---|---|

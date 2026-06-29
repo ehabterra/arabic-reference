@@ -338,7 +338,7 @@ img { max-width: 100%; }
    ===================================================================== */
 .dp-prose { font-size: 1.1rem; line-height: 2; overflow-wrap: break-word; word-break: break-word; font-family: var(--font-naskh); }
 /* English overlay reads better a touch tighter, left-aligned */
-html[data-lang="en"] [data-lang-block="en"] { font-size: 1.02rem; line-height: 1.75; }
+html[data-lang="en"] [data-lang-block="en"] { line-height: 1.75; }
 .dp-prose > :first-child { margin-top: 0; }
 .dp-prose h2 { font-size: 1.55rem; margin: 2.6rem 0 1rem; padding-bottom: .35rem; border-bottom: 1px solid var(--dp-border); scroll-margin-top: 86px; letter-spacing: -.01em; }
 .dp-prose h3 { font-size: 1.2rem; margin: 1.8rem 0 .7rem; scroll-margin-top: 86px; }
@@ -1060,8 +1060,8 @@ main.dp-container { animation: dp-fade .45s var(--dp-ease) both; }
   --dp-gold:          #9c7c1a;
   --dp-gold-2:        #b8932b;
   --dp-harakat:       #b8392f;
-  --dp-bg:            #f6efe0; /* parchment */
-  --dp-bg-2:          #efe6d3;
+  --dp-bg:            #faf6ec; /* light parchment */
+  --dp-bg-2:          #f3ecde;
   --dp-surface:       #fffdf7;
   --dp-surface-2:     #f4ecdb;
   --dp-surface-3:     #e8dcc4;
@@ -1464,3 +1464,12 @@ html[data-lang="en"] [data-lang-block="en"] { display: revert; }
 html[data-lang="en"] [data-lang-block="en"] .dp-prose,
 html[data-lang="en"] [data-lang-block="en"] { text-align: left; }
 .dp-langnote { color: var(--dp-muted); font-style: italic; font-size: .9rem; }
+
+/* ⌘K search: level pill on each result */
+.dp-cmdk__level { display: inline-block; margin-inline-start: .5em; font-size: .66rem; font-weight: 600; font-family: var(--font-sans); color: var(--dp-gold); border: 1px solid var(--dp-border-strong); border-radius: 999px; padding: 0 .5em; vertical-align: middle; }
+
+/* Calligraphy technique diagrams */
+.dp-cal { display: grid; place-items: center; gap: .55rem; margin: 1.3rem auto; padding: 1.1rem 1rem .9rem; border: 1px solid var(--dp-border); border-radius: 14px; background: var(--dp-surface); max-width: 380px; }
+.dp-cal__art { width: 100%; display: grid; place-items: center; }
+.dp-cal__art svg { width: 100%; max-width: 300px; height: auto; }
+.dp-cal__cap { font-size: .82rem; color: var(--dp-muted); font-family: var(--font-sans); text-align: center; }
