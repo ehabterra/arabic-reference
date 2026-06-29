@@ -1,6 +1,6 @@
 ---
-interface QuizOption { text: string; correct: boolean; }
-interface QuizItem { q: string; options: QuizOption[]; explain?: string; }
+interface QuizOption { text: string; text_en?: string; correct: boolean; }
+interface QuizItem { q: string; q_en?: string; options: QuizOption[]; explain?: string; explain_en?: string; }
 const { quiz } = Astro.props as { quiz: QuizItem[] };
 ---
 <div class="dp-quiz" data-dp-quiz>
@@ -18,15 +18,20 @@ const { quiz } = Astro.props as { quiz: QuizItem[] };
     <div class="dp-q">
       <p class="dp-q__prompt">
         {i + 1}.
-        <span>{q.q}</span>
+        <span data-lang-block="ar">{q.q}</span>
+        <span data-lang-block="en">{q.q_en ?? q.q}</span>
       </p>
       {q.options.map((o) => (
         <button class="dp-opt" data-correct={o.correct ? 'true' : 'false'}>
-          <span>{o.text}</span>
+          <span data-lang-block="ar">{o.text}</span>
+          <span data-lang-block="en">{o.text_en ?? o.text}</span>
         </button>
       ))}
-      {q.explain && (
-        <p class="dp-q__explain"><span>{q.explain}</span></p>
+      {(q.explain || q.explain_en) && (
+        <p class="dp-q__explain">
+          <span data-lang-block="ar">{q.explain}</span>
+          <span data-lang-block="en">{q.explain_en ?? q.explain}</span>
+        </p>
       )}
     </div>
   ))}
