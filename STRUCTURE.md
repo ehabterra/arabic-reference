@@ -114,8 +114,10 @@ src/pages/
 
 ## Notes
 
-- `node_modules` is a symlink to `/Users/ehab/Documents/go-reference/node_modules`
-  to save disk space. Run `pnpm install` inside this directory if you need to
-  install independently.
+- `node_modules` must be a **real local install** (`pnpm install`), not a symlink.
+  It was previously symlinked to `/Users/ehab/Documents/go-reference/node_modules`
+  to save disk space, but that made `pnpm dev` serve assets through a path Vite
+  rejected with **HTTP 403**. If dev 403s on assets, confirm `node_modules` is a
+  directory, not a symlink.
 - The Cloudflare adapter, API routes, and Mermaid/playground infra are all
   inherited unchanged from go-reference and work identically.

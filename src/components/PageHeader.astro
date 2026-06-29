@@ -12,7 +12,12 @@ const eyebrow =
 <header class="dp-hero">
   <p class="dp-hero__eyebrow">{eyebrow}{d.difficulty ? ` · ${d.difficulty}` : ''}</p>
   <h1><span data-lang-block="ar">{d.title}</span><span data-lang-block="en">{d.title_en ?? d.title}</span></h1>
-  {d.intent && <p class="dp-hero__lede" data-i18n-html={`intent.${slug}`}>{d.intent}</p>}
+  {d.intent && (
+    <p class="dp-hero__lede">
+      <span data-lang-block="ar">{d.intent}</span>
+      <span data-lang-block="en">{d.intent_en ?? d.intent}</span>
+    </p>
+  )}
   {d.aka && (
     <p class="dp-kicker" style="margin-top:.9rem">
       <span data-lang-block="ar">يُعرف أيضاً بـ — {d.aka}</span>

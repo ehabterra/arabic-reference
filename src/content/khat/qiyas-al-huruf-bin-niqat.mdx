@@ -7,6 +7,7 @@ order: 2
 difficulty: "مبتدئ"
 status: ready
 intent: "فهم نظام النقاط كوحدة قياس في الخط العربي وكيفية تحديد ارتفاعات الحروف وأبعادها."
+intent_en: "Understand the dot system as the unit of measurement in Arabic calligraphy and how to determine letter heights and proportions."
 sources:
   - book: "علم نفسك الخطوط العربية"
   - book: "الخط العربي (وزارة التعليم)"
@@ -85,6 +86,7 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+import Calligraphy from '../../components/Calligraphy.astro';
 
 <div data-lang-block="ar">
 
@@ -118,6 +120,8 @@ import Mermaid from '../../components/Mermaid.astro';
 ```
 
 هذا يعني أن **ألف النسخ** ارتفاعه **~4 نقاط** فوق خط السطر [يُتحقَّق بصريًّا].
+
+<Calligraphy kind="dot-measure" dots={5} />
 
 ---
 
@@ -217,6 +221,8 @@ Imagine your pen nib leaving a square stamp ◆ with each press. Here is how Ali
 ```
 
 This means **Alif in Naskh** is approximately **4 dots** tall above the baseline (verified visually against models).
+
+<Calligraphy kind="dot-measure" dots={5} />
 
 ---
 

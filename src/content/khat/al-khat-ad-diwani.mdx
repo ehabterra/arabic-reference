@@ -7,6 +7,7 @@ order: 31
 difficulty: "متقدّم"
 status: ready
 intent: "التعرف على الخط الديواني وأصله العثماني وخصائصه البصرية الفريدة وفرعه الجلي."
+intent_en: "Get acquainted with Diwani script, its Ottoman origins, its unique visual characteristics, and its Jali variant."
 sources:
   - book: "علم نفسك الخطوط العربية"
   - book: "الخط العربي (وزارة التعليم)"
@@ -85,6 +86,7 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+import Calligraphy from '../../components/Calligraphy.astro';
 
 <div data-lang-block="ar">
 
@@ -140,6 +142,8 @@ import Mermaid from '../../components/Mermaid.astro';
 | **الديواني** | **~100–110 درجة [يُتحقَّق بصريًّا]** |
 
 الزاوية الكبيرة جدًّا تُنتج تبايناً مغايرًا للخطوط الأخرى تمامًا — التخين والتنحيف يأتيان من اتجاه مختلف.
+
+<Calligraphy kind="nib-angle" angle={105} script="الديواني" scriptEn="Diwani" />
 
 ### 3. الدورانات والتقوسات
 
@@ -256,6 +260,8 @@ This undulation gives Diwani a kinetic quality found in no other script.
 | **Diwani** | **~100–110° (verified visually)** |
 
 The very high angle produces a thick-thin contrast unlike any other script — weight falls in unfamiliar directions.
+
+<Calligraphy kind="nib-angle" angle={105} script="الديواني" scriptEn="Diwani" />
 
 ### 3. Curves and loops
 

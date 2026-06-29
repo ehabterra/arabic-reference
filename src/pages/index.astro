@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { TRACKS, SITE_DESC } from '../lib/consts';
+import { TRACKS, SITE_DESC, SITE_DESC_EN } from '../lib/consts';
 
 const qiraa = await getCollection('qiraa');
 const nahw = await getCollection('nahw');
@@ -46,7 +46,10 @@ const trackIcons: Record<string, string> = {
   <header class="dp-hero">
     <p class="dp-hero__eyebrow" data-i18n="home.eyebrow">مرجع تفاعلي للغة العربية</p>
     <h1 data-i18n="home.h1">المرجع العربي</h1>
-    <p class="dp-hero__lede">{SITE_DESC}</p>
+    <p class="dp-hero__lede">
+      <span data-lang-block="ar">{SITE_DESC}</span>
+      <span data-lang-block="en">{SITE_DESC_EN}</span>
+    </p>
   </header>
 
   <section class="dp-resume" data-dp-resume hidden>

@@ -20,13 +20,13 @@ const tajwid = await getCollection('tajwid');
 const khat = await getCollection('khat');
 const quranArabic = await getCollection('quranArabic');
 const searchIndex = [
-  ...qiraa.map((p) => ({ t: p.data.title, u: `/qiraa/${p.id}/`, c: p.data.category, s: 'القراءة والكتابة', i: p.data.intent, d: p.data.difficulty })),
-  ...nahw.map((p) => ({ t: p.data.title, u: `/nahw/${p.id}/`, c: p.data.category, s: 'النحو', i: p.data.intent, d: p.data.difficulty })),
-  ...sarf.map((p) => ({ t: p.data.title, u: `/sarf/${p.id}/`, c: p.data.category, s: 'الصرف', i: p.data.intent, d: p.data.difficulty })),
-  ...balagha.map((p) => ({ t: p.data.title, u: `/balagha/${p.id}/`, c: p.data.category, s: 'البلاغة', i: p.data.intent, d: p.data.difficulty })),
-  ...tajwid.map((p) => ({ t: p.data.title, u: `/tajwid/${p.id}/`, c: p.data.category, s: 'التجويد', i: p.data.intent, d: p.data.difficulty })),
-  ...khat.map((p) => ({ t: p.data.title, u: `/khat/${p.id}/`, c: p.data.category, s: 'الخط العربي', i: p.data.intent, d: p.data.difficulty })),
-  ...quranArabic.map((p) => ({ t: p.data.title, u: `/arabic-via-quran/${p.id}/`, c: p.data.category, s: 'العربية عبر القرآن', i: p.data.intent, d: p.data.difficulty })),
+  ...qiraa.map((p) => ({ t: p.data.title, te: p.data.title_en, u:`/qiraa/${p.id}/`, c: p.data.category, s: 'القراءة والكتابة', i: p.data.intent, d: p.data.difficulty })),
+  ...nahw.map((p) => ({ t: p.data.title, te: p.data.title_en, u:`/nahw/${p.id}/`, c: p.data.category, s: 'النحو', i: p.data.intent, d: p.data.difficulty })),
+  ...sarf.map((p) => ({ t: p.data.title, te: p.data.title_en, u:`/sarf/${p.id}/`, c: p.data.category, s: 'الصرف', i: p.data.intent, d: p.data.difficulty })),
+  ...balagha.map((p) => ({ t: p.data.title, te: p.data.title_en, u:`/balagha/${p.id}/`, c: p.data.category, s: 'البلاغة', i: p.data.intent, d: p.data.difficulty })),
+  ...tajwid.map((p) => ({ t: p.data.title, te: p.data.title_en, u:`/tajwid/${p.id}/`, c: p.data.category, s: 'التجويد', i: p.data.intent, d: p.data.difficulty })),
+  ...khat.map((p) => ({ t: p.data.title, te: p.data.title_en, u:`/khat/${p.id}/`, c: p.data.category, s: 'الخط العربي', i: p.data.intent, d: p.data.difficulty })),
+  ...quranArabic.map((p) => ({ t: p.data.title, te: p.data.title_en, u:`/arabic-via-quran/${p.id}/`, c: p.data.category, s: 'العربية عبر القرآن', i: p.data.intent, d: p.data.difficulty })),
 ];
 ---
 <!doctype html>

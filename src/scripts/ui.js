@@ -84,13 +84,20 @@ function initCopy() {
 
 /* ---------- command palette (⌘K) ---------- */
 const CAT_COLOR = {
-  foundations: '#f472b6', creational: '#34d399', structural: '#a78bfa', behavioral: '#fbbf24',
-  concurrency: '#22d3ee', stdlib: '#60a5fa', practice: '#fb7185',
-  'building-blocks': '#2dd4bf', coordination: '#fb923c', runtime: '#818cf8',
-  complexity: '#f59e0b', linear: '#22c55e', 'trees-graphs': '#8b5cf6', algorithms: '#ec4899',
-  basics: '#38bdf8', composite: '#14b8a6', 'types-methods': '#d946ef', idioms: '#f43f5e',
-  essentials: '#84cc16', system: '#f97316', testing: '#a855f7', tooling: '#0891b2',
-  'net-basics': '#2563eb', http: '#16a34a', apis: '#db2777', data: '#ca8a04',
+  // qiraa
+  huruf: '#34b3a0', harakat: '#34b3a0', tarkib: '#34b3a0',
+  // nahw
+  kalam: '#d8b24a', marfuaat: '#d8b24a', mansubat: '#d8b24a', majrurat: '#d8b24a', tawabi: '#d8b24a', asalib: '#d8b24a',
+  // sarf
+  mizan: '#5cb869', afaal: '#5cb869', mushtaqqat: '#5cb869',
+  // balagha
+  maani: '#b083d9', bayan: '#b083d9', badi: '#b083d9', balaghaq: '#b083d9',
+  // tajwid
+  makharij: '#e2776c', ahkam: '#e2776c', tilawa: '#e2776c',
+  // khat
+  usus: '#cf9a59', naskh: '#cf9a59', ruqaa: '#cf9a59', khutut_okhra: '#cf9a59',
+  // quran-arabic
+  mustawa1: '#4ea7cb', mustawa2: '#4ea7cb', mustawa3: '#4ea7cb', qiraaq: '#4ea7cb', alfaz: '#4ea7cb',
 };
 
 function fuzzyScore(q, item) {
@@ -102,6 +109,7 @@ function fuzzyScore(q, item) {
   let qi = 0;
   for (let i = 0; i < t.length && qi < q.length; i++) if (t[i] === q[qi]) qi++;
   if (qi === q.length) return 400;
+  if ((item.te || '').toLowerCase().includes(q)) return 380; // English title
   if ((item.i || '').toLowerCase().includes(q)) return 200;
   if (item.c.includes(q) || item.s.toLowerCase().includes(q)) return 100;
   return 0;
@@ -152,7 +160,7 @@ function initSearch() {
   const filtersEl = document.getElementById('dp-cmdk-filters');
   const activeTracks = new Set();
   const activeLevels = new Set();
-  const LEVEL_ORDER = ['Start here', 'Beginner', 'Intermediate', 'Advanced', 'Reference'];
+  const LEVEL_ORDER = ['ابدأ هنا', 'مبتدئ', 'متوسط', 'متقدّم', 'مرجع'];
   // distinct tracks (in first-seen order) and levels (in a sensible difficulty order)
   const tracks = [...new Set(data.map((x) => x.s).filter(Boolean))];
   const levels = LEVEL_ORDER.filter((l) => data.some((x) => x.d === l));
@@ -178,15 +186,17 @@ function initSearch() {
       list.innerHTML = '<li class=”dp-cmdk__empty”>لا نتائج — جرّب كلمات من المحتوى…</li>';
       return;
     }
+    const en = document.documentElement.dataset.lang === 'en';
     list.innerHTML = results.map((r, i) => {
-      const color = CAT_COLOR[r.c] || '#93a1b5';
+      const color = CAT_COLOR[r.c] || 'var(--dp-accent)';
       const cat = (r.c || '').replace(/-/g, ' ');
-      // Content (section) hits show the heading + a marked excerpt; page hits
-      // keep the original section · level subtitle.
-      const sub = r.h ? `${r.s} › ${escapeHtml(r.h)}` : `${r.s}${r.d ? ' · ' + r.d : ''}`;
+      const title = en && r.te ? r.te : r.t;
+      const level = r.d ? `<span class="dp-cmdk__level">${escapeHtml(r.d)}</span>` : '';
+      // Content (section) hits show the heading; page hits show the section.
+      const sub = r.h ? `${r.s} › ${escapeHtml(r.h)}` : r.s;
       return `<li class="dp-cmdk__item ${i === active ? 'is-active' : ''}" data-i="${i}" data-u="${r.u}">
         <div class="dp-cmdk__item-main">
-          <div class="dp-cmdk__item-title">${r.t}</div>
+          <div class="dp-cmdk__item-title">${escapeHtml(title)}${level}</div>
           <div class="dp-cmdk__item-sub">${sub}</div>
           ${r.snip ? `<div class="dp-cmdk__item-snip">${r.snip}</div>` : ''}
         </div>

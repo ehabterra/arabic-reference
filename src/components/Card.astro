@@ -5,6 +5,7 @@ interface Props {
   title: string;
   title_en?: string;
   intent: string;
+  intent_en?: string;
   order?: number;
   difficulty?: string;
   status?: string;
@@ -13,7 +14,7 @@ interface Props {
   base?: string;
   minutes?: number;
 }
-const { slug, category, title, title_en, intent, order, difficulty, status, numLabel, footLabel, base = '/patterns', minutes } = Astro.props;
+const { slug, category, title, title_en, intent, intent_en, order, difficulty, status, numLabel, footLabel, base = '/patterns', minutes } = Astro.props;
 ---
 <a class="dp-card" data-cat={category} data-slug={slug} href={`${base}/${slug}/`}>
   <span class="dp-card__num">{numLabel ?? `${order} · ${difficulty}`}</span>
@@ -21,7 +22,10 @@ const { slug, category, title, title_en, intent, order, difficulty, status, numL
     <span data-lang-block="ar">{title}</span>
     <span data-lang-block="en">{title_en ?? title}</span>
   </span>
-  <p class="dp-card__intent" data-i18n-html={`intent.${slug}`}>{intent}</p>
+  <p class="dp-card__intent">
+    <span data-lang-block="ar">{intent}</span>
+    <span data-lang-block="en">{intent_en ?? intent}</span>
+  </p>
   <span class="dp-card__foot">
     <span>
       {footLabel ?? (

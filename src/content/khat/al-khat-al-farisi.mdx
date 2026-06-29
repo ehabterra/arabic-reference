@@ -7,6 +7,7 @@ order: 30
 difficulty: "متقدّم"
 status: ready
 intent: "التعرف على الخط الفارسي وفروعه (التعليق والنستعليق) وخصائصه الجمالية الفريدة التي تميّزه عن النسخ."
+intent_en: "Get acquainted with Farisi script, its branches (Taʿliq and Nastaliq), and the unique aesthetic characteristics that distinguish it from Naskh."
 sources:
   - book: "علم نفسك الخطوط العربية"
   - book: "الخط العربي (وزارة التعليم)"
@@ -85,6 +86,7 @@ quiz:
 ---
 
 import Mermaid from '../../components/Mermaid.astro';
+import Calligraphy from '../../components/Calligraphy.astro';
 
 <div data-lang-block="ar">
 
@@ -135,6 +137,8 @@ import Mermaid from '../../components/Mermaid.astro';
 | **الفارسي / النستعليق** | **~10–15 درجة** |
 
 الزاوية المنخفضة تُنتج تبايناً مختلفًا تمامًا: التخين والتنحيف في الفارسي يأتيان من اتجاه مغاير للنسخ.
+
+<Calligraphy kind="nib-angle" angle={12} script="الفارسي" scriptEn="Farisi/Nastaliq" />
 
 ### 3. النقاط
 
@@ -246,6 +250,8 @@ Alif, Lam, and Kaf all lean left in Farisi — the single most visible differenc
 | **Farisi / Nastaliq** | **~10–15°** |
 
 The very low angle produces a completely different thick-thin contrast: the weight falls in directions opposite to Naskh.
+
+<Calligraphy kind="nib-angle" angle={12} script="الفارسي" scriptEn="Farisi/Nastaliq" />
 
 ### 3. Dot shape
 

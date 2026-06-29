@@ -48,6 +48,7 @@ const refSchema = z.object({
   gof: z.boolean().default(false),
   status: z.enum(['stub', 'ready']).default('stub'),
   intent: z.string(),
+  intent_en: z.string().optional(),
   nutshell: z.string().optional(),
   aka: z.string().optional(),
   source: z.string().optional(),
