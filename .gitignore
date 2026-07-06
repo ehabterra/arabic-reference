@@ -19,6 +19,9 @@ yarn-error.log*
 # macOS
 .DS_Store
 
+# downloaded by scripts/generate-audio.sh, not committed
+scripts/tts/ar.ref.24k.wav
+
 .idea
 
 books
@@ -26,3 +29,6 @@ books
 BLUEPRINT.md
 # the local dev symlink to the sibling repo's deps
 node_modules
+
+__pycache__
+*.pyc

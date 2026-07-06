@@ -5,3 +5,11 @@
 # time download for mermaid, prism, react and every other chunk.
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
+
+# Pronunciation clips are named by a hash of their *text* (not their bytes), so
+# a re-recorded phrase keeps its filename — cache for a week, not forever. The
+# manifest gains keys as new clips land, so it revalidates daily.
+/audio/*
+  Cache-Control: public, max-age=604800
+/audio/manifest.json
+  Cache-Control: public, max-age=86400
