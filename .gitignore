@@ -29,3 +29,5 @@ books
 BLUEPRINT.md
 # the local dev symlink to the sibling repo's deps
 node_modules
+
+__pycahce__
