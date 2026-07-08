@@ -96,5 +96,9 @@
   "pageheader.aka": "Also known as —",
   "cmdk.navigate": "navigate",
   "cmdk.open": "open",
-  "cmdk.close": "close"
+  "cmdk.close": "close",
+  "notice.title": "Heads up —",
+  "notice.body": "This reference is a work in progress and has not yet been reviewed by professional scholars. The content is AI-summarized from real, trusted source material. It's open source — help improve it, or tell us about anything that looks off.",
+  "notice.contribute": "Contribute",
+  "notice.report": "Report an issue"
 }

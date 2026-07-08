@@ -1,0 +1,59 @@
+name: "🐞 خلل في الموقع · Website bug"
+description: "شيء لا يعمل: زر، عرض، صوت، تنقّل… · Something broken: a button, layout, audio, navigation…"
+title: "[خلل] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        هذا لمشاكل *الموقع نفسه* (لا لأخطاء المحتوى — لذلك استخدم قالب «تصحيح محتوى»).
+        This is for problems with *the site itself* (for content mistakes, use the “Content correction” template instead).
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: "ماذا حدث؟ · What happened?"
+      description: "صِف المشكلة في جملة أو جملتين. · Describe the problem in a sentence or two."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: "كيف نُعيد الخطأ؟ · How to reproduce"
+      description: "خطوات بسيطة نتبعها لنرى المشكلة. · Simple steps we can follow to see it."
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: input
+    id: expected
+    attributes:
+      label: "ماذا توقّعت أن يحدث؟ · What did you expect?"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: device
+    attributes:
+      label: "الجهاز والمتصفّح · Device & browser"
+      options:
+        - "هاتف iPhone / iPad — Safari"
+        - "هاتف Android — Chrome"
+        - "حاسوب — Chrome"
+        - "حاسوب — Safari"
+        - "حاسوب — Firefox"
+        - "أخرى · Other (اذكرها في الوصف)"
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: "لقطة شاشة · Screenshot (optional)"
+      description: "اسحب صورة إلى هنا إن ساعدت. · Drag an image here if it helps."
+    validations:
+      required: false
