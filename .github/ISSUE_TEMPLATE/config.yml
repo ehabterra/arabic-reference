@@ -1,0 +1,6 @@
+# Force people through a template so every issue is descriptive from the start.
+blank_issues_enabled: false
+contact_links:
+  - name: سؤال أو نقاش · Question or discussion
+    url: https://github.com/ehabterra/arabic-reference/discussions
+    about: للأسئلة العامة والنقاش — For general questions and conversation, not a specific problem.

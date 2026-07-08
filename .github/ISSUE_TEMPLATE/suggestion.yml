@@ -1,0 +1,42 @@
+name: "💡 اقتراح · Suggestion"
+description: "درس جديد، تحسين، أو فكرة ميزة · A new lesson, an improvement, or a feature idea"
+title: "[اقتراح] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        كل فكرة تُثري المرجع. اكتبها ببساطة — سطر واحد يكفي أحيانًا.
+        Every idea makes the reference better. Keep it simple — one line is often enough.
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: "ما اقتراحك؟ · What is your idea?"
+      description: "صِف الإضافة أو التحسين. · Describe the addition or improvement."
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: "لماذا يفيد المتعلّم؟ · Why would it help learners?"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: track
+    attributes:
+      label: "المسار · Track"
+      description: "أي علمٍ يخصّه اقتراحك؟ · Which science does it relate to?"
+      options:
+        - "القراءة والكتابة · Reading & writing (qiraa)"
+        - "النحو · Grammar (nahw)"
+        - "الصرف · Morphology (sarf)"
+        - "البلاغة · Rhetoric (balagha)"
+        - "التجويد · Tajwid"
+        - "الخط العربي · Calligraphy (khat)"
+        - "العربية عبر القرآن · Arabic via Qur'an"
+        - "الموقع عمومًا · The site in general"
+    validations:
+      required: false
