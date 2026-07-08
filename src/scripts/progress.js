@@ -387,8 +387,9 @@ function initTheme() {
     if (light) root.dataset.theme = 'light';
     else delete root.dataset.theme;
     try {
-      if (light) localStorage.setItem('dp-theme', 'light');
-      else localStorage.removeItem('dp-theme');
+      // light is the default; persist the explicit choice either way so a dark
+      // pick survives reloads (an absent key now means light, not dark)
+      localStorage.setItem('dp-theme', light ? 'light' : 'dark');
     } catch {}
     render();
     applyGiscusTheme(light);
