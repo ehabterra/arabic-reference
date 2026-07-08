@@ -94,14 +94,17 @@ export const POST: APIRoute = async ({ request, locals }) => {
 
   try {
     await ensureSchema(db);
-    await db
+    // RETURNING hands back the updated count in the same round-trip, so we
+    // don't need a follow-up read (and there's no write/read race window).
+    const row = await db
       .prepare(
         `INSERT INTO page_views (page, count) VALUES (?1, 1)
-         ON CONFLICT(page) DO UPDATE SET count = count + 1, updated_at = datetime('now')`
+         ON CONFLICT(page) DO UPDATE SET count = count + 1, updated_at = datetime('now')
+         RETURNING count`
       )
       .bind(page)
-      .run();
-    return json({ count: await count(db, page) });
+      .first<{ count: number }>();
+    return json({ count: row?.count ?? 0 });
   } catch {
     return json({ error: 'Storage unavailable.' }, 503);
   }

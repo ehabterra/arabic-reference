@@ -26,7 +26,9 @@ function initViews() {
   req
     .then((r) => (r.ok ? r.json() : null))
     .then((data) => {
-      if (!counted) { try { sessionStorage.setItem(sessionKey, '1'); } catch {} }
+      // only mark this session "counted" once the request actually succeeded,
+      // so a transient failure (e.g. 503) still gets retried on the next visit
+      if (!counted && data) { try { sessionStorage.setItem(sessionKey, '1'); } catch {} }
       const n = data && typeof data.count === 'number' ? data.count : null;
       if (n == null || !numEl) return;
       numEl.textContent = n.toLocaleString(document.documentElement.lang || undefined);
