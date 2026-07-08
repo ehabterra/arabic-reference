@@ -805,6 +805,13 @@ main.dp-container { animation: dp-fade .45s var(--dp-ease) both; }
    the sidebar stacks to the page bottom, so the dock floats instead — pinned
    bottom-left to clear the bottom-right nudge toast. */
 .dp-like-dock { margin: .8rem 0; }
+/* per-page view counter (sidebar) */
+.dp-views {
+  display: flex; align-items: center; gap: .4rem;
+  margin: 0 0 .8rem; font-size: .82rem; color: var(--dp-muted);
+}
+.dp-views__icon { flex: none; opacity: .8; }
+.dp-views strong { color: var(--dp-text); font-weight: 700; font-variant-numeric: tabular-nums; }
 @media (max-width: 1039px) {
   .dp-like-dock {
     position: fixed; bottom: 1rem; inset-inline-start: 1rem; z-index: 80; margin: 0;

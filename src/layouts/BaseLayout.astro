@@ -10,6 +10,9 @@ import en from '../i18n/en.json';
 interface Props { title?: string; description?: string; }
 const { title, description } = Astro.props;
 const pageTitle = title ? `${title} · ${SITE_TITLE}` : SITE_TITLE;
+// Cloudflare Web Analytics: privacy-first, cookieless. The beacon only renders
+// when PUBLIC_CF_BEACON_TOKEN is set at build time, so the repo ships no token.
+const cfBeacon = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
 const desc = description ?? SITE_DESC;
 
 // Build a lightweight search index for the ⌘K command palette.
@@ -97,6 +100,16 @@ const searchIndex = [
       import '../scripts/ui.js';
       import '../scripts/highlights.js';
       import '../scripts/speak.js';
+      import '../scripts/views.js';
     </script>
+
+    {cfBeacon && (
+      <script
+        is:inline
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon={JSON.stringify({ token: cfBeacon })}
+      ></script>
+    )}
   </body>
 </html>
