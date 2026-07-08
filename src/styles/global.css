@@ -129,6 +129,56 @@ img { max-width: 100%; }
 .dp-footer { border-top: 1px solid var(--dp-border); margin-top: 4rem; padding: 2rem 0; color: var(--dp-muted); font-size: .9rem; }
 .dp-footer__inner { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center; }
 
+/* ---- disclaimer / contribution banner (illumination gold) ---- */
+.dp-notice {
+  position: relative;
+  border-bottom: 1px solid color-mix(in oklab, var(--dp-gold) 30%, var(--dp-border));
+  background:
+    linear-gradient(90deg,
+      color-mix(in oklab, var(--dp-gold) 12%, transparent),
+      color-mix(in oklab, var(--dp-accent) 8%, transparent));
+}
+html[data-notice="off"] .dp-notice { display: none; }
+.dp-notice__inner {
+  display: flex; align-items: center; gap: .85rem;
+  padding: .7rem 1.25rem; font-size: .88rem; line-height: 1.5;
+}
+.dp-notice__spark {
+  flex: none; display: grid; place-items: center;
+  width: 34px; height: 34px; border-radius: 10px;
+  color: #00140f;
+  background: linear-gradient(135deg, var(--dp-gold-2), var(--dp-gold));
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--dp-gold) 40%, transparent), var(--dp-shadow-sm);
+}
+.dp-notice__text { margin: 0; color: var(--dp-text); flex: 1 1 auto; min-width: 12rem; }
+.dp-notice__text strong { color: var(--dp-gold-2); font-weight: 800; }
+.dp-notice__actions { flex: none; display: flex; flex-wrap: wrap; gap: .5rem; }
+.dp-notice__cta {
+  display: inline-flex; align-items: center; white-space: nowrap;
+  padding: .4rem .85rem; border-radius: 999px; font-weight: 700; font-size: .82rem;
+  color: #00140f; background: linear-gradient(92deg, var(--dp-gold-2), var(--dp-gold));
+  border: 1px solid transparent; transition: transform .15s var(--dp-ease), box-shadow .2s;
+}
+.dp-notice__cta:hover { color: #00140f; transform: translateY(-1px); box-shadow: var(--dp-shadow-sm); }
+.dp-notice__cta--ghost {
+  color: var(--dp-gold-2); background: transparent;
+  border-color: color-mix(in oklab, var(--dp-gold) 45%, var(--dp-border));
+}
+.dp-notice__cta--ghost:hover { color: var(--dp-gold-2); background: color-mix(in oklab, var(--dp-gold) 14%, transparent); }
+.dp-notice__close {
+  flex: none; display: grid; place-items: center; cursor: pointer;
+  width: 30px; height: 30px; border-radius: 8px;
+  background: none; border: 1px solid transparent; color: var(--dp-muted);
+  transition: color .15s, background .15s, border-color .15s;
+}
+.dp-notice__close:hover { color: var(--dp-text); background: color-mix(in oklab, var(--dp-gold) 12%, transparent); border-color: var(--dp-border); }
+@media (max-width: 720px) {
+  .dp-notice__inner { flex-wrap: wrap; gap: .6rem .75rem; padding: .65rem 1.1rem; }
+  .dp-notice__text { flex-basis: 100%; order: 3; }
+  .dp-notice__actions { order: 4; }
+  .dp-notice__close { order: 2; margin-inline-start: auto; }
+}
+
 /* =====================================================================
    Buttons / badges
    ===================================================================== */

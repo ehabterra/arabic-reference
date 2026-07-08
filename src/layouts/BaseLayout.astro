@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Nav from '../components/Nav.astro';
+import Notice from '../components/Notice.astro';
 import Footer from '../components/Footer.astro';
 import { getCollection } from 'astro:content';
 import { SITE_TITLE, SITE_DESC } from '../lib/consts';
@@ -42,6 +43,8 @@ const searchIndex = [
           }
           // before first paint, so light-theme users never flash dark
           if (localStorage.getItem('dp-theme') === 'light') d.dataset.theme = 'light';
+          // hide the disclaimer banner pre-paint if the reader dismissed it
+          if (localStorage.getItem('dp-notice-dismissed') === '1') d.dataset.notice = 'off';
         } catch (e) {}
       })();
     </script>
@@ -65,6 +68,7 @@ const searchIndex = [
   <body>
     <div class="dp-readbar" id="dp-readbar"></div>
     <Nav />
+    <Notice />
     <main class="dp-container">
       <slot />
     </main>

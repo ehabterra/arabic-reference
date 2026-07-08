@@ -460,8 +460,19 @@ function initSearchHighlight() {
   document.addEventListener('keydown', onKey);
 }
 
+/* ── Disclaimer banner: remember dismissal in localStorage ────────────── */
+function initNotice() {
+  const btn = document.getElementById('dp-notice-close');
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    document.documentElement.dataset.notice = 'off';
+    try { localStorage.setItem('dp-notice-dismissed', '1'); } catch {}
+  });
+}
+
 function boot() {
   initLang();
+  initNotice();
   markExternalLinks();
   initQuizShuffle();
   initScroll();
