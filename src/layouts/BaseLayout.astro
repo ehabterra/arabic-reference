@@ -31,7 +31,7 @@ const searchIndex = [
 ];
 ---
 <!doctype html>
-<html lang="ar" data-lang="ar" dir="rtl">
+<html lang="ar" data-lang="ar" dir="rtl" data-theme="light">
   <head>
     <script is:inline>
       (function () {
@@ -41,8 +41,9 @@ const searchIndex = [
             d.dataset.lang = 'en';
             d.dir = 'ltr';
           }
-          // before first paint, so light-theme users never flash dark
-          if (localStorage.getItem('dp-theme') === 'light') d.dataset.theme = 'light';
+          // light is the default (data-theme="light" ships in the markup); dark is
+          // opt-in, so only explicit dark users drop the attr before first paint
+          if (localStorage.getItem('dp-theme') === 'dark') d.removeAttribute('data-theme');
           // hide the disclaimer banner pre-paint if the reader dismissed it
           if (localStorage.getItem('dp-notice-dismissed') === '1') d.dataset.notice = 'off';
         } catch (e) {}
@@ -57,7 +58,7 @@ const searchIndex = [
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={desc} />
     <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#080b12" />
+    <meta name="theme-color" content="#faf6ec" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
