@@ -1,0 +1,57 @@
+name: "📝 تصحيح محتوى · Content correction"
+description: "خطأ لغوي أو علمي في درس · A linguistic or factual mistake in a lesson"
+title: "[محتوى] "
+labels: ["content", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        شكرًا لمساعدتك في تحسين المرجع! هذا المحتوى مُلخَّص بمساعدة الذكاء الاصطناعي، فملاحظتك ثمينة.
+        Thanks for helping improve the reference! The content is AI-summarized, so your correction is valuable.
+        **من فضلك املأ الحقول التالية بإيجاز — لا حاجة لإطالة. · Please fill the fields briefly — no need to write a lot.**
+
+  - type: input
+    id: page
+    attributes:
+      label: "الدرس أو الصفحة · Lesson or page"
+      description: "الصقْ رابط الصفحة، أو اكتب عنوان الدرس والقسم. · Paste the page URL, or the lesson + section title."
+      placeholder: "https://…/nahw/aqsam-al-kalam/  ·  «أقسام الكلام» — قسم التعريف"
+    validations:
+      required: true
+
+  - type: textarea
+    id: whats-wrong
+    attributes:
+      label: "ما الخطأ؟ · What is wrong?"
+      description: "انسخ الجملة أو العبارة الخاطئة كما هي. · Copy the exact sentence or phrase that is wrong."
+    validations:
+      required: true
+
+  - type: textarea
+    id: correction
+    attributes:
+      label: "ما الصواب؟ · What should it say?"
+      description: "اكتب التصحيح المقترح. · Write the correction you suggest."
+    validations:
+      required: true
+
+  - type: textarea
+    id: source
+    attributes:
+      label: "المصدر · Source (optional)"
+      description: "إن أمكن، اذكر مرجعًا موثوقًا يؤكد التصحيح (كتاب + صفحة). · If you can, cite a trusted reference (book + page)."
+      placeholder: "شرح ابن عقيل، ج١ ص٤٥"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: language
+    attributes:
+      label: "لغة العرض · Display language"
+      description: "في أي وضع ظهر الخطأ؟ · Which mode were you reading in?"
+      options:
+        - "العربية · Arabic"
+        - "English"
+        - "كلاهما · Both"
+    validations:
+      required: false

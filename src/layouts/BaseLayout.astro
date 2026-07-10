@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Nav from '../components/Nav.astro';
+import Notice from '../components/Notice.astro';
 import Footer from '../components/Footer.astro';
 import { getCollection } from 'astro:content';
 import { SITE_TITLE, SITE_DESC } from '../lib/consts';
@@ -9,6 +10,9 @@ import en from '../i18n/en.json';
 interface Props { title?: string; description?: string; }
 const { title, description } = Astro.props;
 const pageTitle = title ? `${title} · ${SITE_TITLE}` : SITE_TITLE;
+// Cloudflare Web Analytics: privacy-first, cookieless. The beacon only renders
+// when PUBLIC_CF_BEACON_TOKEN is set at build time, so the repo ships no token.
+const cfBeacon = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
 const desc = description ?? SITE_DESC;
 
 // Build a lightweight search index for the ⌘K command palette.
@@ -30,7 +34,7 @@ const searchIndex = [
 ];
 ---
 <!doctype html>
-<html lang="ar" data-lang="ar" dir="rtl">
+<html lang="ar" data-lang="ar" dir="rtl" data-theme="light">
   <head>
     <script is:inline>
       (function () {
@@ -40,8 +44,11 @@ const searchIndex = [
             d.dataset.lang = 'en';
             d.dir = 'ltr';
           }
-          // before first paint, so light-theme users never flash dark
-          if (localStorage.getItem('dp-theme') === 'light') d.dataset.theme = 'light';
+          // light is the default (data-theme="light" ships in the markup); dark is
+          // opt-in, so only explicit dark users drop the attr before first paint
+          if (localStorage.getItem('dp-theme') === 'dark') d.removeAttribute('data-theme');
+          // hide the disclaimer banner pre-paint if the reader dismissed it
+          if (localStorage.getItem('dp-notice-dismissed') === '1') d.dataset.notice = 'off';
         } catch (e) {}
       })();
     </script>
@@ -54,7 +61,7 @@ const searchIndex = [
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={desc} />
     <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#080b12" />
+    <meta name="theme-color" content="#faf6ec" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -65,6 +72,7 @@ const searchIndex = [
   <body>
     <div class="dp-readbar" id="dp-readbar"></div>
     <Nav />
+    <Notice />
     <main class="dp-container">
       <slot />
     </main>
@@ -92,6 +100,16 @@ const searchIndex = [
       import '../scripts/ui.js';
       import '../scripts/highlights.js';
       import '../scripts/speak.js';
+      import '../scripts/views.js';
     </script>
+
+    {cfBeacon && (
+      <script
+        is:inline
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon={JSON.stringify({ token: cfBeacon })}
+      ></script>
+    )}
   </body>
 </html>

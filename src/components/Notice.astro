@@ -1,0 +1,39 @@
+---
+// A dismissible, bilingual disclaimer banner shown under the nav.
+// Tells readers the reference is not yet reviewed by professionals and is
+// AI-summarized from real source material, and invites contribution.
+// Dismissal persists in localStorage (`dp-notice-dismissed`); the pre-paint
+// script in BaseLayout hides it before first paint so a dismissed banner never
+// flashes on reload. Text is Arabic-base with an `_en` overlay (§4b + §4c).
+import { REPO_URL } from '../lib/consts';
+const ISSUES_URL = `${REPO_URL}/issues`;
+---
+<aside class="dp-notice" id="dp-notice" role="note">
+  <div class="dp-container dp-notice__inner">
+    <span class="dp-notice__spark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3l1.9 4.7L18.6 9l-4.7 1.9L12 15.6 10.1 10.9 5.4 9l4.7-1.3L12 3z" />
+        <path d="M19 14l.7 1.8L21.5 16.5 19.7 17.2 19 19l-.7-1.8L16.5 16.5 18.3 15.8 19 14z" />
+      </svg>
+    </span>
+    <p class="dp-notice__text">
+      <strong>
+        <span data-lang-block="ar">ملاحظة —</span><span data-lang-block="en" data-i18n="notice.title">Heads up —</span>
+      </strong>
+      <span data-lang-block="ar">هذا المرجع قيد الإنشاء ولم تُراجِعه بعدُ لجنةٌ من المختصّين. المحتوى مُلخَّصٌ بمساعدة الذكاء الاصطناعي من مصادر ومراجع حقيقية موثوقة. المشروع مفتوح المصدر، فساهِم في تحسينه أو أبلِغنا بأي ملاحظة.</span><span data-lang-block="en" data-i18n="notice.body">This reference is a work in progress and has not yet been reviewed by professional scholars. The content is AI-summarized from real, trusted source material. It's open source — help improve it, or tell us about anything that looks off.</span>
+    </p>
+    <span class="dp-notice__actions">
+      <a class="dp-notice__cta" href={REPO_URL} target="_blank" rel="noopener">
+        <span data-lang-block="ar">ساهِم في المشروع</span><span data-lang-block="en" data-i18n="notice.contribute">Contribute</span>
+      </a>
+      <a class="dp-notice__cta dp-notice__cta--ghost" href={ISSUES_URL} target="_blank" rel="noopener">
+        <span data-lang-block="ar">أبلِغ عن ملاحظة</span><span data-lang-block="en" data-i18n="notice.report">Report an issue</span>
+      </a>
+    </span>
+    <button class="dp-notice__close" id="dp-notice-close" type="button" aria-label="إغلاق الملاحظة" title="إغلاق">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M6 6l12 12M18 6L6 18" />
+      </svg>
+    </button>
+  </div>
+</aside>

@@ -70,6 +70,14 @@ const trackInfo = {
           <div class="dp-like-dock">
             <LikeButton client:visible page={`${base}/${entry.id}`} />
           </div>
+          <p class="dp-views" data-dp-views={`${base}/${entry.id}`} hidden>
+            <svg class="dp-views__icon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+            <strong data-dp-views-num>—</strong>
+            <span data-i18n="pagelayout.views">مشاهدة</span>
+          </p>
           <button class="dp-btn" data-dp-learn={entry.id} aria-pressed="false">
             <span data-dp-learn-label data-i18n="pagelayout.markLearned">علِّم كمتعلَّم</span>
           </button>
