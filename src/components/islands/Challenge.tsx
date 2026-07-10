@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import EditorImport from 'react-simple-code-editor';
-import Prism from 'prismjs';
-import 'prismjs/components/prism-go';
+import { loadGo, highlightGo } from '../../lib/prism-go';
 import { isSolved, markSolved } from '../../lib/challenge-store';
 import { touchStreak } from '../../lib/streak-store';
 import { pushState, chalItem, streakItem } from '../../lib/state-sync';
@@ -23,7 +22,6 @@ interface Props {
   solution?: string;
 }
 
-const highlight = (code: string) => Prism.highlight(code, Prism.languages.go, 'go');
 const editorStyle = { fontFamily: 'var(--font-mono)', fontSize: '.86rem', lineHeight: 1.55 };
 const normalize = (s: string) => s.replace(/\r\n/g, '\n').trimEnd();
 
@@ -39,7 +37,7 @@ export default function Challenge({ id, title = 'bug.go', brief, code, expected,
   // SSR/hydration gate, same reasoning as Playground.tsx.
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
-    setMounted(true);
+    loadGo().then(() => setMounted(true));
     setSolved(isSolved(id));
   }, [id]);
 
@@ -119,7 +117,7 @@ export default function Challenge({ id, title = 'bug.go', brief, code, expected,
         <Editor
           value={src}
           onValueChange={setSrc}
-          highlight={highlight}
+          highlight={highlightGo}
           padding={16}
           tabSize={4}
           insertSpaces={false}

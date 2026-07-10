@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import EditorImport from 'react-simple-code-editor';
-import Prism from 'prismjs';
-import 'prismjs/components/prism-go';
+import { loadGo, highlightGo } from '../../lib/prism-go';
 
 // react-simple-code-editor ships CJS; under Astro's SSR the default import can
 // resolve to the module object, so unwrap a nested .default if present.
@@ -16,8 +15,6 @@ interface Props {
 }
 
 type Out = { text: string; kind: 'ok' | 'err' | '' };
-
-const highlight = (code: string) => Prism.highlight(code, Prism.languages.go, 'go');
 
 const editorStyle = { fontFamily: 'var(--font-mono)', fontSize: '.86rem', lineHeight: 1.55 };
 
@@ -38,8 +35,12 @@ export default function Playground({ code, title = 'main.go', predict = false }:
   // (Prism token output isn't stable across the two environments), so we keep
   // it out of SSR entirely: render a plain placeholder until mounted, then the
   // real editor. SSR === first client render → hydration is clean.
+  // Load the Go language component before mounting the highlighted editor, so
+  // the global `Prism` is set and `Prism.languages.go` exists on first render.
   const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    loadGo().then(() => setMounted(true));
+  }, []);
 
   async function run() {
     setRunning(true);
@@ -101,7 +102,7 @@ export default function Playground({ code, title = 'main.go', predict = false }:
         <Editor
           value={src}
           onValueChange={setSrc}
-          highlight={highlight}
+          highlight={highlightGo}
           padding={16}
           tabSize={4}
           insertSpaces={false}
