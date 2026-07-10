@@ -39,7 +39,9 @@ export default function Playground({ code, title = 'main.go', predict = false }:
   // the global `Prism` is set and `Prism.languages.go` exists on first render.
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
-    loadGo().then(() => setMounted(true));
+    // Mount even if the grammar fails to load — highlightGo degrades to plain
+    // text, so the editor stays usable rather than stuck on the placeholder.
+    loadGo().then(() => setMounted(true)).catch(() => setMounted(true));
   }, []);
 
   async function run() {

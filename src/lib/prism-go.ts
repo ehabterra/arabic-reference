@@ -16,7 +16,14 @@ let promise: Promise<typeof Prism> | null = null;
 export function loadGo(): Promise<typeof Prism> {
   if (!promise) {
     (globalThis as unknown as { Prism?: typeof Prism }).Prism = Prism;
-    promise = import('prismjs/components/prism-go').then(() => Prism);
+    promise = import('prismjs/components/prism-go')
+      .then(() => Prism)
+      .catch((err) => {
+        // Don't cache the rejection — clear it so a later call can retry
+        // (transient network / missing-chunk failures shouldn't be permanent).
+        promise = null;
+        throw err;
+      });
   }
   return promise;
 }

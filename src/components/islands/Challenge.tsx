@@ -37,7 +37,9 @@ export default function Challenge({ id, title = 'bug.go', brief, code, expected,
   // SSR/hydration gate, same reasoning as Playground.tsx.
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
-    loadGo().then(() => setMounted(true));
+    // Mount even if the grammar fails to load — highlightGo degrades to plain
+    // text, so the editor stays usable rather than stuck on the placeholder.
+    loadGo().then(() => setMounted(true)).catch(() => setMounted(true));
     setSolved(isSolved(id));
   }, [id]);
 
