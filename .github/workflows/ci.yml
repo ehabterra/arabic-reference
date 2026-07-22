@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          # Match the version the Cloudflare deploy uses, so anything that would
+          # break the deploy breaks the PR first.
+          node-version: 22.16.0
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      # The same command the deploy runs, so a build failure is caught on the
+      # pull request rather than after merge.
+      - run: pnpm build
