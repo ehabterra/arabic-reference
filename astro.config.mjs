@@ -49,7 +49,16 @@ export default defineConfig({
   // Only prerendered routes are enumerated, so the /api/* endpoints
   // (prerender = false) are excluded automatically. The filter is belt-and-
   // braces in case one is ever prerendered by accident.
-  integrations: [mdx(), react(), sitemap({ filter: (page) => !page.includes('/api/') })],
+  //
+  // Match on the pathname rooted at /api/, not a substring of the whole URL:
+  // a page id of `api` in any track (say /nahw/api/) contains "/api/" too, and
+  // a substring test would silently drop it from the sitemap. This mirrors the
+  // `Disallow: /api/` in public/robots.txt, which is also a root-anchored prefix.
+  integrations: [
+    mdx(),
+    react(),
+    sitemap({ filter: (page) => !new URL(page).pathname.startsWith('/api/') }),
+  ],
   adapter: cloudflare({
     // Expose wrangler.jsonc bindings (D1) under `astro dev` via Miniflare.
     platformProxy: { enabled: true },
