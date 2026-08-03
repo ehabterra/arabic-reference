@@ -39,7 +39,7 @@ const trackInfo = {
   slugs: [...trackEntries].sort((a, b) => a.data.order - b.data.order).map((e) => e.id),
 };
 ---
-<BaseLayout title={d.title} description={d.intent}>
+<BaseLayout title={d.title} description={d.intent} ogType="article">
   <article>
     <nav class="dp-breadcrumb dp-kicker">
       <a href={sectionHref}>
