@@ -4,12 +4,19 @@ import Nav from '../components/Nav.astro';
 import Notice from '../components/Notice.astro';
 import Footer from '../components/Footer.astro';
 import { getCollection } from 'astro:content';
-import { SITE_TITLE, SITE_DESC } from '../lib/consts';
+import { SITE_TITLE, SITE_DESC, SITE_OG_IMAGE } from '../lib/consts';
 import en from '../i18n/en.json';
 
-interface Props { title?: string; description?: string; }
-const { title, description } = Astro.props;
+interface Props { title?: string; description?: string; ogType?: 'website' | 'article'; }
+const { title, description, ogType = 'website' } = Astro.props;
 const pageTitle = title ? `${title} · ${SITE_TITLE}` : SITE_TITLE;
+
+// Canonical URL for this page. Resolved against `site` in astro.config.mjs, so
+// it survives being served from a preview host or through a proxy — the tag
+// always names the one URL we want indexed. Astro's directory build format
+// gives every route a trailing slash, matching the internal links we author.
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = SITE_OG_IMAGE ? new URL(SITE_OG_IMAGE, Astro.site).href : null;
 // Cloudflare Web Analytics: privacy-first, cookieless. The beacon only renders
 // when PUBLIC_CF_BEACON_TOKEN is set at build time, so the repo ships no token.
 const cfBeacon = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
@@ -57,10 +64,21 @@ const searchIndex = [
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
     <meta name="description" content={desc} />
+    <link rel="canonical" href={canonical} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={desc} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={SITE_TITLE} />
+    {/* The served HTML is Arabic (<html lang="ar" dir="rtl">); the English
+        toggle is a client-side swap, so ar_AR is what crawlers actually get. */}
+    <meta property="og:locale" content="ar_AR" />
+    <meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'} />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={desc} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    {ogImage && <meta name="twitter:image" content={ogImage} />}
     <meta name="theme-color" content="#faf6ec" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

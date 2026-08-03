@@ -1,0 +1,11 @@
+# تعلم العربية — https://ar.ehabterra.com
+#
+# Everything here is meant to be read and indexed. The only exclusions are the
+# JSON endpoints under /api/, which serve auth/progress/likes data rather than
+# content and would waste crawl budget.
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://ar.ehabterra.com/sitemap-index.xml

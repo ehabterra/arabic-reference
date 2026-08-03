@@ -4,6 +4,17 @@ export const SITE_DESC =
 export const SITE_DESC_EN =
   'An interactive reference for learning Arabic: reading & writing, grammar (nahw), morphology (sarf), rhetoric (balagha), tajwid, calligraphy, and Qur’anic Arabic — with examples, diagrams, quizzes, and progress tracking.';
 
+/**
+ * Absolute-from-root path to the social share card, or '' if there isn't one.
+ *
+ * Empty means BaseLayout emits no `og:image`/`twitter:image` at all, which is
+ * the right default: pointing the tags at a file that 404s is worse than
+ * omitting them, because crawlers cache the miss. Drop a ~1200×630 PNG at
+ * `public/og.png` and set this to '/og.png' to switch every page's share card
+ * on at once.
+ */
+export const SITE_OG_IMAGE = '';
+
 export interface CategoryMeta {
   key: string;
   title: string;

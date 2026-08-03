@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
+import sitemap from '@astrojs/sitemap';
 import cloudflare from '@astrojs/cloudflare';
 
 // Give every content heading (h2–h4) a stable, build-time `id` derived from
@@ -39,9 +40,25 @@ function rehypeHeadingIds() {
 
 // https://astro.build/config
 export default defineConfig({
-  // Update to your custom domain once attached to the Worker.
-  site: 'https://arabic-reference.workers.dev',
-  integrations: [mdx(), react()],
+  // The production domain. `site` is not cosmetic: every canonical URL and
+  // every <loc> in the sitemap is resolved against it, so pointing it at the
+  // wrong host silently tells Google to index a domain that doesn't serve
+  // this content (wrangler.jsonc sets `workers_dev: false` — the old
+  // *.workers.dev value here never resolved at all).
+  site: 'https://ar.ehabterra.com',
+  // Only prerendered routes are enumerated, so the /api/* endpoints
+  // (prerender = false) are excluded automatically. The filter is belt-and-
+  // braces in case one is ever prerendered by accident.
+  //
+  // Match on the pathname rooted at /api/, not a substring of the whole URL:
+  // a page id of `api` in any track (say /nahw/api/) contains "/api/" too, and
+  // a substring test would silently drop it from the sitemap. This mirrors the
+  // `Disallow: /api/` in public/robots.txt, which is also a root-anchored prefix.
+  integrations: [
+    mdx(),
+    react(),
+    sitemap({ filter: (page) => !new URL(page).pathname.startsWith('/api/') }),
+  ],
   adapter: cloudflare({
     // Expose wrangler.jsonc bindings (D1) under `astro dev` via Miniflare.
     platformProxy: { enabled: true },
